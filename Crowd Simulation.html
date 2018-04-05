@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crowd Simulation</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Crowd Simulation Introductions</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Crowd Dynamics</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Particle System</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Crowd AI</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Crowd rendering and Animations</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">Real World Crowd Applications</button>
+
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>Crowd simulation</h1>
+<p>Crowd simulation is the process of simulating the movement (or dynamics) of a large number of entities or characters.</br>
+ It is commonly used to create virtual scenes for visual media like films and video games, and is also used in crisis training,[architecture and urban planning, and evacuation simulation.
+</br></br>
+Crowd simulation may focus on aspects that target different applications. For realistic and fast rendering of a crowd for visual media or virtual cinematography, reduction of the complexity of the 3D scene and image-based rendering are used,
+</br></br>
+ while variations in appearance help present a realistic population.
+</br></br>
+In games and applications intended to replicate real-life human crowd movement, like in evacuation simulations, 
+</br></br>
+simulated agents may need to navigate towards a goal, avoid collisions, and exhibit other human-like behavior. Many crowd steering algorithms have been developed to lead simulated crowds to their goals realistically. Some more general systems are researched, that can support different kinds of agents(like cars and pedestrians),</br></br>
+ different levels of abstraction(like individual and continuum),</br></br>
+agents interacting with smart objects, and more complex physical and social dynamics</br></br>
+</div>
+<div id="c2" class="tabcontent">
+<h1>Crowd Dynamics</h1>
+<p>Crowd Dynamics is supporting on some of the largest and most prestigious projects. Crowds do not get larger or more complex than during religious pilgrimages and celebrations. Our consultants have worked with the agencies responsible for some of the world's largest crowds in and around Mecca. Our role is to model and test crowd management strategies and to help develop management plans. We have also been deeply involved in assisting architectural teams with the design of the major structures, expansion options for holy sites and provision of supporting transport infrastructure.<br/><br/>London's New Years Eve celebrations used Crowd Dynamics' services. We modelled the crowds likely to attend and we set up a real-time crowd prediction system that helped organisers make informed decisions on the night.<br/><br/>Transport hubs such as bus and train stations require analysis of crowd movements for day to day operation and emergency situations. Crowd Dynamics have extensive experience in this area which includes:<br/><br/>Dwell modelling for rolling stock design, having worked with Alstom, Porterbrook and Bombardier.<br/><br/>Crowd modelling for transport interchanges and queuing/circulation modelling and design, in research into terminal end platforms for RSSB, analysis of a queuing system at White Horse Bridge, analysis of crowds at Chesterfield railway station.</p>		<p>Stadia require efficient crowd movement for entrance, circulation and exit. They require detailed plans for emergency situations.</p><p>Crowd Dynamics are world leading experts on crowd movements. We have a wealth of experience and in-house modelling capability essential for understanding the unique problems associated with crowds in various environments.</p>
+<p>To fully understand and care for the well being of crowds, it is not enough to study the history books or second guess human nature. You have to be able to model, simulate and predict crowd movement, with all the pressures, risks, delays actions and reactions that large groups of people can generate. Crowd Dynamics has spent the last fifteen years modelling crowds and crowd flow. The culmination of that modelling is one of the most sophisticated crowd simulation tools in the business - the Myriad II Software Suite.</p>
+<p>Model capability includes:</p>
+<p><strong>Network Analysis</strong></p>
+<ul type="disc">
+<li>Wide Areas</li>
+<li>Cities</li>
+<li>Complex Routes</li>
+</ul>
+<p><strong> Spatial Analysis</strong></p>
+<ul type="disc">
+<li>Spatial Use Maps</li>
+<li>Value Engineering</li>
+<li>Probability of Conflict</li>
+</ul>
+<p><strong> Agent Models</strong></p>
+<ul>
+<li>Microscopic models</li>
+<li>Detailing crowds at individual level</li>
+<li>Behavioural modelling</li>
+</ul>
+</div>
+<div id="c3" class="tabcontent">
+<h1>Crowd Particle System</h1>
+<p>This is all looking pretty good so far, but there’s a serious problem with our particle system. Whenever we want to send a particle out into the world, we are creating a brand new particle object. This implementation is keeping track of all the particles in an array, and this array’s size is quickly getting out of hand; we’ll eventually run out of memory. We could periodically remove all the dead particles from the array, but that would cause the garbage collector to get triggered a lot.</p>
+
+<p>Instead what we need is a pool of particles. When we want to fire a particle out, we will grab an available one from the pool. When a particle dies, it will be returned to the pool to be recycled later. Once the pool has been created we no longer need to create any new objects, nor do any need to get garbage collected. We can keep our particle system running forever and never hit any memory problems or garbage collector induced jitters.</p>
+
+<p>This is the job of the emitter, who keeps hurling out new particles to meet the demands of the system. It’s also very common to let the emitter handle all aspects of the particles. Particles themselves become very simple structures with just their attributes (color, velocity, size, etc), and the emitter is the brains of the operation making sure everything is being updated correctly.</p>
+
+<p>We can tell the emitter how we want the system to behave, and it will use this information when preparing a new particle. No matter if we want fire, sparks, blood or snow, we can configure the emitter to handle it all. Particle systems are truly flexible beasts.</p>
+
+<p>Here is some pseudo-code of what a typical emitter looks like.</p>
+
+
+<p>There are many ways to implement the particle pool, such as queues, and the implementation can use linked lists or arrays or whatever is appropriate for your environment. For the particle system engine used in this article, a simple array was used. The emitter has a  property which indicates how far back into the array the live particles go, beyond <code>particleCount</code> is where the dead ones live. Whenever a particle kicks the bucket, we swap its position with the last alive particle in the array, and decrement <code>particleCount</code>. This has the advantage of when we are updating the particles, we just need to iterate from <code>0</code> to <code>particleCount</code>, which is nice and simple.</p>
+
+<h2 id="properties-changing-over-the-life-of-a-particle">Properties Changing Over the Life of a Particle</h2>
+
+<p>The particle’s <code>life</code> property is an important one. With it we can know how far along in its life the particle is, and tween certain things about the particle based on this. A common example of this is the particle’s color. If we specify a starting color of say red, and an ending color of blue, the particle will gradually work its way from red to blue, hitting many purples along the way.</p>
+
+
+<ul>
+  <li><code>fooVar</code> is how much we want a given particle’s <code>foo</code> property to vary. If it’s zero, then all particles get the same starting value, otherwise each particle gets a slightly different value, based on how large <code>fooVar</code> is. We just multiply <code>fooVar</code> by a random number between <code>-1</code> and <code>1</code> each time we initialize a particle (that’s what <code>random11()</code> is doing for us)</li>
+  <li>For properties that have a start and an end, we figure out how much to tweak them each frame, then apply that tweak each time we update.</li>
+</ul>
+
+<p>Using these two patterns we can apply all kinds of interesting parameters such as the particle’s angle, its velocity, size, color, shape, even how gravity and other forces effect if if we desire.</p>
+
+<h2 id="the-renderer">The Renderer</h2>
+
+<p>We’ve touched upon two of the three major pieces of a particle system, now let’s talk about the final piece, the renderer. Thankfully not much needs to be said here, rendering the particles is pretty straightforward. Here is some pseudo code to get the idea across:</p>
+
+
+<p>As your particle system becomes more complex, so does the renderer. I’ll touch upon some rendering specific issues with HTML5 canvas later on in the article. It’s good practice to keep all rendering specific code out of the particles and emitter and isolated inside the renderer. This way you can easily swap out a canvas renderer for say a WebGL renderer, or – if you’re adventurous – a DOM renderer using divs and CSS. The code for the renderer used in the example particle systems can be found 
+<h2 id="emission-rate">Emission Rate</h2>
+
+<p>Now that our system uses a pool of particles, two factors become important: emission rate and total particle count. Total particle count indicates how big the pool should be. Emission rate is how often a new particle is initialized and sent on its way. But you have to keep in mind that the particle system can only send out a new particle if one is available in the pool. So emission rate and total particle count go hand in hand. The most common solution for emission rate is . So if you have <code>100</code> particles in your pool and <code>life</code> is set to 5, then your emission rate should be . This ensures a constant flow of particles from the emitter without any gaps. But of course the emission rate depends on what type of system you are making, sometimes gaps are desirable, or sometimes your emission rate is purposely set very low.</p>
+
+
+
+<p>One thing to keep in mind, it is easy to have too many particles and too high of an emission rate. When this happens your particles are all overlapping and crowding each other, and it’s easy to have so many that the particles at the bottom of the pile aren’t visible at all. When this happens your particle system is unnecessarily inefficient. Be sure to play with emission rate and total particles to get the effect you want with as few particles as possible.</p>
+
+<h2 id="textures-and-additive-rendering">Textures and Additive Rendering</h2>
+
+<p>So far our particles have been simple, flat colored, circles. If each particle was a texture instead, the realism can be improved nicely. It’s common for the texture to be a simple “fuzz ball”, we are going to use this texture for most of our systems:</p>
+
+
+<p>In the above system, feel free to change the texture to an image you have on hand (best to keep it small, say around 16x16). If you want to return to the default texture, hit the “reset texture” button. Be sure to try out disabling textures too, as the difference is quite dramatic.</p>
+
+<h3 id="additive-rendering">Additive Rendering</h3>
+
+<p>There is something else going on in that above fire particle system, the <code>textureAdditive</code> property is turned on. If you turn it off, you’ll get a really different effect. This is additive rendering, and it often goes hand in hand with textures. With additive rendering, whenever a new particle is rendered on top of a previously placed particle, their color values are added together and the overall effect is that part of the canvas heads towards white. This really enhances the fire’s realism. Often when you go with a fuzzy texture like this, you will also want additive rendering.</p>
+
+<p>In the world of 2D HTML5 canvas, this effect is accomplished with <code>globalCompositeOperation</code> set to <code>lighter</code>.</p>
+
+<h3 id="tinting-the-texture">“Tinting” the Texture</h3>
+
+<p>Notice how the texture itself is white, but the end result is an orange fire? Typically you want to “tint” the texture to allow your system to take on any color you want. In order to do this in HTML5 Canvas, you will need to use the <code>source-atop</code> global composite operation. You need to render the texture into a second canvas, then render your chosen color on top of it using <code>source-atop</code>, then take that result and render it into the main canvas. Depending on your browser of choice, this can be pretty expensive.</p>
+
+
+
+<h2 id="a-note-on-performance">A Note on Performance</h2>
+
+<p>Now that we’ve introduced textures, it’s a good time to take a look at performance. The above “tinting” procedure can be pretty expensive, depending on which browser you are using (and possibly, even on what graphics card your machine has). Different browsers perform differently on various particle systems, depending on what that system is demanding. For example I have found that <code>globalCompositeOperation</code> is a bit expensive in Chrome and Internet Explorer 10, but faster in Firefox on my laptop. But on the other hand, Chrome and IE10 seem to handle large numbers of particles better than Firefox does. Here are some performance numbers I get on my laptop for two very different particle systems. Fire is very texture heavy but has a low number of particles, and fireworks doesn’t use textures but has a lot of particles:</p>
+
+</div>
+<div id="c4" class="tabcontent">
+<h1>Crowd AI</h1>
+<p>In rule-based AI, virtual agents follow scripts: “if this happens, do that”. This is a good approach to take if agents with different roles are required, such as a main character and several background characters. This type of AI is usually implemented with a hierarchy, such as in , where the lower the need lies in the hierarchy, the stronger it is.</p>
+<p>For example, consider a student walking to class who encounters an explosion and runs away. The theory behind this is initially the first four levels of his needs are met, and the student is acting according to his need for self-actualization. When the explosion happens his safety is threatened which is a much stronger need, causing him to act according to that need.</p>
+<p>This approach is scalable, and can be applied to crowds with a large number of agents. Rule-based AI, however, does have some drawbacks. Most notably the behavior of the agents can become very predictable, which may cause a crowd to behave unrealistically.</p>
+<p>In learning AI, virtual characters behave in ways that have been tested to help them achieve their goals. Agents experiment with their environment or a sample environment which is similar to their real one.</p>
+<p>Agents perform a variety of actions and learn from their mistakes. Each agent alters its behavior in response to rewards and punishments it receives from the environment. Over time, each agent would develop behaviors that are consistently more likely to earn high rewards.</p>
+<p>If this approach is used, along with a large number of possible behaviors and a complex environment agents will act in a realistic and unpredictable fashion.</p>
+
+<p>There are a wide variety of machine learning algorithms that can be applied to crowd simulations.</p>
+<p>Q-Learning is an algorithm residing under machine learning's sub field known as reinforcement learning. A basic overview of the algorithm is that each action is assigned a Q value and each agent is given the directive to always perform the action with the highest Q value. In this case learning applies to the way in which Q values are assigned, which is entirely reward based. When an agent comes in contact with a state, s, and action, a, the algorithm then estimates the total reward value that an agent would receive for performing that state action pair. After calculating this data, it is then stored in the agent's knowledge and the agent proceeds to act from there.</p>
+<p>The agent will constantly alter its behavior depending on the best Q value available to it. And as it explores more and more of the environment, it will eventually learn the most optimal state action pairs to perform in almost every situation.</p>
+<p>The following function outlines the bulk of the algorithm:</p>
+<dl>
+<dd><i>Q(s, a) ?- r + maxaQ(s', a')</i></dd>
+</dl>
+</div>
+<div id="c5" class="tabcontent">
+<h1>Animated Crowd Rendering</h1>
+<p>
+With game rendering becoming more complex, both visually and computationally, it is important to make efficient use of GPU hardware. Using instancing, you can reduce CPU overhead by reducing the number of draw calls, state changes, and buffer updates. This chapter shows how to use DirectX 10 instancing with vertex texture fetches to implement instanced hardware palette-skinned characters. The sample also makes use of constant buffers, and the SV_InstanceID system variable to efficiently implement the technique. With this technique, we are able to realize almost 10,000 characters, independently animating with different animations and differing meshes at 30 frames/sec 
+</br></br>
+<h2> Motivation</h2>
+</br></br>
+Our goal with this technique is to use DirectX 10 efficiently to enable large-scale rendering of animated characters. We can apply this method to crowds, to audiences, and generally to any situation that calls for drawing a large number of actors, each with a different animation, and distinct mesh variations. In such scenarios, some characters will be closer than others, and thus a level-of-detail (LOD) system is important. With instancing, game designers can realize large, dynamic situations previously not possible without pre-rendering or severely limiting the uniqueness of the characters in the scene.
+</br></br>
+<h2>A Brief Review of Instancing</h2></br></br>
+In this chapter, we assume a basic understanding of instancing; however, let's review the fundamentals. The term "instancing" refers to rendering a mesh multiple times in different locations, with different parameters. Traditionally, instancing has been used for static mesh objects such as leaves, grass, or other small pieces of mesh geometry that occur in great numbers throughout the scene. This is accomplished by binding a secondary vertex buffer that contains the custom per-instance parameterizations. At render time, the primary vertex buffer is looped over once for each instance, and the secondary buffer is incremented to parameterize each loop over the mesh. See Figure 2-3 for an illustration. In effect, this results in a much larger combined vertex buffer without having to manually create or transfer this buffer.
+</br></br>
+<h2> Details of the Technique</h2></br></br>
+Traditionally using instancing, we have not been able to render animated objects efficiently. With the advent of DirectX 10, efficient skinned animated instancing became possible.
+</br></br>
+Skinned instancing is an extension of regular instancing. It renders each character using hardware palette skinning. Instead of using the standard method of storing the animation frame in shader constants, we encode all frames of all animations into a texture and look up the bone matrices from that texture in the vertex shader. Thus we can have more than one animation, and each character can be in a different frame of its animation.
+</br></br>
+We encode the per-instance parameters into a constant buffer and index into that array using the SV_InstanceID.
+</br></br>
+To achieve mesh variation per instance, we break the character into submeshes that are individually instanced. Such meshes would be different heads, for example.
+</br></br>
+Finally, to avoid work animating characters in the far distance, we implement an LOD system with lower-resolution polygonal mesh subsections. The decision of which LOD to use is made per frame on a per-instance basis.
+</br></br>
+What follows is a simple rendering flow. For details on each step, see the corresponding subsections of this chapter.
+</br></br>
+CPU
+</br></br>
+Perform game logic (animation time, AI, etc.).
+</br></br>
+Determine an LOD group for each instance and populate LOD lists.
+</br></br>
+For each LOD:
+</br></br>
+For each submesh:
+</br></br>
+Populate instance data buffers for each instanced draw call.
+</br></br>
+For each buffer:
+</br></br>
+- Call DrawInstanced() on the submesh.
+</br></br>
+GPU
+</br></br>
+Vertex Shader
+</br></br>
+Load per-instance data from constants using SV_InstanceID.
+</br></br>
+Load bone matrix of appropriate animation and frame.
+</br></br>
+Perform palette skinning.
+</br></br>
+Pixel Shader
+</br></br>
+<b>Example </b>
+struct PerInstanceData
+</br></br>
+{
+</br></br>
+  float4 world1;
+</br></br>
+  float4 world2;
+</br></br>
+  float4 world3;
+</br></br>
+  float4 color;
+</br></br>
+  uint4  animationData;
+</br></br>
+};
+</br></br>
+cbuffer cInstanceData
+</br></br>
+{
+</br></br>
+  PerInstanceData g_Instances[MAX_INSTANCE_CONSTANTS];
+</br></br>
+}
+</br></br>
+On the CPU side, the data looks like Listing 2-2.
+</br></br>
+
+
+</div>
+<div id="c6" class="tabcontent">
+
+<h1>REAl WORLD APPLICATION</h1>
+<p>Examples of notable crowd AI simulation can be seen in</p>
+<h3><span class="mw-headline" id="Sociology">Sociology</span><span class="mw-editsection"></h3>
+<p><i>Crowd simulation</i> can also refer to simulations based on crowd psychology</a>, often in public safety planning. In this case, the focus is just the behavior of the crowd, and not the visual realism of the simulation. Crowds have been studied as a scientific interest since the end of the 19th Century. A lot of research has focused on the collective social behavior of people at social gatherings, assemblies, protests, rebellions, concerts, sporting events and religious ceremonies. Gaining insight into natural human behavior under varying types of stressful situations will allow better models to be created which can be used to develop crowd controlling strategies.</p>
+<p><i>Emergency response teams</i> such as policemen, the National Guard, military and even volunteers must undergo some type of crowd control training. Using researched principles of human behavior in crowds can give disaster training designers more elements to incorporate to create realistic simulated disasters. Crowd behavior can be observed during panic and non-panic conditions. When natural and unnatural events toss social ideals into a twisting chaotic bind, such as the events of 9/11 and hurricane Katrina, humanity's social capabilities are truly put to the test. Military programs are looking more towards simulated training, involving emergency responses, due to their cost effective technology as well as how effective the learning can be transferred to the real world.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">references to reliable sources. (October 2012)">citation needed</span></a></i>]</sup> Many events that may start out controlled can have a twisting event that turns them into catastrophic situations, where decisions need to be made on the spot. It is these situations in which crowd dynamical understanding would play a vital role in reducing the potential for anarchy.</p>
+<p><i>Modeling</i> techniques of crowds vary from holistic or network approaches to understanding individualistic or behavioral aspects of each agent. For example, the Social Force Model describes a need for individuals to find a balance between social interaction and physical interaction. An approach that incorporates both aspects, and is able to adapt depending on the situation, would better describe natural human behavior, always incorporating some measure of unpredictability. With the use of multi-agent models understanding these complex behaviors has become a much more comprehensible task. With the use of this type of software, systems can now be tested under extreme conditions, and simulate conditions over long periods of time in the matter of seconds.</p>
+<p>In some situations, the behavior of swarms of non-human animals can be used as an experimental model of crowd behavior. The panic behavior of ants when exposed to a chemical in a confined space with limited exit routes has been found to have both similarities and differences to equivalent human behavior.
+<h3><span class="mw-headline" id="Modeling_individual_behaviors">Modeling individual behaviors</span>title=Crowd_simulation&amp;action=edit&amp;section=9" title="Edit section: Modeling individual behaviors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Helbing proposed a model based on physics using a particle system and socio-psychological forces in order to describe human crowd behavior in panic situation, this is now called the Helbing Model. His work is based on how the average person would react in a certain situation. Although this is a good model, there are always different types of people present in the crowd and they each have their own individual characteristics as well as how they act in a group structure. For instance, one person may not react to a panic situation, while another may stops walking and interfere in the crowd dynamics as a whole. Furthermore, depending on the group structure, the individual action can change because the agent is part of a group, for example, returning to a dangerous place in order to rescue a member of that group. Helbing's model can be generalized incorporating individualism.</p>
+<p>In order to tackle this problem, individuality should be assigned to each agent, allowing to deal with different types of behaviors. Another aspect to tackle this problem is the possibility to group people, forming these group causes people to change their behavior as a function of part of the group structure. Each agent (individual) can be defined according to the following parameters:</p>
+<ol>
+<li>Id – Agent identifier</li>
+<li>IdFamily – Identifier of the family. A family is a predefined group formed by agents who know each other</li>
+<li>DE – Dependence level of the agent which mimics the need for help. Values [0,1]</li>
+<li>AL – Altruism level representing the tendency to help other agents. Values [0,1]</li>
+<li>v<sub>i</sub> – Speed of the agent</li>
+</ol>
+<p>To model the effect of the dependence parameter with <i>individual agents</i>, the equation is defined as:</p>
+<dl>
+<dd><i>v<sub>i</sub> = (1 – DE)v<sub>max</sub></i></dd>
+</dl>
+<p>When evaluating the speed of the agent, it is clear that if the value of the dependence factor, DE, is equal to one, then the person would be fully disabled making him unable to move. If the dependence factor is equal to zero, then the person is able to run at his max speed.</p>
+<p>Group formation is related to the Altruism force which is implemented as an interaction force between two or more agents who are part of the same family. Mathematically, it is described as the following:</p>
+<dl>
+<dd><i>Fa<sub>i</sub> = K x SAL<sub>i</sub>DE<sub>j</sub> x |d<sub>ij</sub>-d<sub>ip</sub>| x e<sub>ij</sub></i></dd>
+</dl>
+<p>d<sub>ij</sub> represents the distance between two agents with the origin at the position of the agent. d<sub>ip</sub> is the distance vector point from the agents to the door's position p of the simulation environment. K is a constant. e<sub>ij</sub> is the unitary vector with the origin at position i.</p>
+<p>Consequently, the greater the parameter AL<sub>i</sub> of agent<sub>i</sub>, the bigger will be Fa<sub>i</sub> which points to the agent<sub>j</sub> and has the high level of DE<sub>j</sub>. When both agents are close enough to each other, the one with high DE (agent<sub>j</sub> in this example) adopts the value of agent<sub>i</sub> (DE<sub>j</sub> = DE<sub>i</sub>). This means that the evacuation ability of agent<sub>i</sub> is shared with agent<sub>j</sub> and both start moving together.</p>
+<p>By using these applying these equations in model testing using a normally distributed population, the results are fairly similar to the Helbing Model.</p>
+<p>The places where this would be helpful would be in an evacuation scenario. Take for example, an evacuation of a building in the case of a fire. Taking into account the characteristics of individual agents and their group performances, determining the outcome of how the crowd would exit the building is critically important in creating the layout of the building.></p>
+<h3><span class="mw-headline" id="Leader_Behavior_during_evacuation_simulations">Leader Behavior during evacuation simulations</span>title=Crowd_simulation&amp;action=edit&amp;section=10" title="Edit section: Leader Behavior during evacuation simulations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As described earlier, the <b>Helbing Model</b> is used as the basics for crowd behavior. This same type of behavior model is used for evacuation simulations.</p>
+<p>In general, the first thing that has to be assumed is that not everyone has knowledge about the environment or where there are and aren't hazards. From this assumption we can create three types of agents. The first type is a trained leader, this agent knows about the environment and is able to spread knowledge to other agents so they know how to exit from an environment. The next type of agent is an untrained leader, this agent does not know about the environment, however, as the agent explores the environment and gets information from other types of leaders, the agent is able to spread the knowledge about the environment. The last type of agent is a follower, this type of agent can only take information from other leaders and not be able to share the information with other agents.</p>
+<p>The implementation of these types of agents is fairly straightforward. The leaders in the environment have a map of the environment saved as one of their attributes. An untrained leader and followers will start out with an empty map as their attribute. Untrained leaders and followers will start exploring an environment by themselves and create a map of walkable and unwalkable locations. Leaders and untrained leaders(once they have the knowledge), will share information with other agents depending on their proximity. They will share information about which points on the grid are blocked, the local sub-graphs and the dangers in the area.</p>
+<p>There were two types of searching algorithms tried out for this implementation. There was the random search and the depth first search. A random search is where each of the agents go in any direction through the environment and try to find a pathway out. The depth first search is where agents follow one path as far as it can go then return and try another path if the path they traversed does not contain an exit. If was found that depth first search gave a speed up of 15 times versus a random search.
+<h3></h3>
+<p>There are many different case situations that come into play in crowd simulations.</sup> Recently, crowd simulation has been essential for the many virtual environment applications such as education, training, and entertainment. Many situations are based on the environment of the simulation or the behavior of the group of local agents. In virtual reality applications, every agent interacts with many other agents in the environment, calling for complex real-time interactions. Agents must have continuous changes in the environment since agent behaviors allow complex interactions. Scalable architecture can manage large crowds through the behavior and interactive rates. These situations will indicate how the crowds will act in multiple complex scenarios while several different situations are being applied. A situation can be any circumstance that has typical local behaviors. We can categorize all situations into two different kinds.</p>
+<p><i>Spatial situation</i> is a situation that has a region where the environment affects the local agents. For instance, a crowd waiting in line for a ticket booth would be displaying a spatial situation. Other examples may be a bus stop or an ATM machine where characters act upon their environment. Therefore, we would consider 'bus stop' as the situation if the behavior of the agents are to be getting on or off a bus.</p>
+<p><i>Non-Spatial situation</i> has no region in the environment because this only involves the behavior of the crowd. The relationship of the local agents is an important factor to consider when determining behavior. An example would be a group of friends walking together. Typical behavior of characters that are friends would all move along with each other. This means that 'friendship' would be the situation among the typical behavior of walking together.</p>
+<p>The structure of any situation is built upon four components, Behavior functions, Sensors, States, and Event Rules. Behavior functions represent what the characters behaviors are specific to the situation. Sensors are the sensing capability for agents to see and respond to events. States are the different motions and state transitions used only for the local behaviors. Event rule is the way to connect different events to their specific behaviors. While a character is being put into a situation, these four components are considered at the same time. For spatial situations, the components are added when the individual initially enters the environment that influences the character. For non-spatial situations, the character is affected only once the user assigns the situation to the character. The four components are removed when the agent is taken away from its situations region or the situation itself is removed. The dynamic adding and removing of the situations lets us achieve scalable agents.</p>
+<a href="crowdquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="Crowd Simulation">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>user profile</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css1/style.css">
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+  <style> body { background-image: url("b4.jpg"); background-repeat: no-repeat; } </style> 
+
+<center>
+  <div class="profile">
+        <div class="photo">
+            <input type="file" accept="image/*">
+            
+                <div class="photo__frame photo__frame--circle">
+                    <canvas class="photo__canvas"></canvas>
+                    <div class="message is-empty">
+                        <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                        <p class="message--mobile">Tap here to select your picture.</p>
+                    </div>
+                    <div class="message is-loading">
+                       
+                    </div>
+                    <div class="message is-dragover">
+                        <i class="fa fa-2x fa-cloud-upload"></i>
+                        <p>Drop your photo</p>
+                    </div>
+                    <div class="message is-wrong-file-type">
+                        <p>Only images allowed.</p>
+                        <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                        <p class="message--mobile">Tap here to select your picture.</p>
+                    </div>
+                    <div class="message is-wrong-image-size">
+                        <p>Your photo must be larger than 350px.</p>
+                    </div>
+                </div>
+            </div>
+
+          
+    
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+  
+
+    <script  src="js1/index.js"></script>
+
+</center>
+
+<table align="center" cellpadding = "10"><form name="profile" action="uprofile.php" method="post">
+ 
+<tr>
+<td><b>FIRST NAME</td>
+<td><input type="text" name="fname" id="fname" maxlength="30"/>
+</td>
+</tr>
+ 
+<tr>
+<td><b>LAST NAME</td>
+<td><input type="text" name="lname" id="lname" maxlength="30"/>
+</td>
+</tr>
+ 
+<tr>
+<td><b>MOBILE NUMBER</td>
+<td>
+<input type="text" name="mobile" id="mobile" maxlength="15" />
+</td>
+</tr>
+
+<tr>
+<td><b>GENDER</td>
+<td>
+<input type="radio" name="gender" value="Male" /><b>Male 
+<input type="radio" name="gender" value="Female" /><b>Female 
+</td>
+</tr>
+ 
+ </b>
+</table>
+<center><input type="submit" value="Submit" name="profile" id="submit" class="button"> 
+<a type="button" class="button" href="profile.php" >Cancel</a>
+
+</center>
+</form>
+
+</div>
+
+</body>
+
+</html>

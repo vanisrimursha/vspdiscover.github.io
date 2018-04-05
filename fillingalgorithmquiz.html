@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+<title>Filling Algorithm Quiz</title>
+ <style> body { background-image: url("b3.jpg"); background-repeat: no-repeat; } </style> 
+
+<?php
+session_start();
+$_SESSION['course'] = "Filling Algorithms";
+?>
+
+</head> 
+<style>
+div#test{ border:blue 1px solid; padding:10px 60px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+        ["Polygon is an ordered list of  --------- ? ","Vertices","Lines","points","A"],        
+        ["Filling polygons with particular colors, you need to determine the pixels falling on the border of the polygon and those which fall --------- the polygon","Outside","Inside","Both Inside&Outside","B"],
+        ["-----------  Algorithm works by intersecting line with polygon edges and fills the polygon between pairs of intersections","Boundary Fill","Flood Fill","Scan line","C"],
+        ["------------ algorithm picks a point inside an object and starts to fill until it hits the boundary of the object","Flood fill","Boundary Fill","Scan line","B"],
+        ["--------- replaces the interior color of the object with the fill color. When no more pixels of the original interior color exist","Flood Fill","Boundary Filling","Scan line","A"],
+        ["Polygan filling algorithm relies on the ------- &----------- method of filling in the pixels","2 and 4 connected","4 and 8 Connected","4 and 16 connrcted","B"],
+        ["Inside-outside Test  is also known as counting number method ","True","False","Not Known","A"],
+        ["There are ---------  methods by which we can identify whether particular point is inside an object or outside","Three","Two","Four","B"],
+        ["In non zero winding rule Give the value ---------  to all the edges which are going to upward direction ","0","-1","1","C"],
+        ["In non zero winding rule Give the value ---------  to all the edges which are going to Downward  direction","1","-1","0","B"],
+        ["If the total sum of this direction value is non-zero, then this point to be tested is an -------------","Interior","Exterior","Cannot say","A"],
+        ["If the total sum of this direction value is not a  non-zero, then this point to be tested is an","Exterior","Interior","Cannot say","A"],
+        ["In odd even rule  If the number of interactions is odd, then the point (x,y) is an ---------- ","Interior","Exterior","cannot say","A"],
+        ["In odd even rule  If the number of interactions is even, then the point (x,y) is an ----------","Interior","Cannot say","Exterior","C"],
+        ["The boundary fill algorithm can be implemented by ---------- ","4-connected","8-connected","BothA&B","C"],
+
+      [ "True or False ?</br>Polygon is not an ordered list of vertices ","True","False","Partialy True","B"],
+      [ "True or False ?</br> filling polygons with particular colors, you need to determine the pixels falling on the border of the polygon and those which fall inside the polygon","True","False","Partialy True","A"],
+      [ "True or False ?</br>Scan Line Algorithm works by intersecting scanline with polygon edges and fills the polygon between pairs of intersections","True","False","Partialy True","A"],
+      [ "True or False ?</br>The boundary fill algorithm  picks a point inside an object and starts to fill until it hits the boundary of the object","True","False","Partialy True","A"],
+      [ "True or False ?</br>Nonzero Winding Number Rule is also used with the simple polygons to test the given point is interior or not","True","False","Partialy True","A"]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<button onclick='certificate()'>View Certificate</button>";
+		pos = 0;Scaling
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>NEXT</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+
+function certificate()
+{
+window.open("certificate.php");}
+
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+
+</head>
+
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>

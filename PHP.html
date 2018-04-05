@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>php</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">OverViewing of  PHP</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Operators</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Control Statements</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Variables</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Functions</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">MySQL Functions</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">File Systems Functions</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">Output Controls</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">Sessions</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">Regular Expressions</button>
+</div>
+<div id="c1" class="tabcontent">
+ <h2>Overviewing Of PHP</h2>
+
+<p>This section provides an introduction to the options available to you when developing a PHP application that needs to interact with a MySQL database.<p>
+
+<h4>What is an API?</h4>
+
+<p>An Application Programming Interface, or API, defines the classes, methods, functions and variables that your application will need to call in order to carry out its desired task. In the case of PHP applications that need to communicate with databases the necessary APIs are usually exposed via PHP extensions.</p>
+
+<p>APIs can be procedural or object-oriented. With a procedural API you call functions to carry out tasks, with the object-oriented API you instantiate classes and then call methods on the resulting objects. Of the two the latter is usually the preferred interface, as it is more modern and leads to better organized code.</p>
+
+<p>When writing PHP applications that need to connect to the MySQL server there are several API options available. This document discusses what is available and how to select the best solution for your application.</p>
+
+<h4>What is a Connector?</h4>
+
+<p>In the MySQL documentation, the term connector refers to a piece of software that allows your application to connect to the MySQL database server. MySQL provides connectors for a variety of languages, including PHP.</p>
+
+<p>If your PHP application needs to communicate with a database server you will need to write PHP code to perform such activities as connecting to the database server, querying the database and other database-related functions. Software is required to provide the API that your PHP application will use, and also handle the communication between your application and the database server, possibly using other intermediate libraries where necessary. This software is known generically as a connector, as it allows your application to connect to a database server.
+</p>
+<h4>What is a Driver?</h4>
+
+<p>A driver is a piece of software designed to communicate with a specific type of database server. The driver may also call a library, such as the MySQL Client Library or the MySQL Native Driver. These libraries implement the low-level protocol used to communicate with the MySQL database server.</p>
+
+<p>By way of an example, the PHP Data Objects (PDO) database abstraction layer may use one of several database-specific drivers. One of the drivers it has available is the PDO MYSQL driver, which allows it to interface with the MySQL server.
+
+Sometimes people use the terms connector and driver interchangeably, this can be confusing. In the MySQL-related documentation the term "driver" is reserved for software that provides the database-specific part of a connector package.</p>
+
+<h4>What is an Extension?</h4>
+
+<p>In the PHP documentation you will come across another term - extension. The PHP code consists of a core, with optional extensions to the core functionality. PHP's MySQL-related extensions, such as the mysqli extension, and the mysql extension, are implemented using the PHP extension framework.</p>
+
+<p>An extension typically exposes an API to the PHP programmer, to allow its facilities to be used programmatically. However, some extensions which use the PHP extension framework do not expose an API to the PHP programmer.</p>
+
+<p>The PDO MySQL driver extension, for example, does not expose an API to the PHP programmer, but provides an interface to the PDO layer above it.</p>
+
+<p>The terms API and extension should not be taken to mean the same thing, as an extension may not necessarily expose an API to the programmer.</p>
+
+<h4>What are the main PHP API offerings for using MySQL?</p></h4>
+
+<p>There are three main API options when considering connecting to a MySQL database server:</p>
+
+<p>PHP's MySQL Extension</p>
+
+<p>PHP's mysqli Extension</p>
+
+<p>PHP Data Objects (PDO)</p>
+
+<p>Each has its own advantages and disadvantages. The following discussion aims to give a brief introduction to the key aspects of each API.</p>
+
+<h4>What is PHP's MySQL Extension?</h4>
+
+<p>This is the original extension designed to allow you to develop PHP applications that interact with a MySQL database. The mysql extension provides a procedural interface and is intended for use only with MySQL versions older than 4.1.3. This extension can be used with versions of MySQL 4.1.3 or newer, but not all of the latest MySQL server features will be available.</p>
+
+<h4>Note:</h4>
+
+<p>If you are using MySQL versions 4.1.3 or later it is strongly recommended that you use the mysqli extension instead.</p>
+
+<p>The mysql extension source code is located in the PHP extension directory ext/mysql.</p>
+
+<p>For further information on the mysql extension, see MySQL (Original).</p>
+
+<h4>What is PHP's mysqli Extension?</h4>
+
+<p>The mysqli extension, or as it is sometimes known, the MySQL improved extension, was developed to take advantage of new features found in MySQL systems versions 4.1.3 and newer. The mysqli extension is included with PHP versions 5 and later.</p>
+
+<p>The mysqli extension has a number of benefits, the key enhancements over the mysql extension being:</p>
+
+<p>Object-oriented interface</p>
+
+<p>Support for Prepared Statements</p>
+
+<p>Support for Multiple Statements</p>
+
+<p>Support for Transactions</p>
+
+<p>Enhanced debugging capabilities</p>
+
+<p>Embedded server support</p>
+
+<h4>Note:</h4>
+
+<p>If you are using MySQL versions 4.1.3 or later it is strongly recommended that you use this extension.</p>
+
+<p>As well as the object-oriented interface the extension also provides a procedural interface.</p>
+
+<p>The mysqli extension is built using the PHP extension framework, its source code is located in the directory ext/mysqli.</p>
+
+<p>For further information on the mysqli extension, see MySQLi.</p>
+
+<h4>What is PDO?</h4>
+
+<p>PHP Data Objects, or PDO, is a database abstraction layer specifically for PHP applications. PDO provides a consistent API for your PHP application regardless of the type of database server your application will connect to. In theory, if you are using the PDO API, you could switch the database server you used, from say Firebird to MySQL, and only need to make minor changes to your PHP code.</p>
+
+<p>Other examples of database abstraction layers include JDBC for Java applications and DBI for Perl.</p>
+
+<p>While PDO has its advantages, such as a clean, simple, portable API, its main disadvantage is that it doesn't allow you to use all of the advanced features that are available in the latest versions of MySQL server. For example, PDO does not allow you to use MySQL's support for Multiple Statements.</p>
+
+<p>PDO is implemented using the PHP extension framework, its source code is located in the directory ext/pdo.</p>
+
+<p>For further information on PDO, see the PDO.</p>
+
+<h4>What is the PDO MYSQL driver?</h4>
+
+<p>The PDO MYSQL driver is not an API as such, at least from the PHP programmer's perspective. In fact the PDO MYSQL driver sits in the layer below PDO itself and provides MySQL-specific functionality. The programmer still calls the PDO API, but PDO uses the PDO MYSQL driver to carry out communication with the MySQL server.</p>
+
+<p>The PDO MYSQL driver is one of several available PDO drivers. Other PDO drivers available include those for the Firebird and PostgreSQL database servers.</p>
+
+<p>The PDO MYSQL driver is implemented using the PHP extension framework. Its source code is located in the directory ext/pdo_mysql. It does not expose an API to the PHP programmer.</p>
+
+<p>For further information on the PDO MYSQL driver, see MySQL (PDO).</p>
+
+<h4>What is PHP's MySQL Native Driver?</h4>
+
+<p>In order to communicate with the MySQL database server the mysql extension, mysqli and the PDO MYSQL driver each use a low-level library that implements the required protocol. In the past, the only available library was the MySQL Client Library, otherwise known as libmysqlclient.</p>
+
+<p>However, the interface presented by libmysqlclient was not optimized for communication with PHP applications, as libmysqlclient was originally designed with C applications in mind. For this reason the MySQL Native Driver, mysqlnd, was developed as an alternative to libmysqlclient for PHP applications.</p>
+
+<p>The mysql extension, the mysqli extension and the PDO MySQL driver can each be individually configured to use either libmysqlclient or mysqlnd. As mysqlnd is designed specifically to be utilised in the PHP system it has numerous memory and speed enhancements over libmysqlclient. You are strongly encouraged to take advantage of these improvements.</p>
+
+<h4>Note:</h4>
+
+<p>The MySQL Native Driver can only be used with MySQL server versions 4.1.3 and later.</p>
+
+<p>The MySQL Native Driver is implemented using the PHP extension framework. The source code is located in ext/mysqlnd. It does not expose an API to the PHP programmer.</p>
+</div>
+
+<div id="c2" class="tabcontent">
+  <h2>Operators</h2>
+<p>When comparing or processing variables and other values you use
+operators. Without them, PHP would be more of a word jumble instead of a
+language. In some unique cases, operators slightly alter the relationship
+between two variables or their function within PHP. </p>
+
+<h3>Basic Operators</h3>
+
+<p>Add ( + ): $a = 1; $a = $a + 5; // $a is equal to 6/</p>
+
+<p>Subtract ( - ): $s = 10; $s = $s - 5; // $s is equal to 5</p>
+
+<p>Multiply ( * ): $m = 2; $m = $m * 10; // $m is equal to 20</p>
+
+<p>Divide ( / ): $d = 20; $d = $d / 5; // $d is equal to 4</p>
+
+<p>Modulus ( % ) Provides the remainder after division:
+$u = 5; $u = $u % 2; // $u is equal to 1</p>
+
+<h3>Assignment Operators</h3>
+
+<p>Add ( += ): $a = 1; $a += 5; // $a is equal to 6</p>
+
+<p>Subtract ( -= ): $s = 10; $s -= 5; // $s is equal to 5</p>
+
+<p>Multiply ( *= ): $m = 2; $m *= 10; // $m is equal to 20</p>
+
+<p>Divide ( /= ): $d = 20; $d /= 5; // $d is equal to 4</p>
+
+<p>Modulus ( %= ) Provides the remainder after division:
+$u = 5; $u %= 2; // $u is equal to 1</p>
+
+<p>Concatenate ( .= ) Join onto the end of a string:
+$c = 5; $c .= 2; // $c is now a string, '52'
+See Also:</p>
+
+<h3>Concatenate – Join together in succession</h3>
+<p>19</p>
+
+<h3>Comparison Operators</h3>
+<p>Greater Than ( > ): 2 > 1</p>
+
+<p>Less Than ( < ): 1 < 2</p>
+<p>Greater Than or Equal To ( >= ): 2 >= 2 3 >= 2</p>
+<p>Less Than or Equal To ( <= ): 2 <= 2 2 <= 3</p>
+<p>Short-Hand Plus or Minus one</p>
+<p>Also known as:</p>
+<p>Increment ( $integer++; )</p>
+<p>Decrement ( $integer--; )</p>
+<h3>Examples:</h3>
+<p>$a = 1;</p>
+<p>$a = $a + 1; // $a is now equal to 2</p>
+<p>$a++; // $a is now equal to 3</p>
+<p>$a--; // $a is now equal to 2 again, same as $a = $a – 1;</p>
+
+<h3>Examples:</h3>
+ <p> include('DoesNotExist.txt');</p>
+ <p> Warning: include(DoesNotExist.txt) [function.include]: failed to open</p>
+ <p> stream: No such file or directory</p>
+ <p> @include('DoesNotExist.txt');</p>
+ <p> // blank output below because the error was suppressed
+& - Pass by Reference</p>
+ <p> References allow two variables to refer to the same content. In other words,</p>
+ <p>a variable points to its content (rather than becoming that content). Passing
+by reference allows two variables to point to the same content under
+different names. The ampersand ( & ) is placed before the variable to be
+referenced.</p>
+ <h3>Examples:</h3>
+ <p>$a = 1;</p>
+ <p>$b = &$a; // $b references the same value as $a, currently 1</p>
+ <p>$b = $b + 1; // 1 is added to $b, which effects $a the same way</p>
+ <p>echo "b is equal to $b, and a is equal to $a";</p>
+ <p>b is equal to 2, and a is equal to 2</p>
+ <p>20</p>
+
+<h3>Ternary Operator</h3>
+ <p>The Ternary Operator is a short-hand form for evaluating what to do when
+an expression is evaluated as either TRUE or FALSE. The conditional returns
+either the TRUE or FALSE output. Basic format is as follows:
+(expr) ? ValueIfTrue : ValueIfFalse ;</p>
+ <h3>Examples:</h3>
+ <p>$boolean = TRUE;</p>
+ <p>$result = ($boolean) ? 'Is True' : 'Is False';</p>
+ <p>echo $result;</p>
+ <p>Is True</p>
+ <p>// $result is not yet set</p>
+ <p>$result = (isset($result)) ? $result+1 : 10;</p>
+ <p>echo " \$result = $result.";</p>
+ <p>$result = (isset($result)) ? $result+1 : 10;</p>
+ <p>echo " \$result = $result.";</p>
+ <p>$result = 10. $result = 11.</p>
+ <p>21</p>
+ <p>Use this for functions when you wish to simply alter the original variable
+and return it again to the same variable name with its new value assigned.
+function add(&$var){ // The & is before the argument $var</p>
+ <p>$var++;</p>
+ <p>}</p>
+ <p>$a = 1;</p>
+ <p>$b = 10;</p>
+ <p>add($a);</p>
+ <p>echo "a is $a,";</p>
+ <p>add($b);</p>
+ <p>echo " a is $a, and b is $b"; // Note: $a and $b are NOT referenced</p>
+ <p>a is 2, a is 2, and b is 11</p>
+ <p>You can also do this to alter an array with foreach:</p>
+ <p>$array = array(1,2,3,4);</p>
+ <p>foreach ($array as &$value){</p>
+ <p>$value = $value + 10;</p>
+ <p>}</p>
+ <p>unset ($value); // Must be included, $value remains after foreach loop</p>
+ <p>print_r($array);</p>
+ <p>Array ( [0] => 11 [1] => 12 [2] => 13 [3] => 14 )</p>
+ <p>Mario Lurig</p>
+ <p>The Equal Sign</p>
+ <p>Assignment ( = ): Assigns the value on the right to the variable on the left</p>
+ <p>Equality ( == ): Checks if the left and right values are equal</p>
+ <p>Identical ( === ): Checks if the left and right values are equal AND identical</p>
+ <h3>Examples:</h3>
+ <p>$a = 1; // Sets the value of $a as 1 by assignment</p>
+ <p>$b = TRUE; // Sets the value of $b to the boolean TRUE</p>
+ <p>if ($a == $b){</p>
+ <p>echo 'a is equal to b.';</p>
+ <p>}</p>
+ <p>if ($a === $b){</p>
+ <p>echo 'a is identical and equal to b.';</p>
+ <p>}</p>
+ <p>a is equal to b.</p>
+ <p>Not ( ! ), Not Equal to ( != ), Not Identical to ( !== )</p>
+ <p>Used in conditional statements to evaluate as true a FALSE result of an</p>
+ <p>expression or if a value is NOT equal to the second value.</p>
+ <h3>Examples:</h3>
+ <p>$a = 1;</p>
+ <p>if (!isset($a)){ // If the variable $a is NOT set then...</p>
+ <p>echo '$a is not set'; // The expression is TRUE if it is NOT set</p>
+ <p>// Since there is no ELSE statement, nothing is displayed</p>
+ <p>}</p>
+ <p>if ($a != 0){ <p>vecho '$a does not equal zero';</p>
+ <p>}</p>
+ <p>$a does not equal zero</p>
+ <p>See The Equal Sign above for equality versus identical</p>
+ <p>Concatenate (The Period)</p>
+ <p>A period is used to join dissimilar items as part of a string in the same order
+as they are listed. In many cases this is used to reference the value of a
+function or of an array, which cannot be referenced within double quotations
+( "" ) when being assigned to a $string variable.</p>
+ <h3>Examples:</h3>
+ <p>$array = array( 1 => 'Hello' );</p>
+ <p>$string = 'World';</p>
+ <p>echo '$string in single quotes, followed by ' . $array[1] . "$string";</p>
+ <p>$string in single quotes, followed by HelloWorld
+22</p>
+ <p>Comparison Operators (non-arithmetic)</p>
+ <p>and ( && )v
+ <p>or ( || )</p>
+ <p>xor ( xor ) - Or, but not All</p>
+ <h3>Examples:</h3>
+ <p>if (1 == 1 && 2 == 2){</p>
+ <p>echo 'And is True';</p>
+ <p>}</p>
+ <p>And is True</p>
+ <p>if (1 == 1 || 2 == 2){</p>
+ <p>echo 'At least one of these is True';</p>
+ <p>}</p>
+ <p>At least one of these is True</p>
+ <p>if (1 == 1 xor 2 == 10){</p>
+ <p>echo 'One of these is True, but not both';</p>
+ <p>}</p>
+ <p>One of these is True, but not both</p>
+ <p>23</p>
+ 
+ <p>24</p>
+ 
+</div>
+<div id="c3" class="tabcontent">
+ <h2>Control Statements In PHP</h2>
+
+<p>The if, if…else and if…elseif…else construct are one of the most important features of many languages, these conditional statements provides you different action for the different conditions.</p>
+
+
+<p>When we write code, we perform different actions for different decisions. Like other languages, PHP is built out of a series of control statements. The control statement can be an assignment, a function call, a loop, a conditional statement or even a statement that does nothing or an empty statement. In PHP we have the following conditional statements:</p>
+
+
+<p>if statement – We use this control statement to execute some code only if a specified condition is true.</p>
+
+
+<p>if…else statement – We use this control statement to execute some code if a condition is true and another code if the condition is false.</p>
+
+
+
+ 
+
+
+<p>if…elseif….else statement – We use this control statement to select one of several blocks of code to be executed</p>
+
+
+<p>switch statement – We use this control statement to select one of many blocks of code to be executed</p>
+
+<h3>1. The if Statement</h3>
+
+
+<p>Use the if statement to execute some code only if a specified condition is true.
+The expression is evaluated to its Boolean value. If expression evaluates to TRUE, PHP will execute statement, and if it evaluates to FALSE – it’ll ignore it</p>
+
+<p><strong>Syntax</p>
+<p>if (condition) {</p>
+<p>code to be executed if condition is true;</p>
+<p>}</strong></p>
+
+
+<p>The following example would display ” A is bigger than B” if $a is bigger than $b:</p>
+
+<p><?php</p>
+
+<p>if ($a > $b)</p>
+
+<p>echo "A is bigger than B";
+?></p>
+
+<h3>2. The if…else Statement</h3>
+
+
+<p>elseif, as its name suggests, is a combination of if and else. Like else, it extends an if statement to execute a different statement in case the original if expression evaluates to FALSE. However, unlike else, it will execute that alternative expression only if the elseif conditional expression evaluates to TRUE.</p>
+
+
+<p><strong>if (condition)</p>
+
+<p>code to be executed if condition is true;</p>
+
+<p>else</p>
+
+<p>code to be executed if condition is false;</strong></p>
+
+
+<p>For example, the following code would display a is bigger than b, a equal to b or a is smaller than b:</p>
+
+<p><?php</p>
+
+<p>if ($a > $b) {</p>
+
+<p>echo "a is bigger than b";</p>
+
+<p>} elseif ($a == $b) {</p>
+
+<p>echo "a is equal to b";</p>
+
+<p>} else {</p>
+
+<p>echo "a is smaller than b";</p>
+<p>}</p>
+
+<p>?></p>
+
+<h3>3. The if…elseif….else Statement</h3>
+
+<p>Use the if….elseif…else statement to select one of several blocks of code to be executed.</p>
+<p>f (condition)</p>
+
+<p>code to be executed if condition is true;</p>
+
+<p>elseif (condition)</p>
+
+<p>code to be executed if condition is true;</p>
+
+<p>else</p>
+
+<p>code to be executed if condition is false;</p>
+
+
+<p>Note: Note that elseif and else if will only be considered exactly the same when using curly brackets as in the above example. When using a colon to define your if/elseif conditions, you must not separate else if into two words, or PHP will fail with a parse error.</p>
+
+<h3>4. The Switch Statement</h3>
+
+<p>The switch statement is similar to IF statements on the same expression. In many occasions, you may want to compare the same variable (or expression) with many different values, and execute a different piece of code depending on which value it equals to. This is exactly what the switch statement is for.</p>
+
+
+<p><strong>switch ( )</p>
+
+<p>{</p>
+
+<p>case condition1
+</p>
+<p>break;</p>
+
+<p>case condition2</p>
+
+<p>break;</p>
+
+<p>}</strong></p>
+
+
+<p>For example, the following code would display $i matched value as 0 or 1 or 2:</p>
+
+<p><?php</p>
+
+<p>switch ($i) {</p>
+
+<p>case 0:</p>
+
+<p>echo "i equals 0";</p>
+
+<p>case 1:</p>
+
+<p>echo "i equals 1";</p>
+
+<p>case 2:</p>
+
+<p>echo "i equals 2";</p>
+
+<p>}</p>
+
+<p>?></p>
+
+</div>
+<div id="c4" class="tabcontent">
+<h2>Variables</h2>
+
+<p>PHP has a total of eight data types which we use to construct our variables -</p>
+
+<h4>Integers - are whole numbers, without a decimal point, like 4195.</h4>
+<h4>Doubles - are floating-point numbers, like 3.14159 or 49.1.</h4>
+
+<h4>Booleans - have only two possible values either true or false.</h4>
+
+<h4>NULL - is a special type that only has one value: NULL.</h4>
+
+<h4>Strings - are sequences of characters, like 'PHP supports string operations.'</h4>
+
+<h4>Arrays - are named and indexed collections of other values.</h4>
+
+<h4>Objects - are instances of programmer-defined classes, which can package up both other kinds of values and functions that are specific to the class.</h4>
+
+<h4>Resources - are special variables that hold references to resources external to PHP (such as database connections).</h4>
+
+<p>The first five are simple types, and the next two (arrays and objects) are compound - the compound types can package up other arbitrary values of arbitrary type, whereas the simple types cannot.</p>
+
+<p>We will explain only simple data type in this chapters. Array and Objects will be explained separately.</p>
+<h3>Integers</h3>
+<p>They are whole numbers, without a decimal point, like 4195. They are the simplest type .they correspond to simple whole numbers, both positive and negative. Integers can be assigned to variables, or they can be used in expressions, like so -</p>
+
+<p>$int_var = 12345;</p>
+
+<p>$another_int = -12345 + 12345;</p>
+
+<p>Integer can be in decimal (base 10), octal (base 8), and hexadecimal (base 16) format. Decimal format is the default, octal integers are specified with a leading 0, and hexadecimals have a leading 0x.</p>
+
+
+<h3>Doubles</h3>
+
+<p>They like 3.14159 or 49.1. By default, doubles print with the minimum number of decimal places needed. For example, the code -</p>
+
+
+<p><?php</p>
+
+<p>   $many = 2.2888800;</p>
+
+<p>   $many_2 = 2.2111200;</p>
+
+<p>   $few = $many + $many_2;</p>
+
+<p>     print("$many + $many_2 = $few <br>");</p>
+
+<p>?>
+</p>
+<p>It produces the following browser output -</p>
+
+<p>2.28888 + 2.21112 = 4.5</p>
+
+<h3>Boolean</h3>
+
+<p>They have only two possible values either true or false. PHP provides a couple of constants especially for use as Booleans: TRUE and FALSE, which can be used like so -</p>
+
+<p>if (TRUE)
+</p>
+
+<p>   print("This will always print<br>");</p>
+
+
+<p>else</p>
+
+<p>   print("This will never print<br>");</p>
+
+<p>Interpreting other types as Booleans</p>
+
+<p>Here are the rules for determine the "truth" of any value not already of the Boolean type -</p>
+
+<p>If the value is a number, it is false if exactly equal to zero and true otherwise.</p>
+
+<p>If the value is a string, it is false if the string is empty (has zero characters) or is the string "0", and is true otherwise.</p>
+<p>
+Values of type NULL are always false.</p>
+
+<p>If the value is an array, it is false if it contains no other values, and it is true otherwise. For an object, containing a value means having a member variable that has been assigned a value.</p>
+
+<p>Valid resources are true (although some functions that return resources when they are successful will return FALSE when unsuccessful).</p>
+
+<p>Don't use double as Booleans.</p>
+
+<p>Each of the following variables has the truth value embedded in its name when it is used in a Boolean context.</p>
+
+<p>$true_num = 3 + 0.14159;</p>
+
+<p>$true_str = "Tried and true"</p>
+
+<p>$true_array[49] = "An array element";</p>
+
+<p>$false_array = array();</p>
+
+<p>$false_null = NULL;</p>
+
+<p>$false_num = 999 - 999;</p>
+
+<p>$false_str = "";</p>
+
+
+<h3>NULL</h3>
+
+<p>NULL is a special type that only has one value: NULL. To give a variable the NULL value, simply assign it like this -</p>
+
+<p>$my_var = NULL;</p>
+
+<p>The special constant NULL is capitalized by convention, but actually it is case insensitive; you could just as well have typed -</p>
+
+<p>$my_var = null;</p>
+
+<p>A variable that has been assigned NULL has the following properties -</p>
+
+<p>It evaluates to FALSE in a Boolean context.</p>
+
+<p>It returns FALSE when tested with IsSet() function.</p>
+
+<h3>Strings</h3>
+
+<p>They are sequences of characters, like "PHP supports string operations". Following are valid examples of string</p>
+
+<p>$string_1 = "This is a string in double quotes";</p>
+
+<p>$string_2 = 'This is a somewhat longer, singly quoted string';</p>
+
+<p>$string_39 = "This string has thirty-nine characters";</p>
+
+<p>$string_0 = ""; // a string with zero characters</p>
+
+<p>Singly quoted strings are treated almost literally, whereas doubly quoted strings replace variables with their values as well as specially interpreting certain character sequences.</p>
+
+
+<p><?php</p>
+
+<p>   $variable = "name";</p>
+
+<p>   $literally = 'My $variable will not print!';</p>
+   
+   <p>print($literally);</p>
+
+<p>   print "<br>";</p>
+   
+<p>   $literally = "My $variable will print!";</p>
+<p>   print($literally);</p>
+
+<p>?></p>
+<p>This will produce following result -</p>
+
+<p>My $variable will not print!</p>
+
+<p>My name will print</p>
+
+<p>There are no artificial limits on string length - within the bounds of available memory, you ought to be able to make arbitrarily long strings.</p>
+
+<p>Strings that are delimited by double quotes (as in "this") are preprocessed in both the following two ways by PHP -</p>
+
+<p>Certain character sequences beginning with backslash (\) are replaced with special characters</p>
+
+<p>Variable names (starting with $) are replaced with string representations of their values.</p>
+
+<p>The escape-sequence replacements are -</p>
+
+<p>\n is replaced by the newline character</p>
+
+<p>\r is replaced by the carriage-return character</p>
+
+<p>\t is replaced by the tab character</p>
+
+
+<p>\$ is replaced by the dollar sign itself ($)</p>
+
+<p>\" is replaced by a single double-quote (")</p>
+
+<p>\\ is replaced by a single backslash (\)</p>
+
+<p>Here Document</p>
+
+<p>You can assign multiple lines to a single string variable using here document -</p>
+
+
+<p><?php</p>
+
+<p>   $channel =<<<_XML_</p>
+   
+<p>   <channel></p>
+
+<p>      <title>What's For Dinner</title></p>
+
+<p>      <link>http://menu.example.com/ </link></p>
+
+<p>      <description>Choose what to eat tonight.</description></p>
+
+<p>   </channel></p>
+
+<p>   _XML_;</p>
+   
+<p>   echo <<<END</p>
+<p>   This uses the "here document" syntax to output multiple lines with variable </p>
+
+<p>   interpolation. Note that the here document terminator must appear on a line with </p>
+
+<p>   just a semicolon. no extra whitespace!</p>
+   
+
+<p>   END;</p>
+   
+<p>   print $channel;</p>
+
+<p>?></p>
+
+<p>This will produce following result -</p>
+
+<p>This uses the "here document" syntax to output</p>
+
+<p>multiple lines with variable interpolation. Note</p>
+
+<p>that the here document terminator must appear on a</p>
+
+<p>line with just a semicolon. no extra whitespace!</p>
+
+
+</div>
+<div id="c5" class="tabcontent">
+<h2>PHP User Defined Functions</h2>
+
+<p>Besides the built-in PHP functions, we can create our own functions.</p>
+
+<p>A function is a block of statements that can be used repeatedly in a program.</p>
+
+<p>A function will not execute immediately when a page loads.</p>
+
+<p>A function will be executed by a call to the function.</p>
+
+<h3>Create a User Defined Function in PHP</h3>
+<p>A user defined function declaration starts with the word "function":</p>
+
+<p><b>Syntax</b></p>
+<p>function functionName() {</p>
+   <p> code to be executed;</p>
+<p>}</p>
+
+<h4>Note: A function name can start with a letter or underscore (not a number).</h4></p>
+
+
+<p><b>Example</b></p>
+<p><?php</p>
+<p>function writeMsg() {</p>
+ <p>   echo "Hello world!";</p>
+<p>}</p>
+
+<p>writeMsg(); // call the function</p>
+<p>?></p>
+
+
+<h3>PHP Function Arguments</h3>
+<p>Information can be passed to functions through arguments. An argument is just like a variable.</p>
+
+<p>Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.</p>
+
+<p>The following example has a function with one argument ($fname). When the familyName() function is called, we also pass along a name (e.g. Jani), and the name is used inside the function, which outputs several different first names, but an equal last name:</p>
+
+<p><b>Example</b></p>
+<p><?php</p>
+<p>function familyName($fname) {</p>
+  <p>  echo "$fname Refsnes.<br>";</p>
+<p>}</p>
+
+<p>familyName("Jani");</p>
+<p>familyName("Hege");</p>
+<p>familyName("Stale");</p>
+<p>familyName("Kai Jim");</p>
+<p>familyName("Borge");</p>
+<p>?></p>
+
+</div>
+<div id="c6" class="tabcontent">
+<h2>MySQL Functions In PHP</h2>
+
+<h4>Function	Description</h4>
+<p>mysqli_affected_rows()	Returns the number of affected rows in the previous MySQL operation</p>
+<p>mysqli_autocommit()	Turns on or off auto-committing database modifications</p>
+
+<p>mysqli_change_user()	Changes the user of the specified database connection</p>
+
+<p>mysqli_character_set_name()	Returns the default character set for the database connection</p>
+
+<p>mysqli_close()	Closes a previously opened database connection</p>
+
+<p>mysqli_commit()	Commits the current transaction</p>
+
+<p>mysqli_connect_errno()	Returns the error code from the last connection error</p>
+
+<p>mysqli_connect_error()	Returns the error description from the last connection error</p>
+
+<p>mysqli_connect()	Opens a new connection to the MySQL server</p>
+
+<p>mysqli_data_seek()	Adjusts the result pointer to an arbitrary row in the result-set</p>
+
+<p>mysqli_debug()	Performs debugging operations</p>
+
+<p>mysqli_dump_debug_info()	Dumps debugging info into the log</p>
+
+<p>mysqli_errno()	Returns the last error code for the most recent function call</p>
+
+<p>
+mysqli_error_list()	Returns a list of errors for the most recent function call</p>
+
+<p>mysqli_error()	Returns the last error description for the most recent function call</p>
+
+<p>mysqli_fetch_all()	Fetches all result rows as an associative array, a numeric array, or both</p>
+
+<p>mysqli_fetch_array()	Fetches a result row as an associative, a numeric array, or both</p>
+
+<p>mysqli_fetch_assoc()	Fetches a result row as an associative array</p>
+
+<p>mysqli_fetch_field_direct()	Returns meta-data for a single field in the result set, as an object</p>
+
+<p>mysqli_fetch_field()	Returns the next field in the result set, as an object</p>
+
+<p>mysqli_fetch_fields()	Returns an array of objects that represent the fields in a result set</p>
+
+<p>mysqli_fetch_lengths()	Returns the lengths of the columns of the current row in the result set</p>
+
+<p>mysqli_fetch_object()	Returns the current row of a result set, as an object</p>
+
+<p>mysqli_fetch_row()	Fetches one row from a result-set and returns it as an enumerated array</p>
+
+<p>mysqli_field_count()	Returns the number of columns for the most recent query</p>
+
+<p>mysqli_field_seek()	Sets the field cursor to the given field offset</p>
+
+<p>mysqli_field_tell()	Returns the position of the field cursor</p>
+
+<p>mysqli_free_result()	Frees the memory associated with a result</p>
+
+<p>mysqli_get_charset()	Returns a character set object</p>
+
+<p>mysqli_get_client_info()	Returns the MySQL client library version</p>
+
+<p>mysqli_get_client_stats()	Returns statistics about client per-process</p>
+
+<p>mysqli_get_client_version()	Returns the MySQL client library version as an integer</p>
+
+<p>mysqli_get_connection_stats()	Returns statistics about the client connection</p>
+
+<p>mysqli_get_host_info()	Returns the MySQL server hostname and the connection type</p>
+
+<p>mysqli_get_proto_info()	Returns the MySQL protocol version</p>
+
+<p>mysqli_get_server_info()	Returns the MySQL server version</p>
+
+<p>mysqli_get_server_version()	Returns the MySQL server version as an integer</p>
+
+<p>mysqli_info()	Returns information about the most recently executed query</p>
+
+<p>mysqli_init()	Initializes MySQLi and returns a resource for use with mysqli_real_connect()</p>
+
+<p>mysqli_insert_id()	Returns the auto-generated id used in the last query</p>
+<p>mysqli_kill()	Asks the server to kill a MySQL thread
+</p>
+<p>mysqli_more_results()	Checks if there are more results from a multi query</p>
+
+<p>mysqli_multi_query()	Performs one or more queries on the database</p>
+
+<p>mysqli_next_result()	Prepares the next result set from mysqli_multi_query()</p>
+
+<p>mysqli_num_fields()	Returns the number of fields in a result set</p>
+
+<p>mysqli_num_rows()	Returns the number of rows in a result set</p>
+
+<p>mysqli_options()	Sets extra connect options and affect behavior for a connection</p>
+
+<p>mysqli_ping()	Pings a server connection, or tries to reconnect if the connection has gone down</p>
+
+<p>mysqli_prepare()	Prepares an SQL statement for execution</p>
+<p>mysqli_query()	Performs a query against the database</p>
+
+<p>mysqli_real_connect()	Opens a new connection to the MySQL server</p>
+
+<p>mysqli_real_escape_string()	Escapes special characters in a string for use in an SQL statement</p>
+
+<p>mysqli_real_query()	Executes an SQL query</p>
+
+<p>mysqli_reap_async_query()	Returns the result from async query</p>
+
+<p>mysqli_refresh()	Refreshes tables or caches, or resets the replication server information</p>
+
+<p>mysqli_rollback()	Rolls back the current transaction for the database</p>
+
+<p>mysqli_select_db()	Changes the default database for the connection</p>
+
+<p>mysqli_set_charset()	Sets the default client character set</p>
+
+<p>mysqli_set_local_infile_default()	Unsets user defined handler for load local infile command</p>
+
+<p>mysqli_set_local_infile_handler()	Set callback function for LOAD DATA LOCAL INFILE command</p>
+
+<p>mysqli_sqlstate()	Returns the SQLSTATE error code for the last MySQL operation</p>
+
+<p>mysqli_ssl_set()	Used to establish secure connections using SSL</p>
+
+<p>mysqli_stat()	Returns the current system status</p>
+
+<p>mysqli_stmt_init()	Initializes a statement and returns an object for use with mysqli_stmt_prepare()</p>
+
+<p>mysqli_store_result()	Transfers a result set from the last query</p>
+
+<p>mysqli_thread_id()	Returns the thread ID for the current connection</p>
+
+<p>mysqli_thread_safe()	Returns whether the client library is compiled as thread-safe</p>
+
+<p>mysqli_use_result()	Initiates the retrieval of a result set from the last query executed using the mysqli_real_query()</p>
+
+<p>mysqli_warning_count()	Returns the number of warnings from the last query in the connection</p>
+
+</div>
+<div id="c7" class="tabcontent">
+<h2>PHP Filesystem Introduction</h2>
+<p>The filesystem functions allow you to access and manipulate the filesystem.</p>
+
+<h3>Installation</h3>
+<p>The filesystem functions are part of the PHP core. There is no installation needed to use these functions..</p>
+
+<h3>Unix / Windows Compatibility</h3>
+<p>When specifying a path on Unix platforms, a forward slash (/) is used as directory separator..</p>
+
+<p>On Windows platforms, both forward slash (/) and backslash (\) can be used..</p>
+
+<h3>Runtime Configuration</h3>
+<p>The behavior of the filesystem functions is affected by settings in php.ini..</p>
+
+<h2>PHP Filesystem Functions</h2>
+
+.<p><b>Function  with  Description</b>.</p>
+<p>basename()	Returns the filename component of a path.</p>
+<p>chgrp()	Changes the file group.</p>
+<p>chmod()	Changes the file mode.</p>
+<p>chown()Changes the file owner.</p>
+<p>clearstatcache()	Clears the file status cache.</p>
+<p>copy()	Copies a file.</p>
+<p>delete()	See unlink() or unset().</p>
+<p>dirname()	Returns the directory name component of a path.</p>
+<p>disk_free_space()	Returns the free space of a directory.</p>
+<p>disk_total_space()	Returns the total size of a directory.</p>
+<p>diskfreespace()	Alias of disk_free_space().</p>
+<p>fclose()	Closes an open file.</p>
+
+<p>feof()	Tests for end-of-file on an open file.</p>
+<p>
+fflush()	Flushes buffered output to an open file.</p>
+<p>
+fgetc()	Returns a character from an open file.</p>
+<p>
+fgetcsv()	Parses a line from an open file, checking for CSV fields.</p>
+<p>
+fgets()	Returns a line from an open file.</p>
+<p>
+fgetss()	Returns a line, with HTML and PHP tags removed, from an open file.</p>
+<p>
+file()	Reads a file into an array.</p>
+<p>
+file_exists()	Checks whether or not a file or directory exists.</p>
+<p>
+file_get_contents()	Reads a file into a string.</p>
+
+<p>file_put_contents()	Writes a string to a file.</p>
+
+<p>fileatime()	Returns the last access time of a file.</p>
+
+<p>filectime()	Returns the last change time of a file.</p>
+
+<p>filegroup()	Returns the group ID of a file.</p>
+
+<p>fileinode()	Returns the inode number of a file.</p>
+
+<p>filemtime()	Returns the last modification time of a file.</p>
+
+<p>fileowner()	Returns the user ID (owner) of a file.</p>
+
+<p>fileperms()	Returns the permissions of a file.</p>
+
+<p>filesize()	Returns the file size.</p>
+
+<p>filetype()	Returns the file type.</p>
+
+<p>flock()	Locks or releases a file.</p>
+
+<p>fnmatch()	Matches a filename or string against a specified pattern.</p>
+
+<p>fopen()	Opens a file or URL.</p>
+
+<p>fpassthru()	Reads from an open file, until EOF, and writes the result to the output buffer.</p>
+
+<p>fputcsv()	Formats a line as CSV and writes it to an open file.</p>
+
+<p>fputs()	Alias of fwrite().</p>
+
+<p>fread()	Reads from an open file.</p>
+
+<p>fscanf()	Parses input from an open file according to a specified format.</p>
+<p>fseek()	Seeks in an open file.</p>
+
+<p>fstat()	Returns information about an open file.</p>
+
+<p>ftell()	Returns the current position in an open file.</p>
+
+<p>ftruncate()	Truncates an open file to a specified length.</p>
+
+<p>fwrite()	Writes to an open file.</p>
+
+<p>glob()	Returns an array of filenames / directories matching a specified pattern.</p>
+
+<p>is_dir()	Checks whether a file is a directory.</p>
+
+<p>is_executable()	Checks whether a file is executable.</p>
+
+<p>is_file()	Checks whether a file is a regular file.</p>
+
+<p>is_link()	Checks whether a file is a link.</p>
+
+<p>is_readable()	Checks whether a file is readable.</p>
+
+<p>is_uploaded_file()	Checks whether a file was uploaded via HTTP POST.</p>
+
+<p>is_writable()	Checks whether a file is writeable.</p>
+
+<p>is_writeable()	Alias of is_writable().</p>
+
+<p>lchgrp()	Changes group ownership of symlink.</p>
+
+<p>lchown()	Changes user ownership of symlink.</p>
+
+<p>link()	Creates a hard link.</p>
+
+<p>linkinfo()	Returns information about a hard link.</p>
+
+<p>lstat()	Returns information about a file or symbolic link.</p>
+
+<p>mkdir()	Creates a directory.</p>
+
+<p>move_uploaded_file()	Moves an uploaded file to a new location.</p>
+
+<p>parse_ini_file()	Parses a configuration file.</p>
+
+<p>parse_ini_string()	Parses a configuration string.</p>
+
+<p>pathinfo()	Returns information about a file path.</p>
+
+<p>pclose()	Closes a pipe opened by popen().</p>
+
+<p>popen()	Opens a pipe.</p>
+
+<p>readfile()	Reads a file and writes it to the output buffer.</p>
+
+<p>readlink()	Returns the target of a symbolic link.</p>
+
+<p>realpath()	Returns the absolute pathname.</p>
+
+<p>realpath_cache_get()	Returns realpath cache entries.</p>
+
+<p>realpath_cache_size()	Returns realpath cache size.</p>
+
+<p>rename()	Renames a file or directory.</p>
+
+<p>rewind()	Rewinds a file pointer.</p>
+
+<p>rmdir()	Removes an empty directory.</p>
+
+<p>set_file_buffer()	Sets the buffer size of an open file.</p>
+
+<p>stat()	Returns information about a file.</p>
+
+<p>symlink()	Creates a symbolic link.</p>
+
+<p>tempnam()	Creates a unique temporary file.</p>
+
+<p>tmpfile()	Creates a unique temporary file.</p>
+
+<p>touch()	Sets access and modification time of a file.</p>
+
+<p>umask()	Changes file permissions for files.</p>
+
+<p>unlink()	Deletes a file.</p>
+
+
+</div>
+<div id="c8" class="tabcontent">
+<h2>Output Control Functions</h2>
+<h3>Introduction</h3>
+ 
+<p>The Output Control functions allow you to control when output is sent from the script. This can be useful in several different situations, especially if you need to send headers to the browser after your script has began outputting data. The Output Control functions do not affect headers sent using header() or setcookie(), only functions such as echo() and data between blocks of PHP code.</p>
+
+<h3>Requirements</h3>
+<p>No external libraries are needed to build this extension.</p>
+
+<h3>Installation</h3>
+<p>There is no installation needed to use these functions; they are part of the PHP core.</p>
+
+<h3>Runtime Configuration</h3>
+<p>The behaviour of these functions is affected by settings in php.ini.</p>
+
+
+<h3>output_buffering boolean/integer</h3>
+<p> You can enable output buffering for all files by setting this directive to 'On'. If you wish to limit the size of the buffer to a certain size - you can use a maximum number of bytes instead of 'On', as a value for this directive (e.g., output_buffering=4096). As of PHP 4.3.5, this directive is always Off in PHP-CLI.</p>
+
+<h3>output_handler string</h3>
+<p> You can redirect all of the output of your scripts to a function. For example, if you set output_handler to mb_output_handler(), character encoding will be transparently converted to the specified encoding. Setting any output handler automatically turns on output buffering.</p>
+
+<h4>Note: You cannot use both mb_output_handler() with ob_iconv_handler() and you cannot use both ob_gzhandler() and zlib.output_compression.</h4>
+
+<h4>Note: Only built-in functions can be used with this directive. For user defined functions, use ob_start().</h4>
+
+<h3>implicit_flush boolean</h3>
+<p>FALSE by default. Changing this to TRUE tells PHP to tell the output layer to flush itself automatically after every output block. This is equivalent to calling the PHP function flush() after each and every call to print() or echo() and each and every HTML block.</p>
+
+<p> When using PHP within an web environment, turning this option on has serious performance implications and is generally recommended for debugging purposes only. This value defaults to TRUE when operating under the CLI SAPI.</p>
+
+<p> See also ob_implicit_flush().</p>
+
+<p><b>Resource Types</b></p>
+<p>This extension has no resource types defined</p>.
+
+<p><b>Predefined Constants</b></p>
+<p>This extension has no constants defined.</p>
+
+<p><b>Examples</b></p>
+<p>Example 1. Output Control example</p>
+
+<p><?php</p>
+
+<p>ob_start();</p>
+<p>echo "Hello\n";</p>
+
+<p>setcookie("cookiename", "cookiedata");</p>
+
+<p>ob_end_flush();</p>
+
+<p>?></p>
+<p> In the above example, the output from echo() would be stored in the output buffer until ob_end_flush() was called. In the mean time, the call to setcookie() successfully stored a cookie without causing an error. (You can not normally send headers to the browser after data has already been sent.)</p>
+
+<p><b>Note:</b> When upgrading from PHP 4.1 (and 4.2) to 4.3 that due to a bug in earlier versions you must ensure that implict_flush is OFF in your php.ini, otherwise any output with ob_start() will not be hidden from output.</p>
+
+ <p>See also header() and setcookie().</p>
+
+
+<p>flush -- Flush the output buffer</p>
+<p>ob_clean --  Clean (erase) the output buffer</p>
+<p>ob_end_clean --  Clean (erase) the output buffer and turn off output buffering</p>
+<p>ob_end_flush --  Flush (send) the output buffer and turn off output buffering</p>
+<p>ob_flush --  Flush (send) the output buffer</p>
+<p>ob_get_clean --  Get current buffer contents and delete current output buffer</p>
+<p>ob_get_contents --  Return the contents of the output buffer</p>
+<p>ob_get_flush --  Flush the output buffer, return it as a string and turn off output buffering</p>
+<p>ob_get_length --  Return the length of the output buffer</p>
+<p>ob_get_level --  Return the nesting level of the output buffering mechanism</p>
+<p>ob_get_status --  Get status of output buffers</p>
+<p>ob_gzhandler --  ob_start callback function to gzip output buffer</p>
+<p>ob_implicit_flush --  Turn implicit flush on/off</p>
+<p>ob_list_handlers --  List all output handlers in use</p>
+<p>ob_start -- Turn on output buffering</p>
+<p>output_add_rewrite_var --  Add URL rewriter values</p>
+<p>output_reset_rewrite_vars --  Reset URL rewriter values</p>
+
+
+
+</div>
+<div id="c9" class="tabcontent">
+<h2> PHP Session</h2>
+<h3>What is a PHP Session?</h3>
+<p>When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. The computer knows who you are. It knows when you start the application and when you end. But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state.</p>
+
+<p>Session variables solve this problem by storing user information to be used across multiple pages (e.g. username, favorite color, etc). By default, session variables last until the user closes the browser.</p>
+
+<p>So; Session variables hold information about one single user, and are available to all pages in one application.</p>
+
+
+<h3>Start a PHP Session</h3>
+<p>A session is started with the session_start() function.</p>
+
+<p>Session variables are set with the PHP global variable: $_SESSION.</p>
+
+<p>Now, let's create a new page called "demo_session1.php". In this page, we start a new PHP session and set some session variables:</p>
+
+<p><b>Example</b></p>
+<p><?php</p>
+<p>// Start the session</p>
+<p>session_start();</p>
+<p>?></p>
+<p><!DOCTYPE html></p>
+<p><html></p>
+<p><body></p>
+
+<p><?php</p>
+<p>// Set session variables</p>
+<p>$_SESSION["favcolor"] = "green";</p>
+<p>$_SESSION["favanimal"] = "cat";</p>
+<p>echo "Session variables are set.";</p>
+<p>?></p>
+
+<p></body></p>
+<p></html></p>
+
+<p>Note: The session_start() function must be the very first thing in your document. Before any HTML tags.</p>
+
+
+
+
+</div>
+<div id="c10" class="tabcontent">
+<h2>Regular expressions in  PHP</h2>
+
+<p>Regular expressions are nothing more than a sequence or pattern of characters itself. They provide the foundation for pattern-matching functionality.</p>
+
+<p>Using regular expression you can search a particular string inside a another string, you can replace one string by another string and you can split a string into many chunks.</p>
+
+<p>PHP offers functions specific to two sets of regular expression functions, each corresponding to a certain type of regular expression. You can use any of them based on your comfort.</p>
+
+<p>i)POSIX Regular Expressions</p>
+<p>ii)PERL Style Regular Expressions</p>
+<p>iii)POSIX Regular Expressions</p>
+<p>iv)The structure of a POSIX regular expression is not dissimilar to that of a typical arithmetic expression: various elements (operators) are combined to form more complex expressions.</p>
+
+<p>The simplest regular expression is one that matches a single character, such as g, inside strings such as g, haggle, or bag.</p>
+
+<p>Lets give explanation for few concepts being used in POSIX regular expression. After that we will introduce you with regular expression related functions.</p>
+
+
+<p><b>Expression & Description</b></p>
+
+<p>[0-9]      -->        It matches any decimal digit from 0 through 9.</p>
+
+	
+<p>[a-z]-->It matches any character from lower-case a through lowercase z.
+</p>
+	
+<p>[A-Z]-->It matches any character from uppercase A through uppercase Z.</p>
+
+	
+<p>[a-Z]-->It matches any character from lowercase a through uppercase Z.</p>
+
+<p>The ranges shown above are general; you could also use the range [0-3] to match any decimal digit ranging from 0 through 3, or the range [b-v] to match any lowercase character ranging from b through v.</p>
+
+<p><b>Quantifiers</b></p>
+
+<p>The frequency or position of bracketed character sequences and single characters can be denoted by a special character. Each special character having a specific connotation. The +, *, ?, {int. range}, and $ flags all follow a character sequence.</p>
+
+<p><b>Expression & Description</b></p>
+
+<p>p+-->It matches any string containing at least one p.</p>
+	
+<p>p*-->It matches any string containing zero or more p's.</p>
+
+	
+<p>p?-->it matches any string containing zero or one p's.</p>
+
+	
+<p>p{N}-->It matches any string containing a sequence of N p's</p>
+
+	
+<p>p{2,3}-->It matches any string containing a sequence of two or three p's.</p>
+
+	
+<p>p{2, }-->It matches any string containing a sequence of at least two p's.</p>
+
+	
+<p>p$-->It matches any string with p at the end of it.</p>
+
+	
+<p>^p-->It matches any string with p at the beginning of it.</p>
+
+<p>The sql_regcase() function can be thought of as a utility function, converting each character in the input parameter string into a bracketed expression containing two characters.</p>
+<a href="phpquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="PHP">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

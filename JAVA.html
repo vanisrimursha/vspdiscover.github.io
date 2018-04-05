@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JAVA</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 20%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">An Overview of Java</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Datatypes,Tokens,Variables,and Arrays</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Operators</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Control Statements and Looping</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Java Methods and Constructor</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">Inheritance</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">Packages</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">Interfaces</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">Exception Handling</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">Multithreading</button>
+</div>
+<div id="c1" class="tabcontent">
+<h2>Java  programming</h2> 
+
+<p>Java language created by James Gosling from Sun Microsystems (Sun) in 1991. The target of Java is to write a program once and then run this program on multiple operating systems. The first publicly available version of Java (Java 1.0) was released in 1995. Sun Microsystems was acquired by the Oracle Corporation in 2010. Oracle has now the steermanship for Java. In 2006 Sun started to make Java available under the GNU General Public License (GPL). Oracle continues this project called OpenJDK.</p>
+
+
+<p>Over time new enhanced versions of Java have been released. The current version of Java is Java 1.8 which is also known as Java 8.</p>
+
+
+<p>Java is defined by a specification and consists of a programming language, a compiler, core libraries and a runtime (Java virtual machine) The Java runtime allows software developers to write program code in other languages than the Java programming language which still runs on the Java virtual machine. The Java platform is usually associated with the Java virtual machine and the Java core libraries.</p>
+
+<p>The Java language was designed with the following properties:</p>
+
+<p>Platform independent: Java programs use the Java virtual machine as abstraction and do not access the operating system directly. This makes Java programs highly portable. A Java program (which is standard-compliant and follows certain rules) can run unmodified on all supported platforms, e.g., Windows or Linux.</p>
+
+<p>Object-orientated programming language: Except the primitive data types, all elements in Java are objects.</p>
+
+<p>Strongly-typed programming language: Java is strongly-typed, e.g., the types of the used variables must be pre-defined and conversion to other objects is relatively strict, e.g., must be done in most cases by the programmer.</p>
+
+<p>Interpreted and compiled language: Java source code is transferred into the bytecode format which does not depend on the target platform. These bytecode instructions will be interpreted by the Java Virtual machine (JVM). The JVM contains a so called Hotspot-Compiler which translates performance critical bytecode instructions into native code instructions.</p>
+
+<p>Automatic memory management: Java manages the memory allocation and de-allocation for creating new objects. The program does not have direct access to the memory. The so-called garbage collector automatically deletes objects to which no active pointer exists.</p>
+
+<p>The Java syntax is similar to C++. Java is case-sensitive, e.g., variables called myValue and myvalue are treated as different variables.</p>
+
+<p><b>1.2. Hello world Java program</p>
+<p>// a small Java program</p>
+<p>public class HelloWorld {</p>
+<p>    public static void main(String[] args) {</p>
+ <p>       System.out.println("Hello World");</p>
+  <p>  }</p>
+<p>}</b></p>
+</div>
+<div id="c2" class="tabcontent">
+ <h2>Data type</h2>
+<p>Data type specifies the size and type of values that can be stored in an identifier. The Java language is rich in its data types. Different data types allow you to select the type appropriate to the needs of the application.</p>
+
+<p>Data types in Java are classified into two types:</p>
+
+<b>Primitive</b>—which include Integer, Character, Boolean, and Floating Point.</p>
+<b>Non-primitive</b>—which include Classes, Interfaces, and Arrays.</p>
+<h3>Primitive Data Types</h3>
+<p><b>1. Integer</b></p>
+<p>Integer types can hold whole numbers such as 123 and -96. The size of the values that can be stored depends on the integer type that we choose.</p>
+
+<p>Type-	Size	-Range of values that can be stored</p>
+<p>byte-->	1 byte-->	-128 to 127</p>
+<p>short--> 2 bytes-->	-32768 to 32767</p>
+<p>int-->	4 bytes-->	-2,147,483,648 to 2,147,483,647</p>
+<p>long-->	8 bytes--> 9,223,372,036,854,775,808 to9,223,372,036,854,755,807</p>
+
+<p>The range of values is calculated as -(2n-1) to (2n-1)-1; where n is the number of bits required. For example, the byte data type requires 1 byte = 8 bits. Therefore, the range of values that can be stored in the byte data type is -(28-1) to (28-1)-1</p>
+<p>= -27 to (27) -1</p>
+<p>= -128 to 127</p>
+
+<p><b>2. Floating Point</b></p>
+<p>Floating point data types are used to represent numbers with a fractional part. Single precision floating point numbers occupy 4 bytes and Double precision floating point numbers occupy 8 bytes. There are two subtypes:</p>
+
+<p>Type------   ---Size--	Range of values that can be stored</p>
+<p>float-------	4 bytes-------3.4e-038 to 3.4e+038</p>
+<p>double----	8 bytes----	1.7e-308 to 1.7e+038</p>
+<p><b>3. Character</b></p>
+<p>It stores character constants in the memory. It assumes a size of 2 bytes, but basically it can hold only a single character because char stores unicode character sets. It has a minimum value of ‘u0000’ (or 0) and a maximum value of ‘uffff’ (or 65,535, inclusive).</p>
+
+<p><b>4. Boolean</b></p>
+<p>Boolean data types are used to store values with two states: true or false.</p>
+
+<h2>Java Tokens</h2>
+<p>A token is the smallest element in a program that is meaningful to the compiler. These tokens define the structure of the language. The Java token set can be divided into five categories: Identifiers, Keywords, Literals, Operators, and Separators.</p>
+
+<p><b>1. Identifiers</b></p>
+<p>Identifiers are names provided by you. These can be assigned to variables, methods, functions, classes etc. to uniquely identify them to the compiler.</p>
+
+<p><b>2. Keywords</b></p>
+<p>Keywords are reserved words that have a specific meaning for the compiler. They cannot be used as identifiers. Java has a rich set of keywords. Some examples are: boolean, char, if, protected, new, this, try, catch, null, threadsafe etc.</p>
+
+<p><b>3. Literals</b></p>
+<p>Literals are variables whose values remain constant throughout the program. They are also called Constants. Literals can be of four types. They are:</p>
+
+<p><b>a. String Literals</b></p>
+<p>String Literals are always enclosed in double quotes and are implemented using the java.lang.String class. Enclosing a character string within double quotes will automatically create a new String object. For example, String s = "this is a string";. String objects are immutable, which means that once created, their values cannot be changed.</p>
+
+<p><b>b. Character Literals</b></p>
+<p>These are enclosed in single quotes and contain only one character.</p>
+
+<p><b>c. Boolean Literals</b></p>
+<p>They can only have the values true or false. These values do not correspond to 1 or 0 as in C or C++.</p>
+
+<p><b>d. Numeric Literals</b></p>
+<p>Numeric Literals can contain integer or floating point values.</p>
+
+<p><b>4. Operators</b></p>
+<p>An operator is a symbol that operates on one or more operands to produce a result.</p>
+
+<p>They will be discussed in greater detail in the next article.</p>
+
+<p><b>5. Separators</b></p>
+<p>Separators are symbols that indicate the division and arrangement of groups of code. The structure and function of code is generally defined by the separators. The separators used in Java are as follows:</p>
+
+<p><b>parentheses ( )</b></p>
+<p>Used to define precedence in expressions, to enclose parameters in method definitions, and enclosing cast types.</p>
+<p><b>braces { }</b></p>
+<p>Used to define a block of code and to hold the values of arrays.</p>
+<p><b>brackets [ ]</b></p>
+<p>Used to declare array types.</p>
+<p><b>semicolon ;</b></p>
+<p>Used to separate statements.</p>
+<p><b>comma ,</b></p>
+<p>Used to separate identifiers in a variable declaration and in the for statement.</p>
+
+<h2>Variables</h2>
+<p>There are different types of variables in Java. They are as follows:</p>
+
+<p><b>1. Instance Variables (Non-Static Fields)</b></p>
+<p>Objects store their individual states in “non-static fields”, that is, fields declared without the static keyword.</p>
+
+<p>Non-static fields are also known as instance variables because their values are unique to each instance of a class. For example, the currentSpeed of one bicycle is independent from the currentSpeed of another.</p>
+
+<p><b>2. Class Variables (Static Fields)</b></p>
+<p>A class variable is any field declared with the static modifier; this tells the compiler that there is exactly one copy of this variable in existence, regardless of how many times the class has been instantiated. A field defining the number of gears for a particular kind of bicycle could be marked as static since, conceptually, the same number of gears will apply to all instances. The code static int numGears = 6; would create such a static field.</p>
+
+<p><b>3. Local Variables</b></p>
+<p>A method stores its temporary state in local variables. The syntax for declaring a local variable is similar to declaring a field (for example, int count = 0;). There is no special keyword designating a variable as local; that determination comes entirely from the location in which the variable is declared—between the opening and closing braces of a method. As such, local variables are only visible to the methods in which they are declared; they are not accessible from the rest of the class.</p>
+
+<p><b>4. Parameters</b></p>
+<p>They are the variables that are passed to the methods of a class.</p>
+
+<p><b>Variable Declaration</b></p>
+<p>Identifiers are the names of variables. They must be composed of only letters, numbers, the underscore, and the dollar sign ($). They cannot contain white spaces. Identifiers may only begin with a letter, the underscore, or the dollar sign. A variable cannot begin with a number. All variable names are case sensitive.</p>
+
+<p><b>Syntax for variable declaration</b></p>
+<p>datatype1 variable1, datatype2 variable2, … datatypen variablen;</p>
+
+
+<p><b>For example;</b></p>
+
+<p>ch='a';</p>
+<p>a=0;</p>
+
+<h2>Arrays</h2>
+
+<p>An array is a group of variables that share the same data type, and are referred to by a common name. Arrays of any type can be created and may have one or more dimensions.</p>
+
+<p>A specific element in an array is accessed by its index. The array index ranges from 0 to n-1; therefore, in an array of size 10, the first element is stored at index 0 and the last or the 10th element at index 9.</p>
+
+<p>The following program, Printarr, creates an array of integers, puts some values in it, and prints each value to standard output.</p>
+
+<p>class Printarr {</p>
+  <p>public static void main(String[] args) {</p>
+    <p>// declares an array of integers</p>
+   <p> int[ ] A;</p>
+
+<p>    // allocates memory for 5 integers</p>
+    <p>A = new int[5];</p>
+
+<p>    // initialize elements</p>
+    <p>A[0] = 15;//first element</p>
+
+<p>    A[1] = 20;//second element</p>
+
+<p>    A[2] = 25;//third element</p>
+
+<p>    A[3] = 30;//fourth element</p>
+
+<p>    A[4] = 50;//fifth element</p>
+
+<p>    System.out.println("Element at index 0: "</p>
+       <p>                + A[0]);
+    <p>System.out.println("Element at index 1: "</p>
+           <p>            + A[1]);
+    <p>System.out.println("Element at index 2: "</p>
+                       + A[2]);
+    <p>System.out.println("Element at index 3: "
+                       + A[3]);</p>
+
+    <p>System.out.println("Element at index 4: "</p>
+                       + A[4]);
+  <p>}</p>
+
+<p>}</p>
+<p><b>The output from this program is:</b></p>
+
+
+<p>Element at index 0: 15</p>
+
+<p>Element at index 1: 20</p>
+
+<p>Element at index 2: 25</p>
+
+<p>Element at index 3: 30</p>
+
+<p>Element at index 4: 50</p>
+
+<h4>Copying Arrays</h4>
+
+<p>The data from one array can be copied into another array by using the arraycopy method of the System class:</p>
+
+
+<p>public static void arraycopy(Object src,</p>
+
+       <p>                int srcPos,</p>
+
+              <p>         Object dest,</p>
+
+<p>                       int destPos,</p>
+
+       <p>                int length)</p>
+
+<p>The two Object arguments specify the array to copy from, and the array to copy to. The three int arguments specify the starting position in the source array, the starting position in the destination array, and the number of array elements to copy.</p>
+
+
+<p>The following program, Copyarr, declares an array of char elements, spelling the word “array”. It uses arraycopy to copy three elements of the first array into the second array:</p>
+
+
+<p>class Copyarr {</p>
+
+  <p>pu1blic static void main(String[] args) {</p>
+
+    <p>char[] source = { 'a', 'r', 'r', 'a', 'y' };</p>
+
+    <p>char[] target = new char[3];</p>
+
+
+<p>    System.arraycopy(source, 0, target, 0, 3);</p>
+
+   <p> System.out.println(new String(target));</p>
+
+  <p>}</p>
+
+<p>}</p>
+
+</div>
+<div id="c3" class="tabcontent">
+ <h2>Operators in java</h2>
+<p>Operator in java is a symbol that is used to perform operations. For example: +, -, *, / etc.</p>
+
+<p>There are many types of operators in java which are given below:</p>
+
+<p><b>Unary Operator,</p>
+<p>Arithmetic Operator,</p>
+<p>shift Operator,</p>
+<p>Relational Operator,</p>
+<p>Bitwise Operator,</p>
+<p>Logical Operator,</p>
+<p>Ternary Operator and</p>
+<p>Assignment Operator.</b></p>
+
+<p><b>Java Unary Operator Example: ++ and --</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>int x=10;  </p>
+<p>System.out.println(x++);//10 (11)  </p>
+<p>System.out.println(++x);//12 </p> 
+<p>System.out.println(x--);//12 (11)  </p>
+<p>System.out.println(--x);//10  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+
+<p>10
+12
+12
+10</p>
+<p><b>Java Unary Operator Example 2: ++ and --</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>int a=10;  </p>
+<p>int b=10; </p> 
+<p>System.out.println(a++ + ++a);//10+12=22  </p>
+<p>System.out.println(b++ + b++);//10+11=21  </p>
+  
+<p>}}  </p>
+<p><b>Output:</b></p>
+
+<p>22
+21</p>
+<p><b>Java Unary Operator Example: ~ and !</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>int a=10;  </p>
+<p>int b=-10;  </p>
+<p>boolean c=true; </p> 
+<p>boolean d=false;  </p>
+<p>System.out.println(~a);//-11 (minus of total positive value which starts from 0)  </p>
+<p>System.out.println(~b);//9 (positive of total minus, positive starts from 0)  </p>
+<p>System.out.println(!c);//false (opposite of boolean value)  </p>
+<p>System.out.println(!d);//true  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+
+<p>-11
+9
+false
+true</p>
+<p><b>Java Arithmetic Operator Example</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){ </p> 
+<p>int a=10;  </p>
+<p>int b=5;  </p>
+<p>System.out.println(a+b);//15  </p>
+<p>System.out.println(a-b);//5  </p>
+<p>System.out.println(a*b);//50  </p>
+<p>System.out.println(a/b);//2  </p>
+<p>System.out.println(a%b);//0  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+<p>
+15
+5
+50
+2
+0</p>
+<p><b>Java Arithmetic Operator Example: Expression</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>System.out.println(10*10/5+3-1*4/2);  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+<p>
+21</p>
+<p><b>Java Shift Operator Example: Left Shift</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>System.out.println(10<<2);//10*2^2=10*4=40  </p>
+<p>System.out.println(10<<3);//10*2^3=10*8=80  </p>
+<p>System.out.println(20<<2);//20*2^2=20*4=80  </p>
+<p>System.out.println(15<<4);//15*2^4=15*16=240  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+
+<p>40
+80
+80
+240</p>
+<p><b>Java Shift Operator Example: Right Shift</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>System.out.println(10>>2);//10/2^2=10/4=2  </p>
+<p>System.out.println(20>>2);//20/2^2=20/4=5</p>  
+<p>System.out.println(20>>3);//20/2^3=20/8=2  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+<p>
+2
+5
+2</p>
+<p><b>Java Shift Operator Example: >> vs >>></b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+    <p>//For positive number, >> and >>> works same </p> 
+    <p>System.out.println(20>>2);  </p>
+    <p>System.out.println(20>>>2);  </p>
+    <p>//For negative number, >>> changes parity bit (MSB) to 0  </p>
+    <p>System.out.println(-20>>2);  </p>
+    <p>System.out.println(-20>>>2);  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+<p>
+5
+5
+-5
+1073741819</p>
+<p><b>Java AND Operator Example: Logical && and Bitwise &</b></p>
+<p>The logical && operator doesn't check second condition if first condition is false. It checks second condition only if first one is true.</p>
+
+<p>The bitwise & operator always checks both conditions whether first condition is true or false.</p>
+
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>int a=10;  </p>
+<p>int b=5;  </p>
+<p>int c=20;  </p>
+<p>System.out.println(a<b&&a<c);//false && true = false  </p>
+<p>System.out.println(a<b&a<c);//false & true = false  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+
+<p>false
+false</p>
+<p><b>Java AND Operator Example: Logical && vs Bitwise &</b></p>
+<p>class OperatorExample{  </p>
+<p>public static void main(String args[]){  </p>
+<p>int a=10;  </p>
+<p>int b=5;  </p>
+<p>int c=20;  </p>
+<p>System.out.println(a<b&&a++<c);//false && true = false  </p>
+<p>System.out.println(a);//10 because second condition is not checked  </p>
+<p>System.out.println(a<b&a++<c);//false && true = false  </p>
+<p>System.out.println(a);//11 because second condition is checked  </p>
+<p>}}  </p>
+<p><b>Output:</b></p>
+
+<p>false</p>
+<p>10</p>
+<p>false</p>
+<p>11</p>
+<p><b>Java OR Operator Example: Logical || and Bitwise |</b></p>
+<p>The logical || operator doesn't check second condition if first condition is true. It checks second condition only if first one is false.</p>
+
+<p>The bitwise | operator always checks both conditions whether first condition is true or false.</p>
+
+<p>class OperatorExample{  </p>
+
+<p>public static void main(String args[]){  </p>
+
+<p>int a=10;  </p>
+
+<p>int b=5;  </p>
+
+<p>int c=20;  </p>
+
+<p>System.out.println(a>b||a<c);//true || true = true  </p>
+
+<p>System.out.println(a>b|a<c);//true | true = true  </p>
+
+<p>//|| vs |  
+</p>
+<p>System.out.println(a>b||a++<c);//true || true = true  </p>
+
+<p>System.out.println(a);//10 because second condition is not checked  </p>
+
+<p>System.out.println(a>b|a++<c);//true | true = true  </p>
+
+<p>System.out.println(a);//11 because second condition is checked  </p>
+
+<p>}}  </p>
+
+<p><b>Output:</b></p>
+<p>
+true
+true
+true
+10
+true
+11</p>
+
+<p><b>Java Ternary Operator Example</b></p>
+
+<p>class OperatorExample{  </p>
+
+<p>public static void main(String args[]){  </p>
+
+<p>int a=2;  </p>
+
+<p>int b=5;  </p>
+
+<p>int min=(a<b)?a:b;  </p>
+
+<p>System.out.println(min);  </p>
+
+<p>}}  
+</p>
+<p><b>Output:</b></p>
+
+<p>2</p>
+
+<p><b>Java Assignment Operator Example</b></p>
+
+<p>class OperatorExample{  </p>
+
+<p>public static void main(String args[]){  </p>
+
+<p>int a=10;  </p>
+
+<p>int b=20;  </p>
+
+<p>a+=4;//a=a+4 (a=10+4)  </p>
+
+<p>b-=4;//b=b-4 (b=20-4)  </p>
+
+<p>System.out.println(a);  </p>
+
+<p>System.out.println(b);  </p>
+
+<p>}}  </p>
+
+<p><b>Output:</b></p>
+
+<p>14
+16</p>
+
+<p><b>Java Assignment Operator Example</b></p>
+
+<p>class OperatorExample{  </p>
+
+<p>public static void main(String[] args){  </p>
+
+<p>int a=10;  </p>
+
+<p>a+=3;//10+3  </p>
+
+<p>System.out.println(a);  </p>
+
+<p>a-=4;//13-4  </p>
+
+<p>System.out.println(a);  </p>
+<p>a*=2;//9*2  
+</p>
+<p>System.out.println(a);  
+</p>
+<p>a/=2;//18/2  
+</p>
+<p>System.out.println(a);  
+</p>
+<p>}}  
+</p>
+<p><b>Output:</b>
+</p>
+
+<p>13
+9
+18
+9
+</p>
+<p><b>Java Assignment Operator Example: Adding short</b>
+</p>
+<p>class OperatorExample{  
+</p>
+<p>public static void main(String args[]){  
+</p>
+
+<p>short a=10;  
+</p>
+<p>short b=10;  
+</p>
+<p>//a+=b;//a=a+b internally so fine  
+</p>
+<p>a=a+b;//Compile time error because 10+10=20 now int  
+</p>
+<p>System.out.println(a);  
+</p>
+<p>}}  
+</p>
+<p><b>Output</b>:
+</p>
+<p>
+Compile time error
+</p>
+<p><b>After type cast:</b>
+</p>
+
+<p>class OperatorExample{  
+</p>
+<p>public static void main(String args[]){  
+</p>
+<p>short a=10;  
+</p>
+<p>short b=10;  
+</p>
+<p>a=(short)(a+b);//20 which is int now converted to short  
+</p>
+<p>System.out.println(a);  
+</p>
+<p>}}  
+</p>
+<p><b>Output:</b>
+</p>
+<p>20</p>
+</div>
+<div id="c4" class="tabcontent">
+<h2>Java Control Statements</h2>
+        
+
+<p>The control statement are used to controll the flow of execution of the program . This execution order depends on the supplied data values and the conditional logic. Java contains the following types of control statements:</p>
+
+<p><b>1- Selection Statements
+</p>
+<p>2- Repetition Statements
+</p>
+<p>3- Branching Statements</b> 
+</p>
+<h3>Selection statements:</h3>
+</p>
+<p><b>If Statement:</b>
+</p>
+<p>This is a control statement to execute a single statement or a block of code, when the given condition is true and if it is false then it skips if block and rest code of program is executed .
+</p>
+<p>  Syntax:</p>
+  <p>if(conditional_expression){</p>
+<p>  <statements>;
+  </p>
+<p>...;</p>
+
+<p>  ...;
+</p>
+<p>}</p>
+
+
+
+
+<p><b>If-else Statement:</b></p>
+<p>The "if-else" statement is an extension of if statement that provides another option when 'if' statement evaluates  to "false" i.e. else block is executed if "if" statement is false.  
+</p>
+<p>  Syntax:
+   </p>
+<p>if(conditional_expression){
+</p>
+<p>  <statements>;</p>
+<p>
+  ...;</p>
+<p>
+  ...;
+</p>
+<p>  }</p>
+
+<p>   else{
+</p>
+<p>  <statements>;
+</p>
+<p>  ....;
+</p>
+<p>  ....;
+</p>
+<p>   } 
+</p>
+
+<p><b>Switch Statement:</b></p>
+This is an easier implementation to the if-else statements. The keyword "switch" is  followed by an expression that should evaluates to byte, short, char or int primitive data types ,only. In a switch block there can be one or more labeled cases. The expression that creates labels for the case must be unique. The switch expression is matched with each case label. Only the matched case is executed ,if no case matches then the default statement (if present) is executed.</p>
+
+<p>Syntax:</p>
+  <p>switch(control_expression){</p>
+  <p>case expression 1:</p>
+  <p><statement>;</p>
+  <p>case expression 2:</p>
+  <p><statement>;</p>
+   <p>...</p>
+   .<p>..</p>
+  <p>case expression n:</p>
+  <p><statement>;</p>
+  <p>default:</p>
+  <p><statement>;</p>
+  <p>}//end switch</p>
+
+<h3>Repetition Statements:</h3>
+
+<p><b>while loop statements:</b></p>
+<p>This is a looping or repeating statement. It executes a block of code or statements till the given condition is true. The expression must be evaluated to a boolean value. It continues testing the condition and executes the block of code. When the expression results to false control comes out of loop. </p>
+
+<p>Syntax:</p>
+   <p>while(expression){</p>
+  <p><statement>;</p>
+  .<p>..;</p>
+  .<p>..;</p>
+ <p> }</p>
+
+
+<p><b>do-while loop statements:</b></p>
+<p>This is another looping statement that tests the given condition past so you can say that the do-while looping statement is a past-test loop statement. First the do block statements are executed then the condition given in while statement is </p><p>checked. So in this case, even the condition is false in the first attempt, do block of code is executed at least once.
+</p>
+<p>Syntax:</p>
+  <p>do{</p>
+  <p><statement>;</p>
+  .<p>..;</p>
+  <p>...;</p>
+<p>  }while (expression);</p>
+
+<p><b>for loop statements:</b></p>
+<p>This is also a loop statement that provides a compact way to iterate over a range of values. From a  user point of view, this is reliable because it executes the statements within this block repeatedly till the specified conditions is true .</p>
+
+<p>Syntax:</p>
+    <p>for (initialization; condition; increment or decrement){</p>
+  <p><statement>;
+  .</p>
+<p>..;</p>
+<p>  ...;</p>
+  <p>}</p>
+<p>initialization: The loop is started  with the value specified.</p>
+<p>condition: It evaluates to either 'true' or 'false'. If it is false then the loop is terminated. </p>
+<p>increment or decrement: After each iteration, value increments or decrements. </p>
+
+<h3>Branching Statements:</h3>
+
+<p><b>Break statements:</b> </p>
+<p>The break statement is a branching statement that contains two forms: labeled and unlabeled. The break statement is used for breaking the execution of a loop (while, do-while and for) . It also terminates the switch statements. </p>
+
+<p>Syntax:</p>
+  <p>break;  // breaks the innermost loop or switch statement.</p>
+  <p>break label;   // breaks the outermost loop in a series of nested loops.</p>
+
+
+  
+<p><b>Continue statements:</b></p>
+<p>This is a branching statement that are used in the looping statements (while, do-while and for) to skip the  current iteration of the loop and  resume the next iteration . </p>
+
+<p>Syntax:</p>
+  <p>continue;</p>
+
+<p><b>Return statements:</b></p>
+<p>It is a special branching statement that  transfers the control to the caller of the method. This statement is used to return a value to the caller method and terminates execution of method. This has two forms: one that returns a value and the other that can not return. the returned value type must match the return type of  method. </p>
+
+<p>Syntax:</p>
+  <p>return;</p>
+  <p>return values;
+</p>
+
+
+</div>
+<div id="c5" class="tabcontent">
+<h2>Java Methods</h2>
+
+<p> Java method is a collection of statements that are grouped together to perform an operation. When you call the System.out.println() method, for example, the system actually executes several statements in order to display a message on the console.
+
+Now you will learn how to create your own methods with or without return values, invoke a method with or without parameters, and apply method abstraction in the program design.</p>
+
+
+<h4>Creating Method</h4>
+
+<p>Considering the following example to explain the syntax of a method -
+</p>
+<p><b>Syntax</b>
+</p>
+<p>public static int methodName(int a, int b) {
+  </p> <p>// body
+</p><p>}</p>
+
+<h4>Method Calling</h4>
+
+<p>For using a method, it should be called. There are two ways in which a method is called i.e., method returns a value or returning nothing (no return value).
+</p>
+<p>The process of method calling is simple. When a program invokes a method, the program control gets transferred to the called method. This called method then returns control to the caller in two conditions, when -
+</p>
+<p>the return statement is executed.
+it reaches the method ending closing brace.
+The methods returning void is considered as call to a statement. Lets consider an example -
+</p>
+<p>System.out.println("This is tutorialspoint.com!");
+The method returning value can be understood by the following example -
+</p>
+<p>int result = sum(6, 9);
+Following is the example to demonstrate how to define a method and how to call it -
+</p>
+<h2>The Constructors</h2>
+
+<p>A constructor initializes an object when it is created. It has the same name as its class and is syntactically similar to a method. However, constructors have no explicit return type.
+</p>
+<p>Typically, you will use a constructor to give initial values to the instance variables defined by the class, or to perform any other startup procedures required to create a fully formed object.
+</p>
+<p>All classes have constructors, whether you define one or not, because Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.
+</p>
+
+<h3>Parameterized Constructor</h3>
+
+<p>Most often, you will need a constructor that accepts one or more parameters. Parameters are added to a constructor in the same way that they are added to a method, just declare them inside the parentheses after the constructor's name.
+</p>
+<p><b>Example</b>
+</p>
+<p>Here is a simple example that uses a constructor with a parameter -
+</p>
+<p>// A simple constructor.</p>
+<p>class MyClass {</p>
+<p>   int x;</p>
+   
+   <p>// Following is the constructor</p>
+  <p> MyClass(int i ) {</p>
+   <p>   x = i;</p>
+   <p>}</p>
+<p>}</p>
+<p>You will need to call a constructor to initialize objects as follows -
+</p>
+<p>public class ConsDemo {
+</p>
+<p>   public static void main(String args[]) {
+      </p><p>MyClass t1 = new MyClass( 10 );
+      </p><p>MyClass t2 = new MyClass( 20 );
+      </p><p>System.out.println(t1.x + " " + t2.x);
+   </p><p>}</p>
+<p>}</p>
+<p>This will produce the following result -
+</p>
+<b><p>Output</b>
+</p>
+<p>10 20
+</p>
+</div>
+<div id="c6" class="tabcontent">
+<h2>Inheritance in Java</h2>
+
+
+<p>The idea behind inheritance in java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of parent class, and you can add new methods and fields also.</p>
+
+<p>Inheritance represents the IS-A relationship, also known as parent-child relationship.
+</p>
+
+<p>For Method Overriding (so runtime polymorphism can be achieved).
+</p>
+<p>For Code Reusability.</p>
+<b>
+<p>Syntax of Java Inheritance</b></p>
+<p>class Subclass-name extends Superclass-name  </p>
+<p>{  </p>
+   <p>//methods and fields  </p>
+<p>}  
+</p>
+<p>The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+</p>
+<p>In the terminology of Java, a class which is inherited is called parent or super class and the new class is called child or subclass.
+</p>
+<p><b>Types of inheritance in java</b>
+</p>
+<p>On the basis of class, there can be three types of inheritance in java: 
+</p>
+<p><b>single
+</p>
+<p> multilevel 
+</p>
+<p>hierarchical.</b>
+</p>
+<p><b>1) Single Inheritance</b>
+</p>
+<p>Single inheritance is damn easy to understand. When a class extends another one class only then we  call it a single inheritance. The below flow diagram shows that class B extends only one class which is A. Here A is a parent class of B and B would be  a child class of A.
+</p>
+
+<p><b>Single Inheritance example program in Java</b>
+</p>
+<p>Class A
+</p>
+<p>{
+</p>
+<p>   public void methodA()
+</p>
+<p>   {
+</p>
+<p>     System.out.println("Base class method");
+</p>
+<p>   }
+</p>
+<p>}
+</p>
+
+
+<p>Class B extends A
+</p>
+<p>{
+</p>
+<p>   public void methodB()
+</p>
+<p>   {
+</p>
+<p>     System.out.println("Child class method");
+</p>
+<p>   }
+</p>
+<p>   public static void main(String args[])
+</p>
+<p>
+   {</p>
+
+<p>     B obj = new B();
+</p>
+<p>     obj.methodA(); //calling super class method
+</p>
+<p>     obj.methodB(); //calling local method
+</p>
+<p>  }
+</p>
+<p>}
+</p>
+
+<p><b>2) Multiple Inheritance</b>
+</p>
+<p>“Multiple Inheritance” refers to the concept of one class extending (Or inherits) more than one base class. The inheritance we learnt earlier had the concept of one base class or parent. The problem with “multiple inheritance” is that the derived class will 
+have to manage the dependency on two base classes.
+</p>
+
+ 
+<p><b>Multiple-Inheritance</b>
+</p>
+<p>Note 1: Multiple Inheritance is very rarely used in software projects. Using Multiple inheritance often leads to problems in the hierarchy. This results in unwanted complexity when further extending the class.
+</p>
+<p>Note 2: Most of the new OO languages like Small Talk, Java, C# do not support Multiple inheritance. Multiple Inheritance is supported in C++.
+</p>
+<p><b>3) Multilevel Inheritance</b>
+</p>
+<p>Multilevel inheritance refers to a mechanism in OO technology where one can inherit from a derived class, thereby making this derived class the base class for the new class. As you can see in below flow diagram C is subclass or child class of B and B is 
+</p>
+<p>a child class of A. For more details and example refer – Multilevel inheritance in Java.
+</p>
+
+
+<p><b>Multilevel Inheritance example program in Java</b>
+</p>
+
+<p>Class X
+</p>
+<p>{
+</p>
+<p>   public void methodX()
+<p>
+   {
+</p>
+<p>     System.out.println("Class X method");
+</p>
+<p>   }
+</p>
+<p>}
+</p>
+<p>Class Y extends X
+</p>
+<p>{
+</p>
+<p>public void methodY()
+</p>
+<p>{
+</p>
+<p>System.out.println("class Y method");
+</p>
+<p>}
+</p>
+<p>}
+</p>
+<p>Class Z extends Y
+</p>
+<p>{
+</p>
+<p>   public void methodZ()
+</p>
+<p>   {
+</p>
+
+<p>     System.out.println("class Z method");
+</p>
+<p>   }
+</p>
+
+<p>   public static void main(String args[])
+</p>
+<p>   {
+</p>
+<p>     Z obj = new Z();
+</p>
+<p>     obj.methodX(); //calling grand parent class method
+</p>
+<p>     obj.methodY(); //calling parent class method
+</p>
+<p>     obj.methodZ(); //calling local method
+</p>
+<p>  }
+</p>
+<p>}</p>
+<p><b>4) Hierarchical Inheritance</b>
+</p>
+<p>In such kind of inheritance one class is inherited by many sub classes. In below example class B,C and D inherits the same class A. A is parent class (or base class) of B,C & D. Read More at – Hierarchical Inheritance in java with example program.
+</p>
+<p>Hierarchical-Inheritance
+</p>
+<p><b>5) Hybrid Inheritance</b>
+</p>
+<p>In simple terms you can say that Hybrid inheritance is a combination of Single and Multiple inheritance. A typical flow diagram would look like below. A hybrid inheritance can be achieved in the java in a same way as multiple inheritance can be!! Using interfaces. yes you heard it right. By using interfaces you can have multiple as well as hybrid inheritance in Java.
+</p>
+
+
+  
+</div>
+<div id="c7" class="tabcontent">
+<h2>Packages In Java</h2>
+
+<p>Package in Java is a mechanism to encapsulate a group of classes, sub packages and interfaces. Packages are used for:</p>
+
+<p>Preventing naming conflicts. For example there can be two classes with name Employee in two packages, college.staff.cse.Employee and college.staff.ee.Employee
+Making searching/locating and usage of classes, interfaces, enumerations and annotations easier
+Providing controlled access: protected and default have package level access control. A protected member is accessible by classes in the same package and its subclasses. A default member (without any access specifier) is accessible by classes in the same package only.</p>
+<p>Packages can be considered as data encapsulation (or data-hiding).
+All we need to do is put related classes into packages. After that we can simply write a import a class from existing packages and use it in our program. A packages is container of group of related classes where some of the classes are accessible are exposed and others are kept for internal purpose.</p>
+<p>We can reuse existing classes from the packages as many time as we need it in our program.</p>
+
+<h5>How packages work?</h5>
+
+<p>Package names and directory structure are closely related. For example if a package name is college.staff.cse, then there are three directories, college, staff and cse such that cse is present in staff and staff is present college. Also, the directory college is accessible through CLASSPATH variable, i.e., path of parent directory of college is present in CLASSPATH. The idea is to make sure that classes are easy to locate.
+Package naming conventions : Packages are named in reverse order of domain names, i.e., org.geeksforgeeks.practice. For example, in a college, the recommended convention is college.tech.cse, college.tech.ee, college.art.history, etc.</p>
+
+<p>Adding a class to a Package : We can add more classes to an created package by using package name at the top of the program and saving it in the package directory. We need a new java file to define a public class, otherwise we can add the new class to an existing .java file and recompile it.</p>
+
+<p>Subpackages: Packages that are inside another package are the subpackages. These are not imported by default, they have to imported explicitly. Also, members of a subpackage have no access privileges, i.e., they are considered as different package for protected and default access specifiers.</p>
+
+ 
+<h4>Types of packages:</h4>
+
+
+<p>User Defined packages</p>
+
+<p>Built-in Packages
+</p>
+<h5>Built-in Packages</h5>
+
+<p>These packages consist of a large number of classes which are a part of Java API.Some of the commonly used built-in packages are:
+</p>
+<p>1) java.lang: Contains language support classes(e.g classed which defines primitive data types, math operations). This package is automatically imported.
+</p>
+<p>2)  java.io: Contains classed for supporting input / output operations.
+</p>
+<p>3)  java.util: Contains utility classes which implement data structures like Linked List, Dictionary and support ; for Date / Time operations.
+</p>
+<p>4)  java.applet: Contains classes for creating Applets.
+</p>
+<p>5)  java.awt: Contain classes for implementing the components for graphical user interfaces (like button , ;menus etc).
+</p>
+<p>6)  java.net: Contain classes for supporting networking operations.
+</p>
+<h5>User-defined packages</h5>
+
+<p>These are the packages that are defined by the user. First we create a directory myPackage (name should be same as the name of the package). Then create the MyClass inside the directory with the first statement being the package names.
+</p>
+<p> // Name of the package must be same as the directory
+ </p>
+<p>/ under which this file is saved
+</p>
+<p>package myPackage;
+</p>
+<p>public class MyClass
+</p>
+<p>{
+</p>
+<p>    public void getNames(String s)
+</p>
+<p>    {        
+</p>
+<p>        System.out.println(s);        
+</p>
+<p>    }
+</p>
+<p>}
+</p>
+<p>Now we can use the MyClass class in our program.
+</p>
+<p>/* import 'MyClass' class from 'names' myPackage */
+</p>
+<p>import myPackage.MyClass;
+</p>
+<p>public class PrintName 
+</p>
+<p>{
+</p>
+<p>   public static void main(String args[]) 
+</p>
+<p>   {       
+</p>
+<p>      // Initializing the String variable 
+</p>
+<p>      // with a value 
+</p>
+<p>      String name = "GeeksforGeeks";
+      </p>
+      <p>// Creating an instance of class MyClass in 
+</p>
+<p>      // the package.
+</p>
+<p>      MyClass obj = new MyClass();
+      </p>
+      <p>obj.getNames(name);
+</p>
+<p>   }
+</p>
+<p>}
+
+<p><b>Note : MyClass.java must be saved inside the myPackage directory since it is a part of the package.</b>
+</p>
+ 
+
+</div>
+<div id="c8" class="tabcontent">
+<h2>Interfaces in Java</h2>
+
+<p>Like a class, an interface can have methods and variables, but the methods declared in interface are by default abstract (only method signature, no body).  </p>
+
+<p>Interfaces specify what a class must do and not how. It is the blueprint of the class.</p>
+<p>An Interface is about capabilities like a Player may be an interface and any class implementing Player must be able to (or must implement) move(). So it specifies a set of methods that the class has to implement.</p>
+<p>If a class implements an interface and does not provide method bodies for all functions specified in the interface, then class must be declared abstract.</p>
+<p>A Java library example is, Comparator Interface. If a class implements this interface, then it can be used to sort a collection.</p>
+
+<h3>Syntax :</h3>
+
+<p>interface <interface_name>{</p>
+    
+    <p>// declare constant fields</p>
+    <p>// declare methods that abstract </p>
+    <p>// by default.</p>
+<p>}
+</p>
+<p>To declare an interface, use interface keyword. It is used to provide total abstraction. That means all the methods in interface are declared with empty body and are public and all fields are public, static and final by default. A class that implement interface must implement all the methods declared in the interface. To implement interface use implements keyword.</p>
+
+<h3>Why do we use interface ?</h3>
+
+<p>It is used to achieve total abstraction.</p>
+<p>Since java does not support multiple inheritance in case of class, but by using interface it can achieve multiple inheritance .</p>
+<p>It is also used to achieve loose coupling.</p>
+<p>Interfaces are used to implement abstraction. So the question arises why use interfaces when we have abstract classes?</p>
+<p>The reason is, abstract classes may contain non-final variables, whereas variables in interface are final, public and static.</p>
+
+<p>// A simple interface</p>
+
+<p>interface Player
+</p>
+<p>{
+</p>
+<p>    final int id = 10;
+</p>
+<p>    int move();
+</p>
+<p>}
+</p>
+<p>To implement an interface we use keyword: implement
+</p>
+<p>// Java program to demonstrate working of 
+</p>
+<p>// interface.
+</p>
+<p>import java.io.*;
+</p>
+<p> // A simple interface
+</p>
+<p>interface in1
+</p>
+<p>{
+</p>
+<p>    // public, static and final
+</p>
+<p>    final int a = 10;
+ </p>
+ <p>   // public and abstract 
+</p>
+
+<p>    void display();
+</p>
+<p>}
+ </p>
+<p>/ A class that implements interface.
+</p>
+<p>class testClass implements in1
+</p>
+<p>{
+</p>
+<p>    // Implementing the capabilities of
+</p>
+<p>    // interface.
+</p>
+<p>    public void display()
+</p>
+<p>    {
+</p>
+<p>        System.out.println("Geek");
+</p>
+<p>    }
+ </p>
+<p>    // Driver Code
+</p>
+<p>    public static void main (String[] args)
+</p>
+<p>    {
+</p>
+<p>        testClass t = new testClass();
+</p>
+<p>        t.display();
+</p>
+<p>        System.out.println(a);
+</p>
+<p>    }
+</p>
+<p>}
+</p>
+<p><b>
+Output:</b></p>
+
+<p>Geek</p>
+<p>10</p>
+</div>
+<div id="c9" class="tabcontent">
+ <h2>Exceptions in Java</h2>
+
+<h3>What is an Exception?</h3>
+
+<p>An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program’s instructions.</p>
+
+<h3>Error vs Exception</h3>
+
+<p>Error: An Error indicates serious problem that a reasonable application should not try to catch.
+</p>
+<p>Exception: Exception indicates conditions that a reasonable application might try to catch.
+</p>
+<h3>Exception Hierarchy</h3>
+
+<p>All exception and errors types are sub classes of class Throwable, which is base class of hierarchy.One branch is headed by Exception. This class is used for exceptional conditions that user programs should catch. NullPointerException is an example of such an exception.Another branch,Error are used by the Java run-time system(JVM) to indicate errors having to do with the run-time environment itself(JRE). StackOverflowError is an example of such an error.
+</p>
+<h3>Exception-in-java1</h3>
+
+<p>For checked vs unchecked exception, see Checked vs Unchecked Exceptions
+</p>
+<h3>How JVM handle an Exception?</h3>
+
+<p><b>Default Exception Handling : </b></p>
+</p>
+<p>Whenever inside a method, if an exception has occurred, the method creates an Object known as Exception Object and hands it off to the run-time system(JVM). The exception object contains name and description of the exception, and current state of the program where exception has occurred. Creating the Exception Object and handling it to the run-time system is called throwing an Exception.There might be the list of the methods that had been called to get to the method where exception was occurred. This ordered list of the methods is called Call Stack.Now the following procedure will happen.
+</p>
+<p>The run-time system searches the call stack to find the method that contains block of code that can handle the occurred exception. The block of the code is called Exception handler.
+</p>
+<p>The run-time system starts searching from the method in which exception occurred, proceeds through call stack in the reverse order in which methods were called.
+</p>
+<p>If it finds  appropriate handler then it passes the occurred exception to it. Appropriate handler means the type of the exception object thrown matches the type of the exception object it can handle.
+</p>
+<p>If run-time system searches all the methods on call stack and couldn’t have found the appropriate handler then run-time system handover the Exception Object to default exception handler , which is part of run-time system. This handler prints the exception information in the following format and terminates program abnormally.
+</p>
+<p>Exception in thread "xxx" Name of Exception : Description
+</p>
+<p>... ...... ..  // Call Stack
+</p>
+<p>See the below diagram to understand the flow of the call stack.
+</p>
+<p>call stack
+</p>
+<h4>Example :</h4>
+
+<p>// Java program to demonstrate how exception is thrown.
+</p>
+<p>class ThrowsExecp{
+    </p>
+    <p>public static void main(String args[]){
+        </p>
+
+<p>        String str = null;
+</p>
+<p>        System.out.println(str.length());
+        </p>
+    <p>}
+</p>
+<p>}
+</p>
+<p><b>Output :</b>
+</p>
+
+<p>Exception in thread "main" java.lang.NullPointerException
+</p>
+<p>    at ThrowsExecp.main(File.java:8)
+</p>
+
+<h3>Points to remember :</h3>
+
+<p>In a method, there can be more than one statements that might throw exception, So put all these statements within its own try block and provide separate exception handler within own catch block for each of them.
+</p>
+<p>If an exception occurs within the try block, that exception is handled by the exception handler associated with it. To associate exception handler, we must put catch block after it. There can be more than one exception handlers. Each catch block is a 
+exception handler that handles the exception of the type indicated by its argument. The argument, ExceptionType declares the type of the exception that it can handle and must be the name of the class that inherits from Throwable class.
+</p>
+<p>For each try block there can be zero or more catch blocks, but only one finally block.
+</p>
+<p>The finally block is optional.It always gets executed whether an exception occurred in try block or not . If exception occurs, then it will be executed after try and catch blocks. And if exception does not occur then it will be executed after the try block. 
+</p>
+<p>The finally block in java is used to put important codes such as clean up code e.g. closing the file or closing the connection.</p>
+</div>
+<div id="c10" class="tabcontent">
+ <h2>Java Multi-threading</h2>
+
+<p>Java is a multi-threaded programming language which means we can develop multi-threaded program using Java. A multi-threaded program contains two or more parts that can run concurrently and each part can handle a different task at the same time making optimal use of the available resources specially when your computer has multiple CPUs.</p>
+
+<p>By definition, multitasking is when multiple processes share common processing resources such as a CPU. Multi-threading extends the idea of multitasking into applications where you can subdivide specific operations within a single application into individual threads. Each of the threads can run in parallel. The OS divides processing time not only among different applications, but also among each thread within an application.</p>
+
+<p>Multi-threading enables you to write in a way where multiple activities can proceed concurrently in the same program.</p>
+
+<h2>Life Cycle of a Thread</h2>
+
+<p>A thread goes through various stages in its life cycle. For example, a thread is born, started, runs, and then dies. The following diagram shows the complete life cycle of a thread.</p>
+
+<p>Java Thread</p>
+<p>Following are the stages of the life cycle -</p>
+
+<p><b>New</b> - A new thread begins its life cycle in the new state. It remains in this state until the program starts the thread. It is also referred to as a born thread.</p>
+
+<p><b>Runnable </b>- After a newly born thread is started, the thread becomes runnable. A thread in this state is considered to be executing its task.</p>
+
+<p><b>Waiting</b> - Sometimes, a thread transitions to the waiting state while the thread waits for another thread to perform a task. A thread transitions back to the runnable state only when another thread signals the waiting thread to continue executing.</p>
+
+<p><b>Timed Waiting</b> - A runnable thread can enter the timed waiting state for a specified interval of time. A thread in this state transitions back to the runnable state when that time interval expires or when the event it is waiting for occurs.</p>
+
+<p><b>Terminated (Dead)</b> - A runnable thread enters the terminated state when it completes its task or otherwise terminates.
+</p>
+<h3>Thread Priorities</h3>
+
+<p>Every Java thread has a priority that helps the operating system determine the order in which threads are scheduled.
+</p>
+<p>Java thread priorities are in the range between MIN_PRIORITY (a constant of 1) and MAX_PRIORITY (a constant of 10). By default, every thread is given priority NORM_PRIORITY (a constant of 5).
+</p>
+<p>Threads with higher priority are more important to a program and should be allocated processor time before lower-priority threads. However, thread priorities cannot guarantee the order in which threads execute and are very much platform dependent.
+</p>
+<p>Create a Thread by Implementing a Runnable Interface
+If your class is intended to be executed as a thread then you can achieve this by implementing a Runnable interface. You will need to follow three basic steps -
+</p>
+<p><b>Step 1</b></p>
+<p>As a first step, you need to implement a run() method provided by a Runnable interface. This method provides an entry point for the thread and you will put your complete business logic inside this method. Following is a simple syntax of the run() method -</p>
+
+<p>public void run( )
+</p>
+<p><b>Step 2</b></p>
+<p>As a second step, you will instantiate a Thread object using the following constructor -
+</p>
+<p>Thread(Runnable threadObj, String threadName);</p>
+<p>Where, threadObj is an instance of a class that implements the Runnable interface and threadName is the name given to the new thread.</p>
+
+<p><b>Step 3</b>
+</p>
+<p>Once a Thread object is created, you can start it by calling start() method, which executes a call to run( ) method. Following is a simple syntax of start() method -
+</p>
+
+<h3>Create a Thread by Extending a Thread Class</h3>
+<p>The second way to create a thread is to create a new class that extends Thread class using the following two simple steps. This approach provides more flexibility in handling multiple threads created using available methods in Thread class.
+</p>
+<p><b>Step 1</b>
+</p>
+<p>You will need to override run( ) method available in Thread class. This method provides an entry point for the thread and you will put your complete business logic inside this method. Following is a simple syntax of run() method -
+</p>
+<p>public void run( )</p>
+<p><b>Step 2</b></p>
+<p>Once Thread object is created, you can start it by calling start() method, which executes a call to run( ) method. Following is a simple syntax of start() method -
+</p>
+<h3>	Method & Description</h3>
+	
+<p>public void start()---------->Starts the thread in a separate path of execution, then invokes the run() method on this Thread object.
+</p>
+	
+<p>public void run()------------->If this Thread object was instantiated using a separate Runnable target, the run() method is invoked on that Runnable object.
+</p>
+	
+<p>public final void setName(String name)---------------->Changes the name of the Thread object. There is also a getName() method for retrieving the name.
+</p>
+	
+<p>public final void setPriority(int priority)---------------->Sets the priority of this Thread object. The possible values are between 1 and 10.
+</p>
+	
+<p>public final void setDaemon(boolean on)------------------->A parameter of true denotes this Thread as a daemon thread.
+</p>
+	
+<p>public final void join(long millisec)---------------------->The current thread invokes this method on a second thread, causing the current thread to block until the second thread terminates or the specified number of milliseconds passes.
+</p>
+	
+<p>public void interrupt()-------------------->Interrupts this thread, causing it to continue execution if it was blocked for any reason.
+</p>
+	
+<p>public final boolean isAlive()------------------->Returns true if the thread is alive, which is any time after the thread has been started but before it runs to completion.
+</p>
+<p><b>The previous methods are invoked on a particular Thread object. The following methods in the Thread class are static. Invoking one of the static methods performs the operation on the currently running thread.</b>
+</p>
+<h3>Method & Description</h3>
+<p>public static void yield() ----------->Causes the currently running thread to yield to any other threads of the same priority that are waiting to be scheduled.
+</p>
+	
+<p>public static void sleep(long millisec)------------->Causes the currently running thread to block for at least the specified number of milliseconds.
+</p>
+
+<p>public static boolean holdsLock(Object x)------------->Returns true if the current thread holds the lock on the given Object.
+</p>
+	
+<p>public static Thread currentThread()--------------->Returns a reference to the currently running thread, which is the thread that invokes this method.
+</p>
+	
+<p>public static void dumpStack()----------------->Prints the stack trace for the currently running thread, which is useful when debugging a multithreaded application.
+</p>
+<h3>Example</h3>
+<p>The following ThreadClassDemo program demonstrates some of these methods of the Thread class. Consider a class DisplayMessage which implements Runnable -
+</p>
+<p>// File Name : DisplayMessage.java
+</p>
+<p>// Create a thread to implement Runnable
+</p>
+<p>public class DisplayMessage implements Runnable {
+</p>
+   <p>private String message;
+   </p>
+   <p>public DisplayMessage(String message) {
+</p>
+     <p> this.message = message;
+</p>
+   <p>}
+</p>
+   
+
+   <p>public void run() {
+</p>
+      <p>while(true) {
+</p>
+         <p>System.out.println(message);
+</p>      
+<p>}
+</p>
+<p> }
+</p>
+<p>}
+</p>
+<p>Following is another class which extends the Thread class -
+</p>
+
+
+<p>// File Name : GuessANumber.java
+</p>
+<p>// Create a thread to extentd Thread
+</p>
+<p>public class GuessANumber extends Thread {
+</p>
+<p>   private int number;
+</p>
+
+<p>   public GuessANumber(int number) {
+</p>
+
+<p>      this.number = number;
+</p>
+<p>   }
+   </p>
+   <p>public void run() {
+</p>
+<p>      int counter = 0;
+</p>
+
+<p>      int guess = 0;
+</p>
+<p>      do {
+</p>
+<p>         guess = (int) (Math.random() * 100 + 1);
+</p>
+<p>         System.out.println(this.getName() + " guesses " + guess);
+</p>
+<p>         counter++;
+</p>
+<p>      } while(guess != number);
+</p>
+
+<p>      System.out.println("** Correct!" + this.getName() + "in" + counter + "guesses.**");
+</p>
+<p>   }
+</p>
+
+<p>}
+</p>
+<p>Following is the main program, which makes use of the above-defined classes -
+</p>
+
+
+<p>// File Name : ThreadClassDemo.java
+</p>
+<p>public class ThreadClassDemo {
+</p>
+
+<p>   public static void main(String [] args) {
+</p>
+
+<p>      Runnable hello = new DisplayMessage("Hello");
+</p>
+<p>      Thread thread1 = new Thread(hello);
+</p>
+
+<p>      thread1.setDaemon(true);
+</p>
+<p>      thread1.setName("hello");
+</p>
+<p>      System.out.println("Starting hello thread...");
+</p>
+
+<p>      thread1.start();
+</p>      
+
+<p>      Runnable bye = new DisplayMessage("Goodbye");
+</p>
+<p>      Thread thread2 = new Thread(bye);
+</p>
+<p>      thread2.setPriority(Thread.MIN_PRIORITY);
+</p>
+<p>      thread2.setDaemon(true);
+</p>
+
+<p>      System.out.println("Starting goodbye thread...");
+</p>
+<p>      thread2.start();
+</p>
+<p>      System.out.println("Starting thread3...");
+</p>
+<p>      Thread thread3 = new GuessANumber(27);
+</p>
+<p>      thread3.start();
+</p>
+<p>      try {
+</p>
+<p>         thread3.join();
+</p>
+<p>      } catch (InterruptedException e) {
+</p>
+<p>         System.out.println("Thread interrupted.");
+</p>
+<p>      }
+</p>
+<p>      System.out.println("Starting thread4...");
+</p>
+<p>      Thread thread4 = new GuessANumber(75);
+      </p>
+      <p>thread4.start();
+</p>
+<p>      System.out.println("main() is ending...");
+</p>
+<p>   }
+</p>
+<p>}
+
+<p>This will produce the following result. You can try this example again and again and you will get a different result every time.
+</p>
+
+<h3>Output</h3>
+
+<p>Starting hello thread...
+</p>
+<p>Starting goodbye thread...
+</p>
+<p>Hello
+</p>
+<p>
+Hello
+</p>
+<p>Hello
+</p>
+<p>Hello
+</p>
+<p>Hello
+</p>
+<p>Hello
+</p>
+<p>Goodbye
+</p>
+<p>Goodbye
+</p>
+<p>Goodbye
+</p>
+<p>Goodbye
+</p>
+<p>
+Goodbye
+</p>
+<p>.......
+</p>
+<a href="javaquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="JAVA">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
+

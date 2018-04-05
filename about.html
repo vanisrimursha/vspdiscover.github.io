@@ -1,0 +1,367 @@
+<html>
+<head>
+<title> About Discover!</title>
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body
+{
+background-image: url("aboutus.png");
+background-repeat: no-repeat;
+background-position: center;
+background-color: white;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  height: 100px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: blue;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    background-color: blue;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="topnav" >
+  <a  href="homepage.html">HOME</a>
+  <a href="contact.html">CONTACT</a>
+  <a class="active" href="#about us">ABOUT</a>
+<a href="FAQ.html">FAQ</a>
+<a href="help.html">HELP</a>
+<a href="ratings.php">RATE us!</a>
+&nbsp;
+&nbsp;
+
+<div class="dropdown">
+<button onclick="document.location.href='login.html'" class="dropbtn">Login</button>
+<button onclick="document.location.href='signup.html'" class="dropbtn">Signup</button>
+
+<button onclick="document.location.href='instructor.html" class="dropbtn">Become a Discoverer!!</button>
+</div>
+
+<h3><marquee direction="left"><font color="white"> Design your life with <font color="yellow">Discover!</font>...</marquee></h3>
+
+</div>
+
+ &nbsp;
+<div class="dropdown">
+
+</div>
+
+
+<div style="padding-left:16px">
+</div>
+<center><p><h1><font color="darkblue">ABOUT US...</font><h1></p></center>
+
+<p><h2><font color="darkblue">INTRODUCTION</font></h1></p>
+<p><font color="blue">ONLINE FREE TUTORIAL IS AN EDUCATIONAL WEBSITE WHERE WE CAN COMPLETE OUR COURSE AND GET CERTIFICATE THROUGH ONLINE AT FREE OF COST.<br> 
+IT IS HELPFUL FOR THE LEARNERS TO COMPLETE THE COURSE WITH IN THE SHORT PERIOD OF TIME.<br> 
+THIS WEBSITE IS ALSO USEFUL FOR THE INSTRUCTOR TO SHARE THEIR KNOWLEDGE.<br> 
+IT HAS QUIZ SESSION SO THAT LEARNERS CAN DEVELOP THEIR KNOWLEDGE AND EVALUATE THEMSELVES.<br>
+</p>   
+
+<p><h2><font color="darkblue">LEARNER MODULE WITH LOGIN AND SIGN UP</font></h1></p>
+<p>IN THIS MODULE THE LEARNER NEED TO SIGN IN WITH VALID USERNAME AND PASSWORD.<br> 
+IF THE LEARNER DON’T HAVE THE ACCOUNT, LEARNER NEED TO SIGN UP WITH FIRST NAME, SUR NAME , EMAIL ID AND PASSWORD ,THEN MAIL WILL BE SENT TO YOUR MAIL ID REGADING ONLINE FREE TUTORIAL 
+
+
+<p><h2><font color="darkblue">INSTRUCTOR MODULE WITH LOGIN AND SIGN UP</font></h1></p>
+<p>IN THIS MODULE THE INSTRUCTOR NEED TO SIGN IN WITH VALID INSTRUCTOR ID AND PASSWORD.<br> 
+INSTRUCTOR ID SHOULD BE IN THE COMBINATION OF ALPHA NUMERICAL.<br> 
+IF THE INSTRUCTOR DON’T HAVE THE ACCOUNT , INSTRUCTOR NEED TO SIGN UP WITH FIRST NAME, EMAIL ID, HANDLING COURSE(WHICH COURSE GOING TO BE HANDLED) AND PASSWORD, THEN MAIL WILL BE SENT TO YOUR MAIL ID REGARDING ONLINE FREE TUTORIAL.<br>
+
+
+<p><h2><font color="darkblue">INSTRUCTOR – COURSE UPLOAD</font></h1></p>
+<p>IN THIS MODULE INSTRUCTOR WILL UPLOAD THE COURSE MATERIAL FOR THE COURSES LIKE PERSONAL SKILL DEVELOPMENT,C,C++,JAVA,..WHAT HE/SHE IS HANDLING.<br> 
+THE COURSE MATERIALS ARE AVAILABLE IN THIS WEBSITE IN THE FORM OF TEXT FORMAT , PDF FORMAT , VIDEO FORMAT AND E-BOOK.<br>  
+
+
+<p><h2><font color="darkblue">LEARNER – COURSE COMPLETION</font></h1></p>
+<p>THIS MODULE IS HELPFUL FOR THE LEARNERS TO COMLETE THE COURSE.<br>
+LEARNER NEED TO ATTEND THE LECTURE HOUR OF WHAT ARE THE MATERIALS UPLOADED BY THE INSTRUCTOR.<br>
+LEARNERS NEED TO DOWNLOAD THE COURSE MATERIALS UPLOADED BY THE INSTRUCTOR.<br> 
+ONCE ALL THE SESSION IS COMPLETED THE LEARNER’S COURSE IS COMPLETED.<br>
+
+
+<p><h2><font color="darkblue">LEARNER QUIZ AND CERTIFICATION</font></h1></p>
+<p>THIS MODULE IS THE FINAL MODULE OF ONLINE FEE TUTORIAL.<br>
+AFTER THE COMPLETION OF COURSE LEARNER NEED TO ATTEND THE QUIZ SESSION.<br> 
+IT CONSISTS OF THIRTY MULTIPLE CHOICE QUESTION.<br> AFTER COMPLETION OF QUIZ SESSION , IT WILL GENERATE YOU CERTIFICATE , YOU CAN DOWNLOAD AS JPG OR PDF FORMAT.<br>
+
+<p><h2><font color="darkblue">COURSES OFFERED</font></h1></p>
+<p>C<br>
+C++<br>
+JAVA<br>
+PERSONAL DEVELOPMENT<br>
+ENTERPRENEURSHIP<br>
+PYTHON<br>
+PHP<br>
+SQL<br>
+.NET<br>
+MAD<br>
+HTML<br>
+CSS<br>
+JAVASCRIPT<br>
+CROWD SIMULATION<br>
+SCROLLING<br>
+MORPHING<br>
+GRAPHICS ALGORITHMS<br>
+GUI<br>
+CLIPPING<br>
+VIEWING<br>
+DATA STRUCTURES<br>
+OPERATING SYSTEM<br>
+COMPUTER HARDWARE<br>
+NETWORKS<br>
+CRYPTOGRAPHY<br>
+FINANCE<br> 
+COMMERCE<br>
+M AND E COMMERCE<br>
+ACCOUNTANCY<br>
+BUSINESS LAW<br>
+ECONOMICS<br>
+PURCHASE AND SALES<br>
+PHOTO COLLAGE<br>
+VIDEO COVERAGE<br>
+MORPHING<br>
+DRAWING ON SEEING A PICTURE<br>
+3D ART<br>
+IMAGE EDITING<br>
+WEDDING PHOTOGRAPHY<br>
+WILDLIFE PHOTOGRAPHY<br>
+BLACK AND WHITE PHTOGRAPHY<br>
+DIETING<br>
+SPORTS<br>
+NUTRITION<br>
+YOGA<br>
+SAFETY AND FIRST AID<br>
+GENERAL HEALTH<br>
+TAMIL<br>
+ARABIC<br>
+COMMUNICATIONAL ENGLISH<br>
+BASIC ENGLISH<br>
+<h1> Authors </h1>
+<center>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img src="usericon.png" alt="Vanisri Muralisankar" style="width:200px; height: 180px"></center>
+      <div class="container"><font color="black">
+        <h2>Vanisri Muralisankar</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Department of Computer Science and technology.</p>
+        <p> Handles Courses in web scripts and technology, programming language courses and professional courses.</p>
+        <p>vanisrimursha@gmail.com</p></font>
+        <p><a href="contact.html"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <center><img src="usericon.png" alt="Sandhya Ramesh" style="width:200px; height: 180px"></center>
+      <div class="container"><font color="black">
+        <h2>Sandhya Ramesh</h2>
+        <p class="title">CEO & Art Director</p>
+        <p>Department of Computer Testing and Development.</p>
+        <p>Handles Courses in system testing and software engineering, personal development skills.</p>
+        <p>sandhyarv1998@gmail.com</p></font>
+        <p><a href="contact.html"><button class="button"> Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <center><img src="usericon.png" alt="Pavithra Lingam" style="width:200px; height: 180px"></center>
+      <div class="container"><font color="black">
+        <h2>Pavithra Lingam</h2>
+        <p class="title">CEO & Designer</p>
+        <p>Department of Software Engineering and Technology.</p>
+        <p> Handles Courses in Software Engineering and technology, Software Testing  and some personal development courses.</p>
+        <p>pavithra13.10.1997@gmail.com</p></font>
+        <p><a href="contact.html"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+
+</div>
+</body>
+
+</html>
+
+
+
+

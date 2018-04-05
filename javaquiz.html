@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+<title>JAVA Quiz</title>
+
+<?php
+session_start();
+$_SESSION['course'] = "JAVA";
+?>
+
+ <style> body { background-image: url("b3.jpg"); background-repeat: no-repeat; } </style> </head> 
+<style>
+div#test{ border:blue 1px solid; padding:10px 60px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+                  [ "Java language created by James Gosling from Sun Microsystems (Sun) in ---------- ", "1991 ", "1997", "1995", "A" ],
+	[ " ------------  are names provided by users These can be assigned to variables, methods, functions, classes etc?", "Keywords", "Identifiers", "Literals", "B" ],
+	[ "  ----------- are variables whose values remain constant throughout the program?.", "Identifiers", "Literals", "Keywords", "B" ],
+                  [ "------------ Used to define a block of code and to hold the values of arrays?", "Brackets [ ]", "Parathesis ( )", "Braces { } ", "C" ],
+	[ " Non-static fields are also known as ------------ ?", "Instance variable", "Local Variables", "Class Variable", "A" ],
+                   [ "An --------  is a group of variables that share the same data type, and are referred to by a common name.?", "Array", "Functions", "Keywords", "A" ],
+	[ "------  is a control statement to execute a single statement or a block of code,", "If-else ", "If", "Switch", "B" ],
+                  [ " ------------- is a collection of statements that are grouped together to perform an operation ?", "Java Method", "Java Constructor", "Java Keywords", "A" ],
+	[ "There are ------  ways in which a Java method calls  ?", "4 ", "3", "2", "C" ],
+                  [ " A ----------  initializes an object when it is created. It has the same name as its class and is syntactically similar to a method", "Constructor", "Keyword", "Identifiers", "B" ],
+	["-----------  inheritance refers to a mechanism in OO technology where one can inherit from a derived class", "Single", "Multi level", "Multiple", "B" ],
+                     [ "The ------------  keyword indicates that you are making a new class that derives from an existing class ", "Void", "Extends", "Class", "B" ],
+	[ "-----------  in Java is a mechanism to encapsulate a group of classes, sub packages and interfaces.", "Packages", "Inheritance", "Both", "A" ],
+                 [ " ------------ Contains classed for supporting input / output operations?", "java.lang", "java.util", "java.io", "C" ],
+	["All exception and errors types are sub classes of class Throwable", "True", "False", "Not Known", "A" ],
+                    [ "A new thread not begins its life cycle in the new state. ", "True", "False", "Not Known", "B" ],
+	[ "------------- can have methods and variables, but the methods declared in interface are by default abstract ", "Interface", "Inheritance", "Methods", "A" ],
+	[ "  A runnable thread enters the terminated state when it completes its task or otherwise terminates", "False", "True", "Partialy True", "B" ],
+["------------- indicates serious problem that a reasonable application should not try to catch.", "Exception", "Error", " Both", "B" ],
+[ "public void start()->Starts the thread in a separate path of execution, then invokes the run() method on this Thread object. ", "True", "False", "Not Known", "A" ]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<button onclick='certificate()'>View Certificate</button>";
+		pos = 0;Scaling
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>NEXT</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+
+function certificate()
+{
+window.open("certificate.php");}
+
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+
+</head>
+
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>

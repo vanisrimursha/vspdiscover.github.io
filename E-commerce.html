@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Commerce</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  E-Commerce</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Business Model</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Payment System</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Security System</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">B2B Model</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">B2C Model</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">EDI</button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>E-Commerce - Overview</h1>
+
+<p>E-Commerce or Electronics Commerce is a methodology of modern business, which addresses the need of business organizations, vendors and customers to reduce cost and improve the quality of goods and services while increasing the speed of delivery. Ecommerce refers to the paperless exchange of business information using the following ways &minus;</p>
+<ul class="list">
+<li>Electronic Data Exchange (EDI)</li>
+<li>Electronic Mail (e-mail)</li>
+<li>Electronic Bulletin Boards</li>
+<li>Electronic Fund Transfer (EFT)</li>
+<li>Other Network-based technologies</li>
+</ul>
+<h2>Features</h2>
+<p>E-Commerce provides the following features &minus;</p>
+<ul class="list">
+<li><p><b>Non-Cash Payment</b> &minus;  E-Commerce enables the use of credit cards, debit cards,
+smart cards, electronic fund transfer via bank's website, and other modes of electronics payment.</p></li>
+<li><p><b>24x7 Service availability</b> &minus; E-commerce automates the business of enterprises
+and the way they provide services to their customers. It is available anytime, anywhere.</p></li>
+<li><p><b>Advertising / Marketing</b> &minus; E-commerce increases the reach of advertising of
+products and services of businesses. It helps in better marketing management of products/services.</p></li>
+<li><p><b>Improved Sales</b> &minus; Using e-commerce, orders for the products can be generated
+anytime, anywhere without any human intervention. It gives a big boost to existing sales volumes.</p></li>
+<li><p><b>Support</b> &minus; E-commerce provides various ways to provide pre-sales and post-sales assistance to provide better services to customers.</p></li>
+<li><p><b>Inventory Management</b> &minus; E-commerce automates inventory management. Reports get generated instantly when required. Product inventory management becomes very efficient and easy to maintain.</p></li>
+<li><p><b>Communication improvement</b> &minus; E-commerce provides ways for faster, efficient,
+reliable communication with customers and partners.</p></li>
+</ul>
+<h2>Traditional Commerce v/s E-Commerce</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:10%;">Sr. No.</th>
+<th>Traditional Commerce</th>
+<th>E-Commerce</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Heavy dependency on information exchange from person to person.</td>
+<td>Information sharing is made easy via electronic communication channels making little dependency on person to person information exchange.</td>
+</tr> 	
+<tr>
+<td>2</td>
+<td>Communication/ transaction are done in synchronous way. Manual intervention is required for each communication or transaction.</td>
+<td>Communication or transaction can be done in asynchronous way. Electronics system automatically handles when to pass communication to required person or do the transactions.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>It is difficult to establish and maintain standard practices in traditional commerce.</td>
+<td>A uniform strategy can be easily established and maintain in e-commerce.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Communications of business depends upon individual skills.</td>
+<td>In e-Commerce or Electronic Market, there is no human intervention.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Unavailability of a uniform platform as traditional commerce depends heavily on personal communication.</td>
+<td>E-Commerce website provides user a platform where al l information is available at one place.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>No uniform platform for information sharing as it depends heavily on personal communication.</td>
+<td>E-Commerce provides a universal platform to support commercial / business activities across the globe.</td>
+</tr>
+</table>
+<hr />
+</div>
+
+<div id="c2" class="tabcontent">
+<h1>E-Commerce - Business Models</h1>
+
+<p>E-commerce business models can generally be categorized into the following categories.</p>
+<ul class="list">
+<li>Business - to - Business (B2B)</li>
+<li>Business - to - Consumer (B2C)</li>
+<li>Consumer - to - Consumer (C2C)</li>
+<li>Consumer - to - Business (C2B)</li>
+<li>Business - to - Government (B2G)</li>
+<li>Government - to - Business (G2B)</li>
+<li>Government - to - Citizen (G2C)</li>
+</ul>
+<h2>Business - to - Business</h2>
+<p>A website following the B2B business model sells its products to an intermediate buyer
+who then sells the product to the final customer. As an example, a wholesaler places an order from a company's website and after receiving the consignment, sells the endproduct to the final customer who comes to buy the product at one of its retail outlets.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/b2b.jpg" alt="B2B Model" />
+<h2>Business - to - Consumer</h2>
+<p>A website following the B2C business model sells its products directly to a customer. A
+customer can view the products shown on the website. The customer can choose a product and order the same. The website will then send a notification to the business organization via email and the organization will dispatch the product/goods to the customer.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/b2c.jpg" alt="B2C Model" />
+<h2>Consumer - to - Consumer</h2>
+<p>A website following the C2C business model helps consumers to sell their assets like
+residential property, cars, motorcycles, etc., or rent a room by publishing their information on the website. Website may or may not charge the consumer for its services. Another consumer may opt to buy the product of the first customer by viewing the post/advertisement on the website.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/c2c.jpg" alt="C2C Model" />
+<h2>Consumer - to - Business</h2>
+<p>In this model, a consumer approaches a website showing multiple business organizations
+for a particular service. The consumer places an estimate of amount he/she wants to spend for a particular service. For example, the comparison of interest rates of personal loan/car loan provided by various banks via websites. A business organization who fulfills the consumer's requirement within the specified budget, approaches the customer and provides its services.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/c2b.jpg" alt="C2B Model" />
+<h2>Business - to - Government</h2>
+<p>B2G model is a variant of B2B model. Such websites are used by governments to trade and exchange information with various business organizations. Such websites are accredited by the government and provide a medium to businesses to submit application forms to the government.</p>
+<img src="/e_commerce/images/b2g.jpg" alt="B2G Model" />
+<h2>Government - to - Business</h2>
+<p>Governments use B2G model websites to approach business organizations. Such websites support auctions, tenders, and application submission functionalities.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/g2b.jpg" alt="G2B Model" />
+<h2>Government - to - Citizen</h2>
+<p>Governments use G2C model websites to approach citizen in general. Such websites support auctions of vehicles, machinery, or any other material. Such website also provides services like registration for birth, marriage or death certificates. The main objective of G2C websites is to reduce the average time for fulfilling citizen’s requests for various government services.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/g2c.jpg" alt="G2C Model" />
+<hr />
+
+</div>
+
+<div id="c3" class="tabcontent">
+<h1>E-Commerce - Payment Systems</h1>
+
+<p>E-commerce sites use electronic payment, where electronic payment refers to paperless monetary transactions. Electronic payment has revolutionized the business processing by reducing the paperwork, transaction costs, and labor cost. Being user friendly and less time-consuming than manual processing, it helps business organization to expand its market reach/expansion. Listed below are some of the modes of electronic payments &minus;</p>
+<ul class="list">
+<li>Credit Card</li>
+<li>Debit Card</li>
+<li>Smart Card</li>
+<li>E-Money</li>
+<li>Electronic Fund Transfer (EFT)</li>
+</ul>
+<h2>Credit Card</h2>
+<p>Payment using credit card is one of most common mode of electronic payment. Credit card is small plastic card with a unique number attached with an account. It has also a magnetic strip embedded in it which is used to read credit card via card readers. When a customer purchases a product via credit card, credit card issuer bank pays on behalf of the customer and customer has a certain time period after which he/she can pay the credit card bill. It is usually credit card monthly payment cycle. Following are the actors in the credit card system.</p>
+<ul class="list">
+<li><b>The card holder</b> &minus; Customer</li>
+<li><b>The merchant</b> &minus; seller of product who can accept credit card payments.</li>
+<li><b>The card issuer bank</b> &minus; card holder's bank</li>
+<li><b>The acquirer bank</b> &minus; the merchant's bank</li>
+<li><b>The card brand</b> &minus; for example , visa or Mastercard.</li>
+</ul>
+<h2>Credit Card Payment Proces</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:20%">Step</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Step 1</td>
+<td>Bank issues and activates a credit card to the customer on his/her request.</td>
+</tr>
+<tr>
+<td>Step 2</td>
+<td>The customer presents the credit card information to the merchant site or to the merchant from whom he/she wants to purchase a product/service.</td>
+</tr>
+<tr>
+<td>Step 3</td>
+<td>Merchant validates the customer's identity by asking for approval from the card brand company.</td>
+</tr>
+<tr>
+<td>Step 4</td>
+<td>Card brand company authenticates the credit card and pays the transaction by credit. Merchant keeps the sales slip.</td>
+</tr>
+<tr>
+<td>Step 5</td>
+<td>Merchant submits the sales slip to acquirer banks and gets the service charges paid to him/her.</td>
+</tr>
+<tr>
+<td>Step 6</td>
+<td>Acquirer bank requests the card brand company to clear the credit amount and gets the payment.</td>
+</tr>
+<tr>
+<td>Step 6</td>
+<td>Now the card brand company asks to clear the amount from the issuer bank and the amount gets transferred to the card brand company.</td>
+</tr>
+</table>
+<h2>Debit Card</h2>
+<p>Debit card, like credit card, is a small plastic card with a unique number mapped with
+the bank account number. It is required to have a bank account before getting a debit card from the bank. The major difference between a debit card and a credit card is that in case of payment through debit card, the amount gets deducted from the card's bank account immediately and there should be sufficient balance in the bank account for the transaction to get completed; whereas in case of a credit card transaction, there is no such compulsion.</p>
+<p>Debit cards free the customer to carry cash and cheques. Even merchants accept a debit card readily. Having a restriction on the amount that can be withdrawn in a day using a debit card helps the customer to keep a check on his/her spending.</p>
+<h2>Smart Card</h2>
+<p>Smart card is again similar to a credit card or a debit card in appearance, but it has a
+small microprocessor chip embedded in it. It has the capacity to store a customer’s work-related and/or personal information. Smart cards are also used to store money and the amount gets deducted after every transaction.</p>
+<p>Smart cards can only be accessed using a PIN that every customer is assigned with. Smart cards are secure, as they store information in encrypted format and are less expensive/provides faster processing. Mondex and Visa Cash cards are examples of smart cards.</p>
+<h2>E-Money</h2>
+<p>E-Money transactions refer to situation where payment is done over the network and the
+amount gets transferred from one financial body to another financial body without any involvement of a middleman. E-money transactions are faster, convenient, and saves a lot of time.</p>
+<p>Online payments done via credit cards, debit cards, or smart cards are examples of emoney
+transactions. Another popular example is e-cash. In case of e-cash, both customer and merchant have to sign up with the bank or company issuing e-cash.</p>
+<h2>Electronic Fund Transfer</h2>
+<p>It is a very popular electronic payment method to transfer money from one bank account to another bank account. Accounts can be in the same bank or different banks. Fund transfer can be done using ATM (Automated Teller Machine) or using a computer.</p>
+<p>Nowadays, internet-based EFT is getting popular. In this case, a customer uses the website provided by the bank, logs in to the bank's website and registers another bank account. He/she then places a request to transfer certain amount to that account. Customer's bank transfers the amount to other account if it is in the same bank, otherwise the transfer request is forwarded to an ACH (Automated Clearing House) to transfer the amount to other account and the amount is deducted from the customer's account. Once the amount is transferred to other account, the customer is notified of the fund transfer by the bank.</p>
+<hr />
+
+</div>
+
+<div id="c4" class="tabcontent">
+<h1>E-Commerce - Security Systems</h1>
+
+<p>Security is an essential part of any transaction that takes place over the internet. Customers will lose his/her faith in e-business if its security is compromised. Following are the essential requirements for safe e-payments/transactions &minus;</p>
+<ul class="list">
+<li><p><b>Confidentiality</b> &minus; Information should not be accessible to an unauthorized person. It should not be intercepted during the transmission.</p></li>
+<li><p><b>Integrity</b> &minus; Information should not be altered during its transmission over the network.</p></li>
+<li><p><b>Availability</b> &minus; Information should be available wherever and whenever required within a time limit specified.</p></li>
+<li><p><b>Authenticity</b> &minus; There should be a mechanism to authenticate a user before giving him/her an access to the required information.</p></li>
+<li><p><b>Non-Repudiability</b> &minus; It is the protection against the denial of order or denial of payment. Once a sender sends a message, the sender should not be able to deny sending the message. Similarly, the recipient of message should not be able to deny the receipt.</p></li>
+<li><p><b>Encryption</b> &minus; Information should be encrypted and decrypted only by an authorized user.</p></li>
+<li><p><b>Auditability</b> &minus; Data should be recorded in such a way that it can be audited for integrity requirements.</p></li>
+</ul>
+<h2>Measures to ensure Security</h2>
+<p>Major security measures are following &minus;</p>
+<ul class="list">
+<li><p><b>Encryption</b> &minus; It is a very effective and practical way to safeguard the data being transmitted over the network. Sender of the information encrypts the data using a secret code and only the specified receiver can decrypt the data using the same or a different secret code.</p></li>
+<li><p><b>Digital Signature</b> &minus; Digital signature ensures the authenticity of the information. A digital signature is an e-signature authenticated through encryption and password.</p></li>
+<li><p><b>Security Certificates</b> &minus; Security certificate is a unique digital id used to verify the identity of an individual website or user.</p></li>
+</ul>
+<h2>Security Protocols in Internet</h2>
+<p>We will discuss here some of the popular protocols used over the internet to ensure secured online transactions.</p>
+<h2>Secure Socket Layer (SSL)</h2>
+<p>It is the most commonly used protocol and is widely used across the industry. It meets following security requirements &minus;</p>
+<ul class="list">
+<li>Authentication</li>
+<li>Encryption</li>
+<li>Integrity</li>
+<li>Non-reputability</li>
+</ul>
+<p>"https://" is to be used for HTTP urls with SSL, where as "http:/" is to be used for HTTP urls without SSL.</p>
+<h3>Secure Hypertext Transfer Protocol (SHTTP)</h3>
+<p>SHTTP extends the HTTP internet protocol with public key encryption, authentication, and digital signature over the internet. Secure HTTP supports multiple security mechanism, providing security to the end-users. SHTTP works by negotiating encryption scheme types used between the client and the server.</p>
+<h3>Secure Electronic Transaction</h3>
+<p>It is a secure protocol developed by MasterCard and Visa in collaboration. Theoretically,
+it is the best security protocol. It has the following components &minus;</p>
+<ul class="list">
+<li><p><b>Card Holder's Digital Wallet Software</b> &minus; Digital Wallet allows the card holder
+to make secure purchases online via point and click interface.</p></li>
+<li><p><b>Merchant Software</b> &minus; This software helps merchants to communicate with
+potential customers and financial institutions in a secure manner.</p></li>
+<li><p><b>Payment Gateway Server Software</b> &minus; Payment gateway provides automatic and standard payment process. It supports the process for merchant's certificate request.</p></li>
+<li><p><b>Certificate Authority Software</b> &minus; This software is used by financial institutions to issue digital certificates to card holders and merchants, and to enable them to
+register their account agreements for secure electronic commerce.</p></li>
+</ul>
+<hr />
+</div>
+
+<div id="c5" class="tabcontent">
+<h1>E-Commerce - B2B Model</h1>
+
+<p>A website following the B2B business model sells its products to an intermediate buyer who then sells the products to the final customer. As an example, a wholesaler places an order from a company's website and after receiving the consignment, it sells the endproduct to the final customer who comes to buy the product at the wholesaler's retail outlet.</p>
+<p>B2B identifies both the seller as well as the buyer as business entities. B2B covers a
+large number of applications, which enables business to form relationships with their distributors, re-sellers, suppliers, etc. Following are the leading items in B2B eCommerce.</p>
+<ul class="list">
+<li>Electronics</li>
+<li>Shipping and Warehousing</li>
+<li>Motor Vehicles</li>
+<li>Petrochemicals</li>
+<li>Paper</li>
+<li>Office products</li>
+<li>Food</li>
+<li>Agriculture</li>
+</ul>
+<h2>Key Technologies</h2>
+<p>Following are the key technologies used in B2B e-commerce &minus;</p>
+<ul class="list">
+<li><p><b>Electronic Data Interchange (EDI)</b> &minus; EDI is an inter-organizational exchange
+of business documents in a structured and machine processable format.</p></li>
+<li><p><b>Internet</b> &minus; Internet represents the World Wide Web or the network of networks
+connecting computers across the world.</p></li>
+<li><p><b>Intranet</b> &minus; Intranet represents a dedicated network of computers within a single organization.</li>
+<li><p><b>Extranet</b> &minus; Extranet represents a network where the outside business partners,
+suppliers, or customers can have a limited access to a portion of enterprise intranet/network.</p></li>
+<li><p><b>Back-End Information System Integration</b> &minus; Back-end information systems
+are database management systems used to manage the business data.</p></li>
+</ul>
+<h2>Architectural Models</h2>
+<p>Following are the architectural models in B2B e-commerce &minus;</p>
+<ul class="list">
+<li><p><b>Supplier Oriented marketplace</b> &minus; In this type of model, a common marketplace provided by supplier is used by both individual customers as well as business users. A supplier offers an e-stores for sales promotion.</p></li>
+<li><p><b>Buyer Oriented marketplace</b> &minus; In this type of model, buyer has his/her own market place or e-market. He invites suppliers to bid on product's catalog. A Buyer company opens a bidding site.</p></li>
+<li><p><b>Intermediary Oriented marketplace</b> &minus; In this type of model, an intermediary  company runs a market place where business buyers and sellers can transact with each other.</p></li>
+</ul>
+<hr />
+</div>
+
+<div id="c6" class="tabcontent">
+<h1>E-Commerce - B2C Model</h1>
+
+<p>In B2C model, a business website is a place where all the transactions take place directly
+between a business organization and a consumer.</p>
+<p>In the B2C model, a consumer goes to the website, selects a catalog, orders the catalog,
+and an email is sent to the business organization. After receiving the order, goods are dispatched to the customer. Following are the key features of the B2C model &minus;</p>
+<ul class="list">
+<li>Heavy advertising required to attract customers.</li>
+<li>High investments in terms of hardware/software.</li>
+<li>Support or good customer care service.</li>
+</ul>
+<h2>Consumer Shopping Procedure</h2>
+<p>Following are the steps used in B2C e-commerce &minus;</p>
+<p>A consumer &minus;</p>
+<ul class="list">
+<li>determines the requirement.</li>
+<li>searches available items on the website meeting the requirment.</li>
+<li>compares similar items for price, delivery date or any other terms.</li>
+<li>places the order.</li>
+<li>pays the bill.</li>
+<li>receives the delivered item and review/inspect them.</li>
+<li>consults the vendor to get after service support or returns the product if not satisfied with the delivered product.</li>
+</ul>
+<h2>Disintermediation and Re-intermediation</h2>
+<p>In traditional commerce, there are intermediating agents like wholesalers, distributors, and
+retailers between the manufacturer and the consumer. In B2C websites, a manufacturer can
+sell its products directly to potential consumers. This process of removal of business layers
+responsible for intermediary functions is called <b>disintermediation</b>.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/disintermediation.jpg" alt="Disintermediation" />
+<p>Nowadays, new electronic intermediary breeds such as e-mall and product selection agents
+are emerging. This process of shifting of business layers responsible for intermediary functions from traditional to electronic mediums is called <b>re-intermediation</b>.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/reintermediation.jpg" alt="Reintermediation" />
+<hr />
+</div>
+
+<div id="c7" class="tabcontent">
+<h1>E-Commerce - EDI</h1>
+
+<p>EDI stands for Electronic Data Exchange. EDI is an electronic way of transferring business documents in an organization internally, between its various departments or externally with suppliers, customers, or any subsidiaries. In EDI, paper documents are replaced with electronic documents such as word documents, spreadsheets, etc.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/edi.jpg" alt="EDI" />
+<h2>EDI Documents</h2> 
+<p>Following are the few important documents used in EDI &minus;</p>
+<ul class="list">
+<li>Invoices</li>
+<li>Purchase orders</li>
+<li>Shipping Requests</li>
+<li>Acknowledgement</li>
+<li>Business Correspondence letters</li>
+<li>Financial information letters</li>
+</ul>
+<h2>Steps in an EDI System</h2>
+<p>Following are the steps in an EDI System.</p>
+<ul class="list">
+<li><p>A program generates a file that contains the processed document.</p></li>
+<li><p>The document is converted into an agreed standard format.</p></li>
+<li><p>The file containing the document is sent electronically on the network.</p></li>
+<li><p>The trading partner receives the file.</p></li>
+<li><p>An acknowledgement document is generated and sent to the originating organization.</p></li>
+</ul>
+<h2>Advantages of an EDI System</h2>
+<p>Following are the advantages of having an EDI system.</p>
+<ul class="list">
+<li><p><b>Reduction in data entry errors.</b> &minus; Chances of errors are much less while using a computer for data entry.</p></li>
+<li><p><b>Shorter processing life cycle</b> &minus; Orders can be processed as soon as they are
+entered into the system. It reduces the processing time of the transfer documents.</p></li>
+<li><p><b>Electronic form of data</b> &minus; It is quite easy to transfer or share the data, as it is present in electronic format.</p></li>
+<li><p><b>Reduction in paperwork</b> &minus; As a lot of paper documents are replaced with
+electronic documents, there is a huge reduction in paperwork.</p></li>
+<li><p><b>Cost Effective</b> &minus; As time is saved and orders are processed very effectively, EDI proves to be highly cost effective.</p></li>
+<li><p><b>Standard Means of communication</b> &minus; EDI enforces standards on the content of
+data and its format which leads to clearer communication.</p></li>
+</ul>
+<a href="ecommercequiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="E-commerce">
+    <input type="submit" class="button" value="Quiz Later">
+<hr />
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

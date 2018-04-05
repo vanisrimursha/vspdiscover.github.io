@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  CSS</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">CSS-Syntax</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">CSS-Colors&Backgrounds</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">CSS-Fonts</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">CSS-Images&Links</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">CSS-Tables&Lists</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">CSS-Outlines</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">CSS-Visibility</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">CSS-Layouts</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">CSS-Validation</button>
+
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>What is CSS?</h1>
+
+<p><b>C</b>ascading <b>S</b>tyle <b>S</b>heets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.</p>
+<p>CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout designs,variations in display for different devices and screen sizes as well as a variety of other effects.</p>
+<p>CSS is easy to learn and understand but it provides powerful control over the presentation of an HTML  document. Most commonly, CSS is combined with the markup languages HTML or XHTML.</p>
+<h2>Advantages of CSS</h2>
+<ul class="list">
+<li><p><b>CSS saves time</b> &minus; You can write CSS once and then reuse same sheet in multiple HTML pages. You can define a style for each HTML element and apply it to as many Web pages as you want.</p></li>
+<li><p><b>Pages load faster</b> &minus; If you are using CSS, you do not need to write HTML tag attributes every time. Just write one CSS rule of a tag and apply it to all the occurrences of that tag. So less code means faster download times.</p></li>
+<li><p><b>Easy maintenance</b> &minus; To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.</p></li>
+<li><p><b>Superior styles to HTML</b> &minus; CSS has a much wider array of attributes than HTML, so you can give a far better look to your HTML page in comparison to HTML attributes.</p></li>
+<li><p><b>Multiple Device Compatibility</b> &minus; Style sheets allow content to be optimized for more than one type of device. By using the same HTML document, different versions of a website can be presented for handheld devices such as PDAs and cell phones or for printing.</p></li>
+<li><p><b>Global web standards</b> &minus; Now HTML attributes are being deprecated and it is being recommended to use CSS. So its a good idea to start using CSS in all the HTML pages to make them compatible to future browsers.</p></li>
+<li><p><b>Offline Browsing</b> &minus; CSS can store web applications locally with the help of an offline catche.Using of this, we can view offline websites.The cache also ensures faster loading and better overall performance of the website. </p></li>
+<li><p><b>Platform Independence</b> &minus; The Script offer consistent platform independence and can support latest browsers as well. </p></li>
+</ul>
+<h2>Who Creates and Maintains CSS?</h2>
+<p>CSS  was invented by <b>Håkon Wium Lie</b> on October 10, 1994 and maintained through a group of people within the W3C called the CSS Working Group. The CSS Working Group creates documents called <b>specifications</b>. When a specification has been discussed and officially ratified by W3C members, it becomes a recommendation.</p>
+<p>These ratified specifications are called recommendations because the W3C has no control over the actual implementation of the language. Independent companies and organizations create that software.</p>
+<p><b>NOTE</b> &minus; The World Wide Web Consortium, or W3C is a group that makes recommendations about how the Internet works and how it should evolve.</p>
+<h2>CSS Versions</h2>
+<p>Cascading Style Sheets, level 1 (CSS1) was came out of W3C as a recommendation in December 1996. This version describes the CSS language as well as a simple visual formatting model for all the HTML tags.</p>
+<p>CSS2 was became a W3C recommendation in May 1998 and builds on CSS1. This version adds support for media-specific style sheets e.g. printers and aural devices, downloadable fonts, element positioning and tables.</p>
+<p>CSS3 was became a W3C recommendation in June 1999 and builds on older versions CSS. it has divided into documentations is called as Modules and here each module having new extension features defined in CSS2.</p>
+<h3>CSS3 Modules</h3>
+<p>CSS3 Modules are having old CSS specifications as well as extension features.</p>
+<ul class="list">
+<li>Selectors</li>
+<li>Box Model</li>
+<li>Backgrounds and Borders</li>
+<li>Image Values and Replaced Content</li>
+<li>Text Effects</li>
+<li>2D/3D Transformations</li>
+<li>Animations</li>
+<li>Multiple Column Layout</li>
+<li>User Interface</li>
+</ul>
+<hr />
+
+</div>
+<div id="c2" class="tabcontent">
+<h1>CSS - Syntax</h1>
+
+<p>A CSS comprises of style rules that are interpreted by the browser and then applied to the corresponding elements in your document. A style rule is made of three parts &minus;</p>
+<ul class="list">
+<li><p><b>Selector</b> &minus; A selector is an HTML tag at which a style will be applied. This could be any tag like &lt;h1&gt; or &lt;table&gt; etc.</p></li>
+<li><p><b>Property</b> - A property is a type of attribute of HTML tag. Put simply, all the HTML attributes are converted into CSS properties. They could be <i>color</i>, <i>border</i> etc.</p></li>
+<li><p><b>Value</b> - Values are assigned to properties. For example, <i>color</i> property can have value either <i>red</i> or <i>#F1F1F1</i> etc.</p></li>
+</ul>
+<p>You can put CSS Style Rule Syntax as follows &minus;</p>
+<pre class="prettyprint notranslate">
+selector { property: value }
+</pre> 
+<p><b>Example:</b> You can define a table border as follows &minus;</p>
+<pre class="prettyprint notranslate">
+table{ border :1px solid #C00; }
+</pre> 
+<p>Here table is a selector and border is a property and given value <i>1px solid #C00</i> is the value of that property.</p>
+<p>You can define selectors in various simple ways based on your comfort. Let me put these selectors one by one.</p>
+<h2>The Type Selectors</h2>
+<p>This is the same selector we have seen above. Again, one more example to give a color to all level 1 headings:</p>
+<pre class="prettyprint notranslate">
+h1 {
+   color: #36CFFF; 
+}
+</pre> 
+<h2>The Universal Selectors</h2>
+<p>Rather than selecting elements of a specific type, the universal selector quite simply matches the name of any element type &minus;</p>
+<pre class="prettyprint notranslate">
+* { 
+   color: #000000; 
+}
+</pre> 
+<p>This rule renders the content of every element in our document in black.</p>
+<h2>The Descendant Selectors</h2>
+<p>Suppose you want to apply a style rule to a particular element only when it lies inside a particular element. As given in the following example, style rule will apply to &lt;em&gt; element only when it lies inside &lt;ul&gt; tag.</p>
+<pre class="prettyprint notranslate">
+ul em {
+   color: #000000; 
+}
+</pre> 
+<h2>The Class Selectors</h2>
+<p>You can define style rules based on the class attribute of the elements. All the elements having that class will be formatted according to the defined rule.</p>
+<pre class="prettyprint notranslate">
+.black {
+   color: #000000; 
+}
+</pre> 
+<p>This rule renders the content in black for every element with class attribute set to <i>black</i> in our document. You can make it a bit more particular. For example:</p>
+<pre class="prettyprint notranslate">
+h1.black {
+   color: #000000; 
+}
+</pre> 
+<p>This rule renders the content in black for only &lt;h1&gt; elements with class attribute set to <i>black</i>.</p>
+<p>You can apply more than one class selectors to given element. Consider the following example:</p>
+<pre class="prettyprint notranslate">
+&lt;p class="center bold"&gt;
+   This para will be styled by the classes <i>center</i> and <i>bold</i>.
+&lt;/p&gt;
+</pre> 
+<h2>The ID Selectors</h2>
+<p>You can define style rules based on the <i>id</i> attribute of the elements. All the elements having that <i>id</i> will be formatted according to the defined rule.</p>
+<pre class="prettyprint notranslate">
+#black {
+   color: #000000; 
+}
+</pre> 
+<p>This rule renders the content in black for every element with <i>id</i> attribute set to <i>black</i> in our document. You can make it a bit more particular. For example &minus;</p>
+<pre class="prettyprint notranslate">
+h1#black {
+   color: #000000; 
+}
+</pre> 
+<p>This rule renders the content in black for only &lt;h1&gt; elements with <i>id</i> attribute set to <i>black</i>. </p>
+<p>The true power of <i>id</i> selectors is when they are used as the foundation for descendant selectors, For example:</p>
+<pre class="prettyprint notranslate">
+#black h2 {
+   color: #000000; 
+}
+</pre> 
+<p>In this example all level 2 headings will be displayed in black color when those headings will lie with in tags having <i>id</i> attribute set to <i>black</i>.</p>
+<h2>The Child Selectors</h2>
+<p>You have seen the descendant selectors. There is one more type of selector, which is very similar to descendants but have different functionality. Consider the following example &minus;</p>
+<pre class="prettyprint notranslate">
+body &gt; p {
+   color: #000000; 
+}
+</pre> 
+<p>This rule will render all the paragraphs in black if they are direct child of &lt;body&gt; element. Other paragraphs put inside other elements like &lt;div&gt; or &lt;td&gt would not have any effect of this rule.</p>
+<h2>The Attribute Selectors</h2>
+<p>You can also apply styles to HTML elements with particular attributes. The style rule below will match all the input elements having a type attribute with a value of <i>text</i> &minus;</p>
+<pre class="prettyprint notranslate">
+input[type = "text"]{
+   color: #000000; 
+}
+</pre> 
+<p>The advantage to this method is that the &lt;input type = "submit" /&gt; element is unaffected, and the color applied only to the desired text fields.</p>
+<p>There are following rules applied to attribute selector.</p>
+<ul class="list">
+<li><p><b>p[lang]</b> - Selects all paragraph elements with a <i>lang</i> attribute.</p></li>
+<li><p><b>p[lang="fr"]</b> - Selects all paragraph elements whose <i>lang</i> attribute has a value of exactly "fr".</p></li>
+<li><p><b>p[lang~="fr"]</b> - Selects all paragraph elements whose <i>lang</i> attribute contains the word "fr".</p></li>
+<li><p><b>p[lang|="en"]</b> - Selects all paragraph elements whose <i>lang</i> attribute contains values that are exactly "en", or begin with "en-".</p></li>
+</ul>
+<h2>Multiple Style Rules</h2>
+<p>You may need to define multiple style rules for a single element. You can define these rules to combine multiple properties and corresponding values into a single block as defined in the following example &minus;</p>
+<pre class="prettyprint notranslate">
+h1 {
+   color: #36C;
+   font-weight: normal;
+   letter-spacing: .4em;
+   margin-bottom: 1em;
+   text-transform: lowercase;
+}
+</pre> 
+<p>Here all the property and value pairs are separated by a <b>semi colon (;)</b>. You can keep them in a single line or multiple lines. For better readability we keep them into separate lines.</p>
+<h2>Grouping Selectors</h2>
+<p>You can apply a style to many selectors if you like. Just separate the selectors with a comma, as given in the following example &minus;</p>
+<pre class="prettyprint notranslate">
+h1, h2, h3 {
+   color: #36C;
+   font-weight: normal;
+   letter-spacing: .4em;
+   margin-bottom: 1em;
+   text-transform: lowercase;
+}
+</pre> 
+<p>This define style rule will be applicable to h1, h2 and h3 element as well. The order of the list is irrelevant. All the elements in the selector will have the corresponding declarations applied to them.</p>
+<p>You can combine the various <i>id</i> selectors together as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+#content, #footer, #supplement {
+   position: absolute;
+   left: 510px;
+   width: 200px;
+}
+</pre> 
+<hr />
+
+
+</div>
+<div id="c3" class="tabcontent">
+<h1>CSS - Colors</h1>
+
+<p>CSS uses color values to specify a color. Typically, these are used to set a color either for the foreground of an element (i.e., its text) or else for the background of the element. They can also be used to affect the color of borders and other decorative effects.</p>
+<p>You can specify your color values in various formats. Following table lists all the possible formats &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Format</th>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Hex Code</td>
+<td>#RRGGBB</td>	
+<td>p{color:#FF0000;}</td>	
+</tr>
+<tr>
+<td>Short Hex Code</td>
+<td>#RGB</td>	
+<td>p{color:#6A7;}</td>	
+</tr>	
+<tr>
+<td>RGB %</td>
+<td>rgb(rrr%,ggg%,bbb%)</td>	
+<td>p{color:rgb(50%,50%,50%);}</td>	
+</tr>
+<tr>
+<td>RGB Absolute</td>
+<td>rgb(rrr,ggg,bbb)</td>	
+<td>p{color:rgb(0,0,255);}</td>	
+</tr>
+<tr>
+<td>keyword</td>
+<td>aqua, black, etc.</td>	
+<td>p{color:teal;}</td>	
+</tr>
+</table>
+<p>These formats are explained in more detail in the following sections &minus;</p>
+<h2>CSS Colors - Hex Codes</h2>
+<p>A hexadecimal is a 6 digit representation of a color. The first two digits(RR) represent a red value, the next two are a green value(GG), and the last are the blue value(BB).</p>
+<p>A hexadecimal value can be taken from any graphics software like Adobe Photoshop, Jasc Paintshop Pro, or even using Advanced Paint Brush.</p>
+<p>Each hexadecimal code will be preceded by a pound or hash sign '#'. Following are the examples to use Hexadecimal notation.</p>
+<table class="table table-bordered">
+<tr>
+<th width="50%">Color</th>
+<th width="50%">Color HEX</th>
+</tr>
+<tr>
+<td bgcolor="#000000">&nbsp;</td>
+<td>#000000</td> 
+</tr>
+<tr>
+<td bgcolor="#ff0000">&nbsp;</td>
+<td>#FF0000</td>
+</tr>
+<tr>
+<td bgcolor="#00ff00">&nbsp;</td>
+<td>#00FF00</td>
+</tr>
+<tr>
+<td bgcolor="#0000ff">&nbsp;</td>
+<td>#0000FF</td>
+</tr>
+<tr>
+<td bgcolor="#ffff00">&nbsp;</td>
+<td>#FFFF00</td>
+</tr>
+<tr>
+<td bgcolor="#00ffff">&nbsp;</td>
+<td>#00FFFF</td>
+</tr>
+<tr>
+<td bgcolor="#ff00ff">&nbsp;</td>
+<td>#FF00FF</td>
+</tr>
+<tr>
+<td bgcolor="#c0c0c0">&nbsp;</td>
+<td>#C0C0C0</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">&nbsp;</td>
+<td>#FFFFFF</td>
+</tr>
+</table>
+<h2>CSS Colors - Short Hex Codes</h2>
+<p>This is a shorter form of the six-digit notation. In this format, each digit is replicated to arrive at an equivalent six-digit value. For example: #6A7 becomes #66AA77.</p>
+<p>A hexadecimal value can be taken from any graphics software like Adobe Photoshop, Jasc Paintshop Pro, or even using Advanced Paint Brush.</p>
+<p>Each hexadecimal code will be preceded by a pound or hash sign '#'. Following are the examples to use Hexadecimal notation.</p>
+<table class="table table-bordered">
+<tr>
+<th width="50%">Color</th>
+<th width="50%">Color HEX</th>
+</tr>
+<tr>
+<td bgcolor="#000">&nbsp;</td>
+<td>#000</td>
+</tr>
+<tr>
+<td bgcolor="#F00">&nbsp;</td>
+<td>#F00</td>
+</tr>
+<tr>
+<td bgcolor="#0F0">&nbsp;</td>
+<td>#0F0</td>
+</tr>
+<tr>
+<td bgcolor="#00F">&nbsp;</td>
+<td>#0FF</td>
+</tr>
+<tr>
+<td bgcolor="#FF0">&nbsp;</td>
+<td>#FF0</td>
+</tr>
+<tr>
+<td bgcolor="#0FF">&nbsp;</td>
+<td>#0FF</td>
+</tr>
+<tr>
+<td bgcolor="#F0F">&nbsp;</td>
+<td>#F0F</td>
+</tr>
+<tr>
+<td bgcolor="#FFF">&nbsp;</td>
+<td>#FFF</td>
+</tr>
+</table>
+<h2>CSS Colors - RGB Values</h2>
+<p>This color value is specified using the <b>rgb( )</b> property. This property takes three values, one each for red, green, and blue. The value can be an integer between 0 and 255 or a percentage.</p>
+<p><b>NOTE:</b> All the browsers does not support rgb() property of color so it is recommended not to use it.</p>
+<p>Following is the example to show few colors using RGB values.</p>
+<table class="table table-bordered">
+<tr>
+<th width="50%">Color</th>
+<th width="50%">Color RGB</th>
+</tr>
+<tr>
+<td bgcolor="#000000">&nbsp;</td>
+<td>rgb(0,0,0)</td>
+</tr>
+<tr>
+<td bgcolor="#ff0000">&nbsp;</td>
+<td>rgb(255,0,0)</td>
+</tr>
+<tr>
+<td bgcolor="#00ff00">&nbsp;</td>
+<td>rgb(0,255,0)</td>
+</tr>
+<tr>
+<td bgcolor="#0000ff">&nbsp;</td>
+<td>rgb(0,0,255)</td>
+</tr>
+<tr>
+<td bgcolor="#ffff00">&nbsp;</td>
+<td>rgb(255,255,0)</td>
+</tr>
+<tr>
+<td bgcolor="#00ffff">&nbsp;</td>
+<td>rgb(0,255,255)</td>
+</tr>
+<tr>
+<td bgcolor="#ff00ff">&nbsp;</td>
+<td>rgb(255,0,255)</td>
+</tr>
+<tr>
+<td bgcolor="#c0c0c0">&nbsp;</td>
+<td>rgb(192,192,192)</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">&nbsp;</td>
+<td>rgb(255,255,255)</td>
+</tr>
+</table>
+<h2>Building Color Codes</h2>
+<p>You can build millions of color codes using our Color Code Builder. </p>
+<h2>Browser Safe Colors</h2>
+<p>Here is the list of 216 colors which are supposed to be most safe and computer independent colors. These colors vary from hexa code 000000 to FFFFFF. These colors are safe to use because they ensure that all computers would display the colors correctly when running a 256 color palette &minus;</p>
+<table class="table table-bordered">
+<tr>
+<td style="color: white;"  bgcolor="#000000">000000</td>
+<td style="color: white;"  bgcolor="#000033">000033</td>
+<td style="color: white;"  bgcolor="#000066">000066</td>
+<td style="color: white;"  bgcolor="#000099">000099</td>
+<td style="color: white;"  bgcolor="#0000cc">0000CC</td>
+<td style="color: white;"  bgcolor="#0000ff">0000FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#003300">003300</td>
+<td style="color: white;"  bgcolor="#003333">003333</td>
+<td style="color: white;"  bgcolor="#003366">003366</td>
+<td style="color: white;"  bgcolor="#003399">003399</td>
+<td style="color: white;"  bgcolor="#0033cc">0033CC</td>
+<td style="color: white;"  bgcolor="#0033ff">0033FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#006600">006600</td>
+<td style="color: white;"  bgcolor="#006633">006633</td>
+<td style="color: white;"  bgcolor="#006666">006666</td>
+<td style="color: white;"  bgcolor="#006699">006699</td>
+<td style="color: white;"  bgcolor="#0066cc">0066CC</td>
+<td style="color: white;"  bgcolor="#0066ff">0066FF</td>
+</tr>
+<tr>
+<td  bgcolor="#009900">009900</td>
+<td  bgcolor="#009933">009933</td>
+<td  bgcolor="#009966">009966</td>
+<td  bgcolor="#009999">009999</td>
+<td  bgcolor="#0099cc">0099CC</td>
+<td  bgcolor="#0099ff">0099FF</td>
+</tr>
+<tr>
+<td  bgcolor="#00cc00">00CC00</td>
+<td  bgcolor="#00cc33">00CC33</td>
+<td  bgcolor="#00cc66">00CC66</td>
+<td  bgcolor="#00cc99">00CC99</td>
+<td  bgcolor="#00cccc">00CCCC</td>
+<td  bgcolor="#00ccff">00CCFF</td>
+</tr>
+<tr>
+<td  bgcolor="#00ff00">00FF00</td>
+<td  bgcolor="#00ff33">00FF33</td>
+<td  bgcolor="#00ff66">00FF66</td>
+<td  bgcolor="#00ff99">00FF99</td>
+<td  bgcolor="#00ffcc">00FFCC</td>
+<td  bgcolor="#00ffff">00FFFF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#330000">330000</td>
+<td style="color: white;"  bgcolor="#330033">330033</td>
+<td style="color: white;"  bgcolor="#330066">330066</td>
+<td style="color: white;"  bgcolor="#330099">330099</td>
+<td style="color: white;"  bgcolor="#3300cc">3300CC</td>
+<td style="color: white;"  bgcolor="#3300ff">3300FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#333300">333300</td>
+<td style="color: white;"  bgcolor="#333333">333333</td>
+<td style="color: white;"  bgcolor="#333366">333366</td>
+<td style="color: white;"  bgcolor="#333399">333399</td>
+<td style="color: white;"  bgcolor="#3333cc">3333CC</td>
+<td style="color: white;"  bgcolor="#3333ff">3333FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#336600">336600</td>
+<td style="color: white;"  bgcolor="#336633">336633</td>
+<td style="color: white;"  bgcolor="#336666">336666</td>
+<td style="color: white;"  bgcolor="#336699">336699</td>
+<td style="color: white;"  bgcolor="#3366cc">3366CC</td>
+<td style="color: white;"  bgcolor="#3366ff">3366FF</td>
+</tr>
+<tr>
+<td  bgcolor="#339900">339900</td>
+<td  bgcolor="#339933">339933</td>
+<td  bgcolor="#339966">339966</td>
+<td  bgcolor="#339999">339999</td>
+<td  bgcolor="#3399cc">3399CC</td>
+<td  bgcolor="#3399ff">3399FF</td>
+</tr>
+<tr>
+<td  bgcolor="#33cc00">33CC00</td>
+<td  bgcolor="#33cc33">33CC33</td>
+<td  bgcolor="#33cc66">33CC66</td>
+<td  bgcolor="#33cc99">33CC99</td>
+<td  bgcolor="#33cccc">33CCCC</td>
+<td  bgcolor="#33ccff">33CCFF</td>
+</tr>
+<tr>
+<td  bgcolor="#33ff00">33FF00</td>
+<td  bgcolor="#33ff33">33FF33</td>
+<td  bgcolor="#33ff66">33FF66</td>
+<td  bgcolor="#33ff99">33FF99</td>
+<td  bgcolor="#33ffcc">33FFCC</td>
+<td  bgcolor="#33ffff">33FFFF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#660000">660000</td>
+<td style="color: white;"  bgcolor="#660033">660033</td>
+<td style="color: white;"  bgcolor="#660066">660066</td>
+<td style="color: white;"  bgcolor="#660099">660099</td>
+<td style="color: white;"  bgcolor="#6600cc">6600CC</td>
+<td style="color: white;"  bgcolor="#6600ff">6600FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#663300">663300</td>
+<td style="color: white;"  bgcolor="#663333">663333</td>
+<td style="color: white;"  bgcolor="#663366">663366</td>
+<td style="color: white;"  bgcolor="#663399">663399</td>
+<td style="color: white;"  bgcolor="#6633cc">6633CC</td>
+<td style="color: white;"  bgcolor="#6633ff">6633FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#666600">666600</td>
+<td style="color: white;"  bgcolor="#666633">666633</td>
+<td style="color: white;"  bgcolor="#666666">666666</td>
+<td style="color: white;"  bgcolor="#666699">666699</td>
+<td style="color: white;"  bgcolor="#6666cc">6666CC</td>
+<td style="color: white;"  bgcolor="#6666ff">6666FF</td>
+</tr>
+<tr>
+<td  bgcolor="#669900">669900</td>
+<td  bgcolor="#669933">669933</td>
+<td  bgcolor="#669966">669966</td>
+<td  bgcolor="#669999">669999</td>
+<td  bgcolor="#6699cc">6699CC</td>
+<td  bgcolor="#6699ff">6699FF</td>
+</tr>
+<tr>
+<td  bgcolor="#66cc00">66CC00</td>
+<td  bgcolor="#66cc33">66CC33</td>
+<td  bgcolor="#66cc66">66CC66</td>
+<td  bgcolor="#66cc99">66CC99</td>
+<td  bgcolor="#66cccc">66CCCC</td>
+<td  bgcolor="#66ccff">66CCFF</td>
+</tr>
+<tr>
+<td  bgcolor="#66ff00">66FF00</td>
+<td  bgcolor="#66ff33">66FF33</td>
+<td  bgcolor="#66ff66">66FF66</td>
+<td  bgcolor="#66ff99">66FF99</td>
+<td  bgcolor="#66ffcc">66FFCC</td>
+<td  bgcolor="#66ffff">66FFFF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#990000">990000</td>
+<td style="color: white;"  bgcolor="#990033">990033</td>
+<td style="color: white;"  bgcolor="#990066">990066</td>
+<td style="color: white;"  bgcolor="#990099">990099</td>
+<td style="color: white;"  bgcolor="#9900cc">9900CC</td>
+<td style="color: white;"  bgcolor="#9900ff">9900FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#993300">993300</td>
+<td style="color: white;"  bgcolor="#993333">993333</td>
+<td style="color: white;"  bgcolor="#993366">993366</td>
+<td style="color: white;"  bgcolor="#993399">993399</td>
+<td style="color: white;"  bgcolor="#9933cc">9933CC</td>
+<td style="color: white;"  bgcolor="#9933ff">9933FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#996600">996600</td>
+<td style="color: white;"  bgcolor="#996633">996633</td>
+<td style="color: white;"  bgcolor="#996666">996666</td>
+<td style="color: white;"  bgcolor="#996699">996699</td>
+<td style="color: white;"  bgcolor="#9966cc">9966CC</td>
+<td style="color: white;"  bgcolor="#9966ff">9966FF</td>
+</tr>
+<tr>
+<td  bgcolor="#999900">999900</td>
+<td  bgcolor="#999933">999933</td>
+<td  bgcolor="#999966">999966</td>
+<td  bgcolor="#999999">999999</td>
+<td  bgcolor="#9999cc">9999CC</td>
+<td  bgcolor="#9999ff">9999FF</td>
+</tr>
+<tr>
+<td  bgcolor="#99cc00">99CC00</td>
+<td  bgcolor="#99cc33">99CC33</td>
+<td  bgcolor="#99cc66">99CC66</td>
+<td  bgcolor="#99cc99">99CC99</td>
+<td  bgcolor="#99cccc">99CCCC</td>
+<td  bgcolor="#99ccff">99CCFF</td>
+</tr>
+<tr>
+<td  bgcolor="#99ff00">99FF00</td>
+<td  bgcolor="#99ff33">99FF33</td>
+<td  bgcolor="#99ff66">99FF66</td>
+<td  bgcolor="#99ff99">99FF99</td>
+<td  bgcolor="#99ffcc">99FFCC</td>
+<td  bgcolor="#99ffff">99FFFF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#cc0000">CC0000</td>
+<td style="color: white;"  bgcolor="#cc0033">CC0033</td>
+<td style="color: white;"  bgcolor="#cc0066">CC0066</td>
+<td style="color: white;"  bgcolor="#cc0099">CC0099</td>
+<td style="color: white;"  bgcolor="#cc00cc">CC00CC</td>
+<td style="color: white;"  bgcolor="#cc00ff">CC00FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#cc3300">CC3300</td>
+<td style="color: white;"  bgcolor="#cc3333">CC3333</td>
+<td style="color: white;"  bgcolor="#cc3366">CC3366</td>
+<td style="color: white;"  bgcolor="#cc3399">CC3399</td>
+<td style="color: white;"  bgcolor="#cc33cc">CC33CC</td>
+<td style="color: white;"  bgcolor="#cc33ff">CC33FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#cc6600">CC6600</td>
+<td style="color: white;"  bgcolor="#cc6633">CC6633</td>
+<td style="color: white;"  bgcolor="#cc6666">CC6666</td>
+<td style="color: white;"  bgcolor="#cc6699">CC6699</td>
+<td style="color: white;"  bgcolor="#cc66cc">CC66CC</td>
+<td style="color: white;"  bgcolor="#cc66ff">CC66FF</td>
+</tr>
+<tr>
+<td  bgcolor="#cc9900">CC9900</td>
+<td  bgcolor="#cc9933">CC9933</td>
+<td  bgcolor="#cc9966">CC9966</td>
+<td  bgcolor="#cc9999">CC9999</td>
+<td  bgcolor="#cc99cc">CC99CC</td>
+<td  bgcolor="#cc99ff">CC99FF</td>
+</tr>
+<tr>
+<td  bgcolor="#cccc00">CCCC00</td>
+<td  bgcolor="#cccc33">CCCC33</td>
+<td  bgcolor="#cccc66">CCCC66</td>
+<td  bgcolor="#cccc99">CCCC99</td>
+<td  bgcolor="#cccccc">CCCCCC</td>
+<td  bgcolor="#ccccff">CCCCFF</td>
+</tr>
+<tr>
+<td  bgcolor="#ccff00">CCFF00</td>
+<td  bgcolor="#ccff33">CCFF33</td>
+<td  bgcolor="#ccff66">CCFF66</td>
+<td  bgcolor="#ccff99">CCFF99</td>
+<td  bgcolor="#ccffcc">CCFFCC</td>
+<td  bgcolor="#ccffff">CCFFFF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#ff0000">FF0000</td>
+<td style="color: white;"  bgcolor="#ff0033">FF0033</td>
+<td style="color: white;"  bgcolor="#ff0066">FF0066</td>
+<td style="color: white;"  bgcolor="#ff0099">FF0099</td>
+<td style="color: white;"  bgcolor="#ff00cc">FF00CC</td>
+<td style="color: white;"  bgcolor="#ff00ff">FF00FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#ff3300">FF3300</td>
+<td style="color: white;"  bgcolor="#ff3333">FF3333</td>
+<td style="color: white;"  bgcolor="#ff3366">FF3366</td>
+<td style="color: white;"  bgcolor="#ff3399">FF3399</td>
+<td style="color: white;"  bgcolor="#ff33cc">FF33CC</td>
+<td style="color: white;"  bgcolor="#ff33ff">FF33FF</td>
+</tr>
+<tr>
+<td style="color: white;"  bgcolor="#ff6600">FF6600</td>
+<td style="color: white;"  bgcolor="#ff6633">FF6633</td>
+<td style="color: white;"  bgcolor="#ff6666">FF6666</td>
+<td style="color: white;"  bgcolor="#ff6699">FF6699</td>
+<td style="color: white;"  bgcolor="#ff66cc">FF66CC</td>
+<td style="color: white;"  bgcolor="#ff66ff">FF66FF</td>
+</tr>
+<tr>
+<td  bgcolor="#ff9900">FF9900</td>
+<td  bgcolor="#ff9933">FF9933</td>
+<td  bgcolor="#ff9966">FF9966</td>
+<td  bgcolor="#ff9999">FF9999</td>
+<td  bgcolor="#ff99cc">FF99CC</td>
+<td  bgcolor="#ff99ff">FF99FF</td>
+</tr>
+<tr>
+<td  bgcolor="#ffcc00">FFCC00</td>
+<td  bgcolor="#ffcc33">FFCC33</td>
+<td  bgcolor="#ffcc66">FFCC66</td>
+<td  bgcolor="#ffcc99">FFCC99</td>
+<td  bgcolor="#ffcccc">FFCCCC</td>
+<td  bgcolor="#ffccff">FFCCFF</td>
+</tr>
+<tr>
+<td  bgcolor="#ffff00">FFFF00</td>
+<td  bgcolor="#ffff33">FFFF33</td>
+<td  bgcolor="#ffff66">FFFF66</td>
+<td  bgcolor="#ffff99">FFFF99</td>
+<td  bgcolor="#ffffcc">FFFFCC</td>
+<td  bgcolor="#ffffff">FFFFFF</td>
+</tr>
+</table>
+<hr />
+<h1>CSS - Background</h1>
+
+<p>This chapter teaches you how to set backgrounds of various HTML elements. You can set the following background properties of an element &minus;</p>
+<ul class="list">
+<li><p>The <b>background-color</b> property is used to set the background color of an element.</p></li>
+<li><p>The <b>background-image</b> property is used to set the background image of an element.</p></li>
+<li><p>The <b>background-repeat</b> property is used to control the repetition of an image in the background.</p></li>
+<li><p>The <b>background-position</b> property is used to control the position of an image in the background.</p></li>
+<li><p>The <b>background-attachment</b> property is used to control the scrolling of an image in the background.</p></li>
+<li><p>The <b>background</b> property is used as a shorthand to specify a number of other background properties.</p></li>
+</ul>
+<h2>Set the Background Color</h2>
+<p>Following is the example which demonstrates how to set the background color for an element.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;body&gt;
+      &lt;p <b>style = "background-color:yellow;"</b>&gt;
+      This text has a yellow background color.&lt;/p&gt;
+   &lt;/body&gt;
+   &lt;/head&gt;
+&lt;html&gt;
+</pre> 
+<h2>Set the Background Image</h2>
+<p>We can set the background image by calling local stored images as shown below</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body  {
+            background-image: url("/css/images/css.jpg");
+            background-color: #cccccc;
+         }
+      &lt;/style&gt;
+      &lt;body&gt;
+         &lt;h1&gt;Hello World!&lt;/h1&gt;
+      &lt;/body&gt;
+   &lt;/head&gt;
+&lt;html&gt;
+</pre>
+<h2>Repeat the Background Image</h2>
+<p>The following example demonstrates how to repeat the background image if an image is small. You can use <i>no-repeat</i> value for <i>background-repeat</i> property if you don't want to repeat an image, in this case image will display only once.</p>
+<p>By default <i>background-repeat</i> property will have <i>repeat</i> value.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-repeat: repeat;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Tutorials point&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<p>The following example which demonstrates how to repeat the background image vertically.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-repeat: repeat-y;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Tutorials point&lt;/&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<p>The following example demonstrates how to repeat the background image horizontally.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-repeat: repeat-x;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Tutorials point&lt;/&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Background Image Position</h2>
+<p>The following example demonstrates how to set the background image position 100 pixels away from the left side.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-position:100px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Tutorials point&lt;/&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<p>The following example demonstrates how to set the background image position 100 pixels away from the left side and 200 pixels down from the top.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-position:100px 200px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Tutorials point&lt;/&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Set the Background Attachment</h2>
+<p>Background attachment determines whether a background image is fixed or scrolls with the rest of the page.</p>
+<p>The following example demonstrates how to set the fixed background image.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style&gt;
+         body  {
+            background-image: url('/css/images/css.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+         }
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<p>The following example demonstrates how to set the scrolling background image.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style&gt;
+         body  {
+            background-image: url('/css/images/css.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-attachment:scroll;
+         }.
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      &lt;p&gt;The background-image is fixed. Try to scroll down the page.&lt;/p&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Shorthand Property</h2>
+<p>You can use the <i>background</i> property to set all the background properties at once. For example &minus;</p>
+<pre class="result notranslate">
+&lt;p <b>style="background:url(/images/pattern1.gif) repeat fixed;"</b>&gt;
+   This parapgraph has fixed repeated background image.
+&lt;/p&gt;
+</pre> 
+<hr />
+
+
+</div>
+<div id="c4" class="tabcontent">
+<h1>CSS - Fonts</h1>
+
+<p>This chapter teaches you how to set fonts of a content, available in an HTML element. You can set following font properties of an element &minus;</p>
+<ul class="list">
+<li><p>The <b>font-family</b> property is used to change the face of a font.</p></li>
+<li><p>The <b>font-style</b> property is used to make a font italic or oblique.</p></li>
+<li><p>The <b>font-variant</b> property is used to create a small-caps effect.</p></li>
+<li><p>The <b>font-weight</b> property is used to increase or decrease how bold or light a font appears.</p></li>
+<li><p>The <b>font-size</b> property is used to increase or decrease the size of a font.</p></li>
+<li><p>The <b>font</b> property is used as shorthand to specify a number of other font properties.</p></li>
+</ul>
+<h2>Set the Font Family</h2>
+<p>Following is the example, which demonstrates how to set the font family of an element. Possible value could be any font family name.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-family:georgia,garamond,serif;"</b>&gt;
+      This text is rendered in either georgia, garamond, or the default serif font 
+      depending on which font  you have at your system.
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Font Style</h2>
+<p>Following is the example, which demonstrates how to set the font style of an element. Possible values are <i>normal, italic and oblique</i>.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-style:italic;"</b>&gt;
+      This text will be rendered in italic style
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Font Variant</h2>
+<p>The following example demonstrates how to set the font variant of an element. Possible values are <i>normal and small-caps</i>.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-variant:small-caps;"</b>&gt;
+      This text will be rendered as small caps
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Font Weight</h2>
+<p>The following example demonstrates how to set the font weight of an element. The font-weight property provides the functionality to specify how bold a font is. Possible values could be <i>normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900</i>.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-weight:bold;"</b>&gt;This font is bold.&lt;/p&gt;
+      &lt;p <b>style="font-weight:bolder;"</b>&gt;This font is bolder.&lt;/p&gt;
+      &lt;p <b>style="font-weight:500;"</b>&gt;This font is 500 weight.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Font Size</h2>
+<p>The following example demonstrates how to set the font size of an element. The font-size property is used to control the size of fonts. Possible values could be <i>xx-small, x-small, small, medium, large, x-large, xx-large, smaller, larger, size in pixels or in %</i>.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-size:20px;"</b>&gt;This font size is 20 pixels&lt;/p&gt;
+      &lt;p <b>style="font-size:small;"</b>&gt;This font size is small&lt;/p&gt;
+      &lt;p <b>style="font-size:large;"</b>&gt;This font size is large&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Font Size Adjust</h2>
+<p>The following example demonstrates how to set the font size adjust of an element. This property enables you to adjust the x-height to make fonts more legible. Possible value could be any number.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-size-adjust:0.61;"</b>&gt;
+         This text is using a font-size-adjust value.
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Set the Font Stretch</h2>
+<p>The following example demonstrates how to set the font stretch of an element. This property relies on the user's computer to have an expanded or condensed version of the font being used.</p>
+<p>Possible values could be <i>normal, wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded</i>.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font-stretch:ultra-expanded;"</b>&gt;
+         If this doesn't appear to work, it is likely that your computer doesn't have a  
+         condensed or expanded version of the font being used.
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Shorthand Property</h2>
+<p>You can use the <i>font</i> property to set all the font properties at once. For example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p <b>style="font:italic small-caps bold 15px georgia;"</b>&gt;
+      Applying all the properties on the text at once.
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<hr />
+
+</div>
+<div id="c5" class="tabcontent">
+<h1>CSS - Using Images</h1>
+
+<p>Images play an important role in any webpage. Though it is not recommended to include a lot of images, but it is still important to use good images wherever required.</p>
+<p>CSS plays a good role to control image display. You can set the following image properties using CSS.</p>
+<ul class="list">
+<li><p>The <b>border</b> property is used to set the width of an image border.</p></li>
+<li><p>The <b>height</b> property is used to set the height of an image.</p></li>
+<li><p>The <b>width</b> property is used to set the width of an image.</p></li>
+<li><p>The <b>-moz-opacity</b> property is used to set the opacity of an image.</p></li>
+</ul>
+<h2>The Image Border Property</h2>
+<p>The <i>border</i> property of an image is used to set the width of an image border. This property can have a value in length or in &#37;.</p>
+<p>A width of zero pixels means no border.</p>
+<p>Here is the example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;img style="border:0px;" src="/css/images/logo.png" /&gt;
+      &lt;br /&gt;
+      &lt;img style="border:3px dashed red;" src="/css/images/logo.png" /&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<h2>The Image Height Property</h2>
+<p>The <i>height</i> property of an image is used to set the height of an image. This property can have a value in length or in &#37;. While giving value in &#37;, it applies it in respect of the box in which an image is available.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;img style="border:1px solid red; height:100px;" src="/css/images/logo.png" /&gt;
+      &lt;br /&gt;
+      &lt;img style="border:1px solid red; height:50%;" src="/css/images/logo.png" /&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<h2>The Image Width Property</h2>
+<p>The <i>width</i> property of an image is used to set the width of an image. This property can have a value in length or in &#37;. While giving value in &#37;, it applies it in respect of the box in which an image is available.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;img style="border:1px solid red; width:150px;" src="/css/images/logo.png" /&gt;
+      &lt;br /&gt;
+      &lt;img style="border:1px solid red; width:100%;" src="/css/images/logo.png" /&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<h2>The -moz-opacity Property</h2>
+<p>The <i>-moz-opacity</i> property of an image is used to set the opacity of an image. This property is used to create a transparent image in Mozilla. IE uses <b>filter:alpha(opacity=x)</b> to create transparent images.</p>
+<p>In Mozilla (-moz-opacity:x) x can be a value from 0.0 - 1.0. A lower value makes the element more transparent (The same things goes for the CSS3-valid syntax opacity:x).</p>
+<p>In IE (filter:alpha(opacity=x)) x can be a value from 0 - 100. A lower value makes the element more transparent.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;img style="border:1px solid red;-moz-opacity:0.4;filter:alpha(opacity=40);" src="/css/images/logo.png" /&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+<hr />
+
+<h1>CSS - Links</h1>
+<p>This chapter teaches you how to set different properties of a hyper link using CSS.  You can set following properties of a hyper link &minus;</p>
+<p>We will revisit the same properties when we will discuss Pseudo-Classes of CSS.</p>
+<ul class="list">
+<li><p>The <b>:link</b> signifies unvisited hyperlinks.</p></li>
+<li><p>The <b>:visited</b> signifies visited hyperlinks.</p></li>
+<li><p>The <b>:hover</b> signifies an element that currently has the user's mouse pointer hovering over it.</p></li>
+<li><p>The <b>:active</b> signifies an element on which the user is currently clicking.</p></li>
+</ul>
+<p>Usually, all these properties are kept in the header part of the HTML document.</p>
+<p>Remember a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective. Also, a:active MUST come after a:hover in the CSS definition as follows &minus;</p>
+<pre class="result notranslate">
+&lt;style type="text/css"&gt;
+   a:link {color: #000000}
+   a:visited {color: #006600}
+   a:hover {color: #FFCC00}
+   a:active {color: #FF00CC}
+&lt;/style&gt;
+</pre> 
+<p>Now, we will see how to use these properties to give different effects to hyperlinks.</p>
+<h2>Set the Color of Links</h2>
+<p>The following example demonstrates how to set the link color. Possible values could be any color name in any valid format.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style type="text/css"&gt;
+         a:link {color:#000000}
+     &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;a href=""&gt;Link&lt;/a&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+<h2>Set the Color of Visited Links</h2>
+<p>The following example demonstrates how to set the color of visited links. Possible values could be any color name in any valid format.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style type="text/css"&gt;
+         a:visited {color: #006600}
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;a href=""&gt; link&lt;/a&gt; 
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<h2>Change the Color of Links when Mouse is Over</h2>
+<p>The following example demonstrates how to change the color of links when we bring a mouse pointer over that link. Possible values could be any color name in any valid format.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style type="text/css"&gt;
+         a:hover {color: #FFCC00}
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;a href=""&gt;Link&lt;/a&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<h2>Change the Color of Active Links</h2>
+<p>The following example demonstrates how to change the color of active links. Possible values could be any color name in any valid format.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style type="text/css"&gt;
+         a:active {color: #FF00CC}
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;a href=""&gt;Link&lt;/a&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<hr />
+
+</div>
+<div id="c6" class="tabcontent">
+<h1>CSS - Tables</h1>
+
+<p>This tutorial will teach you how to set different properties of an HTML table using CSS. You can set following properties of a table &minus;</p>
+<ul class="list">
+<li><p>The <b>border-collapse</b> specifies whether the browser should control the appearance of the adjacent borders that touch each other or whether each cell should maintain its style.</p></li>
+<li><p>The <b>border-spacing</b> specifies the width that should appear between table cells.</p></li>
+<li><p>The <b>caption-side</b> captions are presented in the &lt;caption&gt; element. By default, these are rendered above the table in the document. You use the <i>caption-side</i> property to control the placement of the table caption.</p></li>
+<li><p>The <b>empty-cells</b> specifies whether the border should be shown if a cell is empty.</p></li>
+<li><p>The <b>table-layout</b> allows browsers to speed up layout of a table by using the first width properties it comes across for the rest of a column rather than having to load the whole table before rendering it.</p></li>
+</ul>
+<p>Now, we will see how to use these properties with examples.</p>
+<h2>The border-collapse Property:</h2>
+<p>This property can have two values <i>collapse</i> and <i>separate</i>. The following example uses both the values:</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style type="text/css"&gt;
+         table.one {border-collapse:collapse;}
+         table.two {border-collapse:separate;}
+         td.a {
+            border-style:dotted;
+            border-width:3px;
+            border-color:#000000; 
+            padding: 10px;
+         }
+         td.b {
+            border-style:solid;
+            border-width:3px;
+            border-color:#333333;
+            padding:10px;
+         }
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;table class="one"&gt;
+         &lt;caption&gt;Collapse Border Example&lt;/caption&gt;
+         &lt;tr&gt;&lt;td class="a"&gt; Cell A Collapse Example&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td class="b"&gt; Cell B Collapse Example&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;br /&gt;
+      
+      &lt;table class="two"&gt;
+         &lt;caption&gt;Separate Border Example&lt;/caption&gt;
+         &lt;tr&gt;&lt;td class="a"&gt; Cell A Separate Example&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td class="b"&gt; Cell B Separate Example&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+
+<h2>The border-spacing Property</h2>
+<p>The border-spacing property specifies the distance that separates adjacent cells'. borders. It can take either one or two values; these should be units of length.</p>
+<p>If you provide one value, it will applies to both vertical and horizontal borders. Or you can specify two values, in which case, the first refers to the horizontal spacing and the second to the vertical spacing &minus;</p>
+<p><b>NOTE</b> &minus; Unfortunately, this property does not work in Netscape 7 or IE 6.</p>
+<pre class="result notranslate">
+&lt;style type="text/css"&gt;
+   /* If you provide one value */
+   table.example {border-spacing:10px;}
+   /* This is how you can provide two values */
+   table.example {border-spacing:10px; 15px;}
+&lt;/style&gt;
+</pre> 
+<p>Now let's modify the previous example and see the effect &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style type="text/css"&gt;
+         table.one {
+            border-collapse:separate;
+            width:400px;
+            border-spacing:10px;
+         }
+         table.two {
+            border-collapse:separate;
+            width:400px;
+            border-spacing:10px 50px;
+         }
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;table class="one" border="1"&gt;
+         &lt;caption&gt;Separate Border Example with border-spacing&lt;/caption&gt;
+         &lt;tr&gt;&lt;td&gt; Cell A Collapse Example&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt; Cell B Collapse Example&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;br /&gt;
+      
+      &lt;table class="two" border="1"&gt;
+         &lt;caption&gt;Separate Border Example with border-spacing&lt;/caption&gt;
+         &lt;tr&gt;&lt;td&gt; Cell A Separate Example&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt; Cell B Separate Example&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+
+<h2>The caption-side Property</h2>
+<p>The caption-side property allows you to specify where the content of a &lt;caption&gt; element should be placed in relationship to the table. The table that follows lists the possible values.</p>
+<p>This property can have one of the four values <i>top, bottom, left </i> or <i> right</i>. The following example uses each value.</p>
+<p><b>NOTE:</b> These properties may not work with your IE Browser.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style type="text/css"&gt;
+         caption.top {caption-side:top}
+         caption.bottom {caption-side:bottom}
+         caption.left {caption-side:left}
+         caption.right {caption-side:right}
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;table style="width:400px; border:1px solid black;"&gt;
+         &lt;caption class="top"&gt;
+         This caption will appear at the top
+         &lt;/caption&gt;
+         &lt;tr&gt;&lt;td &gt; Cell A&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td &gt; Cell B&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;br /&gt;
+      
+      &lt;table style="width:400px; border:1px solid black;"&gt;
+         &lt;caption class="bottom"&gt;
+         This caption will appear at the bottom
+         &lt;/caption&gt;
+         &lt;tr&gt;&lt;td &gt; Cell A&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td &gt; Cell B&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;br /&gt;
+      
+      &lt;table style="width:400px; border:1px solid black;"&gt;
+         &lt;caption class="left"&gt;
+         This caption will appear at the left
+         &lt;/caption&gt;
+         &lt;tr&gt;&lt;td &gt; Cell A&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td &gt; Cell B&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;br /&gt;
+      
+      &lt;table style="width:400px; border:1px solid black;"&gt;
+         &lt;caption class="right"&gt;
+         This caption will appear at the right
+         &lt;/caption&gt;
+         &lt;tr&gt;&lt;td &gt; Cell A&lt;/td&gt;&lt;/tr&gt;
+         &lt;tr&gt;&lt;td &gt; Cell B&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+
+<h2>The empty-cells Property</h2>
+<p>The empty-cells property indicates whether a cell without any content should have a border displayed.</p>
+<p>This property can have one of the three values - <i>show, hide</i> or <i>inherit</i>.</p>
+<p>Here is the empty-cells property used to hide borders of empty cells in the &lt;table&gt; element.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style type="text/css"&gt;
+         table.empty{
+            width:350px;
+            border-collapse:separate;
+            empty-cells:hide;
+         }
+         td.empty{
+            padding:5px;
+            border-style:solid;
+            border-width:1px;
+            border-color:#999999;
+         }
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;table class="empty"&gt;
+      &lt;tr&gt;
+         &lt;th&gt;&lt;/th&gt;
+         &lt;th&gt;Title one&lt;/th&gt;
+         &lt;th&gt;Title two&lt;/th&gt;
+      &lt;/tr&gt;
+      
+      &lt;tr&gt;
+         &lt;th&gt;Row Title&lt;/th&gt;
+         &lt;td class="empty"&gt;value&lt;/td&gt;
+         &lt;td class="empty"&gt;value&lt;/td&gt;
+      &lt;/tr&gt;
+      
+      &lt;tr&gt;
+         &lt;th&gt;Row Title&lt;/th&gt;
+         &lt;td class="empty"&gt;value&lt;/td&gt;
+         &lt;td class="empty"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+
+<h2>The table-layout Property</h2>
+<p>The table-layout property is supposed to help you control how a browser should render or lay out a table.</p>
+<p>This property can have one of the three values: <i>fixed, auto</i> or <i>inherit</i>. </p>
+<p>The following example shows the difference between these properties.</p>
+<p><b>NOTE</b> &minus; This property is not supported by many browsers so do not rely on this property.</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;style type="text/css"&gt;
+         table.auto {
+            table-layout: auto
+         }
+         table.fixed{
+            table-layout: fixed
+         }
+      &lt;/style&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;table class="auto" border="1" width="100%"&gt;
+      &lt;tr&gt;
+         &lt;td width="20%"&gt;1000000000000000000000000000&lt;/td&gt;
+         &lt;td width="40%"&gt;10000000&lt;/td&gt;
+         &lt;td width="40%"&gt;100&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;br /&gt;
+      
+      &lt;table class="fixed" border="1" width="100%"&gt;
+      &lt;tr&gt;
+         &lt;td width="20%"&gt;1000000000000000000000000000&lt;/td&gt;
+         &lt;td width="40%"&gt;10000000&lt;/td&gt;
+         &lt;td width="40%"&gt;100&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<hr />
+
+<h1>CSS - Lists</h1>
+<p>Lists are very helpful in conveying a set of either numbered or bullet points. This chapter teaches you how to control list type, position, style, etc., using CSS.</p>
+<p>We have the following five CSS properties, which can be used to control lists:</p>
+<ul class="list">
+<li><p>The <b>list-style-type</b> allows you to control the shape or appearance of the marker.</p></li>
+<li><p>The <b>list-style-position</b> specifies whether a long point that wraps to a second line should align with the first line or start underneath the start of the marker.</p></li>
+<li><p>The <b>list-style-image</b> specifies an image for the marker rather than a bullet point or number.</p></li>
+<li><p>The <b>list-style</b> serves as shorthand for the preceding properties.</p></li>
+<li><p>The <b>marker-offset</b> specifies the distance between a marker and the text in the list.</p></li>
+</ul>
+<p>Now, we will see how to use these properties with examples.</p>
+<h2>The list-style-type Property</h2>
+<p>The <i>list-style-type</i> property allows you to control the shape or style of bullet point (also known as a marker) in the case of unordered lists and the style of numbering characters in ordered lists.</p>
+<p>Here are the values which can be used for an unordered list &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>none</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>disc (default)</td>
+<td>A filled-in circle</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>An empty circle</td>
+</tr>
+<tr>
+<td>square</td>
+<td>A filled-in square</td>
+</tr>
+</table>
+<p>Here are the values, which can be used for an ordered list &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Value</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>decimal</td>
+<td>Number</td>
+<td>1,2,3,4,5</td>
+</tr>
+<tr>
+<td style="width:26%;">decimal-leading-zero</td>
+<td>0 before the number</td>
+<td>01, 02, 03, 04, 05</td>
+</tr>
+<tr>
+<td>lower-alpha</td>
+<td>Lowercase alphanumeric characters</td>
+<td>a, b, c, d, e</td>
+</tr>
+<tr>
+<td>upper-alpha</td>
+<td>Uppercase alphanumeric characters</td>
+<td>A, B, C, D, E</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>Lowercase Roman numerals</td>
+<td>i, ii, iii, iv, v</td>
+</tr>
+<tr>
+<td>upper-roman</td>
+<td>Uppercase Roman numerals</td>
+<td>I, II, III, IV, V</td>
+</tr>
+<tr>
+<td>lower-greek</td>
+<td>The marker is lower-greek</td>
+<td>alpha, beta, gamma</td>
+</tr>
+<tr>
+<td>lower-latin</td>
+<td>The marker is lower-latin</td>
+<td>a, b, c, d, e</td>
+</tr>
+<tr>
+<td>upper-latin</td>
+<td>The marker is upper-latin</td>
+<td>A, B, C, D, E</td>
+</tr>
+<tr>
+<td>hebrew</td>
+<td style="width:54%;">The marker is traditional Hebrew numbering</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>armenian</td>
+<td>The marker is traditional Armenian numbering</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>georgian</td>
+<td>The marker is traditional Georgian numbering</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>cjk-ideographic</td>
+<td>The marker is plain ideographic numbers</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>hiragana</td>
+<td>The marker is hiragana</td>
+<td>a, i, u, e, o, ka, ki</td>
+</tr>
+<tr>
+<td>katakana</td>
+<td>The marker is katakana</td>
+<td>A, I, U, E, O, KA, KI</td>
+</tr>
+<tr>
+<td>hiragana-iroha</td>
+<td>The marker is hiragana-iroha</td>
+<td>i, ro, ha, ni, ho, he, to</td>
+</tr>
+<tr>
+<td>katakana-iroha</td>
+<td>The marker is katakana-iroha</td>
+<td>I, RO, HA, NI, HO, HE, TO</td>
+</tr>
+</table>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style="list-style-type:circle;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ul style="list-style-type:square;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style="list-style-type:decimal;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;ol style="list-style-type:lower-alpha;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;ol style="list-style-type:lower-roman;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre> 
+<h2>The list-style-position Property</h2>
+<p>The <i>list-style-position</i> property indicates whether the marker should appear inside or outside of the box containing the bullet points. It can have one the two values &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>none</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>inside</td>
+<td>If the text goes onto a second line, the text will wrap underneath the marker. It will also appear indented to where the text would have started if the list had a value of outside.</td>
+</tr>
+<tr>
+<td>outside</td>
+<td>If the text goes onto a second line, the text will be aligned with the start of the first line (to the right of the bullet).</td>
+</tr>
+</table>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style="list-style-type:circle; list-style-position:outside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ul style="list-style-type:square;list-style-position:inside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style="list-style-type:decimal;list-style-position:outside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;ol style="list-style-type:lower-alpha;list-style-position:inside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre> 
+<h2>The list-style-image Property</h2>
+<p>The <i>list-style-image</i> allows you to specify an image so that you can use your own bullet style. The syntax is similar to the background-image property with the letters url starting the value of the property followed by the URL in brackets. If it does not find the given image then default bullets are used.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul&gt;
+         &lt;li style="list-style-image: url(/images/bullet.gif);"&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol&gt;
+         &lt;li style="list-style-image: url(/images/bullet.gif);"&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre> 
+<h2>The list-style Property</h2>
+<p>The <i>list-style</i> allows you to specify all the list properties into a single expression. These properties can appear in any order.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style="list-style: inside square;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style="list-style: outside upper-alpha;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt; 
+</pre> 
+<h2>The marker-offset Property</h2>
+<p>The <i>marker-offset</i> property allows you to specify the distance between the marker and the text relating to that marker. Its value should be a length as shown in the following example &minus;</p>
+<p>Unfortunately, this property is not supported in IE 6 or Netscape 7.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style="list-style: inside square; marker-offset:2em;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style="list-style: outside upper-alpha; marker-offset:2cm;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre> 
+<hr />
+
+</div>
+<div id="c7" class="tabcontent">
+<h1>CSS - Outlines</h1>
+
+<p>Outlines are very similar to borders, but there are few major differences as well &minus;</p>
+<ul class="list">
+<li><p>An outline does not take up space.</p></li>
+<li><p>Outlines do not have to be rectangular.</p></li>
+<li><p>Outline is always the same on all sides; you cannot specify different values for different sides of an element.</p></li>
+</ul>
+<p><b>NOTE</b> &minus; The outline properties are not supported by IE 6 or Netscape 7.</p>
+<p>You can set the following outline properties using CSS.</p>
+<ul class="list">
+<li><p>The <b>outline-width</b> property is used to set the width of the outline.</p></li>
+<li><p>The <b>outline-style</b> property is used to set the line style for the outline.</p></li>
+<li><p>The <b>outline-color</b> property is used to set the color of the outline.</p></li>
+<li><p>The <b>outline</b> property is used to set all the above three properties in a single statement.</p></li>
+</ul>
+<h2>The outline-width Property</h2>
+<p>The <i>outline-width</i> property specifies the width of the outline to be added to the box. Its value should be a length or one of the values <i>thin, medium, or thick,</i> just like the border-width attribute.</p>
+<p>A width of zero pixels means no outline.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p style="outline-width:thin; outline-style:solid;"&gt;
+      This text is having thin outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline-width:thick; outline-style:solid;"&gt;
+      This text is having thick outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline-width:5px; outline-style:solid;"&gt;
+      This text is having 5x outline.
+      &lt;/p&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt; 
+</pre> 
+<h2>The outline-style Property</h2>
+<p>The <i>outline-style</i> property specifies the style for the line (solid, dotted, or dashed) that goes around an element. It can take one of the following values &minus;</p>
+<ul class="list">
+<li><p><b>none:</b> No border. (Equivalent of outline-width:0;)</p></li>
+<li><p><b>solid:</b> Outline is a single solid line.</p></li>
+<li><p><b>dotted:</b> Outline is a series of dots.</p></li>
+<li><p><b>dashed:</b> Outline is a series of short lines.</p></li>
+<li><p><b>double:</b> Outline is two solid lines.</p></li>
+<li><p><b>groove:</b> Outline looks as though it is carved into the page.</p></li>
+<li><p><b>ridge:</b> Outline looks the opposite of groove.</p></li>
+<li><p><b>inset:</b> Outline makes the box look like it is embedded in the page.</p></li>
+<li><p><b>outset:</b> Outline makes the box look like it is coming out of the canvas.</p></li>
+<li><p><b>hidden:</b> Same as none.</p></li>
+</ul>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p style="outline-width:thin; outline-style:solid;"&gt;
+      This text is having thin solid  outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline-width:thick; outline-style:dashed;"&gt;
+      This text is having thick dashed outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline-width:5px;outline-style:dotted;"&gt;
+      This text is having 5x dotted outline.
+      &lt;/p&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt; 
+</pre> 
+<h2>The outline-color Property</h2>
+<p>The <i>outline-color</i> property allows you to specify the color of the outline. Its value should either be a color name, a hex color, or an RGB value, as with the color and border-color properties.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p style="outline-width:thin; outline-style:solid;outline-color:red"&gt;
+      This text is having thin solid red  outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline-width:thick; outline-style:dashed;outline-color:#009900"&gt;
+      This text is having thick dashed green outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline-width:5px;outline-style:dotted;outline-color:rgb(13,33,232)"&gt;
+      This text is having 5x dotted blue outline.
+      &lt;/p&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt; 
+</pre> 
+<h2>The outline Property</h2>
+<p>The <i>outline</i> property is a shorthand property that allows you to specify values for any of the three properties discussed previously in any order but in a single statement.</p>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p style="outline:thin solid red;"&gt;
+      This text is having thin solid red outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+       
+      &lt;p style="outline:thick dashed #009900;"&gt;
+      This text is having thick dashed green outline.
+      &lt;/p&gt;
+      &lt;br /&gt;
+      
+      &lt;p style="outline:5px dotted rgb(13,33,232);"&gt;
+      This text is having 5x dotted blue outline.
+      &lt;/p&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt; 
+</pre> 
+<hr />
+
+</div>
+
+<div id="c8" class="tabcontent">
+<h1>CSS - Visibility</h1>
+<p>A property called <i>visibility</i> allows you to hide an element from view. You can use this property along with JavaScript to create very complex menu and very complex webpage layouts.</p>
+<p>You may choose to use the visibility property to hide error messages that are only displayed if the user needs to see them, or to hide answers to a quiz until the user selects an option.</p>
+<p><b>NOTE</b> &minus; Remember that the source code will still contain whatever is in the invisible paragraph, so you should not use this to hide sensitive information such as credit card details or passwords.</p>
+<p>The <i>visibility</i> property can take the values listed in the table that follows &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>visible</td>
+<td>The box and its contents are shown to the user.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>The box and its content are made invisible, although they still affect the layout of the page.</td>
+</tr>
+<tr>
+<td>collapse</td>
+<td>This is for use only with dynamic table columns and row effects.</td>
+</tr>
+</table>
+<p>Here is an example &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;
+      This paragraph should be visible in normal way.
+      &lt;/p&gt;
+   
+      &lt;p style="visibility:hidden;"&gt;
+      This paragraph should not be visible.
+      &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<hr />
+
+</div>
+
+<div id="c9" class="tabcontent">
+<h1>CSS - Layouts</h1>
+
+<p>Hope you are very comfortable with HTML tables and you are efficient in designing  page layouts using HTML Tables. But you know CSS also provides plenty of controls for positioning elements in a document. Since CSS is <i>the wave of the future,</i> why not learn and use CSS instead of tables for page layout purposes?</p>
+<p>The following list collects a few pros and cons of both the technologies &minus;</p>
+<ul class="list">
+<li><p>Most browsers support tables, while CSS support is being slowly adopted.</p></li>
+<li><p>Tables are more forgiving when the browser window size changes - morphing their content and wrapping to accommodate the changes accordingly. CSS positioning tends to be exact and fairly inflexible.</p></li>
+<li><p>Tables are much easier to learn and manipulate than CSS rules.</p></li>
+</ul>
+<p>But each of these arguments can be reversed &minus;</p>
+<ul class="list">
+<li><p>CSS is pivotal to the future of Web documents and will be supported by most browsers.</p></li>
+<li><p>CSS is more exact than tables, allowing your document to be viewed as you intended, regardless of the browser window.</p></li>
+<li><p>Keeping track of nested tables can be a real pain. CSS rules tend to be well organized, easily read, and easily changed.</p></li>
+</ul>
+<p>Finally, we would suggest you to use whichever technology makes sense to you and use what you know or what presents your documents in the best way.</p>
+<p>CSS also provides <i>table-layout</i> property to make your tables load much faster. Following is an example &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;table style="<b>table-layout:fixed</b>;width:600px;"&gt;
+   &lt;tr height="30"&gt;
+      &lt;td width="150"&gt;CSS table layout cell 1&lt;/td&gt;
+      &lt;td width="200"&gt;CSS table layout cell 2&lt;/td&gt;
+      &lt;td width="250"&gt;CSS table layout cell 3&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/table&gt;
+</pre> 
+<p>You will notice the benefits more on large tables. With traditional HTML, the browser had to calculate every cell before finally rendering the table. When you set the table-layout algorithm to <i>fixed</i>, however, it only needs to look at the first row before rendering the whole table. It means your table will need to have fixed column widths and row heights.</p>
+<h2>Sample Column Layout</h2>
+<p>Here are the steps to create a simple Column Layout using CSS &minus;</p>
+<p>Set the margin and padding of the complete document as follows &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;style style="text/css"&gt;
+   &lt;!--
+   body {
+      margin:9px 9px 0 9px;
+      padding:0;
+      background:#FFF;
+   }
+   --&gt;
+&lt;/style&gt;
+</pre> 
+<p>Now, we will define a column with yellow color and later, we will attach this rule to a &lt;div&gt;:</p>
+<pre class="prettyprint notranslate">
+&lt;style style="text/css"&gt;
+   &lt;!--
+   #level0 {
+      background:#FC0;
+   }
+   --&gt;
+&lt;/style&gt;
+</pre> 
+<p>Upto this point, we will have a document with yellow body, so let us now define another division inside level0 &minus;</p> 
+<pre class="result notranslate">
+&lt;style style="text/css"&gt;
+   &lt;!--
+   #level1 {
+      margin-left:143px;
+      padding-left:9px;
+      background:#FFF;
+   }
+   --&gt;
+&lt;/style&gt;
+</pre> 
+<p>Now, we will nest one more division inside level1, and we will change just background color &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;style style="text/css"&gt;
+   &lt;!--
+   #level2 {
+      background:#FFF3AC;
+   }
+   --&gt;
+&lt;/style&gt;
+</pre> 
+<p>Finally, we will use the same technique, nest a level3 division inside level2 to get the visual layout for the right column &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;style style="text/css"&gt;
+   &lt;!--
+   #level3 {
+      margin-right:143px;
+      padding-right:9px;
+      background:#FFF;
+   }
+   #main {
+      background:#CCC;
+   }
+   --&gt;
+&lt;/style&gt;
+</pre> 
+<p>Complete the source code as follows &minus;</p>
+<pre class="prettyprint notranslate tryit">
+&lt;style style="text/css"&gt;
+   body {
+      margin:9px 9px 0 9px;
+      padding:0;
+      background:#FFF;
+   }
+	
+   #level0 {background:#FC0;}
+	
+   #level1 {
+      margin-left:143px;
+      padding-left:9px;
+      background:#FFF;
+   }
+	
+   #level2 {background:#FFF3AC;}
+	
+   #level3 {
+      margin-right:143px;
+      padding-right:9px;
+      background:#FFF;
+   }
+	
+   #main {background:#CCC;}
+&lt;/style&gt;
+&lt;body&gt;
+   &lt;div id="level0"&gt;
+      &lt;div id="level1"&gt;
+         &lt;div id="level2"&gt;
+            &lt;div id="level3"&gt;
+               &lt;div id="main"&gt;
+                  Final Content goes here...
+               &lt;/div&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+</pre> 
+<p>Similarly, you can add a top navigation bar or an ad bar at the top of the page.</p>
+<hr />
+
+</div>
+
+<div id="c10" class="tabcontent">
+<h1>CSS - Validations</h1>
+
+<p>Validation is the process of checking something against a rule. When you are a beginner, it is very common that you will commit many mistakes in writing your CSS rules. How you will make sure whatever you have written is 100% accurate and up to the W3 quality standards?</p>
+<p>If you use CSS, your code needs to be correct. Improper code may cause unexpected results in how your page looks or functions.</p>
+<p>But if you want to validate your CSS style sheet embedded in an (X)HTML document, you should first check that the (X)HTML you use is valid.</p>
+<p>Tool to check the validity  of (X)HTML document: Validate (X)HTML document</a>.</p>
+<p>You can use the following tools to check the validity of your CSS.</p>
+<table class="table table-bordered">
+<tr>
+<td>
+</p>
+</td>
+<td>
+W3C CSS Validator (World Wide Web Consortium), This validator checks your css by either file upload, direct input, or using URI - one page at a time. This validator helps you to locate all the errors in your CSS.</p>
+</td>
+</tr>
+<tr>
+<td>
+</p>
+</td>
+<td>
+The WDG CSS check validator, lets you validate your css by direct input, file upload, and using URI. Errors will be listed by line and column numbers if you have any. Errors usually come with links to explain the reason of error.
+</td>
+</tr>
+</table>
+<p>A CSS validator checks your Cascading Style Sheets to make sure that they comply with the CSS standards set by the W3 Consortium. There are a few validators which will also tell you which CSS features are supported by which browsers (since not all browsers are equal in their CSS implementation).</p>
+<h2>Why Validate Your HTML Code?</h2>
+<p>There are a number of reasons why you should validate your code. But major ones are &minus;</p>
+<ul class="list">
+<li>It Helps Cross-Browser, Cross-Platform, and Future Compatibility.</li>
+<li>A good quality website increases search engine visibility.</li>
+<li>Professionalism: As a web developer, your code should not raise errors while seen by the visitors.</li>
+</ul>
+<a href="cssquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="CSS">
+    <input type="submit" class="button" value="Quiz Later">
+<hr />
+
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

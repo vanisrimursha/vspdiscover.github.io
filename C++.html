@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>C++</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Overviewing of  C++</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Variables&Constants</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Operators</button>
+<button class="tablinks" onclick="openCity(event, 'c4')"> Input&Output with Streams</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Functions</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">Array&Pointers</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">Classes</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">Constructor/Destroctor</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">Files</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">Overloading</button>
+<button class="tablinks" onclick="openCity(event, 'c11')">Inheritance</button>
+</div>
+
+<div id="c1" class="tabcontent">
+ <h2>History of C++</h2>
+<p>C++ Programming Language was developed by Bjarne Stroustrup in 1979.</br></br>
+
+ Initially the C++ language was named as "C with classes". "C with classes" was renamed to C++ in 1983. The "++" is increment operator in C++. It increments the variable by one value. This name demonstrates the fact that C++ is an extension of a C language.</br></br>
+
+<h3>Who is using C++ Programming Language</h3>
+
+C++ is used in different sectors of the software industry. 
+</br></br>
+For example Apple OS is written in C++. Windows 95, 98, Me, 200 and XP are also written in C++. Microsoft Office, Internet Explorer and Visual Studio are written in Visual C++. 
+</br></br>
+All the major applications of Adobe Systems (Acrobat, Photoshop, Flash, ImageReady, Illustrator etc.) are developed using C++. Amazon.com is developing software for large scale e-commerce using C++. Google search engine, Chromium Web Browser and some other software is written in C++ too. The is a huge list of companies that are using C++.
+</br></br>
+<h3>Why to use C++</h3>
+
+C++ is always used when there is a need in high performance and efficient applications. It's an efficient and flexible language. The philosophy of C++ is "Any features that you do not use, you do not pay for (e.g. in performance)". That’s why C++ is chosen when the task is to build big applications which should use less resources.
+</br></br>
+<h3>About C++ version</h3>
+
+C++ is a modern and developing language. The last standard of C++ called C++14 added a lot of features to the C++ language and fixed some bugs. This standard was introduced in March 2014.
+</br></br>
+<h3>What C++ Supports</h3>
+
+C++ supports the Object-Oriented Programming (OOP) Paradigm. It means that all the concepts of the OOP such as Encapsulation, Polymorphism and Inheritance are supported by C++. These topics are discussed in C++ Object Oriented section of this tutorial.
+</br></br>
+The Standard C++ consists of two parts: 
+</br></br>
+the core language and the Standard Library. The Standard Library mainly is based on the Standard Template Library (STL). The STL provides a large number of useful tools. It makes application development more efficient. 
+</br></br>
+The capabilities provided by STL are described in C++ STL tutorial.
+</br></br>
+<h3>About this C++ Tutorial</h3>
+C++ is a good language that helps you to understand the modern approach of the software development. The important thing for a beginner developer is to understand the concepts of programming and not to lose time with technical details of the language. This tutorial will help you to understand how applications are created and will save a lot of time while learning C++
+
+
+</div>
+<div id="c2" class="tabcontent">
+ <h2>Variables</h2>
+<p>In programming, a variable is a container (storage area) to hold data.</p>
+
+<p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+
+<h3>int playerScore = 95;</h3>
+<p>Here, playerScore is a variable of integer type. The variable is assigned value: 95.</p>
+
+<p>The value of a variable can be changed, hence the name 'variable'.</p>
+
+<p>In C++ programming, you have to declare a variable before you can use it.</p>
+
+<h3>Rules for naming a variable in C++</h3>
+<p>A variable name can have letters (both uppercase and lowercase letters), digits and underscore only.</p>
+<p>The first letter of a variable should be either a letter or an underscore. However, it is discouraged to start variable name with an underscore. It is because variable name that starts with an underscore can conflict with system name and may cause error.</p>
+<p>There is no rule on how long a variable can be. However, only the first 31 characters of a variable are checked by the compiler. So, the first 31 letters of two variables in a program should be different.</p>
+<p>C is a strongly typed language. What this means it that, the type of a variable cannot be changed.</p>
+
+
+
+<h2>Constants/Literals</h2>
+<p>A constant is a value or an identifier whose value cannot be altered in a program. For example: 1, 2.5, "C++ programming is easy", etc.</p>
+
+<p>As mentioned, an identifier also can be defined as a constant.</p>
+
+<p>const double PI = 3.14</p>
+<p>Here, PI is a constant. Basically what it means is that, PI and 3.14 is same for this program.</p>
+
+<p>Below are the different types of constants you can use in C++.</p>
+
+<h3>1. Integer constants</h3>
+<p>An integer constant is a numeric constant (associated with number) without any fractional or exponential part. There are three types of integer constants in C++ programming:</p>
+
+<p>decimal constant(base 10)
+<p>octal constant(base 8)
+<p>hexadecimal constant(base 16)
+
+<p>For example:</p>
+
+<p>Decimal constants: 0, -9, 22 etc</p>
+<p>Octal constants: 021, 077, 033 etc</p>
+<p>Hexadecimal constants: 0x7f, 0x2a, 0x521 etc</p>
+<p>In C programming, octal constant starts with a 0 and hexadecimal constant starts with a 0x.</p>
+
+<h3>2. Floating-point constants</h3>
+<p>A floating point constant is a numeric constant that has either a fractional form or an exponent form. For example:</p>
+
+<p>-2.0</p>
+<p>0.0000234</p>
+<p>-0.22E-5</p>
+<p>Note: E-5 = 10-5</p>
+
+<h3>3. Character constants</h3>
+<p>A character constant is a constant which uses single quotation around characters. For example: 'a', 'l', 'm', 'F'</p>
+
+<h3>4. Escape Sequences</h3>
+<p>Sometimes, it is necessary to use characters which cannot be typed or has special meaning in C++ programming. For example: newline(enter), tab, question mark etc. In order to use these characters, escape sequence is used.</p>
+
+<p>For example: \n is used for newline. The backslash ( \ ) causes "escape" from the normal way the characters are interpreted by the compiler.</p>
+
+<h3>Escape Sequences</h3>
+<h3>Escape Sequences	Character</h3>
+<p>\b	Backspace</p>
+<p>\f	Form feed</p>
+<p>\n	Newline</p>
+<p>\r	Return</p>
+<p>\t	Horizontal tab</p>
+<p>\v	Vertical tab
+<p>\\	Backslash</p>
+<p>\'	Single quotation mark</p>
+<p>\"	Double quotation mark</p>
+<p>\?	Question mark</p>
+<p>\0	Null character</p>
+<h3>5. String constants</h3>
+<p>String constants are the constants which are enclosed in a pair of double-quote marks. For example:</p>
+
+<p>"good"                  //string constant</p>
+<p>""                     //null string constant</p>
+<p>"      "               //string constant of six white space</p>
+<p>"x"                    //string constant having single character</p>.
+<p>"Earth is round\n"         //prints string with newline</p>
+<h3>6. Enumeration constants</h3>
+<p>Keyword enum is used to define enumeration types. For example:</p>
+
+<h3>enum color {yellow, green, black, white};</h3>
+<p>Here, color is a variable and yellow, green, black and white are the enumeration constants having value 0, 1, 2 and 3 respectively. For more information, visit page: C Enumeration.</p>
+
+
+
+<h3>Data types in C++</h2>
+<h2>Fundamental Data Types</h3>
+<p>Integer types</p>
+<p>Floating type</p>
+<p>Character type</p>
+<h2>Derived Data Types</h3>
+<p>Arrays</p>
+<p>Pointers</p>
+<p>Structures</p>
+<p>Enumeration</p>
+
+<h4>int - Integer data types</h4>
+<p>Integers are whole numbers that can have both positive and negative values but no decimal values. Example: 0, -5, 10</p>
+
+<p>In C++ programming, keyword int is used for declaring integer variable. For example:</p>
+
+<p>int id;</p>
+<p>Here, id is a variable of type integer.</p>
+
+<p>You can declare multiple variable at once in C++ programming. For example:</p>
+
+<h4>int id, age;
+The size of int is either 2 bytes(In older PC's) or 4 bytes. If you consider an integer having size of 4 byte( equal to 32 bits), it can take 232 distinct states as: -231,-231+1, ...,-2, -1, 0, 1, 2, ..., 231-2, 231-1. If you try to store larger number than 231-1, i.e,+2147483647 and smaller number than -231, i.e, -2147483648, program will not run correctly.</h4>
+
+<p>Similarly, int of 2 bytes, it can take 216 distinct states from -215 to 215-1.</p>
+
+<h4>float - Floating types</h4>
+<p>Floating type variables can hold real numbers such as: 2.34, -9.382, 5.0 etc. You can declare a floating point variable in C++ by using either float or double keyword. For example:</p>
+
+<p>float accountBalance;</p>
+<p>double bookPrice;</p>
+
+<p>Here, both accountBalance and bookPrice are floating type variables.</p>
+
+<p>In C++, floating values can be represented in exponential form as well. For example:</p>
+
+<h4>float normalizationFactor = 22.442e2;
+Difference between float and double
+The size of float (single precision float data type) is 4 bytes. And the size of double (double precision float data type) is 8 bytes. Floating point variables has a precision of 6 digits whereas the precision of double is 14 digits.</h4>
+
+<h4>char - Character types</h4>
+<p>Keyword char is used for declaring character type variables. For example:</p>
+
+<p>char test = 'h';</p>
+<p>Here, test is a character variable. The value of test is 'h'.</p>
+
+<p>The size of character variable is 1 byte.</p>
+
+<h3>C++Qualifiers</h3>
+<p>Qualifiers alters the meaning of base data types to yield a new data type.</p>
+
+<h4>Size qualifiers</h4>
+<p>Size qualifiers alters the size of a basic type. There are two size qualifiers, long and short. For example:</p>
+
+<p>long double i;</p>
+<p>The size of double is 8 bytes. However, when long keyword is used, that variable becomes 10 bytes.</p>
+
+<p>Learn more about long keyword in C programming.</p>
+
+<p>There is another keyword short which can be used if you previously know the value of a variable will always be a small number.</p>
+
+<h4>Sign qualifiers</h4>
+<p>Integers and floating point variables can hold both negative and positive values. However, if a variable needs to hold positive value only, unsigned data types are used. For example:</p>
+
+<p>// unsigned variables cannot hold negative value 
+unsigned int positiveInteger;
+There is another qualifier signed which can hold both negative and positive only. However, it is not necessary to define variable signed since a variable is signed by default.</p>
+
+<p>An integer variable of 4 bytes can hold data from -231 to 231-1. However, if the variable is defined as unsigned, it can hold data from 0 to 232-1.</p>
+
+<p>It is important to note that, sign qualifiers can be applied to int and char types only.</p>
+
+<h4>Constant qualifiers</h4>
+<p>An identifier can be declared as a constant. To do so const keyword is used.</p>
+
+<p>const int cost = 20;</p>
+<p>The value of cost cannot be changed in the program.</p>
+
+<h4>Volatile qualifiers</h4>
+<p>A variable should be declared volatile whenever its value can be changed by some external sources outside the program. Keyword volatile is used for creating volatile variables.</p>
+
+ 
+
+
+</div>
+<div id="c3" class="tabcontent">
+ <h3>
+C++ Operators</h3>
+
+ <p>
+Operators are the symbols which tell the computer to execute certain mathematical or logical operations.  A mathematical or logical expression is generally formed with the help of an operator. C++ programming offers a number of operators which are classified into 8 categories viz.</p>
+
+<p>Arithmetic operators</p>
+<p>Relational operators</p>
+<p>Logical operators</p>
+<p>Assignment operators</p>
+<p>Increment and Decrement operators</p>
+<p>Conditional operators</p>
+<p>Bitwise operators</p>
+<p>Special operators</p>
+<h4>1. Arithmetic Operators</h4>
+<p>C ++programming language provides all basic arithmetic operators: +, -, *, / and %.</p>
+
+
+<p>Note: ‘/’ is integer division which only gives integer part as result after division. ‘%’ is modulo division which gives the remainder of integer division as result.</p>
+
+<p>Some examples of arithmetic operators are:</p>
+
+<p>a + b</p>
+<p>a – b</p>
+<p>a * b</p>
+<p>a  / b</p>
+<p>a % b</p>
+<p>In these examples, a and b are variables and are called operands.</p>
+
+<p>Note: ‘%’ cannot be used on floating data type.</p>
+
+
+
+<h4>2. Relational Operators</h4>
+<p>Relational operators are used when we have to make comparisons. C++ programming offers 6 relational operators.</p>
+
+
+
+<p>Relational expression is an expression which contains the relational operator. Relational operators are most commonly used in decision statements like if, while, etc. Some simple relational expressions are:</p>
+
+<p>1 < 5</p>
+<p>9 != 8</p>
+<p>2 > 1+3</p>
+<p>Note: Arithmetic operators have higher priority than relational operators meaning that if arithmetic expressions are present on two sides of a relational operator then arithmetic expressions will be calculated first and then the result will be compared.</p>
+
+
+
+<h4>3. Logical Operators</h4>
+<p>Logical operators are used when more than one conditions are to be tested and based on that result, decisions have to be made. C++ programming offers three logical operators. </p>
+
+<p>For example: </p>
+
+<p>a < 18 || a> 60 </p>
+<p>An expression which combines two or more relational expressions is known as logical expression. </p>
+
+ <p>   Note:  Relative precedence of relational and logical operators are as follows </p>
+
+<p>Highest precedence   ! </p>
+ 
+
+<p>> >= < <= </p>
+ 	<p>== != </p>
+ 	<p>&& </p>
+<p>Lowest precedence	||  </p>
+ 
+
+
+<h4>4. Assignment Operators</h4>
+
+<p>Assignment operators are used to assign result of an expression to a variable. ‘=’ is the assignment operator in C++. Furthermore, C++ also allows the use of shorthand assignment operators. Shorthand operators take the form: </p>
+
+<p>var op = exp; </p>
+<p>where var is a variable, op is arithmetic operator, exp is an expression. In this case, ‘op=’ is known as shorthand assignment operator. </p>
+
+<p>The above assignment </p>
+
+<p>var op = exp; </p>
+<p>this is the same as the assignment </p>
+
+<p>var = var op exp; </p>
+<p>Consider an example: </p>
+
+<p>x += y;</p>
+<p>Here, the above statement means the same as</p>
+
+<p>x = x + y;</p>
+<p>Note: Shorthand assignment can be used with all arithmetic operators.</p>
+
+<h4>5. Increment and Decrement Operators</h4>
+<p>C programming allows the use of ++ and – operators which are increment and decrement operators respectively. Both the increment and decrement operators are unary operators. The increment operator ++ adds 1 to the operand and the decrement operator – subtracts 1 from the operand. The general syntax of these operators are:</p>
+
+<p>Increment Operator: m++ or ++m;</p>
+
+<p>Decrement Operator: m--or --m;</p>
+
+<p>In the example above, m++ simply means m=m+1; and m-- simply means m=m-1;</p>
+
+<p>Increment and decrement operators are mostly used in for and while loops.</p>
+
+<p>++m and m++ performs the same operation when they form statements independently but they function differently when they are used in right hand side of an expression.</p>
+
+<p>++m is known as prefix operator and m++ is known as postfix operator. A prefix operator firstly adds 1 to the operand and then the result is assigned to the variable on the left whereas a postfix operator firstly assigns value to the variable on the left and then increases the operand by 1. Same is in the case of decrement operator.</p>
+
+<p>For example,</p>
+
+<p>X=10;</p>
+<p>Y=++X;</p>
+
+
+ 
+
+<p>In this case, the value of X and Y will be 6.</p>
+
+<p>And,</p>
+
+<p>X=10;</p>
+<p>Y=X++;</p>
+<p>In this case, the value of Y will be 10 and the value of X will be 11.</p>
+
+<h4>6. Conditional Operator</h4>
+<p>The operator pair “?” and “:” is known as conditional operator. These pair of operators are ternary operators. The general syntax of conditional operator is:</p>
+
+<p>expression1 ? expression2 : expression3 ;</p>
+<p>This syntax can be understood as a substitute of if else statement.</p>
+
+<p>For example,</p>
+
+<p>a = 3 ;</p>
+<p>b = 5 ;</p>
+<p>Consider an if else statement as:</p>
+
+<p>if  (a > b)</p>
+<p>x = a ;</p>
+<p>else</p>
+<p>x = b ;</p>
+<p>Now, this if else statement can be written by using conditional operator as:</p>
+
+<p>x = (a > b) ? a : b ;
+<h4>7. Bitwise Operator</h4>
+<p>In C programming, bitwise operators are used for testing the bits or shifting them left or right. The bitwise operators available in C are:</p>
+
+
+
+<h4>8. Special Operators</h4>
+<p>C programming supports special operators like comma operator, sizeof operator, pointer operators (& and *) and member selection operators (. and ->). The comma operator and sizeof operator are discussed in this section whereas the pointer and member selection operators are discussed in later sections.</p>
+
+<h5>1. Comma Operator</h5>
+<p>The comma operator can be used to link the related expressions together. A comma linked expression is evaluated from left to right and the value of the right most expression is the value of the combined expression.
+
+<p>For example:</p>
+
+          <p>      x = (a = 2, b = 4, a+b)</p>
+<p>In this example, the expression is evaluated from left to right. So at first, variable a is assigned value 2, then variable b is assigned value 4 and then value 6 is assigned to the variable x. Comma operators are commonly used in for loops, while loops, while exchanging values, etc.</p>
+
+<h5>2 .Sizeof() operator</h5>
+<p>The sizeof operator is usually used with an operand which may be variable, constant or a data type qualifier. This operator returns the number of bytes the operand occupies. Sizeof operator is a compile time operator. Some examples of use of sizeof operator are:</p>
+
+<p>x = sizeof (a);</p>
+<p>y = sizeof(float);</p>
+<p>The sizeof operator is usually used to determine the length of arrays and structures when their sizes are not known. It is also used in dynamic memory allocation.</p>
+
+<h4>9.C Expressions</h4>
+<p>Arithmetic expression in C is a combination of variables, constants and operators written in a proper syntax. C can easily handle any complex mathematical expressions but these mathematical expressions have to be written in a proper syntax. Some examples of mathematical expressions written in proper syntax of C are:
+</p>
+<p>Note: C does not have any operator for exponentiation. </p>
+
+<h4>10.C Operator Precedence</h4>
+<p>At first, the expressions within parenthesis are evaluated. If no parenthesis is present, then the arithmetic expression is evaluated from left to right. There are two priority levels of operators in C.</p>
+
+<p>High priority: * /  %</p>
+<p>Low priority: + -</p>
+
+<p>The evaluation procedure of an arithmetic expression includes two left to right passes through the entire expression. In the first pass, the high priority operators are applied as they are encountered and in the second pass, low priority operations are applied as they are encountered.</p>
+
+<p>Suppose, we have an arithmetic expression as:</p>
+
+<p>x = 9 – 12 / 3 + 3 *2 - 1</p>
+ <p>This expression is evaluated in two left to right passes as:</p>
+
+<p>First Pass</p>
+
+<p>Step 1: x = 9-4 + 3 * 2 – 1</p>
+<p>Step 2: x = 9 – 4 + 6 – 1</p>
+
+<p>Second Pass</p>
+
+<p>Step 1: x = 5 + 6 – 1</p>
+<p>Step 2: x = 11 – 1</p>
+<p>Step 3: x = 10</p>
+<p>But when parenthesis is used in the same expression, the order of evaluation gets changed.</p>
+
+<p>For example,</p>
+
+<p>x = 9 – 12 / (3 + 3) * (2 – 1)</p>
+<p>When parentheses are present then the expression inside the parenthesis are evaluated first from left to right. The expression is now evaluated in three passes as:</p>
+
+<p>First Pass</p>
+
+<p>Step 1: x = 9 – 12 / 6 * (2 – 1)</p>
+<p>Step 2: x= 9 – 12 / 6 * 1</p>
+<p>Second Pass</p>
+
+<p>Step 1: x= 9 – 2 * 1</p>
+<p>Step 2: x = 9 – 2</p>
+<p>Third Pass</p>
+
+<p>Step 3: x= 7</p>
+<p>There may even arise a case where nested parentheses are present (i.e. parenthesis inside parenthesis). In such case, the expression inside the innermost set of parentheses is evaluated first and then the outer parentheses are evaluated.</p>
+
+<p>For example, we have an expression as:</p>
+
+<p>x = 9 – ((12 / 3) + 3 * 2) – 1</p>
+<p>The expression is now evaluated as:</p>
+
+<p>First Pass:</p>
+
+<p>Step 1: x = 9 – (4 + 3 * 2) – 1</p>
+<p>Step 2: x= 9 – (4 + 6) – 1</p>
+<p>Step 3: x= 9 – 10 -1</p>
+<p>Second Pass</p>
+
+<p>Step 1: x= - 1 – 1</p>
+<p>Step 2: x = -2</p>
+<p>Note: The number of evaluation steps is equal to the number of operators in the arithmetic expression.</p>
+
+
+
+</div>
+<div id="c4" class="tabcontent">
+ <h2>Basic Input / Output in C++</h2>
+
+<p>C++ comes with libraries which provides us many ways for performing input and output. In C++ input and output is performed in the form of sequence of bytes or more commonly known as streams.</br>
+</br>
+<b>Input Stream:</b> If the direction of flow of bytes is from device(for example: Keyboard) to the main memory then this process is called input.
+</br></br>
+<b>Output Stream:</b> If the direction of flow of bytes is opposite, i.e. from main memory to device( display screen ) then this process is called output.
+</br></br>
+<b>Header files available in C++ for Input – Output operation are:</b>
+</br></br>
+iostream: iostream stands for standard input output stream. This header file contains definitions to objects like cin, cout, cerr etc.
+</br></br>
+iomanip: iomanip stands for input output manipulators. The methods declared in this files are used for manipulating streams. This file contains definitions of setw, setprecision etc.
+</br></br>
+fstream: This header file mainly describes the file srteam. This header file is used to handle the data being read from a file as input or data being written into the file as output.
+</br></br>
+In C++ articles, these two keywords cout and cin  are used very often for taking inputs and printing outputs. These two are the most basic methods of taking input and output in C++. For using cin and cout we must include the header file iostream in our program.
+</br></br>
+In this article we will mainly discuss about the objects defined in the header file iostream like cin and cout.
+</br></br>
+Standard output stream (cout): Usually the standard output device is the display screen. cout is the instance of the ostream class. cout is used to produce output on the standard output device which is usually the display screen. The data needed to be 
+displayed on the screen is inserted in the standard output stream (cout) using the insertion operator (<<).
+</br></br>
+<b>#include <iostream>
+  </br></br>
+using namespace std;
+  </br></br>
+int main( ) {</br></br>
+   char sample[] = "";
+  </br></br>
+   cout << sample << " - A computer science portal for geeks";
+    </br></br>
+   return 0;</br></br>
+}</br></br>
+<h3>Output:</h3>
+
+- A computer science portal for geeks</b>
+
+
+</div>
+<div id="c5" class="tabcontent">
+   <h2>Built In& User Defined Function in C & C++</h2>
+
+<p>There are several different types of functions in C. So far, we have used one type of function:built-in C functions, like printf( ) and scanf( ). These functions are part of the C programming language.</p>
+
+<p>Another type is called a user-defined function. This is a function which the programmer creates and uses in a C program. We will learn how to create these functions in this part of the tutorial.</p>
+
+<p>We can also distinguish between functions which return values and those which don’t — like void main( ). Technically speaking, all functions return values, but in C we can choose to eliminate this process by using void. So far, we have not used our main( ) function to return any values, so we voided it and let the body functions, like printf( ) return values.</p>
+
+
+<p>A function which return values produces some result — like printing text on the screen, or scanning a variable, etc. Let’s examine the different types of functions, so we can understand them better.</p>
+
+<h2>Built-in Functions</h2>
+<p>C has many built-in functions that you can use in your programs. So far we have learned 15 built-in functions:</p>
+
+<p>main( )</p>
+<p>printf( )</p>
+<p>scanf( )	gets( )</p>
+<p>puts( )</p>
+<p>strcpy( )	strlen( )</p>
+<p>strcmp( )</p>
+<p>stricmp( )	strcat( )</p>
+<p>strstr( )</p>
+<p>isalpha( )  isdigit( )</p>
+<p>isupper( )</p>
+<p>islower( )</p>
+<p>If you can’t remember how to use each of these functions, go back and review the previous sections of this tutorial.</p>
+
+<h2>User-Defined Functions</h2>
+
+<p>If you have a special set of instructions that aren’t in a built-in function, you can create a user-defined function. Here are the steps:</p>
+
+<p>give your function a name that isn’t already used in C (by built-in functions, types of variables, keywords, etc.)
+create a function header, which contains three things:</p>
+
+<p><strong>a. the type of variable (int, char, double, etc.) that the function will produce (return)</p>
+
+<p>b. the name of the function, which can be one or more words (but put underscores _ or CapitalLetters connecting these words, because no spaces are allowed)</p>
+
+<p>c. the parameters of the function, which are the names and types of variables inside your function</strong></p>
+
+<p>create a function body, which contains the operations to be completed when you call the function to run
+Function Header</p>
+
+<p>Here is an example of a function header:</p>
+
+<p><b>int Square(int num)This function expects an integer variable, so we begin with int.</b></p>
+
+<p>Then we type a space followed by the name of the function, Square.</p>
+
+<p>Next, we put the parameters in parentheses: (int num).</p>
+
+<p><b>Function Body</p>
+<p>Now we can add variables and functions to create a function body:</p>
+
+<p>{</p>
+<p>return (num * num);</p>
+<p>}</p>
+<p></b></p>
+<p>This function calculates the square of num, which is num * num. This function returns the value of num * num.</p>
+
+<p><b>Location and Call</b></p>
+<p>To use this function, we must write it before void main( ) or after void main( ). We don’t want to write it inside void main( ), since Square( ) is a function separate from main( ).</p>
+<b>
+<p>#include<stdio.h></p>
+<p>int Square(int num)</p>
+<p>{</p>
+<p>return (num * num);</p>
+<p>}</b></p>
+
+<p>Inside void main( ), we must call the function Square( ) to run. This means triggering the function to activate. This involves three things:</p>
+
+<p>a variable equal to the value returned from the function</p>
+<p>the name of the function</p>
+<p>the variable passed to the function</p>
+<p>Here is an example:</p>
+
+<p><b>void main( )</p>
+<p>{</p>
+<p>int num;</p>
+<p>int total;</p>
+<p>total = Square(num);</p>
+<p>}</p>
+
+<p>*****The Square Function*****</p>
+<p>#include<stdio.h></p>
+<p>int Square(int num)</p>
+<p>{</p>
+<p>return (num * num);</p>
+<p>}void main( )</p>
+<p>{</p>
+<p>int num;</p>
+<p>int total;</p>
+<p>printf(“Type a number: “);</p>
+<p>scanf(“%d”, &num);</p>
+<p>total = Square(num);</p>
+<p>printf(“Your number squared is %d.”, total);</p>
+<p>}</b></p>
+
+<p><b>You can create more than one function in a C program. Each function will need its own return statement and its own variable to store the returned value. Here is an example:</b></p>
+
+</div>
+
+<div id="c6" class="tabcontent">
+ <h2>C++ Pointers and Arrays</h2>
+
+<p>In this article, you'll learn about the relation between arrays and pointers, and use them efficiently in your program.</br>
+</br>
+Pointers are the variables that hold address. Not only can pointers store address of a single variable, it can also store address of cells of an array.
+</br></br>
+<b>Consider this example:</b>
+</br>
+int* ptr;
+</br></br>
+int a[5];
+</br></br>
+ptr = &a[2];  // &a[2] is the address of third element of a[5].
+</br></br>
+Pointer pointing to an array cell
+</br></br>
+Suppose, pointer needs to point to the fourth element of an array, that is, hold address of fourth array element in above case.
+</br></br>
+Since ptr points to the third element in the above example, ptr + 1 will point to the fourth element.
+</br></br>
+You may think, ptr + 1 gives you the address of next byte to the ptr. But it's not correct.
+</br></br>
+This is because pointer ptr is a pointer to an int and size of int is fixed for a operating system (size of int is 4 byte of 64-bit operating system). Hence, the address between ptr and ptr + 1 differs by 4 bytes.
+</br></br>
+If pointer ptr was pointer to char then, the address between ptr and ptr + 1 would have differed by 1 byte since size of a character is 1 byte.
+</br></br>
+<b>Example :</b> 
+</br>
+C++ Pointers and Arrays
+</br>
+C++ Program to display address of elements of an array using both array and pointers
+</br>
+<h5>#include <iostream>
+</br>
+using namespace std;
+</br>
+int main()
+</br>
+{
+</br>
+    float arr[5];
+</br>
+    float *ptr;
+    </br>
+    cout << "Displaying address using arrays: " << endl;
+</br>
+    for (int i = 0; i < 5; ++i)
+</br>
+    {
+</br>
+        cout << "&arr[" << i << "] = " << &arr[i] << endl;
+</br>
+    }
+</br>
+    // ptr = &arr[0]
+</br>
+    ptr = arr;
+</br>
+    cout<<"\nDisplaying address using pointers: "<< endl;
+</br>
+    for (int i = 0; i < 5; ++i)
+</br>
+    {
+</br>
+        cout << "ptr + " << i << " = "<< ptr + i << endl;
+</br>
+    }
+</br>
+
+    return 0;
+</br>
+}</h5>
+</br>
+<h3>Output</h3>
+</br>
+<b>Displaying address using arrays: </b>
+</br>
+&arr[0] = 0x7fff5fbff880
+</br>
+&arr[1] = 0x7fff5fbff884
+</br>
+&arr[2] = 0x7fff5fbff888
+</br>
+&arr[3] = 0x7fff5fbff88c
+</br>
+&arr[4] = 0x7fff5fbff890
+</br>
+<b>Displaying address using pointers: </b>
+</br>
+ptr + 0 = 0x7fff5fbff880
+</br>
+ptr + 1 = 0x7fff5fbff884
+</br>
+ptr + 2 = 0x7fff5fbff888
+</br>
+ptr + 3 = 0x7fff5fbff88c
+</br>
+ptr + 4 = 0x7fff5fbff890
+</br>
+
+</div>
+<div id="c7" class="tabcontent">
+ <h2>C++ Classes and Objects</h2>
+
+<p>The main purpose of C++ programming is to add object orientation to the C programming language and classes are the central feature of C++ that supports object-oriented programming and are often called user-defined types.</br>
+</br>
+A class is used to specify the form of an object and it combines data representation and methods for manipulating that data into one neat package. The data and functions within a class are called members of the class.
+</br></br>
+<b>C++ Class Definitions</b>
+</br>
+When you define a class, you define a blueprint for a data type. This doesn't actually define any data, but it does define what the class name means, that is, what an object of the class will consist of and what operations can be performed on such an object.
+</br></br>
+A class definition starts with the keyword class followed by the class name; and the class body, enclosed by a pair of curly braces. A class definition must be followed either by a semicolon or a list of declarations. For example, we defined the Box data type using the keyword class as follows -
+</br></br>
+<h6>class Box {
+</br>
+   public:
+</br>
+      double length;   // Length of a box
+</br>
+      double breadth;  // Breadth of a box
+</br>
+      double height;   // Height of a box
+</br>
+};</h6>
+</br>
+The keyword public determines the access attributes of the members of the class that follows it. A public member can be accessed from outside the class anywhere within the scope of the class object. You can also specify the members of a class as private or protected which we will discuss in a sub-section.
+</br></br>
+<b>Define C++ Objects</b>
+</br></br>
+A class provides the blueprints for objects, so basically an object is created from a class. We declare objects of a class with exactly the same sort of declaration that we declare variables of basic types. Following statements declare two objects of class Box -
+</br></br>
+Box Box1;          // Declare Box1 of type Box
+</br></br>
+Box Box2;          // Declare Box2 of type Box
+</br></br>
+Both of the objects Box1 and Box2 will have their own copy of data members.
+</br></br>
+<b>Accessing the Data Members</b>
+</br></br>
+The public data members of objects of a class can be accessed using the direct member access operator (.). Let us try the following example to make the things clear -
+</br></br>
+<h6>#include <iostream>
+</br></br>
+using namespace std;
+</br></br>
+class Box {
+</br></br>
+   public:
+</br></br>
+      double length;   // Length of a box
+</br></br>
+      double breadth;  // Breadth of a box
+</br></br>
+      double height;   // Height of a box
+</br></br>
+};
+</br></br>
+int main() {
+</br></br>
+   Box Box1;        // Declare Box1 of type Box
+</br></br>
+   Box Box2;        // Declare Box2 of type Box
+</br></br>
+   double volume = 0.0;     // Store the volume of a box here
+ </br></br>
+   // box 1 specification
+</br></br>
+   Box1.height = 5.0; 
+</br></br>
+   Box1.length = 6.0; 
+</br></br>
+   Box1.breadth = 7.0;
+</br></br>
+   // box 2 specification
+</br></br>
+   Box2.height = 10.0;
+</br></br>
+   Box2.length = 12.0;
+</br></br>
+   Box2.breadth = 13.0;
+   </br></br>
+   // volume of box 1
+</br></br>
+   volume = Box1.height * Box1.length * Box1.breadth;
+</br></br>
+   cou</br>t << "Volume of Box1 : " << volume <<endl;
+</br>
+   // v</br>olume of box 2
+</br>
+   vol</br>ume = Box2.height * Box2.length * Box2.breadth;
+</br>
+   cou</br>t << "Volume of Box2 : " << volume <<endl;
+</br>
+   retur</br>n 0;</br>
+}</h6>
+</br></br>
+<h3>output</h3>
+</br></br>
+Volume of Box1 : 210
+</br></br>
+Volume of Box2 : 1560
+</br></br>
+It is important to note that private and protected members can not be accessed directly using direct member access operator (.). We will learn how private and protected members can be accessed.
+</br></br>
+<b>1	Class Member Functions</b>
+</br></br>
+A member function of a class is a function that has its definition or its prototype within the class definition like any other variable.
+</br></br>
+<b>2	Class Access Modifiers</b>
+</br></br>
+A class member can be defined as public, private or protected. By default members would be assumed as private.
+</br></br>
+<b>3	Constructor & Destructor</b>
+</br></br>
+A class constructor is a special function in a class that is called when a new object of the class is created. A destructor is also a special function which is called when created object is deleted.
+</br></br>
+<b>4	Copy Constructor</b>
+</br></br>
+The copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously.
+</br></br>
+<b>5	Friend Functions</b>
+</br></br>
+A friend function is permitted full access to private and protected members of a class.
+</br></br>
+<b>6	Inline Functions</b>
+</br></br>
+With an inline function, the compiler tries to expand the code in the body of the function in place of a call to the function.
+</br></br>
+<b>7	this Pointer</b>
+</br></br>
+Every object has a special pointer this which points to the object itself.
+</br></br>
+<b>8	Pointer to C++ Classes</b>
+</br></br>
+A pointer to a class is done exactly the same way a pointer to a structure is. In fact a class is really just a structure with functions in it.
+</br></br>
+<b>9	Static Members of a Class</b>
+</br></br>
+Both data members and function members of a class can be declared as static.
+</br></br>
+
+</div>
+<div id="c8" class="tabcontent">
+ <h2>C++ Class Constructor and Destructor</h2>
+</br>
+<b>The Class Constructor</b>
+</br></br>
+<p>A class constructor is a special member function of a class that is executed whenever we create new objects of that class.
+</br></br>
+A constructor will have exact same name as the class and it does not have any return type at all, not even void. Constructors can be very useful for setting initial values for certain member variables.
+</br></br>
+Following example explains the concept of constructor -
+</br></br><h6>
+#include <iostream>
+ </br></br>
+using namespace std;
+ </br></br>
+class Line {
+</br></br>
+
+   public:
+</br></br>
+      void setLength( double len );
+</br></br>
+      double getLength( void );
+</br></br>
+      Line();  // This is the constructor
+</br></br>
+   private:
+</br></br>
+      double length;</br></br>
+};</br>
+ 
+
+
+// Member functions definitions including constructor
+</br></br>
+Line::Line(void) {
+</br></br>
+   cout << "Object is being created" << endl;
+</br></br>
+}
+</br></br>
+void Line::setLength( double len ) {
+</br></br>
+   length = len;
+</br></br>
+}
+</br></br>
+double Line::getLength( void ) {
+</br></br>
+   return length;
+</br></br>
+}
+</br></br>
+// Main function for the program
+</br></br>
+int main() {
+</br></br>
+   Line line;
+ </br></br>
+   // set line length
+</br></br>
+   line.setLength(6.0); 
+</br></br>
+   cout << "Length of line : " << line.getLength() <<endl;
+ </br></br>
+   return 0;
+</br></br>
+}</h6>
+</br></br>
+<h3>Output</h3>
+
+Object is being created
+</br></br>
+Length of line : 6
+</br></br>
+<h3>Parameterized Constructor</h3>
+
+A default constructor does not have any parameter, but if you need, a constructor can have parameters. This helps you to assign initial value to an object at the time of its creation as shown in the following example -
+</br></br>
+<h6>#include <iostream>
+ </br></br>
+using namespace std;
+</br></br>
+class Line {
+</br></br>
+   public:
+</br></br>
+      void setLength( double len );
+</br></br>
+      double getLength( void );
+</br></br>
+      Line(double len);  // This is the constructor
+ </br></br>
+   private:
+</br></br>
+      double length;
+</br></br>
+};
+ </br></br>
+
+// Member functions definitions including constructor
+</br></br>
+Line::Line( double len) {
+</br></br>
+   cout << "Object is being created, length = " << len << endl;
+</br></br>
+   length = len;
+</br></br>
+}
+</br></br>
+void Line::setLength( double len ) {
+</br></br>
+   length = len;
+</br></br>
+}
+</br></br>
+double Line::getLength( void ) {
+</br></br>
+   return length;
+</br></br>
+}
+
+</br></br>
+// Main function for the program
+</br></br>
+int main() {
+</br></br>
+   Line line(10.0);
+ </br></br>
+   // get initially set length.
+</br></br>
+   cout << "Length of line : " << line.getLength() <<endl;
+   </br></br>
+   // set line length again
+</br></br>
+   line.setLength(6.0); 
+</br></br>
+   cout << "Length of line : " << line.getLength() <<endl;
+ </br></br>
+   return 0;
+</br></br>
+}</h6>
+</br>
+<h3>Output</h3>
+
+Object is being created, length = 10
+</br></br>
+Length of line : 10
+</br></br>
+Length of line : 6
+</br></br>
+<h2>The Class Destructor</h2>
+</br>
+A destructor is a special member function of a class that is executed whenever an object of it's class goes out of scope or whenever the delete expression is applied to a pointer to the object of that class.
+</br></br>
+A destructor will have exact same name as the class prefixed with a tilde (~) and it can neither return a value nor can it take any parameters. Destructor can be very useful for releasing resources before coming out of the program like closing files, releasing memories etc.
+</br></br>
+
+<h6>#include <iostream>
+</br> 
+using namespace std;
+</br></br>
+class Line {
+</br></br>
+   public:
+</br></br>
+      void setLength( double len );
+</br></br>
+      double getLength( void );
+</br></br>
+      Line();   // This is the constructor declaration
+</br></br>
+      ~Line();  // This is the destructor: declaration
+ </br></br>
+   private:
+</br></br>
+
+      double length;
+</br></br>
+};
+ </br></br>
+
+
+// Member functions definitions including constructor
+</br></br>
+Line::Line(void) {
+</br></br>
+   cout << "Object is being created" << endl;
+</br></br>
+}
+</br></br>
+Line::~Line(void) {
+</br></br>
+   cout << "Object is being deleted" << endl;
+</br></br>
+}
+</br></br>
+void Line::setLength( double len ) {
+</br></br>
+   length = len;
+</br></br>
+}
+</br></br>
+double Line::getLength( void ) {
+</br></br>
+   return length;
+</br></br>
+}
+
+</br></br>
+// Main function for the program
+</br></br>
+int main() {
+</br></br>
+
+   Line line;
+</br></br> 
+   // set line length
+</br></br>
+   line.setLength(6.0); 
+</br></br>
+   cout << "Length of line : " << line.getLength() <<endl;
+ </br></br>
+   return 0;
+</br></br>
+}</h6>
+</br>
+<h3>Output</h3>
+
+Object is being created
+</br></br>
+Length of line : 6
+</br></br>
+Object is being deleted
+</br></br>
+</div>
+<div id="c9" class="tabcontent">
+ <h2>C++ Files and Streams</h2>
+<p>
+<b>1	
+ofstream</b></br>
+
+This data type represents the output file stream and is used to create files and to write information to files.
+</br></br>
+<b>2	
+ifstream</b>
+</br>
+This data type represents the input file stream and is used to read information from files.
+</br></br>
+<b>3	
+fstream</b>
+</br></br>
+This data type represents the file stream generally, and has the capabilities of both ofstream and ifstream which means it can create files, write information to files, and read information from files.
+</br></br>
+To perform file processing in C++, header files <iostream> and <fstream> must be included in your C++ source file.
+</br></br>
+<h3>Opening a File</h3>
+</br></br>
+A file must be opened before you can read from it or write to it. Either ofstream or fstream object may be used to open a file for writing. And ifstream object is used to open a file for reading purpose only.
+</br></br>
+Following is the standard syntax for open() function, which is a member of fstream, ifstream, and ofstream objects.
+</br></br>
+void open(const char *filename, ios::openmode mode);
+Here, the first argument specifies the name and location of the file to be opened and the second argument of the open() member function defines the mode in which the file should be opened.
+</br></br>
+<b>1	
+ios::app</b>
+</br></br>
+Append mode. All output to that file to be appended to the end.
+</br></br>
+<b>2	
+ios::ate</b>
+</br></br>
+Open a file for output and move the read/write control to the end of the file.
+</br></br>
+<b>3	
+ios::in</b>
+</br></br>
+Open a file for reading.
+</br></br>
+<b>4	
+ios::out</b>
+</br></br>
+Open a file for writing.
+</br></br>
+<b>5	
+ios::trunc</b>
+</br></br>
+If the file already exists, its contents will be truncated before opening the file.
+</br></br>
+You can combine two or more of these values by ORing them together. For example if you want to open a file in write mode and want to truncate it in case that already exists, following will be the syntax -
+</br></br>
+ofstream outfile;
+</br></br>
+outfile.open("file.dat", ios::out | ios::trunc );
+</br></br>
+Similar way, you can open a file for reading and writing purpose as follows -
+</br></br>
+fstream  afile;
+</br></br>
+afile.open("file.dat", ios::out | ios::in );
+</br></br>
+<b>Closing a File</b>
+</br>
+When a C++ program terminates it automatically flushes all the streams, release all the allocated memory and close all the opened files. But it is always a good practice that a programmer should close all the opened files before program termination.
+</br></br>
+Following is the standard syntax for close() function, which is a member of fstream, ifstream, and ofstream objects.
+</br></br>
+void close();
+</br></br>
+<b>Writing to a File</b>
+</br></br>
+While doing C++ programming, you write information to a file from your program using the stream insertion operator (<<) just as you use that operator to output information to the screen. The only difference is that you use an ofstream or fstream object instead of the cout object.
+</br></br>
+<b>Reading from a File</b>
+</br></br>
+You read information from a file into your program using the stream extraction operator (>>) just as you use that operator to input information from the keyboard. The only difference is that you use an ifstream or fstream object instead of the cin object.
+</br></br>
+<b>Read and Write Example</b>
+</br></br>
+Following is the C++ program which opens a file in reading and writing mode. After writing information entered by the user to a file named afile.dat, the program reads information from the file and outputs it onto the screen -
+</br></br>
+<h5>#include <fstream>
+</br></br>
+#include <iostream>
+</br></br>
+using namespace std;
+</br></br>
+ 
+int main () {
+</br></br>
+   char data[100];
+</br></br>
+   // open a file in write mode.
+</br></br>
+   ofstream outfile;
+</br></br>
+   outfile.open("afile.dat");
+</br></br>
+   cout << "Writing to the file" << endl;
+</br></br>
+   cout << "Enter your name: "; 
+</br></br>
+   cin.getline(data, 100);
+</br></br>
+
+   // write inputted data into the file.
+</br></br>
+   outfile << data << endl;
+</br></br>
+   cout << "Enter your age: "; 
+</br></br>
+   cin >> data;
+</br></br>
+   cin.ignore();
+   </br></br>
+   // again write inputted data into the file.
+</br></br>
+   outfile << data << endl;
+</br></br>
+   // close the opened file.
+</br></br>
+   outfile.close();
+</br></br>
+
+   // open a file in read mode.
+</br></br>
+   ifstream infile; 
+</br></br>
+   infile.open("afile.dat"); 
+ </br></br>
+   cout << "Reading from the file" << endl; 
+</br></br>
+   infile >> data; 
+</br></br>
+   // write the data at the screen.
+</br></br>
+   cout << data << endl;
+   </br></br>
+   // again read the data from the file and display it.
+</br></br>
+   infile >> data; 
+</br></br>
+   cout << data << endl; 
+</br></br>
+   // close the opened file.
+</br></br>
+   infile.close();
+</br></br>
+   return 0;
+</br></br>
+}</h5>
+<h3>
+Output</h3>
+</br>
+$./a.out
+</br></br>
+Writing to the file
+</br></br>
+Enter your name: Zara
+</br></br>
+Enter your age: 9
+</br></br>
+Reading from the file
+</br></br>
+Zara
+</br></br>
+9
+</br></br>
+
+<b>File Position Pointers</b>
+</br></br>
+Both istream and ostream provide member functions for repositioning the file-position pointer. These member functions are seekg ("seek get") for istream and seekp ("seek put") for ostream.
+</br></br>
+The argument to seekg and seekp normally is a long integer. A second argument can be specified to indicate the seek direction. The seek direction can be ios::beg (the default) for positioning relative to the beginning of a stream, ios::cur for positioning relative to the current position in a stream or ios::end for positioning relative to the end of a stream.
+</br></br>
+The file-position pointer is an integer value that specifies the location in the file as a number of bytes from the file's starting location. Some examples of positioning the "get" file-position pointer are -
+</br></br>
+// position to the nth byte of fileObject (assumes ios::beg)
+fileObject.seekg( n );
+</br></br>
+// position n bytes forward in fileObject
+fileObject.seekg( n, ios::cur );
+</br></br>
+// position n bytes back from end of fileObject
+fileObject.seekg( n, ios::end );
+</br></br>
+// position at end of fileObject
+fileObject.seekg( 0, ios::end );
+</br></br>
+</div>
+<div id="c10" class="tabcontent">
+ <h2>C++ Overloading (Operator and Function)</h2>
+<p>
+C++ allows you to specify more than one definition for a function name or an operator in the same scope, which is called function overloading and operator overloading respectively.
+</br></br>
+An overloaded declaration is a declaration that is declared with the same name as a previously declared declaration in the same scope, except that both declarations have different arguments and obviously different definition (implementation).
+</br></br>
+
+When you call an overloaded function or operator, the compiler determines the most appropriate definition to use, by comparing the argument types you have used to call the function or operator with the parameter types specified in the definitions. </br></br>
+
+The process of selecting the most appropriate overloaded function or operator is called overload resolution.
+</br></br>
+
+<h2>Function Overloading in C++</h2>
+
+You can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. You cannot overload function declarations that differ only by return type.
+</br></br>
+
+Following is the example where same function print() is being used to print different data types -
+</br></br>
+
+<h5>#include <iostream>
+</br></br>
+
+using namespace std;
+</br></br>
+ 
+class printData {
+</br></br>
+
+   public:
+</br></br>
+
+      void print(int i) {
+</br></br>
+
+        cout << "Printing int: " << i << endl;
+</br></br>
+
+      }
+</br></br>
+
+      void print(double  f) {
+</br></br>
+
+        cout << "Printing float: " << f << endl;
+</br></br>
+
+      }
+</br></br>
+
+
+      void print(char* c) {
+</br></br>
+
+        cout << "Printing character: " << c << endl;
+</br></br>
+
+      }
+</br></br>
+
+};
+</br></br>
+
+int main(void) {
+</br></br>
+
+   printData pd;
+</br></br>
+ 
+   //</br></br>
+ Call print to print integer
+</br></br>
+
+   pd.print(5);
+</br></br>
+   
+   // Call print to print float
+</br></br>
+
+   pd.print(500.263);
+</br></br>
+   
+   // Call print to print character
+</br></br>
+
+   pd.print("Hello C++");
+</br></br>
+ 
+   return 0;
+</br></br>
+
+}</h5>
+</br></br>
+
+<h3>Output</h3>
+
+Printing int: 5
+</br></br>
+
+Printing float: 500.263
+</br></br>
+
+Printing character: Hello C++
+</br></br>
+
+<h2>Operators Overloading in C++</h2>
+
+You can redefine or overload most of the built-in operators available in C++. Thus, a programmer can use operators with user-defined types as well.
+</br></br>
+
+Overloaded operators are functions with special names: the keyword "operator" followed by the symbol for the operator being defined. Like any other function, an overloaded operator has a return type and a parameter list.
+</br></br>
+
+
+
+<h5>#include <iostream>
+</br></br>
+
+using namespace std;
+</br></br>
+
+
+class Box {
+</br></br>
+
+   public:
+</br></br>
+
+      double getVolume(void) {
+</br></br>
+
+         return length * breadth * height;
+</br></br>
+
+      }
+</br></br>
+
+      void setLength( double len ) {
+</br></br>
+
+         length = len;
+</br></br>
+
+      }
+</br></br>
+
+      void setBreadth( double bre ) {
+</br></br>
+
+         breadth = bre;
+</br></br>
+
+      }
+</br></br>
+
+      void setHeight( double hei ) {
+</br></br>
+
+         height = hei;
+</br></br>
+
+      }
+</br></br>
+
+      
+      // Overload + operator to add two Box objects.
+</br></br>
+
+      Box operator+(const Box& b) {
+</br></br>
+
+         Box box;
+</br></br>
+
+         box.length = this->length + b.length;
+</br></br>
+
+         box.breadth = this->breadth + b.breadth;
+</br></br>
+
+         box.height = this->height + b.height;
+</br></br>
+
+         return box;
+</br></br>
+
+      }
+</br></br>
+      
+
+   private:
+</br></br>
+
+      double length;      // Length of a box
+</br></br>
+
+      double breadth;     // Breadth of a box
+</br></br>
+
+      double height;      // Height of a box
+</br></br>
+
+};
+</br></br>
+
+
+// Main function for the program
+</br></br>
+
+int main() {
+</br></br>
+
+   Box Box1;                // Declare Box1 of type Box
+</br></br>
+
+   Box Box2;                // Declare Box2 of type Box
+</br></br>
+
+   Box Box3;                // Declare Box3 of type Box
+</br></br>
+
+
+   double volume = 0.0;     // Store the volume of a box here
+</br></br>
+
+ 
+   // box 1 specification
+</br></br>
+
+   Box1.setLength(6.0); 
+</br></br>
+
+   Box1.setBreadth(7.0); 
+</br></br>
+
+   Box1.setHeight(5.0);
+</br></br>
+
+ 
+   // box 2 specification
+</br></br>
+
+   Box2.setLength(12.0); 
+</br></br>
+
+   Box2.setBreadth(13.0); 
+</br></br>
+
+   Box2.setHeight(10.0);
+</br></br>
+ 
+   // volume of box 1
+</br></br>
+
+   volume = Box1.getVolume();
+</br></br>
+
+   cout << "Volume of Box1 : " << volume <<endl;
+</br></br>
+ 
+   // volume of box 2
+</br></br>
+
+   volume = Box2.getVolume();
+</br></br>
+
+   cout << "Volume of Box2 : " << volume <<endl;
+</br></br>
+
+   // Add two object as follows:
+</br></br>
+
+   Box3 = Box1 + Box2;
+</br></br>
+
+   // volume of box 3
+</br></br>
+
+   volume = Box3.getVolume();
+</br></br>
+
+   cout << "Volume of Box3 : " << volume <<endl;
+</br></br>
+
+   return 0;
+
+</br></br>
+}</h5>
+
+<h3>Output</h3>
+
+Volume of Box1 : 210
+</br></br>
+
+Volume of Box2 : 1560
+</br></br>
+
+Volume of Box3 : 5400
+</br></br>
+
+<b>Overloadable/Non-overloadableOperators</b>
+</br></br>
+
+Following is the list of operators which can be overloaded -
+</br></br>
+
+
++	-	*	/	%	^
+</br></br>
+
+&	|	~	!	,	=
+</br></br>
+
+<	>	<=	>=	++	--
+</br></br>
+
+<<	>>	==	!=	&&	||
+</br></br>
+
++=	-=	/=	%=	^=	&=
+</br></br>
+
+|=	*=	<<=	>>=	[]	()
+
+</br></br>
+->	->*	new	new []	delete	delete []
+</br></br>
+
+<b>Following is the list of operators, which can not be overloaded -</b>
+</br></br>
+
+::	.*	.	?:
+</br></br>
+
+
+</div>
+<div id="c11" class="tabcontent">
+ <h2>C++ Inheritance</h2>
+
+<p>One of the most important concepts in object-oriented programming is that of inheritance. Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. This also provides an opportunity to reuse the code functionality and fast implementation time.</br></br>
+
+When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the base class, and the new class is referred to as the derived class.
+</br></br>
+The idea of inheritance implements the is a relationship. For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on.
+</br></br>
+<b>Base and Derived Classes</b>
+</br></br>
+A class can be derived from more than one classes, which means it can inherit data and functions from multiple base classes. To define a derived class, we use a class derivation list to specify the base class(es). A class derivation list names one or more base classes and has the form -
+</br></br>
+class derived-class: access-specifier base-class
+Where access-specifier is one of public, protected, or private, and base-class is the name of a previously defined class. If the access-specifier is not used, then it is private by default.
+</br></br>
+<b>Consider a base class Shape and its derived class Rectangle as follows -</b>
+</br></br>
+<h5>#include <iostream>
+ 
+using namespace std;
+</br></br>
+// Base class
+</br></br>
+class Shape {
+</br></br>
+   public:
+</br></br>
+      void setWidth(int w) {
+</br></br>
+         width = w;
+</br></br>
+      }
+</br></br>
+      void setHeight(int h) {
+</br></br>
+         height = h;
+</br></br>
+      }
+      </br></br>
+   protected:
+</br></br>
+      int width;
+</br></br>
+      int height;
+</br></br>
+};
+</br></br>
+// Derived class
+</br></br>
+class Rectangle: public Shape {
+</br></br>
+   public:
+</br></br>
+      int getArea() { 
+</br></br>
+         return (width * height); 
+</br></br>
+      }
+</br></br>
+};
+</br></br>
+int main(void) {
+</br></br>
+   Rectangle Rect;
+ </br></br>
+   Rect.setWidth(5);
+</br></br>
+   Rect.setHeight(7);
+</br></br>
+   // Print the area of the object.
+</br></br>
+   cout << "Total area: " << Rect.getArea() << endl;
+</br></br>
+   return 0;
+</br></br>
+}</h5>
+</br></br>
+<h3>Output</h3>
+</br></br>
+Total area: 35
+</br></br>
+<h3>Access Control and Inheritance</h5>
+</br></br>
+A derived class can access all the non-private members of its base class. Thus base-class members that should not be accessible to the member functions of derived classes should be declared private in the base class.
+</br></br>
+We can summarize the different access types according to - who can access them in the following way -
+</br></br>
+Access---	public-----	protected----	private
+</br></br>
+Same class---------	yes------	yes------	yes
+</br></br>
+Derived classes------	yes------	yes------	no
+</br></br>
+Outside classes------	yes------	no------	no
+</br></br>
+<b>A derived class inherits all base class methods with the following exceptions -</b>
+</br></br>
+Constructors, destructors and copy constructors of the base class.
+</br></br>
+Overloaded operators of the base class.
+</br></br>
+The friend functions of the base class.
+</br></br>
+<h3>Type of Inheritance</h3>
+</br></br>
+When deriving a class from a base class, the base class may be inherited through public, protected or private inheritance. The type of inheritance is specified by the access-specifier as explained above.
+</br></br>
+We hardly use protected or private inheritance, but public inheritance is commonly used. While using different type of inheritance, following rules are applied -
+</br></br>
+Public Inheritance - When deriving a class from a public base class, public members of the base class become public members of the derived class and protected members of the base class become protected members of the derived class. A base class's 
+</br></br>
+private members are never accessible directly from a derived class, but can be accessed through calls to the public and protected members of the base class.
+</br></br>
+Protected Inheritance - When deriving from a protected base class, public and protected members of the base class become protected members of the derived class.
+</br></br>
+Private Inheritance - When deriving from a private base class, public and protected members of the base class become private members of the derived class.
+</br></br>
+Multiple Inheritance
+</br></br>
+A  C++ class can inherit members from more than one class and here is the extended syntax -
+</br></br>
+class derived-class: access baseA, access baseB....
+</br></br>
+Where access is one of public, protected, or private and would be given for every base class and they will be separated by comma as shown above. Let us try the following example -
+</br></br>
+<h5>#include <iostream>
+ </br></br>
+using namespace std;
+</br></br>
+// Base class Shape
+</br></br>
+class Shape {
+</br></br>
+   public:
+</br></br>
+      void setWidth(int w) {
+</br></br>
+         width = w;
+</br></br>
+      }</br></br>
+
+</br></br>      void setHeight(int h) {
+
+</br></br>         height = h;
+
+</br></br>      }
+      
+</br></br>   protected:
+
+</br></br>      int width;
+
+</br></br>      int height;
+
+</br></br>};
+
+
+</br></br>// Base class PaintCost
+
+</br></br>class PaintCost {
+
+</br></br>   public:
+
+</br></br>      int getCost(int area) {
+</br></br>
+         return area * 70;
+</br></br>
+      }
+</br></br>
+};
+</br></br>
+
+// Derived class
+</br></br>
+class Rectangle: public Shape, public PaintCost {
+</br></br>
+   public:
+</br></br>
+      int getArea() {
+</br></br>
+         return (width * height); 
+</br></br>
+      }
+</br></br>
+};
+</br></br>
+
+int main(void) {
+</br></br>
+   Rectangle Rect;
+</br></br>
+   int area;
+</br></br>
+ 
+   Rect.setWidth(5);
+</br></br>
+   Rect.setHeight(7);
+</br></br>
+
+   area = Rect.getArea();
+</br></br>   
+   // Print the area of the object.
+</br></br>
+   cout << "Total area: " << Rect.getArea() << endl;
+</br></br>
+   // Print the total cost of painting
+</br></br>
+   cout << "Total paint cost: $" << Rect.getCost(area) << endl;
+</br></br>
+   return 0;
+</br></br>
+}</h5>
+<h3>Output</h3>
+
+Total area: 35
+</br></br>
+Total paint cost: $2450
+</br></br>
+<a href="c++quiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="C++">
+    <input type="submit" class="button" value="Quiz Later">
+</hr>
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

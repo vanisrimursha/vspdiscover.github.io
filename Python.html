@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Python</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+
+
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  Python</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Variables</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Operators</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Strings</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Decision Making Statements</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">Looping</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">Tuples</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">Dictionary</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">Functions</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">Files I/O</button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h2>Python - Overview</h2>
+
+<p>Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable. It uses English keywords frequently where as other languages use punctuation, and it has fewer syntactical constructions than other languages.</br></br>
+
+<b>Python is Interpreted </b>- Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.
+</br></br>
+<b>Python is Interactive</b> - You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.
+</br></br>
+<b>Python is Object-Oriented</b> - Python supports Object-Oriented style or technique of programming that encapsulates code within objects.
+</br></br>
+<b>Python is a Beginner's Language</b> - Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.
+</br></br>
+<h3>History of Python</h3>
+
+Python was developed by Guido van Rossum in the late eighties and early nineties at the National Research Institute for Mathematics and Computer Science in the Netherlands.
+</br></br>
+Python is derived from many other languages, including ABC, Modula-3, C, C++, Algol-68, SmallTalk, and Unix shell and other scripting languages.
+</br></br>
+Python is copyrighted. Like Perl, Python source code is now available under the GNU General Public License (GPL).
+</br></br>
+Python is now maintained by a core development team at the institute, although Guido van Rossum still holds a vital role in directing its progress.
+</br></br>
+<h3>Python Features</h3>
+
+<b>Easy-to-learn </b>- Python has few keywords, simple structure, and a clearly defined syntax. This allows the student to pick up the language quickly.
+</br></br>
+<b>Easy-to-read </b>- Python code is more clearly defined and visible to the eyes.
+</br></br>
+<b>Easy-to-maintain </b>- Python's source code is fairly easy-to-maintain.
+</br></br>
+<b>A broad standard library </b>- Python's bulk of the library is very portable and cross-platform compatible on UNIX, Windows, and Macintosh.
+</br></br>
+<b>Interactive Mode</b> - Python has support for an interactive mode which allows interactive testing and debugging of snippets of code.
+</br></br>
+<b>Portable </b>- Python can run on a wide variety of hardware platforms and has the same interface on all platforms.
+</br></br>
+<b>Extendable</b> - You can add low-level modules to the Python interpreter. These modules enable programmers to add to or customize their tools to be more efficient.
+</br></br>
+<b>Databases</b> - Python provides interfaces to all major commercial databases.
+</br></br>
+<b>GUI Programming</b> - Python supports GUI applications that can be created and ported to many system calls, libraries and windows systems, such as Windows MFC, Macintosh, and the X Window system of Unix.
+</br></br>
+<b>Scalable</b> - Python provides a better structure and support for large programs than shell scripting.
+</br></br>
+<h3>Apart from the above-mentioned features, Python has a big list of good features, few are listed below -</h3>
+
+It supports functional and structured programming methods as well as OOP.
+</br></br>
+It can be used as a scripting language or can be compiled to byte-code for building large applications.
+</br></br>
+It provides very high-level dynamic data types and supports dynamic type checking.
+</br></br>
+It supports automatic garbage collection.
+</br></br>
+It can be easily integrated with C, C++, COM, ActiveX, CORBA, and Java.
+</br></br>
+
+</div>
+
+<div id="c2" class="tabcontent">
+
+<h2>Python - Variable Types</h2>
+
+<p>Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in memory.</br></br>
+
+Based on the data type of a variable, the interpreter allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to variables, you can store integers, decimals or characters in these variables.
+</br></br>
+<h3>Assigning Values to Variables</h3>
+
+Python variables do not need explicit declaration to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.
+</br></br>
+The operand to the left of the = operator is the name of the variable and the operand to the right of the = operator is the value stored in the variable. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+counter = 100          # An integer assignment
+</br></br>
+miles   = 1000.0       # A floating point
+</br></br>
+name    = "John"       # A string
+</br></br>
+print counter
+</br></br>
+print miles
+</br></br>
+print name</b>
+</br></br>
+<h3>Output</h3>
+
+100
+</br></br>
+1000.0
+</br></br>
+John
+</br></br>
+<h3>Multiple Assignment</h3>
+
+Python allows you to assign a single value to several variables simultaneously. For example -
+</br></br>
+a = b = c = 1
+</br></br>
+Here, an integer object is created with the value 1, and all three variables are assigned to the same memory location. You can also assign multiple objects to multiple variables. For example -
+</br></br>
+a,b,c = 1,2,"john"
+</br></br>
+Here, two integer objects with values 1 and 2 are assigned to variables a and b respectively, and one string object with the value "john" is assigned to the variable c.
+</br></br>
+<h3>Standard Data Types</h3>
+
+The data stored in memory can be of many types. For example, a person's age is stored as a numeric value and his or her address is stored as alphanumeric characters. Python has various standard data types that are used to define the operations possible on them and the storage method for each of them.
+</br></br>
+<h4>Python has five standard data types -</h4>
+
+1.Numbers
+</br></br>
+2.String</br></br>
+3.List</br></br>
+4.Tuple</br></br>
+5.Dictionary</br></br>
+
+<b>Number data types</b> store numeric values. Number objects are created when you assign a value to them. For example -
+</br></br>
+var1 = 1
+</br></br>
+var2 = 10
+</br></br>
+You can also delete the reference to a number object by using the del statement. The syntax of the del statement is -
+</br></br>
+del var1[,var2[,var3[....,varN]]]]
+</br></br>
+You can delete a single object or multiple objects by using the del statement. For example -
+</br></br>
+del var
+</br></br>
+del var_a, var_b
+</br></br>
+<b>Python supports four different numerical types -</b>
+</br></br>
+int (signed integers)
+</br></br>
+long (long integers, they can also be represented in octal and hexadecimal)
+</br></br>
+float (floating point real values)
+</br></br>
+complex (complex numbers)
+</br></br>
+<b>Examples</b>
+</br></br>
+Here are some examples of numbers -
+</br></br>
+<b>int-----	long-------	float-------	complex</b>
+</br></br>
+10         51924361L	0.0	3.14j
+</br></br>
+100	-0x19323L	15.20	45.j
+</br></br>
+-786	0122L	-21.9	9.322e-36j
+</br></br>
+080	0xDEFABCECBDAECBFBAEl	32.3+e18	.876j
+</br></br>
+-0490	535633629843L	-90.	-.6545+0J
+</br></br>
+-0x260	-052318172735L	-32.54e100	3e+26J
+</br></br>
+
+0x69	-4721885298529L	70.2-E12	4.53e-7j
+</br></br>
+Python allows you to use a lowercase l with long, but it is recommended that you use only an uppercase L to avoid confusion with the number 1. Python displays long integers with an uppercase L.
+</br></br>
+A complex number consists of an ordered pair of real floating-point numbers denoted by x + yj, where x and y are the real numbers and j is the imaginary unit.
+</br></br>
+<h3>Python Strings</h3>
+
+Strings in Python are identified as a contiguous set of characters represented in the quotation marks. Python allows for either pairs of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) with indexes starting at 0 in the beginning of the string and working their way from -1 at the end.
+</br></br>
+The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator. For example -
+</br></br>
+#!/usr/bin/python
+</br></br>
+str = 'Hello World!'
+</br></br>
+print str          # Prints complete string
+</br></br>
+print str[0]       # Prints first character of the string
+</br></br>
+print str[2:5]     # Prints characters starting from 3rd to 5th
+</br></br>
+print str[2:]      # Prints string starting from 3rd character
+</br></br>
+print str * 2      # Prints string two times
+</br></br>
+print str + "TEST" # Prints concatenated string</b>
+</br></br>
+
+<h3>Output</h3>
+
+Hello World!
+</br></br>
+H
+</br></br>
+llo
+</br></br>
+llo World!
+</br></br>
+Hello World!Hello World!
+</br></br>
+Hello World!TEST
+</br></br>
+
+<h3>Python Lists</h3>
+
+Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square brackets ([]). To some extent, lists are similar to arrays in C. One difference between them is that all the items belonging to a list can be of different data type.
+</br></br>
+The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition operator. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+</br></br>
+tinylist = [123, 'john']
+</br></br>
+print list          # Prints complete list
+</br></br>
+print list[0]       # Prints first element of the list
+</br></br>
+print list[1:3]     # Prints elements starting from 2nd till 3rd 
+</br></br>
+print list[2:]      # Prints elements starting from 3rd element
+</br></br>
+print tinylist * 2  # Prints list two times
+</br></br>
+print list + tinylist # Prints concatenated lists</b>
+</br></br>
+<h3>output</h3>
+
+['abcd', 786, 2.23, 'john', 70.200000000000003]
+</br></br>
+abcd
+</br></br>
+[786, 2.23]
+</br></br>
+[2.23, 'john', 70.200000000000003]
+</br></br>
+[123, 'john', 123, 'john']
+</br></br>
+['abcd', 786, 2.23, 'john', 70.200000000000003, 123, 'john']
+</br></br>
+<h3>Python Tuples</h3>
+
+A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parentheses.
+</br></br>
+The main differences between lists and tuples are: Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+tuple = ( 'abcd', 786 , 2.23, 'john', 70.2  )
+</br></br>
+tinytuple = (123, 'john')
+</br></br>
+print tuple           # Prints complete list
+</br></br>
+print tuple[0]        # Prints first element of the list
+</br></br>
+print tuple[1:3]      # Prints elements starting from 2nd till 3rd 
+</br></br>
+print tuple[2:]       # Prints elements starting from 3rd element
+</br></br>
+print tinytuple * 2   # Prints list two times
+</br></br>
+print tuple + tinytuple # Prints concatenated lists</b>
+</br></br>
+<h3>Output</h3>
+
+('abcd', 786, 2.23, 'john', 70.2)
+</br></br>
+abcd
+</br></br>
+(786, 2.23)
+</br></br>
+(2.23, 'john', 70.2)
+</br></br>
+(123, 'john', 123, 'john')
+</br></br>
+('abcd', 786, 2.23, 'john', 70.2, 123, 'john')
+</br></br>
+
+<h3>Data Type Conversion</h3>
+
+Sometimes, you may need to perform conversions between the built-in types. To convert between types, you simply use the type name as a function.
+</br></br>
+There are several built-in functions to perform conversion from one data type to another. These functions return a new object representing the converted value.
+</br></br>
+	
+<b>int(x [,base])</b>
+</br></br>
+Converts x to an integer. base specifies the base if x is a string.
+</br></br>
+	
+<b>long(x [,base] )</b>
+</br></br>
+Converts x to a long integer. base specifies the base if x is a string.
+</br></br>
+	
+<b>float(x)</b>
+</br></br>
+Converts x to a floating-point number.
+</br></br>
+	
+<b>complex(real [,imag])</b>
+</br></br>
+Creates a complex number.
+</br></br>
+	
+<b>str(x)</b>
+</br></br>
+Converts object x to a string representation.
+</br></br>
+	
+<b>repr(x)</b>
+</br></br>
+Converts object x to an expression string.
+</br></br>
+	
+<b>eval(str)</b>
+</br></br>
+Evaluates a string and returns an object.
+</br></br>
+	
+<b>tuple(s)</b>
+</br></br>
+Converts s to a tuple.
+</br></br>
+	
+<b>list(s)</b>
+</br></br>
+Converts s to a list.
+</br></br>
+	
+<b>set(s)</b>
+</br></br>
+Converts s to a set.
+</br></br>
+	
+<b>dict(d)</b>
+</br></br>
+Creates a dictionary. d must be a sequence of (key,value) tuples.
+
+</br></br>	
+<b>frozenset(s)</b>
+</br></br>
+Converts s to a frozen set.
+</br></br>
+	
+<b>chr(x)</b>
+</br></br>
+Converts an integer to a character.
+</br></br>
+	
+<b>unichr(x)</b>
+</br></br>
+Converts an integer to a Unicode character.
+</br></br>
+	
+<b>ord(x)</b>
+</br></br>
+Converts a single character to its integer value.
+</br></br>
+	
+<b>hex(x)</b>
+</br></br>
+Converts an integer to a hexadecimal string.
+</br></br>
+	
+<b>oct(x)</b>
+</br></br>
+Converts an integer to an octal string.
+</br></br>
+
+</div>
+
+<div id="c3" class="tabcontent">
+
+<h2>Python - Basic Operators </h2>
+
+<p>Operators are the constructs which can manipulate the value of operands.</br></br>
+
+Consider the expression 4 + 5 = 9. Here, 4 and 5 are called operands and + is called operator.
+</br></br>
+<h3>Types of Operator</h3>
+
+Python language supports the following types of operators.
+</br></br>
+Arithmetic Operators
+</br></br>
+Comparison (Relational) Operators
+</br></br>
+Assignment Operators
+</br></br>
+Logical Operators
+</br></br>
+Bitwise Operators
+</br></br>
+Membership Operators
+</br></br>
+Identity Operators
+</br></br>
+
+<b>Python Arithmetic Operators</b>
+</br></br>
+Assume variable a holds 10 and variable b holds 20, then -
+</br></br>
+[
++ Addition	Adds values on either side of the operator.	a + b = 30
+</br></br>
+- Subtraction	Subtracts right hand operand from left hand operand.	a – b = -10
+</br></br>
+* Multiplication	Multiplies values on either side of the operator	a * b = 200
+</br></br>
+/ Division	Divides left hand operand by right hand operand	b / a = 2
+</br></br>
+% Modulus	Divides left hand operand by right hand operand and returns remainder	b % a = 0
+</br></br>
+** Exponent	Performs exponential (power) calculation on operators	a**b =10 to the power 20
+</br></br>
+//	Floor Division - The division of operands where the result is the quotient in which the digits after the decimal point are removed. But if one of the operands is negative, the result is floored, i.e., rounded away from zero (towards negative infinity) -	9//2 = 4 and 9.0//2.0 = 4.0, -11//3 = -4, -11.0//3 = -4.0
+</br></br>
+<b>Python Comparison Operators</b>
+</br></br>
+These operators compare the values on either sides of them and decide the relation among them. They are also called Relational operators.
+</br></br>
+Assume variable a holds 10 and variable b holds 20, then -
+</br></br>
+==	If the values of two operands are equal, then the condition becomes true.	(a == b) is not true.
+</br></br>
+!=	If values of two operands are not equal, then condition becomes true.	(a != b) is true.
+</br></br>
+<>	If values of two operands are not equal, then condition becomes true.	(a <> b) is true. This is similar to != operator.
+</br></br>
+>	If the value of left operand is greater than the value of right operand, then condition becomes true.	(a > b) is not true.
+</br></br>
+<	If the value of left operand is less than the value of right operand, then condition becomes true.	(a < b) is true.
+</br></br>
+>=	If the value of left operand is greater than or equal to the value of right operand, then condition becomes true.	(a >= b) is not true.
+</br></br>
+<=	If the value of left operand is less than or equal to the value of right operand, then condition becomes true.	(a <= b) is true.
+</br></br>
+<b>Python Assignment Operators</b>
+</br></br>
+
+=	Assigns values from right side operands to left side operand	c = a + b assigns value of a + b into c
+</br></br>
++= Add AND	It adds right operand to the left operand and assign the result to left operand	c += a is equivalent to c = c + a
+</br></br>
+-= Subtract AND	It subtracts right operand from the left operand and assign the result to left operand	c -= a is equivalent to c = c - a
+</br></br>
+*= Multiply AND	It multiplies right operand with the left operand and assign the result to left operand	c *= a is equivalent to c = c * a
+</br></br>
+/= Divide AND	It divides left operand with the right operand and assign the result to left operand	c /= a is equivalent to c = c / ac /= a is equivalent to c = c / a
+</br></br>
+%= Modulus AND	It takes modulus using two operands and assign the result to left operand	c %= a is equivalent to c = c % a
+</br></br>
+**= Exponent AND	Performs exponential (power) calculation on operators and assign value to the left operand	c **= a is equivalent to c = c ** a
+</br></br>
+//= Floor Division	It performs floor division on operators and assign value to the left operand	c //= a is equivalent to c = c // a
+</br></br>
+<b>Python Bitwise Operators</b>
+</br></br>
+Bitwise operator works on bits and performs bit by bit operation. Assume if a = 60; and b = 13; Now in binary format they will be as follows -
+</br></br>
+a = 0011 1100
+</br></br>
+b = 0000 1101
+</br></br>
+-----------------
+</br></br>
+a&b = 0000 1100
+</br></br>
+a|b = 0011 1101
+</br></br>
+a^b = 0011 0001
+</br></br>
+~a  = 1100 0011
+</br></br>
+& Binary AND	Operator copies a bit to the result if it exists in both operands	(a & b) (means 0000 1100)
+</br></br>
+| Binary OR	It copies a bit if it exists in either operand.	(a | b) = 61 (means 0011 1101)
+</br></br>
+^ Binary XOR	It copies the bit if it is set in one operand but not both.	(a ^ b) = 49 (means 0011 0001)
+</br></br>
+~ Binary Ones Complement	It is unary and has the effect of 'flipping' bits.	(~a ) = -61 (means 1100 0011 in 2's complement form due to a signed binary number.
+</br></br>
+<< Binary Left Shift	The left operands value is moved left by the number of bits specified by the right operand.	a << 2 = 240 (means 1111 0000)
+</br></br>
+>> Binary Right Shift	The left operands value is moved right by the number of bits specified by the right operand.	a >> 2 = 15 (means 0000 1111)
+</br></br>
+<b>Python Logical Operators</b>
+</br></br>
+There are following logical operators supported by Python language. Assume variable a holds 10 and variable b holds 20 then
+</br></br>
+Python’s membership operators test for membership in a sequence, such as strings, lists, or tuples. There are two membership operators as explained below -
+</br></br>
+in	Evaluates to true if it finds a variable in the specified sequence and false otherwise.	x in y, here in results in a 1 if x is a member of sequence y.
+</br></br>
+not in	Evaluates to true if it does not finds a variable in the specified sequence and false otherwise.	x not in y, here not in results in a 1 if x is not a member of sequence y.
+</br></br>
+<b>Python Identity Operators</b>
+</br></br>
+
+Identity operators compare the memory locations of two objects. There are two Identity operators explained below -
+</br></br>
+is	Evaluates to true if the variables on either side of the operator point to the same object and false otherwise.	x is y, here is results in 1 if id(x) equals id(y).
+</br></br>
+is not	Evaluates to false if the variables on either side of the operator point to the same object and true otherwise.	x is not y, here is not results in 1 if id(x) is not equal to id(y).
+</br></br>
+<b>Python Operators Precedence</b>
+</br></br>
+
+<b>**</b>
+</br></br>
+Exponentiation (raise to the power)
+</br></br>
+	
+<b>~ + -</b>
+</br></br>
+Complement, unary plus and minus (method names for the last two are +@ and -@)
+</br></br>
+	
+<b>* / % //</b>
+</br></br>
+Multiply, divide, modulo and floor division
+</br></br>
+<b>	
++ -</b>
+</br></br>
+Addition and subtraction
+</br></br>
+<b>	
+>> <<</b>
+</br></br>
+Right and left bitwise shift
+</br></br>
+	
+<b>&</b>
+</br></br>
+Bitwise 'AND'
+</br></br>
+<b>	
+^ |</b>
+</br></br>
+Bitwise exclusive `OR' and regular `OR'
+</br></br>
+<b>	
+<= < > >=</b>
+</br></br>
+Comparison operators
+</br></br>
+<b>	
+<> == !=</b>
+</br></br>
+Equality operators
+</br></br>
+<b>	
+= %= /= //= -= += *= **=</b>
+</br></br>
+Assignment operators
+</br></br>
+<b>	
+is is not
+</b></br></br>
+Identity operators
+</br></br>
+<b>	
+in not in</b>
+</br></br>
+Membership operators
+</br></br>
+<b>	
+not or and</b>
+</br></br>
+
+
+</div>
+
+<div id="c4" class="tabcontent">
+<h2>Python - Strings</h2>
+
+<p>Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes. Creating strings is as simple as assigning a value to a variable. For example -</br></br>
+
+var1 = 'Hello World!'
+</br></br>
+var2 = "Python Programming"
+</br></br>
+<b>Accessing Values in Strings</b>
+</br></br>
+Python does not support a character type; these are treated as strings of length one, thus also considered a substring.
+</br></br>
+To access substrings, use the square brackets for slicing along with the index or indices to obtain your substring. For example -
+</br></br>
+#!/usr/bin/python
+</br></br>
+var1 = 'Hello World!'
+</br></br>
+var2 = "Python Programming"
+</br></br>
+print "var1[0]: ", var1[0]
+</br></br>
+print "var2[1:5]: ", var2[1:5]
+</br></br>
+<h3>Output</h3>
+</br></br>
+var1[0]:  H
+</br></br>
+var2[1:5]:  ytho
+</br></br>
+<h3>Updating Strings</h3>
+
+You can "update" an existing string by (re)assigning a variable to another string. The new value can be related to its previous value or to a completely different string altogether. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+var1 = 'Hello World!'
+</br></br>
+print "Updated String :- ", var1[:6] + 'Python'</b>
+</br></br>
+<b>When the above code is executed, it produces the following result -</b>
+</br></br>
+Updated String :-  Hello Python
+</br></br>
+Escape Characters
+</br></br>
+Following table is a list of escape or non-printable characters that can be represented with backslash notation.
+</br></br>
+An escape character gets interpreted; in a single quoted as well as double quoted strings.
+</br></br>
+<b>Backslash notation	Hexadecimal character	Description</b>
+</br></br>
+\a	0x07	Bell or alert
+</br></br>
+\b	0x08	Backspace
+</br></br>
+\cx	 	Control-x
+</br></br>
+\C-x	 	Control-x
+</br></br>
+\e	0x1b	Escape
+</br></br>
+\f	0x0c	Formfeed
+</br></br>
+\M-\C-x	 	Meta-Control-x
+</br></br>
+\n	0x0a	Newline
+</br></br>
+\nnn	 	Octal notation, where n is in the range 0.7
+</br></br>
+\r	0x0d	Carriage return
+</br></br>
+
+\s	0x20	Space
+</br></br>
+\t	0x09	Tab
+</br></br>
+\v	0x0b	Vertical tab
+</br></br>
+\x	 	Character x
+</br></br>
+\xnn	 	Hexadecimal notation, where n is in the range 0.9, a.f, or A.F
+</br></br>
+<b>String Special Operators</b>
+</br></br>
+Assume string variable a holds 'Hello' and variable b holds 'Python', then -
+</br></br>
+<b>+</b>	Concatenation - Adds values on either side of the operator	a + b will give HelloPython
+</br></br>
+<b>*</b>	Repetition - Creates new strings, concatenating multiple copies of the same string	a*2 will give -HelloHello
+</br></br>
+<b>[]</b>	Slice - Gives the character from the given index	a[1] will give e
+</br></br>
+<b>[ : ]</b>	Range Slice - Gives the characters from the given range	a[1:4] will give ell
+</br></br>
+<b>in</b>	Membership - Returns true if a character exists in the given string	H in a will give 1
+</br></br>
+<b>not in	Membership -</b> Returns true if a character does not exist in the given string	M not in a will give 1
+</br></br>
+<b>r/R</b>	Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be 
+</br></br>
+<b>lowercase (r) or uppercase (R)</b> and must be placed immediately preceding the first quote mark.	print r'\n' prints \n and print R'\n'prints \n
+</br></br>
+<b>%</b>	Format - Performs String formatting	See at next section
+</br></br>
+<b>String Formatting Operator</b>
+One of Python's coolest features is the string format operator %. This operator is unique to strings and makes up for the pack of having functions from C's printf() family. Following is a simple example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+print "My name is %s and weight is %d kg!" % ('Zara', 21)
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+My name is Zara and weight is 21 kg!
+</br></br>
+Here is the list of complete set of symbols which can be used along with % -</b>
+</br></br>
+
+%c	character
+</br></br>
+%s	string conversion via str() prior to formatting
+</br></br>
+%i	signed decimal integer
+</br></br>
+%d	signed decimal integer
+</br></br>
+%u	unsigned decimal integer
+</br></br>
+%o	octal integer
+</br></br>
+%x	hexadecimal integer (lowercase letters)
+</br></br>
+%X	hexadecimal integer (UPPERcase letters)
+</br></br>
+%e	exponential notation (with lowercase 'e')
+</br></br>
+%E	exponential notation (with UPPERcase 'E')
+</br></br>
+%f	floating point real number
+</br></br>
+%g	the shorter of %f and %e
+</br></br>
+%G	the shorter of %f and %E
+</br></br>
+
+<b>*</b>	argument specifies width or precision
+</br></br>
+<b>-</b>	left justification
+</br></br>
+<b>+</b>	display the sign
+</br></br>
+<b><sp></b>	leave a blank space before a positive number
+</br></br>
+<b>#</b>	add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
+</br></br>
+<b>0</b>       pad from left with zeros (instead of spaces)
+</br></br>
+<b>%</b>	'%%' leaves you with a single literal '%'
+</br></br>
+<b>(var)</b>	mapping variable (dictionary arguments)
+</br></br>
+<b>m.n.</b>	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
+</br></br>
+<h3>Triple Quotes</h3>
+
+Python's triple quotes comes to the rescue by allowing strings to span multiple lines, including verbatim NEWLINEs, TABs, and any other special characters.
+</br></br>
+The syntax for triple quotes consists of three consecutive single or double quotes.
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+para_str = """this is a long string that is made up of
+</br></br>
+several lines and non-printable characters such as
+</br></br>
+TAB ( \t ) and they will show up that way when displayed.
+</br></br>
+NEWLINEs within the string, whether explicitly given like
+</br></br>
+this within the brackets [ \n ], or just a NEWLINE within
+</br></br>
+the variable assignment will also show up.
+</br></br>
+"""
+</br></br>
+print para_str</b>
+</br></br>
+When the above code is executed, it produces the following result. Note how every single special character has been converted to its printed form, right down to the last NEWLINE at the end of the string between the "up." and closing triple quotes. 
+Also note that NEWLINEs occur either with an explicit carriage return at the end of a line or its escape code (\n) -
+</br></br>
+this is a long string that is made up of
+</br></br>
+several lines and non-printable characters such as
+</br></br>
+TAB (    ) and they will show up that way when displayed.
+</br></br>
+NEWLINEs within the string, whether explicitly given like
+</br></br>
+this within the brackets [
+</br></br>
+ ], or just a NEWLINE within
+</br></br>
+the variable assignment will also show up.
+</br></br>
+Raw strings do not treat the backslash as a special character at all. Every character you put into a raw string stays the way you wrote it -
+</br></br>
+
+
+<b>#!/usr/bin/python
+</br></br>
+print 'C:\\nowhere'
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+C:\nowhere
+</br></br>
+Now let's make use of raw string. We would put expression in r'expression' as follows -
+</br></br>
+#!/usr/bin/python
+</br></br>
+
+print r'C:\\nowhere'
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+C:\\nowhere</b>
+</br></br>
+<h3>Unicode String</h3>
+</br></br>
+Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world. I'll restrict my treatment of 
+Unicode strings to the following -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+print u'Hello, world!'</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+Hello, world!
+</br></br>
+As you can see, Unicode strings use the prefix u, just as raw strings use the prefix r.
+</br></br>
+<h3>Built-in String Methods</h3>
+</br></br>
+Python includes the following built-in methods to manipulate strings -
+</br></br>
+1	capitalize()
+Capitalizes first letter of string
+</br></br>
+2	center(width, fillchar)
+Returns a space-padded string with the original string centered to a total of width columns.
+</br></br>
+3	count(str, beg= 0,end=len(string))
+Counts how many times str occurs in string or in a substring of string if starting index beg and ending index end are given.
+</br></br>
+4	decode(encoding='UTF-8',errors='strict')
+Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding.
+</br></br>
+5	encode(encoding='UTF-8',errors='strict')
+Returns encoded string version of string; on error, default is to raise a ValueError unless errors is given with 'ignore' or 'replace'.
+</br></br>
+6	endswith(suffix, beg=0, end=len(string))
+Determines if string or a substring of string (if starting index beg and ending index end are given) ends with suffix; returns true if so and false otherwise.
+</br></br>
+7	expandtabs(tabsize=8)
+Expands tabs in string to multiple spaces; defaults to 8 spaces per tab if tabsize not provided.
+</br></br>
+8	find(str, beg=0 end=len(string))
+Determine if str occurs in string or in a substring of string if starting index beg and ending index end are given returns index if found and -1 otherwise.
+</br></br>
+9	index(str, beg=0, end=len(string))
+Same as find(), but raises an exception if str not found.
+</br></br>
+10	isalnum()
+Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.
+</br></br>
+11	isalpha()
+Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.
+</br></br>
+12	isdigit()
+Returns true if string contains only digits and false otherwise.
+</br></br>
+13	islower()
+Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.
+</br></br>
+14	isnumeric()
+Returns true if a unicode string contains only numeric characters and false otherwise.
+</br></br>
+15	isspace()
+Returns true if string contains only whitespace characters and false otherwise.
+</br></br>
+16	istitle()
+Returns true if string is properly "titlecased" and false otherwise.
+</br></br>
+17	isupper()
+Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.
+</br></br>
+18	join(seq)
+Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.
+</br></br>
+19	len(string)
+Returns the length of the string
+</br></br>
+20	ljust(width[, fillchar])
+Returns a space-padded string with the original string left-justified to a total of width columns.
+</br></br>
+21	lower()
+Converts all uppercase letters in string to lowercase.
+</br></br>
+22	lstrip()
+Removes all leading whitespace in string.
+</br></br>
+23	maketrans()
+Returns a translation table to be used in translate function.
+</br></br>
+24	max(str)
+Returns the max alphabetical character from the string str.
+</br></br>
+25	min(str)
+Returns the min alphabetical character from the string str.
+</br></br>
+26	replace(old, new [, max])
+Replaces all occurrences of old in string with new or at most max occurrences if max given.
+</br></br>
+27	rfind(str, beg=0,end=len(string))
+Same as find(), but search backwards in string.
+</br></br>
+28	rindex( str, beg=0, end=len(string))
+Same as index(), but search backwards in string.
+</br></br>
+29	rjust(width,[, fillchar])
+Returns a space-padded string with the original string right-justified to a total of width columns.
+</br></br>
+30	rstrip()
+Removes all trailing whitespace of string.
+</br></br>
+31	split(str="", num=string.count(str))
+Splits string according to delimiter str (space if not provided) and returns list of substrings; split into at most num substrings if given.
+</br></br>
+32	splitlines( num=string.count('\n'))
+Splits string at all (or num) NEWLINEs and returns a list of each line with NEWLINEs removed.
+</br></br>
+33	startswith(str, beg=0,end=len(string))
+Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.
+</br></br>
+34	strip([chars])
+Performs both lstrip() and rstrip() on string.
+</br></br>
+35	swapcase()
+Inverts case for all letters in string.
+</br></br>
+36	title()
+Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
+</br></br>
+37	translate(table, deletechars="")
+Translates string according to translation table str(256 chars), removing those in the del string.
+</br></br>
+38	upper()
+Converts lowercase letters in string to uppercase.
+</br></br>
+39	zfill (width)
+Returns original string leftpadded with zeros to a total of width characters; intended for numbers, zfill() retains any sign given (less one zero).
+</br></br>
+40	isdecimal()
+Returns true if a unicode string contains only decimal characters and false otherwise.
+</br></br>
+
+</div>
+
+<div id="c5" class="tabcontent">
+<h2>Python - Decision Making</h2>
+
+<p>Decision making is anticipation of conditions occurring while execution of the program and specifying actions taken according to the conditions.</br></br>
+
+Decision structures evaluate multiple expressions which produce TRUE or FALSE as outcome. You need to determine which action to take and which statements to execute if outcome is TRUE or FALSE otherwise.
+</br></br>
+<b>Following is the general form of a typical decision making structure found in most of the programming languages -</b>
+</br></br>
+<b>Decision making statements in Python</b>
+</br></br>
+Python programming language assumes any non-zero and non-null values as TRUE, and if it is either zero or null, then it is assumed as FALSE value.
+</br></br>
+Python programming language provides following types of decision making statements. Click the following links to check their detail.
+</br></br>
+<b>	if statements</b>
+</br></br>
+An if statement consists of a boolean expression followed by one or more statements.
+</br></br>
+<b>	if...else statements</b>
+</br></br>
+An if statement can be followed by an optional else statement, which executes when the boolean expression is FALSE.
+</br></br>
+<b>	nested if statements</b>
+</br></br>
+You can use one if or else if statement inside another if or else if statement(s).
+</br></br>
+
+<b>Single Statement Suites</b>
+</br></br>
+If the suite of an if clause consists only of a single line, it may go on the same line as the header statement.
+</br></br>
+Here is an example of a one-line if clause -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+var = 100
+</br></br>
+if ( var == 100 ) : print "Value of expression is 100"
+</br></br>
+print "Good bye!"
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+Value of expression is 100
+</br></br>
+Good bye!
+</br></br>
+</b>
+
+
+
+
+
+</div>
+
+<div id="c6" class="tabcontent">
+<h2>Python - Loops</h2>
+
+<p>In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times.</br></br>
+
+Programming languages provide various control structures that allow for more complicated execution paths.
+</br></br>
+
+A loop statement allows us to execute a statement or group of statements multiple times. The following diagram illustrates a loop statement -
+</br></br>
+
+<b>Loop Architecture</b>
+</br></br>
+
+Python programming language provides following types of loops to handle looping requirements.
+</br></br>
+
+<b>	while loop</b>
+</br></br>
+
+Repeats a statement or group of statements while a given condition is TRUE. It tests the condition before executing the loop body.
+</br></br>
+
+<b>	for loop</b>
+</br></br>
+
+Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+</br></br>
+
+<b>nested loops</b>
+</br></br>
+
+You can use one or more loop inside any another while, for or do..while loop.
+</br></br>
+
+<b>Loop Control Statements</b>
+</br></br>
+
+Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.
+</br></br>
+
+Python supports the following control statements. Click the following links to check their detail.
+</br></br>
+
+<b>break statement</b>
+</br></br>
+
+Terminates the loop statement and transfers execution to the statement immediately following the loop.
+
+</br></br>
+
+<b>	continue statement</b>
+</br></br>
+
+Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+</br></br>
+
+<b>pass statement</b>
+</br></br>
+
+The pass statement in Python is used when a statement is required syntactically but you do not want any command or code to execute.
+
+</br></br>
+
+
+
+
+
+
+
+</div>
+
+<div id="c7" class="tabcontent">
+<h2>Python - Tuples</h2>
+
+<p>A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.</br></br>
+
+Creating a tuple is as simple as putting different comma-separated values. Optionally you can put these comma-separated values between parentheses also. For example -
+</br></br>
+<b>tup1 = ('physics', 'chemistry', 1997, 2000);
+</br></br>
+tup2 = (1, 2, 3, 4, 5 );
+</br></br>
+tup3 = "a", "b", "c", "d";</b>
+</br></br>
+The empty tuple is written as two parentheses containing nothing -
+</br></br>
+tup1 = ();
+To write a tuple containing a single value you have to include a comma, even though there is only one value -
+</br></br>
+tup1 = (50,);
+Like string indices, tuple indices start at 0, and they can be sliced, concatenated, and so on.
+</br></br>
+Accessing Values in Tuples
+To access values in tuple, use the square brackets for slicing along with the index or indices to obtain value available at that index. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+tup1 = ('physics', 'chemistry', 1997, 2000);
+</br></br>
+tup2 = (1, 2, 3, 4, 5, 6, 7 );
+</br></br>
+print "tup1[0]: ", tup1[0];
+</br></br>
+print "tup2[1:5]: ", tup2[1:5];</b>
+</br></br>
+<h3>output</h3>
+
+tup1[0]:  physics
+</br></br>
+tup2[1:5]:  [2, 3, 4, 5]
+</br></br>
+<b>Updating Tuples</b>
+</br></br>
+Tuples are immutable which means you cannot update or change the values of tuple elements. You are able to take portions of existing tuples to create new tuples as the following example demonstrates -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+tup1 = (12, 34.56);
+</br></br>
+tup2 = ('abc', 'xyz');
+</br></br>
+# Following action is not valid for tuples
+</br></br>
+# tup1[0] = 100;
+</br></br>
+# So let's create a new tuple as follows
+</br></br>
+tup3 = tup1 + tup2;
+</br></br>
+print tup3;</b>
+</br></br>
+<b>Output</b>
+</br></br>
+(12, 34.56, 'abc', 'xyz')
+</br></br>
+<b>Delete Tuple Elements</b>
+</br></br>
+Removing individual tuple elements is not possible. There is, of course, nothing wrong with putting together another tuple with the undesired elements discarded.
+</br></br>
+To explicitly remove an entire tuple, just use the del statement. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+tup = ('physics', 'chemistry', 1997, 2000);
+</br></br>
+print tup;
+</br></br>
+del tup;
+</br></br>
+print "After deleting tup : ";
+</br></br>
+print tup;</b>
+</br></br>
+This produces the following result. Note an exception raised, this is because after del tup tuple does not exist any more -
+</br></br>
+('physics', 'chemistry', 1997, 2000)
+</br></br>
+After deleting tup :
+</br></br>
+Traceback (most recent call last):
+</br></br>
+   File "test.py", line 9, in <module>
+</br></br>
+      print tup;
+</br></br>
+NameError: name 'tup' is not defined
+</br></br>
+<h3>Basic Tuples Operations</h3>
+
+Tuples respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new tuple, not a string.
+</br></br>
+
+
+In fact, tuples respond to all of the general sequence operations we used on strings in the prior chapter -
+</br></br>
+len((1, 2, 3))	3	Length
+</br></br>
+(1, 2, 3) + (4, 5, 6)	(1, 2, 3, 4, 5, 6)	Concatenation
+
+</br></br>('Hi!',) * 4	('Hi!', 'Hi!', 'Hi!', 'Hi!')	Repetition
+
+</br></br>3 in (1, 2, 3)	True	Membership
+
+</br></br>for x in (1, 2, 3): print x,	1 2 3	Iteration
+
+</br></br>Indexing, Slicing, and Matrixes
+
+</br></br>Because tuples are sequences, indexing and slicing work the same way for tuples as they do for strings. Assuming following input -
+
+</br></br>L = ('spam', 'Spam', 'SPAM!')
+ 
+
+</br></br>Python Expression	Results	Description
+
+</br></br>L[2]	'SPAM!'	Offsets start at zero
+
+</br></br>L[-2]	'Spam'	Negative: count from the right
+
+</br></br>L[1:]	['Spam', 'SPAM!']	Slicing fetches sections
+
+</br></br>No Enclosing Delimiters
+
+</br></br>Any set of multiple objects, comma-separated, written without identifying symbols, i.e., brackets for lists, parentheses for tuples, etc., default to tuples, as indicated in these short examples -
+
+
+
+</br></br><b>#!/usr/bin/python
+</br></br>
+print 'abc', -4.24e93, 18+6.6j, 'xyz';
+</br></br>
+x, y = 1, 2;
+</br></br>
+print "Value of x , y : ", x,y;</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+
+abc -4.24e+93 (18+6.6j) xyz
+</br></br>
+Value of x , y : 1 2
+</br></br>
+Built-in Tuple Functions
+</br></br>
+<b>Python includes the following tuple functions -</b>
+</br></br>
+
+
+	cmp(tuple1, tuple2)
+Compares elements of both tuples.
+</br></br>
+	len(tuple)
+Gives the total length of the tuple.
+</br></br>
+	max(tuple)
+Returns item from the tuple with max value.
+</br></br>
+	min(tuple)
+Returns item from the tuple with min value.
+</br></br>
+	tuple(seq)
+Converts a list into tuple.
+</br></br>
+
+</div>
+
+<div id="c8" class="tabcontent">
+<h2>Python - Dictionary</h2>
+
+<p>Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.</br></br>
+
+Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.
+</br></br>
+<b>Accessing Values in Dictionary</b>
+</br></br>
+To access dictionary elements, you can use the familiar square brackets along with the key to obtain its value. Following is a simple example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+</br></br>
+print "dict['Name']: ", dict['Name']
+</br></br>
+print "dict['Age']: ", dict['Age']</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>dict['Name']:  Zara
+</br></br>
+dict['Age']:  7</b>
+</br></br>
+If we attempt to access a data item with a key, which is not part of the dictionary, we get an error as follows -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+</br></br>
+print "dict['Alice']: ", dict['Alice']</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>dict['Alice']:
+</br></br>
+Traceback (most recent call last):
+</br></br>
+   File "test.py", line 4, in <module>
+</br></br>
+      print "dict['Alice']: ", dict['Alice'];</b>
+</br></br>
+KeyError: 'Alice'
+</br></br>
+<h3>Updating Dictionary</h3>
+
+You can update a dictionary by adding a new entry or a key-value pair, modifying an existing entry, or deleting an existing entry as shown below in the simple example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+</br></br>
+dict['Age'] = 8; # update existing entry
+</br></br>
+dict['School'] = "DPS School"; # Add new entry
+</br></br>
+print "dict['Age']: ", dict['Age']
+</br></br>
+print "dict['School']: ", dict['School']</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>dict['Age']:  8
+</br></br>
+dict['School']:  DPS School</b>
+</br></br>
+<h3>Delete Dictionary Elements</h3>
+
+You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also delete entire dictionary in a single operation.
+</br></br>
+To explicitly remove an entire dictionary, just use the del statement. Following is a simple example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+</br></br>
+del dict['Name']; # remove entry with key 'Name'
+</br></br>
+dict.clear();     # remove all entries in dict
+</br></br>
+del dict ;        # delete entire dictionary
+</br></br>
+print "dict['Age']: ", dict['Age']
+</br></br>
+print "dict['School']: ", dict['School']</b>
+</br></br>
+This produces the following result. Note that an exception is raised because after del dict dictionary does not exist any more -
+</br></br>
+</b>dict['Age']:
+</br></br>
+Traceback (most recent call last):
+   </br></br>
+File "test.py", line 8, in <module>
+</br></br>
+      print "dict['Age']: ", dict['Age'];
+</br></br>
+TypeError: 'type' object is unsubscriptable
+</br></br>
+Note - del() method is discussed in subsequent section.
+</b></br></br>
+
+<h3>Properties of Dictionary Keys</h3>
+
+Dictionary values have no restrictions. They can be any arbitrary Python object, either standard objects or user-defined objects. However, same is not true for the keys.
+</br></br>
+There are two important points to remember about dictionary keys -
+</br></br>
+(a) More than one entry per key not allowed. Which means no duplicate key is allowed. When duplicate keys encountered during assignment, the last assignment wins. For example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+dict = {'Name': 'Zara', 'Age': 7, 'Name': 'Manni'}
+</br></br>
+print "dict['Name']: ", dict['Name']</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>dict['Name']:  Manni</b>
+</br></br>
+(b) Keys must be immutable. Which means you can use strings, numbers or tuples as dictionary keys but something like ['key'] is not allowed. Following is a simple example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+dict = {['Name']: 'Zara', 'Age': 7}
+</br></br>
+print "dict['Name']: ", dict['Name']
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+Traceback (most recent call last):
+</br></br>
+   File "test.py", line 3, in <module>
+</br></br>
+      dict = {['Name']: 'Zara', 'Age': 7};</b>
+</br></br>
+TypeError: list objects are unhashable
+</br></br>
+<h3>Built-in Dictionary Functions & Methods</h3>
+
+1	cmp(dict1, dict2)
+Compares elements of both dict.
+</br></br>
+2	len(dict)
+Gives the total length of the dictionary. This would be equal to the number of items in the dictionary.
+</br></br>
+3	str(dict)
+Produces a printable string representation of a dictionary
+</br></br>
+4	type(variable)
+Returns the type of the passed variable. If passed variable is dictionary, then it would return a dictionary type.
+</br></br>
+Python includes following dictionary methods -
+</br></br>
+Sr.No.	Methods with Description
+1	dict.clear()
+Removes all elements of dictionary dict
+</br></br>
+2	dict.copy()
+Returns a shallow copy of dictionary dict
+</br></br>
+3	dict.fromkeys()
+Create a new dictionary with keys from seq and values set to value.
+</br></br>
+4	dict.get(key, default=None)
+For key key, returns value or default if key not in dictionary
+</br></br>
+5	dict.has_key(key)
+Returns true if key in dictionary dict, false otherwise
+</br></br>
+6	dict.items()
+Returns a list of dict's (key, value) tuple pairs
+</br></br>
+7	dict.keys()
+Returns list of dictionary dict's keys
+</br></br>
+8	dict.setdefault(key, default=None)
+Similar to get(), but will set dict[key]=default if key is not already in dict
+</br></br>
+9	dict.update(dict2)
+Adds dictionary dict2's key-values pairs to dict
+</br></br>
+10	dict.values()
+Returns list of dictionary dict's values
+
+</br></br>
+</div>
+
+<div id="c9" class="tabcontent">
+<h2>Python - Functions</h2>
+
+<p>A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.</br></br>
+
+As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called user-defined functions.
+</br></br>
+<h3>Defining a Function</h3>
+
+You can define functions to provide the required functionality. Here are simple rules to define a function in Python.
+</br></br>
+Function blocks begin with the keyword def followed by the function name and parentheses ( ( ) ).
+</br></br>
+Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.
+</br></br>
+The first statement of a function can be an optional statement - the documentation string of the function or docstring.
+</br></br>
+The code block within every function starts with a colon (:) and is indented.
+</br></br>
+The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.
+</br></br>
+<b>Syntax</b>
+</br></br>
+def functionname( parameters ):
+</br></br>
+   "function_docstring"
+</br></br>
+   function_suite
+</br></br>
+   return [expression]
+</br></br>
+By default, parameters have a positional behavior and you need to inform them in the same order that they were defined.
+</br></br>
+<b>Example</b>
+</br></br>
+The following function takes a string as input parameter and prints it on standard screen.
+</br></br>
+def printme( str ):
+</br></br>
+   "This prints a passed string into this function"
+</br></br>
+   print str
+</br></br>
+   return
+</br></br>
+<b>Calling a Function</b>
+</br></br>
+Defining a function only gives it a name, specifies the parameters that are to be included in the function and structures the blocks of code.
+</br></br>
+Once the basic structure of a function is finalized, you can execute it by calling it from another function or directly from the Python prompt. Following is the example to call printme() function -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Function definition is here
+</br></br>
+def printme( str ):
+</br></br>
+   "This prints a passed string into this function"
+</br></br>
+   print str
+</br></br>
+   return;
+</br></br>
+# Now you can call printme function
+</br></br>
+printme("I'm first call to user defined function!")
+</br></br>
+printme("Again second call to the same function")</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>I'm first call to user defined function!
+</br></br>
+Again second call to the same function</b>
+</br></br>
+
+<h3>The Anonymous Functions</h3>
+
+These functions are called anonymous because they are not declared in the standard manner by using the def keyword. You can use the lambda keyword to create small anonymous functions.
+</br></br>
+Lambda forms can take any number of arguments but return just one value in the form of an expression. They cannot contain commands or multiple expressions.
+</br></br>
+An anonymous function cannot be a direct call to print because lambda requires an expression
+</br></br>
+Lambda functions have their own local namespace and cannot access variables other than those in their parameter list and those in the global namespace.
+</br></br>
+Although it appears that lambda's are a one-line version of a function, they are not equivalent to inline statements in C or C++, whose purpose is by passing function stack allocation during invocation for performance reasons.
+</br></br>
+<b>Syntax</b>
+</br></br>
+The syntax of lambda functions contains only a single statement, which is as follows -
+</br></br>
+lambda [arg1 [,arg2,.....argn]]:expression
+</br></br>
+Following is the example to show how lambda form of function works -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Function definition is here
+</br></br>
+sum = lambda arg1, arg2: arg1 + arg2;
+</br></br>
+# Now you can call sum as a function
+</br></br>
+print "Value of total : ", sum( 10, 20 )
+</br></br>
+print "Value of total : ", sum( 20, 20 )</b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>Value of total :  30
+</br></br>
+Value of total :  40</b>
+</br></br>
+<h3>Scope of Variables</h3>
+
+All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.
+</br></br>
+The scope of a variable determines the portion of the program where you can access a particular identifier. There are two basic scopes of variables in Python -
+</br></br>
+<b>Global variables
+</br></br>
+Local variables</b>
+</br></br>
+
+This means that local variables can be accessed only inside the function in which they are declared, whereas global variables can be accessed throughout the program body by all functions. When you call a function, the variables declared inside it are brought into scope. Following is a simple example -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+total = 0; # This is global variable.
+</br></br>
+# Function definition is here
+</br></br>
+def sum( arg1, arg2 ):
+</br></br>
+   # Add both the parameters and return them."
+</br></br>
+   total = arg1 + arg2; # Here total is local variable.
+</br></br>
+   print "Inside the function local total : ", total
+</br></br>
+   return total;
+</br></br>
+# Now you can call sum function
+</br></br>
+sum( 10, 20 );
+</br></br>
+print "Outside the function global total : ", total </b>
+</br></br>
+When the above code is executed, it produces the following result -
+</br></br>
+<b>Inside the function local total :  30
+</br></br>
+Outside the function global total :  0</b>
+</br></br>
+</div>
+
+<div id="c10" class="tabcontent">
+<h2>Python - Files I/O</h2>
+
+<p>This chapter covers all the basic I/O functions available in Python. For more functions, please refer to standard Python documentation.</br></br>
+
+<b>Printing to the Screen</b>
+</br></br>
+The simplest way to produce output is using the print statement where you can pass zero or more expressions separated by commas. This function converts the expressions you pass into a string and writes the result to standard output as follows -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+print "Python is really a great language,", "isn't it?"</b>
+</br></br>
+This produces the following result on your standard screen -
+</br></br>
+<b>Python is really a great language, isn't it?</b>
+</br></br>
+<h3>Reading Keyboard Input</h3>
+
+Python provides two built-in functions to read a line of text from standard input, which by default comes from the keyboard. These functions are -
+</br></br>
+raw_input
+</br></br>
+input
+</br></br>
+The raw_input Function
+</br></br>
+The raw_input([prompt]) function reads one line from standard input and returns it as a string (removing the trailing newline).
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+str = raw_input("Enter your input: ");
+</br></br>
+print "Received input is : ", str</b>
+</br></br>
+This prompts you to enter any string and it would display same string on the screen. When I typed "Hello Python!", its output is like this -
+</br></br>
+<b>Enter your input: Hello Python
+</br></br>
+Received input is :  Hello Python</b>
+</br></br>
+<h3>The input Function</h3>
+
+The input([prompt]) function is equivalent to raw_input, except that it assumes the input is a valid Python expression and returns the evaluated result to you.
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+str = input("Enter your input: ");
+</br></br>
+print "Received input is : ", str</b>
+</br></br>
+This would produce the following result against the entered input -
+</br></br>
+<p>Enter your input: [x*5 for x in range(2,10,2)]
+</br></br>
+Recieved input is :  [10, 20, 30, 40]</p>
+</br></br>
+<h3>Opening and Closing Files</h3>
+
+Until now, you have been reading and writing to the standard input and output. Now, we will see how to use actual data files.
+</br></br>
+Python provides basic functions and methods necessary to manipulate files by default. You can do most of the file manipulation using a file object.
+</br></br>
+<h3>The open Function</h3>
+</br></br>
+Before you can read or write a file, you have to open it using Python's built-in open() function. This function creates a file object, which would be utilized to call other support methods associated with it.
+</br></br>
+<b>Syntax</b>
+</br></br>
+file object = open(file_name [, access_mode][, buffering])
+</br></br>
+Here are parameter details -
+</br></br>
+file_name - The file_name argument is a string value that contains the name of the file that you want to access.
+</br></br>
+access_mode - The access_mode determines the mode in which the file has to be opened, i.e., read, write, append, etc. A complete list of possible values is given below in the table. This is optional parameter and the default file access mode is read (r).
+</br></br>
+buffering - If the buffering value is set to 0, no buffering takes place. If the buffering value is 1, line buffering is performed while accessing a file. If you specify the buffering value as an integer greater than 1, then buffering action is performed with the indicated buffer size. If negative, the buffer size is the system default(default behavior).
+</br></br>
+<b>1	
+r</br></br>
+
+Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.
+</br></br>
+2	
+rb
+</br></br>
+Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
+</br></br>
+3	
+r+
+</br></br>
+Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+</br></br>
+4	
+rb+
+</br></br>
+Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
+</br></br>
+5	
+w
+</br></br>
+Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+</br></br>
+6	
+wb
+</br></br>
+Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+</br></br>
+7	
+w+
+</br></br>
+Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+</br></br>
+8	
+wb+
+</br></br>
+Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+</br></br>
+9	
+a
+</br></br>
+Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+</br></br>
+10	
+ab
+</br></br>
+Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+</br></br>
+11	
+a+
+</br></br>
+Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+</br></br>
+12	
+ab+
+</br></br>
+Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+</b>
+</br></br>
+<h3>The file Object Attributes</h3>
+
+Once a file is opened and you have one file object, you can get various information related to that file.
+</br></br>
+<b>1	
+file.closed
+</br></br>
+Returns true if file is closed, false otherwise.
+</br></br>
+2	
+file.mode
+</br></br>
+Returns access mode with which file was opened.
+
+3	
+file.name
+</br></br>
+Returns name of the file.
+</br></br>
+4	
+file.softspace
+</br></br>
+Returns false if space explicitly required with print, true otherwise.
+</b>
+</br></br>
+Example
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Open a file
+</br></br>
+fo = open("foo.txt", "wb")
+</br></br>
+print "Name of the file: ", fo.name
+</br></br>
+print "Closed or not : ", fo.closed
+</br></br>
+print "Opening mode : ", fo.mode
+</br></br>
+print "Softspace flag : ", fo.softspace</b>
+</br></br>
+This produces the following result -
+</br></br>
+<b>Name of the file:  foo.txt
+</br></br>
+Closed or not :  False
+</br></br>
+Opening mode :  wb
+</br></br>
+Softspace flag :  0</b>
+</br></br>
+<h3>The close() Method</h3>
+
+The close() method of a file object flushes any unwritten information and closes the file object, after which no more writing can be done.
+</br></br>
+Python automatically closes a file when the reference object of a file is reassigned to another file. It is a good practice to use the close() method to close a file.
+</br></br>
+
+<b>Syntax</b>
+</br></br>
+fileObject.close();
+</br></br>
+Example
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Open a file
+</br></br>
+fo = open("foo.txt", "wb")
+</br></br>
+print "Name of the file: ", fo.name
+</br></br>
+# Close opend file
+</br></br>
+fo.close()</b>
+</br></br>
+This produces the following result -
+</br></br>
+<b>Name of the file:  foo.txt
+</br></br>
+Reading and Writing Files</b>
+</br></br>
+The file object provides a set of access methods to make our lives easier. We would see how to use read() and write() methods to read and write files.
+</br></br>
+<h3>The write() Method</h3>
+
+The write() method writes any string to an open file. It is important to note that Python strings can have binary data and not just text.
+</br></br>
+The write() method does not add a newline character ('\n') to the end of the string -
+</br></br>
+<b>Syntax</b>
+
+fileObject.write(string);
+</br></br>
+Here, passed parameter is the content to be written into the opened file.
+</br></br>
+Example</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Open a file
+</br></br>
+fo = open("foo.txt", "wb")
+</br></br>
+fo.write( "Python is a great language.\nYeah its great!!\n");
+</br></br>
+# Close opend file
+</br></br>
+fo.close()</b>
+</br></br>
+The above method would create foo.txt file and would write given content in that file and finally it would close that file. If you would open this file, it would have following content.
+</br></br>
+Python is a great language.
+</br></br>
+Yeah its great!!
+</br></br>
+<h3>The read() Method</h3>
+</br></br>
+The read() method reads a string from an open file. It is important to note that Python strings can have binary data. apart from text data.
+</br></br>
+<b>Syntax</b>
+</br></br>
+fileObject.read([count]);
+</br></br>
+Here, passed parameter is the number of bytes to be read from the opened file. This method starts reading from the beginning of the file and if count is missing, then it tries to read as much as possible, maybe until the end of file.
+</br></br>
+Example
+</br></br>
+Let's take a file foo.txt, which we created above.
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Open a file
+</br></br>
+fo = open("foo.txt", "r+")
+</br></br>
+str = fo.read(10);
+</br></br>
+print "Read String is : ", str
+</br></br>
+# Close opend file
+</br></br>
+fo.close()</b>
+</br></br>
+This produces the following result -
+</br></br>
+<b>Read String is :  Python is</b>
+</br></br>
+
+<h3>File Positions</h3>
+
+The tell() method tells you the current position within the file; in other words, the next read or write will occur at that many bytes from the beginning of the file.
+</br></br>
+The seek(offset[, from]) method changes the current file position. The offset argument indicates the number of bytes to be moved. The from argument specifies the reference position from where the bytes are to be moved.
+</br></br>
+If from is set to 0, it means use the beginning of the file as the reference position and 1 means use the current position as the reference position and if it is set to 2 then the end of the file would be taken as the reference position.
+</br></br>
+Example
+</br></br>
+Let us take a file foo.txt, which we created above.
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+# Open a file
+</br></br>
+fo = open("foo.txt", "r+")
+</br></br>
+str = fo.read(10);
+</br></br>
+print "Read String is : ", str
+</br></br>
+# Check current position
+</br></br>
+position = fo.tell();
+</br></br>
+print "Current file position : ", position
+</br></br>
+# Reposition pointer at the beginning once again
+</br></br>
+position = fo.seek(0, 0);
+</br></br>
+str = fo.read(10);
+</br></br>
+print "Again read String is : ", str
+</br></br>
+# Close opend file
+</br></br>
+fo.close()
+</b></br></br>
+This produces the following result -
+</br></br>
+<b>Read String is :  Python is
+</br></br>
+Current file position :  10
+</br></br>
+Again read String is :  Python is</b>
+</br></br>
+<h3>Renaming and Deleting File</h3>
+
+Python os module provides methods that help you perform file-processing operations, such as renaming and deleting files.
+</br></br>
+To use this module you need to import it first and then you can call any related functions.
+</br></br>
+The rename() Method
+</br></br>
+The rename() method takes two arguments, the current filename and the new filename.
+</br></br>
+<b>Syntax</b>
+</br></br>
+os.rename(current_file_name, new_file_name)
+</br></br>
+Example
+</br></br>
+Following is the example to rename an existing file test1.txt -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+import os
+</br></br>
+# Rename a file from test1.txt to test2.txt
+</br></br>
+os.rename( "test1.txt", "test2.txt" )
+</br></br>
+The remove() Method</b>
+</br></br>
+You can use the remove() method to delete files by supplying the name of the file to be deleted as the argument.
+</br></br>
+<b>Syntax</b>
+</br></br>
+os.remove(file_name)
+</br></br>
+Example
+</br></br>
+Following is the example to delete an existing file test2.txt -
+</br></br>
+<b>#!/usr/bin/python
+</br></br>
+import os
+</br></br>
+# Delete file test2.txt
+</br></br>
+os.remove("text2.txt")</b>
+</br></br>
+<a href="pythonquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="Python">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

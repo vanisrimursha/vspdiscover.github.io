@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<title>HTML Quiz</title>
+ <style> body { background-image: url("b3.jpg"); background-repeat: no-repeat; } </style> 
+
+<?php
+session_start();
+$_SESSION['course'] = "HTML";
+?>
+
+</head> 
+<style>
+div#test{ border:blue 1px solid; padding:10px 60px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+                  [ "True or False ?</br> When a web browser reads an HTML document, browser reads it from top to bottom and left to right", "True ", "False", "Partialy True", "A" ],
+	[ " HTML Tags are always written in -----------  letters?", "uppercase", "lowercase", "Bold letters", "B" ],
+	[ " br stands for ?.", "Bold", "Brake", "Black", "B" ],
+                  [ "HTML elements with no content are called ?", "Non empty Tag", "Element tag", "Empty tag ", "C" ],
+	[ " HTML images are defined with the -----------  tag. ?", "img", "image", "pics", "A" ],
+                   [ "The ------------  attribute specifies an alternative text to be used in image?", "alt", "img_alt", "alt_img", "A" ],
+	[ "The -------------  standard does not require lowercase attribute names.", "HTML3 ", "HTML5", "HTML7", "B" ],
+                  [ " The ----------- attribute provides address information for links ?", "href", "alt", "a- tag", "A" ],
+	[ "In the ------------  HTML lists, all the list items are marked with numbers ?", "Description List ", "Un-order List", "Order -List", "C" ],
+                  [ " -------------- are data, stored in small text files on your computer and it is exchanged between web browser and web server to keep track of various information based on your web application need.", "Frames", "Cookies", "Forn", "B" ],
+	["An ----------------  is a section of a document which contains controls such as text fields, password fields, checkboxes, radio buttons, submit button, menus etc.", "HTML Form", "HTML Frames", "HTML List", "B" ],
+                     [ "------------ groups the related element in a form. ", "Legend", "Form ", "Field set", "B" ],
+	[ "-----------  is used to select one from multiple options.", "Radio Button", "Check Box", "Both", "A" ],
+                 [ " ------------- tag is used to put a line across the webpage.?", "br", "b", "hr", "C" ],
+	["An HTML element usually consists of a start tag and end tag, with the content inserted in between ", "True", "False", "Not Known", "A" ],
+                    [ "HTML elements can not be nested ", "True", "False", "Not Known", "B" ],
+	[ "The filename of the image source is specified in the -------  attribute", "src", "href", "a", "A" ],
+	[ " Some smaller devices cannot cope with frames often because their screen is not big enough to be divided up.", "False", "True", "Partialy True", "B" ],
+["---------  tag describes the paragraph of the webpage.", "h1", "u", " p", "C" ],
+[ "Attributes are always specified in the start tag ", "True", "False", "Not Known", "A" ]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<button onclick='certificate()'>View Certificate</button>";
+		pos = 0;Scaling
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>NEXT</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+
+function certificate()
+{
+window.open("certificate.php");}
+
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+
+</head>
+
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>

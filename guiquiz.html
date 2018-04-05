@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+<title>GUI Quiz</title>
+ <style> body { background-image: url("b3.jpg"); background-repeat: no-repeat; } </style> 
+
+<?php
+session_start();
+$_SESSION['course'] = "GUI";
+?>
+
+</head> 
+<style>
+div#test{ border:blue 1px solid; padding:10px 60px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+                
+ ["The graphical user interface is presented  on the ------------ ?","Computer Screen","CPU","Mouse","A"],
+ ["State one example for Large widgets","Applications","Websites","Windows","C"], 
+["In ---------- , cell phones and handheld game systems also employed application specific touchscreen GUIs","1990s","1980s","1970s","B"],
+ ["Layers of a --------- based on a windowing system Main article","GUI","Graphics","Applications","A"],
+ ["A series of elements conforming a visual language have evolved to represent information stored in -------------","WIMP","Computer","Application","B"],
+ ["The WIMP style of interaction uses a virtual input device to represent the position of a pointing device, most often a ----------- ?","Mouse","Lazer","Keyboard","A"],
+ ["------------ is  Smaller mobile devices such as personal digital assistants (PDAs)","Pre-WIMP","Post-WIMP","BothA&B","B"],
+ ["In the year of ---------- , some touchscreen-based operating systems such as Apple's iOS (iPhone) and Android use the class of GUIs named post-WIMP","2009","2010","2011","C"],
+ ["The Xerox Star 8010 workstation introduced the first commercial GUI","True","False","Not known","A"],
+ ["The Xerox PARC user interface consisted of graphical elements such as --------","Icons","Menu","Windows","C"],
+ ["In ----------- , Xerox eventually commercialized the Alto in the form of a new and enhanced system ","1981","1982","1983","A"],
+ ["The GUIs familiar to most people as of the mid-late ------------- s are Microsoft Windows, macOS, and the X Window System interfaces for desktop and laptop computers","2010","2011","2012","A"],
+ ["Windows ------  was a major success in the marketplace at launch and shortly became the most popular desktop operating system","95","XP","Both A&B","A"],
+ ["In 1984, ----------  released a television commercial which introduced the Macintosh during the telecast of Super Bowl XVIII by CBS","Microsoft","Apple","Blackberry","B"],
+ ["The Apple Lisa was released in ---------- ?","1993","1983","1973","B"],
+      [ "True or False ?</br>The actions in a GUI are usually performed through indirect manipulation of the graphical elements","True","False","Partialy True","B"],
+      [ "True or False ?</br>The graphical user interface is a type of user interface that allows users to interact with electronic devices through graphical icons ","True","False","Partialy True","A"],
+      [ "True or False ?</br>The term GUI tends not to be applied to other lower-display resolution types of interfaces, such as video games ","True","False","Partialy True","A"],
+      [ "True or False ?</br>The graphical user interface is presented (displayed) on the computer screen","True","False","Partialy True","A"],
+      [ "True or False ?</br>A GUI may be designed for the requirements of a vertical market as application-specific graphical user interfaces","True","False","Partialy True","A"]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<button onclick='certificate()'>View Certificate</button>";
+		pos = 0;Scaling
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>NEXT</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+
+function certificate()
+{
+window.open("certificate.php");}
+
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+
+</head>
+
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>

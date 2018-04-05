@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SQL</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  SQL</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">SQL-Syntax</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">SQL-Data Types</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">SQL-Operators</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">SQL-Expressions</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">SQL-Quires(Database,Table)</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">SQL-Constrains</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">SQL-Joins</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">SQL-Sub Quiress</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">SQL-Handling Dublicates</button>
+<button class="tablinks" onclick="openCity(event, 'c11')">SQL-Injection</button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>SQL - Overview</h1>
+
+<p>SQL is a language to operate databases; it includes database creation, deletion, fetching rows, modifying rows, etc. SQL is an <b>ANSI</b> (American National Standards Institute) standard language, but there are many different versions of the SQL language.</p>
+<h2>What is SQL?</h2>
+<p>SQL is Structured Query Language, which is a computer language for storing, manipulating and retrieving data stored in a relational database.</p>
+<p>SQL is the standard language for Relational Database System. All the Relational Database Management Systems (RDMS) like MySQL, MS Access, Oracle, Sybase, Informix, Postgres and SQL Server use SQL as their standard database language.</p>
+<p>Also, they are using different dialects, such as &minus;</p>
+<ul class="list">
+<li> MS SQL Server using T-SQL,</li> 
+<li>Oracle using PL/SQL,</li>
+<li>MS Access version of SQL is called JET SQL (native format) etc.</li>
+</ul>
+<h2>Why SQL?</h2>
+<p>SQL is widely popular because it offers the following advantages &minus;</p>
+<ul class="list">
+<li><p>Allows users to access data in the relational database management systems.</p></li>
+<li><p>Allows users to describe the data.</p></li>
+<li><p>Allows users to define the data in a database and manipulate that data.</p></li>
+<li><p>Allows to embed within other languages using SQL modules, libraries & pre-compilers.</p></li>
+<li><p>Allows users to create and drop databases and tables.</p></li>
+<li><p>Allows users to create view, stored procedure, functions in a database.</p></li> 
+<li><p>Allows users to set permissions on tables, procedures and views.</p></li>
+</ul>
+<h2>A Brief History of SQL</h2>
+<ul class="list">
+<li><p><b>1970</b> &minus; Dr. Edgar F. "Ted" Codd of IBM is known as the father of relational databases. He described a relational model for databases.</p></li>
+<li><p><b>1974</b> &minus; Structured Query Language appeared.</p></li>
+<li><p><b>1978</b> &minus; IBM worked to develop Codd's ideas and released a product named System/R.</p></li>
+<li><p><b>1986</b> &minus; IBM developed the first prototype of relational database and standardized by ANSI. The first relational database was released by Relational Software which later came to be known as Oracle.</p></li>
+</ul>
+<h2>SQL Process</h2>
+<p>When you are executing an SQL command for any RDBMS, the system determines the best way to carry out your request and SQL engine figures out how to interpret the task.</p>
+<p>There are various components included in this process.</p>
+<p>These components are &minus;</p>
+<ul class="list">
+<li>Query Dispatcher</li>
+<li>Optimization Engines</li>
+<li>Classic Query Engine</li>
+<li>SQL Query Engine, etc.</li>
+</ul>
+<p>A classic query engine handles all the non-SQL queries, but a SQL query engine won't handle logical files.</p>
+<p>Following is a simple diagram showing the SQL Architecture &minus;</p>
+<h2>SQL Commands</h2>
+<p>The standard SQL commands to interact with relational databases are CREATE, SELECT, INSERT, UPDATE, DELETE and DROP. These commands can be classified into the following groups based on their nature &minus;</p>
+<h3>DDL - Data Definition Language</h3>
+<table class="table table-bordered">
+<tr>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>CREATE</b></p>
+<p>Creates a new table, a view of a table, or other object in the database.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>ALTER</b></p>
+<p>Modifies an existing database object, such as a table.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>DROP</b></p>
+<p>Deletes an entire table, a view of a table or other objects in the database.</p></td>
+</tr>
+</table>
+<h3>DML - Data Manipulation Language</h3>
+<table class="table table-bordered">
+<tr>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>SELECT</b></p>
+<p>Retrieves certain records from one or more tables.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>INSERT</b></p>
+<p>Creates a record.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>UPDATE</b></p>
+<p>Modifies records.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td><p><b>DELETE</b></p>
+<p>Deletes records.</p></td>
+</tr>
+</table>
+<h3>DCL - Data Control Language</h3>
+<table class="table table-bordered">
+<tr>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>GRANT</b></p>
+<p>Gives a privilege to user.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>REVOKE</b></p>
+<p>Takes back privileges granted from user.</p></td>
+</tr>
+</table>
+
+</div>
+<div id="c2" class="tabcontent">
+<h1>SQL - Syntax</h1>
+
+<p>SQL is followed by a unique set of rules and guidelines called Syntax. This tutorial gives you a quick start with SQL by listing all the basic SQL Syntax.</p>
+<p>All the SQL statements start with any of the keywords like SELECT, INSERT, UPDATE, DELETE, ALTER, DROP, CREATE, USE, SHOW and all the statements end with a semicolon (;).</p>
+<p>The most important point to be noted here is that SQL is case insensitive, which means SELECT and select have same meaning in SQL statements. Whereas, MySQL makes difference in table names. So, if you are working with MySQL, then you need to give table names as they exist in the database.</p>
+<h2>Various Syntax in SQL</h2>
+<blockquote>All the examples given in this tutorial have been tested with a MySQL server.</blockquote>
+<h3>SQL SELECT Statement</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name;
+</pre>
+<h3>SQL DISTINCT Clause</h3>
+<pre class="result notranslate">
+SELECT DISTINCT column1, column2....columnN
+FROM   table_name;
+</pre>
+<h3>SQL WHERE Clause</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name
+WHERE  CONDITION;
+</pre>
+<h3>SQL AND/OR Clause</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name
+WHERE  CONDITION-1 {AND|OR} CONDITION-2;
+</pre>
+<h3>SQL IN Clause</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name
+WHERE  column_name IN (val-1, val-2,...val-N);
+</pre>
+<h3>SQL BETWEEN Clause</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name
+WHERE  column_name BETWEEN val-1 AND val-2;
+</pre>
+<h3>SQL LIKE Clause</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name
+WHERE  column_name LIKE { PATTERN };
+</pre>
+<h3>SQL ORDER BY Clause</h3>
+<pre class="result notranslate">
+SELECT column1, column2....columnN
+FROM   table_name
+WHERE  CONDITION
+ORDER BY column_name {ASC|DESC};
+</pre>
+<h3>SQL GROUP BY Clause</h3>
+<pre class="result notranslate">
+SELECT SUM(column_name)
+FROM   table_name
+WHERE  CONDITION
+GROUP BY column_name;
+</pre>
+<h3>SQL COUNT Clause</h3>
+<pre class="result notranslate">
+SELECT COUNT(column_name)
+FROM   table_name
+WHERE  CONDITION;
+</pre>
+<h3>SQL HAVING Clause</h3>
+<pre class="result notranslate">
+SELECT SUM(column_name)
+FROM   table_name
+WHERE  CONDITION
+GROUP BY column_name
+HAVING (arithematic function condition);
+</pre>
+<h3>SQL CREATE TABLE Statement</h3>
+<pre class="result notranslate">
+CREATE TABLE table_name(
+column1 datatype,
+column2 datatype,
+column3 datatype,
+.....
+columnN datatype,
+PRIMARY KEY( one or more columns )
+);
+</pre>
+<h3>SQL DROP TABLE Statement</h3>
+<pre class="result notranslate">
+DROP TABLE table_name;
+</pre>
+<h3>SQL CREATE INDEX Statement </h3>
+<pre class="result notranslate">
+CREATE UNIQUE INDEX index_name
+ON table_name ( column1, column2,...columnN);
+</pre>
+<h3>SQL DROP INDEX Statement </h3>
+<pre class="result notranslate">
+ALTER TABLE table_name
+DROP INDEX index_name;
+</pre>
+<h3>SQL DESC Statement </h3>
+<pre class="result notranslate">
+DESC table_name;
+</pre>
+<h3>SQL TRUNCATE TABLE Statement</h3>
+<pre class="result notranslate">
+TRUNCATE TABLE table_name;
+</pre>
+<h3>SQL ALTER TABLE Statement</h3>
+<pre class="result notranslate">
+ALTER TABLE table_name {ADD|DROP|MODIFY} column_name {data_ype};
+</pre>
+<h3>SQL ALTER TABLE Statement (Rename) </h3>
+<pre class="result notranslate">
+ALTER TABLE table_name RENAME TO new_table_name;
+</pre>
+<h3>SQL INSERT INTO Statement</h3>
+<pre class="result notranslate">
+INSERT INTO table_name( column1, column2....columnN)
+VALUES ( value1, value2....valueN);
+</pre>
+<h3>SQL UPDATE Statement</h3>
+<pre class="result notranslate">
+UPDATE table_name
+SET column1 = value1, column2 = value2....columnN=valueN
+[ WHERE  CONDITION ];
+</pre>
+<h3>SQL DELETE Statement</h3>
+<pre class="result notranslate">
+DELETE FROM table_name
+WHERE  {CONDITION};
+</pre>
+<h3>SQL CREATE DATABASE Statement</h3>
+<pre class="result notranslate">
+CREATE DATABASE database_name;
+</pre>
+<h3>SQL DROP DATABASE Statement</h3>
+<pre class="result notranslate">
+DROP DATABASE database_name;
+</pre>
+<h3>SQL USE Statement</h3>
+<pre class="result notranslate">
+USE database_name;
+</pre>
+<h3>SQL COMMIT Statement</h3>
+<pre class="result notranslate">
+COMMIT;
+</pre>
+<h3>SQL ROLLBACK Statement</h3>
+<pre class="result notranslate">
+ROLLBACK;
+</pre>
+
+</div>
+
+<div id="c3" class="tabcontent">
+<h1>SQL - Data Types</h1>
+
+<p>SQL Data Type is an attribute that specifies the type of data of any object. Each column, variable and expression has a related data type in SQL. You can use these data types while creating your tables. You can choose a data type for a table column based on your requirement.</p>
+<p>SQL Server offers six categories of data types for your use which are listed below &minus;</p>
+<h2>Exact Numeric Data Types</h2>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">DATA TYPE</th>
+<th style="text-align:center;">FROM</th>
+<th style="text-align:center;">TO</th>
+</tr>
+<tr>
+<td style="text-align:center">bigint</td>
+<td>-9,223,372,036,854,775,808</td>
+<td>9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td>-2,147,483,648</td>
+<td>2,147,483,647</td>
+</tr>
+<tr>
+<td style="text-align:center">smallint</td>
+<td>-32,768</td>
+<td>32,767</td>
+</tr>
+<tr>
+<td style="text-align:center">tinyint</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td style="text-align:center">bit</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">decimal</td>
+<td>-10^38 +1</td>
+<td>10^38 -1</td>
+</tr>
+<tr>
+<td style="text-align:center">numeric</td>
+<td>-10^38 +1</td>
+<td>10^38 -1</td>
+</tr>
+<tr>
+<td style="text-align:center">money</td>
+<td>-922,337,203,685,477.5808</td>
+<td>+922,337,203,685,477.5807</td>
+</tr>
+<tr>
+<td style="text-align:center">smallmoney</td>
+<td>-214,748.3648</td>
+<td>+214,748.3647</td>
+</tr>
+</table>
+<h2>Approximate Numeric Data Types</h2>
+<table class="table table-bordered" style="text-align:center">
+<tr>
+<th style="text-align:center;">DATA TYPE</th>
+<th style="text-align:center;">FROM</th>
+<th style="text-align:center;">TO</th>
+</tr>
+<tr>
+<td>float</td>
+<td>-1.79E + 308</td>
+<td>1.79E + 308</td>
+</tr>
+<tr>
+<td>real</td>
+<td>-3.40E + 38</td>
+<td>3.40E + 38</td>
+</tr>
+</table>
+<h2>Date and Time Data Types</h2>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">DATA TYPE</th>
+<th style="text-align:center;">FROM</th>
+<th style="text-align:center;">TO</th>
+</tr>
+<tr>
+<td>datetime</td>
+<td>Jan 1, 1753</td>
+<td>Dec 31, 9999</td>
+</tr>
+<tr>
+<td>smalldatetime</td>
+<td>Jan 1, 1900</td>
+<td>Jun 6, 2079</td>
+</tr>
+<tr>
+<td>date</td>
+<td colspan="2">Stores a date like June 30, 1991</td>
+</tr>
+<tr>
+<td>time</td>
+<td colspan="2">Stores a time of day like 12:30 P.M.</td>
+</tr>
+</table>
+<p><b>Note</b> &minus; Here, datetime has 3.33 milliseconds accuracy where as smalldatetime has 1 minute accuracy.</p>
+<h2>Character Strings Data Types</h2>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center">DATA TYPE &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>char</b></p>
+<p>Maximum length of 8,000 characters.( Fixed length non-Unicode characters)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>varchar</b></p>
+<p>Maximum of 8,000 characters.(Variable-length non-Unicode data).</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>varchar(max)</b></p>
+<p>Maximum length of 2E + 31 characters, Variable-length non-Unicode data (SQL Server 2005 only).</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td><p><b>text</b></p>
+<p>Variable-length non-Unicode data with a maximum length of 2,147,483,647 characters.</p></td>
+</tr>
+</table>
+<h2>Unicode Character Strings Data Types</h2>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center">DATA TYPE &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>nchar</b></p>
+<p>Maximum length of 4,000 characters.( Fixed length Unicode)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>nvarchar</b></p>
+<p>Maximum length of 4,000 characters.(Variable length Unicode)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>nvarchar(max)</b></p>
+<p>Maximum length of 2E + 31 characters (SQL Server 2005 only).( Variable length Unicode)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td><p><b>ntext</b></p>
+<p>Maximum length of 1,073,741,823 characters. ( Variable length Unicode )</p></td>
+</tr>
+</table>
+<h2>Binary Data Types</h2>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center">DATA TYPE &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>binary</b></p>
+<p>Maximum length of 8,000 bytes(Fixed-length binary data )</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>varbinary</b></p>
+<p>Maximum length of 8,000 bytes.(Variable length binary data)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>varbinary(max)</b></p>
+<p>Maximum length of 2E + 31 bytes (SQL Server 2005 only). ( Variable length Binary data)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td><p><b>image</b></p>
+<p>Maximum length of 2,147,483,647 bytes. ( Variable length Binary Data)</p></td>
+</tr>
+</table>
+<h2>Misc Data Types</h2>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center">DATA TYPE &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td><p><b>sql_variant</b></p>
+<p>Stores values of various SQL Server-supported data types, except text, ntext, and timestamp.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td><p><b>timestamp</b></p>
+<p>Stores a database-wide unique number that gets updated every time a row gets updated</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>uniqueidentifier</b></p>
+<p>Stores a globally unique identifier (GUID)</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td><p><b>xml</b></p>
+<p>Stores XML data. You can store xml instances in a column or a variable (SQL Server 2005 only).</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">5</td>
+<td><p><b>cursor</b></p>
+<p>Reference to a cursor object</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">6</td>
+<td><p><b>table</b></p>
+<p>Stores a result set for later processing</p></td>
+</tr>
+</table>
+
+</div>
+
+<div id="c4" class="tabcontent">
+<h1>SQL - Operators</h1>
+
+<h2>What is an Operator in SQL?</h2>
+<p>An operator is a reserved word or a character used primarily in an SQL statement's WHERE clause to perform operation(s), such as comparisons and arithmetic operations. These Operators are used to specify conditions in an SQL statement and to serve as conjunctions for multiple conditions in a statement.</p>
+<ul class="list">
+<li>Arithmetic operators</li>
+<li>Comparison operators</li>
+<li>Logical operators</li>
+<li>Operators used to negate conditions</li>
+</ul>
+<h2>SQL Arithmetic Operators</h2>
+<p>Assume <b>'variable a'</b> holds 10 and <b>'variable b'</b> holds 20, then &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:23%; text-align:center;">Operator</th>
+<th style="width:50%; text-align:center;">Description</th>
+<th style="text-align:center;">Example</th>
+</tr>
+<tr>
+<td style="vertical-align:middle;">+ (Addition)</td>
+<td>Adds values on either side of the operator.</td>
+<td style="vertical-align:middle;"> a + b will give 30</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">- (Subtraction)</td>
+<td>Subtracts right hand operand from left hand operand.</td>
+<td style="vertical-align:middle;">a - b will give -10</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">* (Multiplication)</td>
+<td>Multiplies values on either side of the operator.</td>
+<td style="vertical-align:middle;">a * b will give 200</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">/ (Division)</td>
+<td>Divides left hand operand by right hand operand.</td>
+<td style="vertical-align:middle;">b / a will give 2</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">% (Modulus)</td>
+<td>Divides left hand operand by right hand operand and returns remainder.</td>
+<td style="vertical-align:middle;">b % a will give 0</td>
+</tr>
+</table>
+<h2>SQL Comparison Operators</h2>
+<p>Assume <b>'variable a'</b> holds 10 and <b>'variable b'</b> holds 20, then &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:15%">Operator</th>
+<th style="width:60%">Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">=</td>
+<td> Checks if the values of two operands are equal or not, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a = b) is not true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">!=</td>
+<td> Checks if the values of two operands are equal or not, if values are not equal then condition becomes true.</td>
+<td style="vertical-align:middle;">(a != b) is true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">&lt;&gt;</td>
+<td>Checks if the values of two operands are equal or not, if values are not equal then condition becomes true.</td>
+<td style="vertical-align:middle;">(a &lt;&gt; b) is true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">&gt;</td>
+<td> Checks if the value of left  operand is greater than the value of right operand, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a &gt; b) is not true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">&lt;</td>
+<td> Checks if the value of left  operand is less than the value of right operand, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a &lt; b) is true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">&gt;=</td>
+<td> Checks if the value of left  operand is greater than or equal to the value of right operand, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a &gt;= b) is not true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">&lt;=</td>
+<td> Checks if the value of left  operand is less than or equal to the value of right operand, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a &lt;= b) is true.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">!&lt;</td>
+<td> Checks if the value of left  operand is not less than the value of right operand, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a !&lt; b) is false.</td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">!&gt;</td>
+<td> Checks if the value of left  operand is not greater than the value of right operand, if yes then condition becomes true.</td>
+<td style="vertical-align:middle;">(a !&gt; b) is true.</td>
+</tr>
+</table>
+<h2>SQL Logical Operators</h2>
+<p>Here is a list of all the logical operators available in SQL.</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Operator &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td>
+<p><b>ALL</b></p>
+<p>The ALL operator is used to compare a value to all values in another value set.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td>
+<p><b>AND</b></p>
+<p>The AND operator allows the existence of multiple conditions in an SQL statement's WHERE clause.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td><p><b>ANY</b></p>
+<p>The ANY operator is used to compare a value to any applicable value in the list as per the condition.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td>
+<p><b>BETWEEN</b></p>
+<p>The BETWEEN operator is used to search for values that are within a set of values, given the minimum value and the maximum value.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">5</td>
+<td>
+<p><b>EXISTS</b></p>
+<p>The EXISTS operator is used to search for the presence of a row in a specified table that meets a certain criterion.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">6</td>
+<td>
+<p><b>IN</b></p>
+<p>The IN operator is used to compare a value to a list of literal values that have been specified.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">7</td>
+<td>
+<p><b>LIKE</b></p>
+<p>The LIKE operator is used to compare a value to similar values using wildcard operators.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">8</td>
+<td>
+<p><b>NOT</b></p>
+<p>The NOT operator reverses the meaning of the logical operator with which it is used. Eg: NOT EXISTS, NOT BETWEEN, NOT IN, etc. <b>This is a negate operator.</b></p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">9</td>
+<td><p><b>OR</b></p>
+<p>The OR operator is used to combine multiple conditions in an SQL statement's WHERE clause.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">10</td>
+<td><p><b>IS NULL</b></p>
+<p>The NULL operator is used to compare a value with a NULL value.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">11</td>
+<td>
+<p><b>UNIQUE</b></p>
+<p>The UNIQUE operator searches every row of a specified table for uniqueness (no duplicates).</p></td>
+</tr>
+</table>
+<hr />
+
+</div>
+<div id="c5" class="tabcontent">
+<h1>SQL - Expressions</h1>
+
+<p>An expression is a combination of one or more values, operators and SQL functions that evaluate to a value. These SQL EXPRESSIONs are like formulae and they are written in query language. You can also use them to query the database for a specific set of data.</p>
+<h3>Syntax</h3>
+<p>Consider the basic syntax of the SELECT statement as follows &minus;</p>
+<pre class="result notranslate">
+SELECT column1, column2, columnN 
+FROM table_name 
+WHERE [CONDITION|EXPRESSION];
+</pre>
+<p>There are different types of SQL expressions, which are mentioned below &minus;</p>
+<ul class="list">
+<li>Boolean</li>
+<li>Numeric</li>
+<li>Date</li>
+</ul>
+<p>Let us now discuss each of these in detail.</p>
+<h2>Boolean Expressions</h2>
+<p>SQL Boolean Expressions fetch the data based on matching a single value. Following is the syntax &minus;</p>
+<pre class="result notranslate">
+SELECT column1, column2, columnN 
+FROM table_name 
+WHERE SINGLE VALUE MATCHING EXPRESSION;
+</pre>
+<p>Consider the CUSTOMERS table having the following records &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT * FROM CUSTOMERS;
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+7 rows in set (0.00 sec)
+</pre>
+<p>The following table is a simple example showing the usage of various SQL Boolean Expressions &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT * FROM CUSTOMERS WHERE SALARY = 10000;
++----+-------+-----+---------+----------+
+| ID | NAME  | AGE | ADDRESS | SALARY   |
++----+-------+-----+---------+----------+
+|  7 | Muffy |  24 | Indore  | 10000.00 |
++----+-------+-----+---------+----------+
+1 row in set (0.00 sec)
+</pre>
+<h2>Numeric Expression</h2>
+<p>These expressions are used to perform any mathematical operation in any query. Following is the syntax &minus;</p>
+<pre class="result notranslate">
+SELECT numerical_expression as  OPERATION_NAME
+[FROM table_name
+WHERE CONDITION] ;
+</pre>
+<p>Here, the numerical_expression is used for a mathematical expression or any formula. Following is a simple example showing the usage of SQL Numeric Expressions &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT (15 + 6) AS ADDITION
++----------+
+| ADDITION |
++----------+
+|       21 |
++----------+
+1 row in set (0.00 sec)
+</pre>
+<p>There are several built-in functions like avg(), sum(), count(), etc., to perform what is known as the aggregate data calculations against a table or a specific table column.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT COUNT(*) AS "RECORDS" FROM CUSTOMERS; 
++---------+
+| RECORDS |
++---------+
+|       7 |
++---------+
+1 row in set (0.00 sec)
+</pre>
+<h2>Date Expressions</h2>
+<p>Date Expressions return current system date and time values &minus;</p> 
+<pre class="prettyprint notranslate">
+SQL&gt;  SELECT CURRENT_TIMESTAMP;
++---------------------+
+| Current_Timestamp   |
++---------------------+
+| 2009-11-12 06:40:23 |
++---------------------+
+1 row in set (0.00 sec)
+</pre>
+<p>Another date expression is as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt;  SELECT  GETDATE();;
++-------------------------+
+| GETDATE                 |
++-------------------------+
+| 2009-10-22 12:07:18.140 |
++-------------------------+
+1 row in set (0.00 sec)
+</pre>
+<hr />
+
+</div>
+
+<div id="c6" class="tabcontent">
+<h1>SQL - CREATE Database</h1>
+
+<p>The SQL <b>CREATE DATABASE</b> statement is used to create a new SQL database.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of this CREATE DATABASE statement is as follows &minus;</p>
+<pre class="result notranslate">
+CREATE DATABASE DatabaseName;
+</pre>
+<p>Always the database name should be unique within the RDBMS.</p>
+<h2>Example</h2>
+<p>If you want to create a new database &lt;testDB&gt;, then the CREATE DATABASE statement would be as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; CREATE DATABASE testDB;
+</pre>
+<p>Make sure you have the admin privilege before creating any database. Once a database is created, you can check it in the list of databases as follows &minus;</p>
+<pre class="result notranslate">
+SQL&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| AMROOD             |
+| TUTORIALSPOINT     |
+| mysql              |
+| orig               |
+| test               |
+| testDB             |
++--------------------+
+7 rows in set (0.00 sec)
+</pre>
+<hr />
+
+
+<h1>SQL - DROP or DELETE Database</h1>
+<p>The SQL <b>DROP DATABASE</b> statement is used to drop an existing database in SQL schema.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of DROP DATABASE statement is as follows &minus;</p>
+<pre class="result notranslate">
+DROP DATABASE DatabaseName;
+</pre>
+<p>Always the database name should be unique within the RDBMS.</p>
+<h2>Example</h2>
+<p>If you want to delete an existing database &lt;testDB&gt;, then the DROP DATABASE statement would be as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; DROP DATABASE testDB;
+</pre>
+<p><b>NOTE</b> &minus; Be careful before using this operation because by deleting an existing database would result in loss of complete information stored in the database.</p>
+<p>Make sure you have the admin privilege before dropping any database. Once a database is dropped, you can check it in the list of the databases as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| AMROOD             |
+| TUTORIALSPOINT     |
+| mysql              |
+| orig               |
+| test               |
++--------------------+
+6 rows in set (0.00 sec)
+</pre>
+<hr />
+
+<h1>SQL - SELECT Database, USE Statement</h1>
+<p>When you have multiple databases in your SQL Schema, then before starting your operation, you would need to select a database where all the operations would be performed.</p>
+<p>The SQL <b>USE</b> statement is used to select any existing database in the SQL schema.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of the USE statement is as shown below &minus;</p>
+<pre class="result notranslate">
+USE DatabaseName;
+</pre>
+<p>Always the database name should be unique within the RDBMS.</p>
+<h2>Example</h2>
+<p>You can check the available databases as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| AMROOD             |
+| TUTORIALSPOINT     |
+| mysql              |
+| orig               |
+| test               |
++--------------------+
+6 rows in set (0.00 sec)
+</pre>
+<p>Now, if you want to work with the AMROOD database, then you can execute the following SQL command and start working with the AMROOD database.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; USE AMROOD;
+</pre>
+<hr />
+
+<h1>SQL - CREATE Table</h1>
+<p>Creating a basic table involves naming the table and defining its columns and each column's data type.</p>
+<p>The SQL <b>CREATE TABLE</b> statement is used to create a new table.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of the CREATE TABLE statement is as follows &minus;</p>
+<pre class="result notranslate">
+CREATE TABLE table_name(
+   column1 datatype,
+   column2 datatype,
+   column3 datatype,
+   .....
+   columnN datatype,
+   PRIMARY KEY( one or more columns )
+);
+</pre>
+<p>CREATE TABLE is the keyword telling the database system what you want to do. In this case, you want to create a new table. The unique name or identifier for the table follows the CREATE TABLE statement.</p>
+<p>Then in brackets comes the list defining each column in the table and what sort of data type it is. The syntax becomes clearer with the following example.</p>
+<p>A copy of an existing table can be created using a combination of the CREATE TABLE statement and the SELECT statement. You can check the complete details at</p>
+<h2>Example</h2>
+<p>The following code block is an example, which creates a CUSTOMERS table with an ID as a primary key and NOT NULL are the constraints showing that these fields cannot be NULL while creating records in this table &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; CREATE TABLE CUSTOMERS(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+</pre>
+<p>You can verify if your table has been created successfully by looking at the message displayed by the SQL server, otherwise you can use the <b>DESC</b> command as follows &minus;</p>
+<pre class="result notranslate">
+SQL&gt; DESC CUSTOMERS;
++---------+---------------+------+-----+---------+-------+
+| Field   | Type          | Null | Key | Default | Extra |
++---------+---------------+------+-----+---------+-------+
+| ID      | int(11)       | NO   | PRI |         |       |
+| NAME    | varchar(20)   | NO   |     |         |       |
+| AGE     | int(11)       | NO   |     |         |       |
+| ADDRESS | char(25)      | YES  |     | NULL    |       |
+| SALARY  | decimal(18,2) | YES  |     | NULL    |       |
++---------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+</pre>
+<p>Now, you have CUSTOMERS table available in your database which you can use to store the required information related to customers.</p>
+<hr />
+
+<h1>SQL - DROP or DELETE Table</h1>
+<p>The SQL <b>DROP TABLE</b> statement is used to remove a table definition and all the data, indexes, triggers, constraints and permission specifications for that table.</p>
+<p><b>NOTE</b> &minus; You should be very careful while using this command because once a table is deleted then all the information available in that table will also be lost forever.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of this DROP TABLE statement is as follows &minus;</p>
+<pre class="result notranslate">
+DROP TABLE table_name;
+</pre>
+<h2>Example</h2>
+<p>Let us first verify the CUSTOMERS table and then we will delete it from the database as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; DESC CUSTOMERS;
++---------+---------------+------+-----+---------+-------+
+| Field   | Type          | Null | Key | Default | Extra |
++---------+---------------+------+-----+---------+-------+
+| ID      | int(11)       | NO   | PRI |         |       |
+| NAME    | varchar(20)   | NO   |     |         |       |
+| AGE     | int(11)       | NO   |     |         |       |
+| ADDRESS | char(25)      | YES  |     | NULL    |       |
+| SALARY  | decimal(18,2) | YES  |     | NULL    |       |
++---------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+</pre>
+<p>This means that the CUSTOMERS table is available in the database, so let us now drop it as shown below.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; DROP TABLE CUSTOMERS;
+Query OK, 0 rows affected (0.01 sec)
+</pre>
+<p>Now, if you would try the DESC command, then you will get the following error &minus;</p>
+<pre class="prettyprint notranslate">
+SQL&gt; DESC CUSTOMERS;
+ERROR 1146 (42S02): Table 'TEST.CUSTOMERS' doesn't exist
+</pre>
+<p>Here, TEST is the database name which we are using for our examples.</p>
+<hr />
+
+<h1>SQL - INSERT Query</h1>
+<p>The SQL <b>INSERT INTO</b> Statement is used to add new rows of data to a table in the database.</p>
+<h3>Syntax</h3>
+<p>There are two basic syntaxes of the INSERT INTO statement which are shown below.</p>
+<pre class="result notranslate">
+INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)  
+VALUES (value1, value2, value3,...valueN);
+</pre>
+<p>Here, column1, column2, column3,...columnN are the names of the columns in the table into which you want to insert the data.</p>
+<p>You may not need to specify the column(s) name in the SQL query if you are adding values for all the columns of the table. But make sure the order of the values is in the same order as the columns in the table.</p>
+<p>The <b>SQL INSERT INTO</b> syntax will be as follows &minus;</p>
+<pre class="result notranslate">
+INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
+</pre>
+<h3>Example</h3>
+<p>The following statements would create six records in the CUSTOMERS table.</p>
+<pre class="prettyprint notranslate">
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (1, 'Ramesh', 32, 'Ahmedabad', 2000.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (2, 'Khilan', 25, 'Delhi', 1500.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (3, 'kaushik', 23, 'Kota', 2000.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (4, 'Chaitali', 25, 'Mumbai', 6500.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (5, 'Hardik', 27, 'Bhopal', 8500.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (6, 'Komal', 22, 'MP', 4500.00 );
+</pre>
+<p>You can create a record in the CUSTOMERS table by using the second syntax as shown below.</p>
+<pre class="result notranslate">
+INSERT INTO CUSTOMERS 
+VALUES (7, 'Muffy', 24, 'Indore', 10000.00 );
+</pre>
+<p>All the above statements would produce the following records in the CUSTOMERS table as shown below.</p>
+<pre class="prettyprint notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<h2>Populate one table using another table</h2>
+<p>You can populate the data into a table through the select statement over another table; provided the other table has a set of fields, which are required to populate the first table.</p>
+<p>Here is the syntax &minus;</p>
+<pre class="result notranslate">
+INSERT INTO first_table_name [(column1, column2, ... columnN)] 
+   SELECT column1, column2, ...columnN 
+   FROM second_table_name
+   [WHERE condition];
+</pre>
+<hr />
+
+
+<h1>SQL - SELECT Query</h1>
+<p>The SQL <b>SELECT</b> statement is used to fetch the data from a database table which returns this data in the form of a result table. These result tables are called result-sets.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of the SELECT statement is as follows &minus;</p>
+<pre class="result notranslate">
+SELECT column1, column2, columnN FROM table_name;
+</pre>
+<p>Here, column1, column2... are the fields of a table whose values you want to fetch. If you want to fetch all the fields available in the field, then you can use the following syntax.</p>
+<pre class="prettyprint notranslate">
+SELECT * FROM table_name;
+</pre>
+<h2>Example</h2>
+<p>Consider the CUSTOMERS table having the following records &minus;</p>
+<pre class="prettyprint notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<p>The following code is an example, which would fetch the ID, Name and Salary fields of the customers available in CUSTOMERS table.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT ID, NAME, SALARY FROM CUSTOMERS;
+</pre>
+<p>This would produce the following result &minus;</p>
+<pre class="result notranslate">
++----+----------+----------+
+| ID | NAME     | SALARY   |
++----+----------+----------+
+|  1 | Ramesh   |  2000.00 |
+|  2 | Khilan   |  1500.00 |
+|  3 | kaushik  |  2000.00 |
+|  4 | Chaitali |  6500.00 |
+|  5 | Hardik   |  8500.00 |
+|  6 | Komal    |  4500.00 |
+|  7 | Muffy    | 10000.00 |
++----+----------+----------+
+</pre>
+<p>If you want to fetch all the fields of the CUSTOMERS table, then you should use the following query.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT * FROM CUSTOMERS;
+</pre>
+<p>This would produce the result as shown below.</p>
+<pre class="result notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<hr />
+
+</div>
+
+<div id="c7" class="tabcontent">
+<h1>SQL - Constraints</h1>
+
+<p>Constraints are the rules enforced on the data columns of a table. These are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.</p>
+<p>Constraints could be either on a column level or a table level. The column level constraints are applied only to one column, whereas the table level constraints are applied to the whole table.</p>
+<p>Following are some of the most commonly used constraints available in SQL. These constraints have already been discussed in  SQL - RDBMS Conceptschapter, but it’s worth to revise them at this point.</p>
+<ul class="list">
+<li><p>NOT NULL Constraint  Ensures that a column cannot have NULL value.</p></li>
+<li><p>DEFAULT Constraint   Provides a default value for a column when none is specified.</p></li>
+<li><p>UNIQUE Constraint     Ensures that all values in a column are different.</p></li>
+<li><p>PRIMARY Key Uniquely identifies each row/record in a database table.</p></li>
+<li><p>FOREIGN Key  Uniquely identifies a row/record in any of the given database table.</p></li>
+<li><p>CHECK Constraint  The CHECK constraint ensures that all the values in a column satisfies certain conditions.</p></li>
+<li><p>INDEX Used to create and retrieve data from the database very quickly.</p></li>
+</ul>
+<p>Constraints can be specified when a table is created with the CREATE TABLE statement or you can use the ALTER TABLE statement to create constraints even after the table is created.</p>
+<h2>Dropping Constraints</h2>
+<p>Any constraint that you have defined can be dropped using the ALTER TABLE command with the DROP CONSTRAINT option.</p>
+<p>For example, to drop the primary key constraint in the EMPLOYEES table, you can use the following command.</p>
+<pre class="prettyprint notranslate">
+ALTER TABLE EMPLOYEES DROP CONSTRAINT EMPLOYEES_PK;
+</pre>
+<p>Some implementations may provide shortcuts for dropping certain constraints. For example, to drop the primary key constraint for a table in Oracle, you can use the following command.</p>
+<pre class="prettyprint notranslate">
+ALTER TABLE EMPLOYEES DROP PRIMARY KEY;
+</pre>
+<p>Some implementations allow you to disable constraints. Instead of permanently dropping a constraint from the database, you may want to temporarily disable the constraint and then enable it later.</p>
+<h2>Integrity Constraints</h2>
+<p>Integrity constraints are used to ensure accuracy and consistency of the data in a relational database. Data integrity is handled in a relational database through the concept of referential integrity.</p>
+<p>There are many types of integrity constraints that play a role in <b>Referential Integrity (RI)</b>. These constraints include Primary Key, Foreign Key, Unique Constraints and other constraints which are mentioned above.</p>
+<hr />
+
+</div>
+
+<div id="c8" class="tabcontent">
+<h1>SQL - Using Joins</h1>
+
+<p>The SQL <b>Joins</b> clause is used to combine records from two or more tables in a database. A JOIN is a means for combining fields from two tables by using values common to each.</p>
+<p>Consider the following two tables &minus;</p>
+<p><b>Table 1</b> &minus; CUSTOMERS Table</p>
+<pre class="prettyprint notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<p><b>Table 2</b> &minus; ORDERS Table</p>
+<pre class="prettyprint notranslate">
++-----+---------------------+-------------+--------+
+|OID  | DATE                | CUSTOMER_ID | AMOUNT |
++-----+---------------------+-------------+--------+
+| 102 | 2009-10-08 00:00:00 |           3 |   3000 |
+| 100 | 2009-10-08 00:00:00 |           3 |   1500 |
+| 101 | 2009-11-20 00:00:00 |           2 |   1560 |
+| 103 | 2008-05-20 00:00:00 |           4 |   2060 |
++-----+---------------------+-------------+--------+
+</pre>
+<p>Now, let us join these two tables in our SELECT statement as shown below.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT ID, NAME, AGE, AMOUNT
+   FROM CUSTOMERS, ORDERS
+   WHERE  CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+</pre>
+<p>This would produce the following result.</p>
+<pre class="result notranslate">
++----+----------+-----+--------+
+| ID | NAME     | AGE | AMOUNT |
++----+----------+-----+--------+
+|  3 | kaushik  |  23 |   3000 |
+|  3 | kaushik  |  23 |   1500 |
+|  2 | Khilan   |  25 |   1560 |
+|  4 | Chaitali |  25 |   2060 |
++----+----------+-----+--------+
+</pre>
+<p>Here, it is noticeable that the join is performed in the WHERE clause. Several operators can be used to join tables, such as =, &lt;, &gt;, &lt;&gt;, &lt;=, &gt;=, !=, BETWEEN, LIKE, and NOT; they can all be used to join tables. However, the most common operator is the equal to symbol.</p>
+<p>There are different types of joins available in SQL &minus;</p>
+<ul class="list">
+<li><p>INNER JOIN</a> &minus; returns rows when there is a match in both tables.</p></li>
+<li><p>LEFT JOIN</a> &minus; returns all rows from the left table, even if there are no matches in the right table.</p></li>
+<li><p>RIGHT JOIN</a> &minus; returns all rows from the right table, even if there are no matches in the left table.</p></li>
+<li><p>FULL JOIN</a> &minus; returns rows when there is a match in one of the tables.</p></li>
+<li><p>SELF JOIN</a> &minus; is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.</p></li>
+<li><p>CARTESIAN JOIN</a> &minus; returns the Cartesian product of the sets of records from the two or more joined tables.</p></li>
+</ul>
+<p>Let us now discuss each of these joins in detail.</p>
+<hr />
+
+</div>
+
+<div id="c9" class="tabcontent">
+<h1>SQL - Sub Queries</h1>
+
+<p>A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause.</p>
+<p>A subquery is used to return data that will be used in the main query as a condition to further restrict the data to be retrieved.</p>
+<p>Subqueries can be used with the SELECT, INSERT, UPDATE, and DELETE statements along with the operators like =, &lt;, &gt;, &gt;=, &lt;=, IN, BETWEEN, etc.</p>
+<p>There are a few rules that subqueries must follow &minus;</p>
+<ul class="list">
+<li><p>Subqueries must be enclosed within parentheses.</p></li>
+<li><p>A subquery can have only one column in the SELECT clause, unless multiple columns are in the main query for the subquery to compare its selected columns.</p></li>
+<li><p>An ORDER BY command cannot be used in a subquery, although the main query can use an ORDER BY. The GROUP BY command can be used to perform the same function as the ORDER BY in a subquery.</p></li>
+<li><p>Subqueries that return more than one row can only be used with multiple value operators such as the IN operator.</p></li>
+<li><p>The SELECT list cannot include any references to values that evaluate to a BLOB, ARRAY, CLOB, or NCLOB.</p></li>
+<li><p>A subquery cannot be immediately enclosed in a set function.</p></li>
+<li><p>The BETWEEN operator cannot be used with a subquery. However, the BETWEEN operator can be used within the subquery.</p></li>
+</ul>
+<h2>Subqueries with the SELECT Statement</h2>
+<p>Subqueries are most frequently used with the SELECT statement. The basic syntax is as follows &minus;</p>
+<pre class="result notranslate">
+SELECT column_name [, column_name ]
+FROM   table1 [, table2 ]
+WHERE  column_name OPERATOR
+   (SELECT column_name [, column_name ]
+   FROM table1 [, table2 ]
+   [WHERE])
+</pre>
+<h3>Example</h3>
+<p>Consider the CUSTOMERS table having the following records &minus;</p>
+<pre class="prettyprint notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  35 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<p>Now, let us check the following subquery with a SELECT statement.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT * 
+   FROM CUSTOMERS 
+   WHERE ID IN (SELECT ID 
+         FROM CUSTOMERS 
+         WHERE SALARY &gt; 4500) ;
+</pre>
+<p>This would produce the following result.</p>
+<pre class="result notranslate">
++----+----------+-----+---------+----------+
+| ID | NAME     | AGE | ADDRESS | SALARY   |
++----+----------+-----+---------+----------+
+|  4 | Chaitali |  25 | Mumbai  |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal  |  8500.00 |
+|  7 | Muffy    |  24 | Indore  | 10000.00 |
++----+----------+-----+---------+----------+
+</pre>
+<h2>Subqueries with the INSERT Statement</h2>
+<p>Subqueries also can be used  with INSERT statements. The INSERT statement uses the data returned from the subquery to insert into another table. The selected data in the subquery can be modified with any of the character, date or number functions.</p>
+<p>The basic syntax is as follows.</p>
+<pre class="result notranslate">
+INSERT INTO table_name [ (column1 [, column2 ]) ]
+   SELECT [ *|column1 [, column2 ]
+   FROM table1 [, table2 ]
+   [ WHERE VALUE OPERATOR ]
+</pre>
+<h3>Example</h3>
+<p>Consider a table CUSTOMERS_BKP with similar structure as CUSTOMERS table. Now to copy the complete CUSTOMERS table into the CUSTOMERS_BKP table, you can use the following syntax.</p>
+<pre class="result notranslate">
+SQL&gt; INSERT INTO CUSTOMERS_BKP
+   SELECT * FROM CUSTOMERS 
+   WHERE ID IN (SELECT ID 
+   FROM CUSTOMERS) ;
+</pre>
+<h2>Subqueries with the UPDATE Statement</h2>
+<p>The subquery can be used in conjunction with the UPDATE statement. Either single or multiple columns in a table can be updated when using a subquery with the UPDATE statement.</p>
+<p>The basic syntax is as follows.</p>
+<pre class="result notranslate">
+UPDATE table
+SET column_name = new_value
+[ WHERE OPERATOR [ VALUE ]
+   (SELECT COLUMN_NAME
+   FROM TABLE_NAME)
+   [ WHERE) ]
+</pre>
+<h3>Example</h3>
+<p>Assuming, we have CUSTOMERS_BKP table available which is backup of CUSTOMERS table. The following example updates SALARY by 0.25 times in the CUSTOMERS table for all the customers whose AGE is greater than or equal to 27.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; UPDATE CUSTOMERS
+   SET SALARY = SALARY * 0.25
+   WHERE AGE IN (SELECT AGE FROM CUSTOMERS_BKP
+      WHERE AGE &gt;= 27 );
+</pre>
+<p>This would impact two rows and finally CUSTOMERS table would have the following records.</p>
+<pre class="result notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  35 | Ahmedabad |   125.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  2125.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<h2>Subqueries with the DELETE Statement</h2>
+<p>The subquery can be used in conjunction with the DELETE statement like with any other statements mentioned above.</p>
+<p>The basic syntax is as follows.</p>
+<pre class="result notranslate">
+DELETE FROM TABLE_NAME
+[ WHERE OPERATOR [ VALUE ]
+   (SELECT COLUMN_NAME
+   FROM TABLE_NAME)
+   [ WHERE) ]
+</pre>
+<h3>Example</h3>
+<p>Assuming, we have a CUSTOMERS_BKP table available which is a backup of the CUSTOMERS table. The following example deletes the records from the CUSTOMERS table for all the customers whose AGE is greater than or equal to 27.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; DELETE FROM CUSTOMERS
+   WHERE AGE IN (SELECT AGE FROM CUSTOMERS_BKP
+      WHERE AGE >= 27 );
+</pre>
+<p>This would impact two rows and finally the CUSTOMERS table would have the following records.</p>
+<pre class="result notranslate">
++----+----------+-----+---------+----------+
+| ID | NAME     | AGE | ADDRESS | SALARY   |
++----+----------+-----+---------+----------+
+|  2 | Khilan   |  25 | Delhi   |  1500.00 |
+|  3 | kaushik  |  23 | Kota    |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai  |  6500.00 |
+|  6 | Komal    |  22 | MP      |  4500.00 |
+|  7 | Muffy    |  24 | Indore  | 10000.00 |
++----+----------+-----+---------+----------+
+</pre>
+<hr />
+
+</div>
+
+<div id="c10" class="tabcontent">
+<h1>SQL - Handling Duplicates</h1>
+
+<p>There may be a situation when you have multiple duplicate records in a table. While fetching such records, it makes more sense to fetch only unique records instead of fetching duplicate records.</p> 
+<p>The SQL <b>DISTINCT</b> keyword, which we have already discussed is used in conjunction with the SELECT statement to eliminate all the duplicate records and by fetching only the unique records.</p>
+<h2>Syntax</h2>
+<p>The basic syntax of a DISTINCT keyword to eliminate duplicate records is as follows.</p>
+<pre class="result notranslate">
+SELECT DISTINCT column1, column2,.....columnN 
+FROM table_name
+WHERE [condition]
+</pre>
+<h2>Example</h2>
+<p>Consider the CUSTOMERS table having the following records.</p>
+<pre class="prettyprint notranslate">
++----+----------+-----+-----------+----------+
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+</pre>
+<p>First, let us see how the following SELECT query returns duplicate salary records.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT SALARY FROM CUSTOMERS
+   ORDER BY SALARY;
+</pre>
+<p>This would produce the following result where the salary of 2000 is coming twice which is a duplicate record from the original table.</p>
+<pre class="result notranslate">
++----------+
+| SALARY   |
++----------+
+|  1500.00 |
+|  2000.00 |
+|  2000.00 |
+|  4500.00 |
+|  6500.00 |
+|  8500.00 |
+| 10000.00 |
++----------+
+</pre>
+<p>Now, let us use the DISTINCT keyword with the above SELECT query and see the result.</p>
+<pre class="prettyprint notranslate">
+SQL&gt; SELECT DISTINCT SALARY FROM CUSTOMERS
+   ORDER BY SALARY;
+</pre>
+<p>This would produce the following result where we do not have any duplicate entry.</p>
+<pre class="result notranslate">
++----------+
+| SALARY   |
++----------+
+|  1500.00 |
+|  2000.00 |
+|  4500.00 |
+|  6500.00 |
+|  8500.00 |
+| 10000.00 |
++----------+
+</pre>
+<hr />
+
+</div>
+
+<div id="c11" class="tabcontent">
+<h1>SQL - Injection</h1>
+
+<p>If you take a user input through a webpage and insert it into a SQL database, there is a chance that you have left yourself wide open for a security issue known as the <b>SQL Injection</b>. This chapter will teach you how to help prevent this from happening and help you secure your scripts and SQL statements in your server side scripts such as a PERL Script.</p>
+<p>Injection usually occurs when you ask a user for input, like their name and instead of a name they give you a SQL statement that you will unknowingly run on your database. Never trust user provided data, process this data only after validation; as a rule, this is done by <b>Pattern Matching</b>.</p>
+<p>In the example below, the <b>name</b> is restricted to the alphanumerical characters plus underscore and to a length between 8 and 20 characters (modify these rules as needed).</p>
+<pre class="prettyprint notranslate">
+if (preg_match("/^\w{8,20}$/", $_GET['username'], $matches)) {
+   $result = mysql_query("SELECT * FROM CUSTOMERS 
+      WHERE name = $matches[0]");
+} else {
+   echo "user name not accepted";
+}
+</pre>
+<p>To demonstrate the problem, consider this excerpt &minus;</p>
+<pre class="prettyprint notranslate">
+// supposed input
+$name = "Qadir'; DELETE FROM CUSTOMERS;";
+mysql_query("SELECT * FROM CUSTOMSRS WHERE name='{$name}'");
+</pre>
+<p>The function call is supposed to retrieve a record from the CUSTOMERS table where the name column matches the name specified by the user. Under normal circumstances, <b>$name</b> would only contain alphanumeric characters and perhaps spaces, such as the string ilia. But here, by appending an entirely new query to $name, the call to the database turns into disaster; the injected DELETE query removes all records from the CUSTOMERS table.</p>
+<p>Fortunately, if you use MySQL, the <b>mysql_query()</b> function does not permit query stacking or executing multiple SQL queries in a single function call. If you try to stack queries, the call fails.</p>
+<p>However, other PHP database extensions, such as <b>SQLite</b> and <b>PostgreSQL</b> happily perform stacked queries, executing all the queries provided in one string and creating a serious security problem.</p>
+<h2>Preventing SQL Injection</h2>
+<p>You can handle all escape characters smartly in scripting languages like PERL and PHP. The MySQL extension for PHP provides the function <b>mysql_real_escape_string()</b> to escape input characters that are special to MySQL.</p>
+<pre class="prettyprint notranslate">
+if (get_magic_quotes_gpc()) {
+   $name = stripslashes($name);
+}
+$name = mysql_real_escape_string($name);
+mysql_query("SELECT * FROM CUSTOMERS WHERE name='{$name}'");
+</pre>
+<h3>The LIKE Quandary</h3>
+<p>To address the LIKE quandary, a custom escaping mechanism must convert user-supplied '%' and '_' characters to literals. Use <b>addcslashes()</b>, a function that lets you specify a character range to escape.</p>
+<pre class="prettyprint notranslate">
+$sub = addcslashes(mysql_real_escape_string("%str"), "%_");
+// $sub == \%str\_
+mysql_query("SELECT * FROM messages 
+   WHERE subject LIKE '{$sub}%'");
+</pre>
+<a href="sqlquiz.php" class="button">Start Quiz</a>
+<input type="button" onclick="document.location.href='laterquiz.php'" class="button" value="Quiz Later">
+<hr />
+
+</div>
+</div>
+
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

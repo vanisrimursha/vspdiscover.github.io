@@ -1,0 +1,493 @@
+<html>
+<head>
+<style>
+.card1 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card1:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: #433e75;
+    color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 93%;
+}
+
+.button:hover {
+  background-color: dodgerblue;
+}
+.dropbtn {
+    background-color: royalblue;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: lawngreen;
+    color: indigo;
+}
+.dropbtn1 {
+    background-color: green;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn1:hover, .dropbtn1:focus {
+    background-color: yellow;
+}
+</style>
+
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<form name="content"  action="content.php" method="post">
+<h1> <font color="green">Discover our Trending Courses....</h1>
+<div style"width:100px;overflow:auto">
+<table width="100%">
+<tr>
+<td width="250px">
+<div class="card1" name="python">
+  <center><img src="python.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="python" style="font-size: 18px"><b>Python</b></p> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add Python to my Favourites" name="python" class="dropbtn"/>
+    <p><a type="button" class="button" href="Python.html" >Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="dot_net.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="net" style="font-size: 18px"><b>.Net</b></p> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add ASP.Net to my Favourites" name="asp" class="dropbtn"/>
+    <p><a type="button" class="button"  href=".Net.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="c_ash.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="cash" style="font-size: 18px"><b>C#</b></p> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add C# to my Favourites" name="c_ash" class="dropbtn"/>
+    <p><a type="button" class="button" href="C#.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="MAD.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="mad" style="font-size: 18px"><b>MAD</b></p> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add MAD to my Favourites" name="MAD" class="dropbtn"/>
+    <p><a type="button" class="button"  href="MAD.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="sqlite.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="sqlite" style="font-size: 18px"><b>SQLite</b></p> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add SQLite to my Favourites" name="sqlite" class="dropbtn"/>
+    <p><a type="button" class="button"  href="SQLite.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td>
+<button onclick="document.location.href='categories.html'" class="dropbtn1">See More...</button>
+</td>
+</tr>
+</table>
+</div>
+
+<h1> <font color="green">Discover your Programming Languages....</h1>
+<div style"width:100px;overflow:auto">
+<table width="100%">
+<tr>
+<td width="250px">
+<div class="card1">
+  <center><img src="C.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="c" style="font-size: 18px"><b>C</b></h4> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add C to my Favourites" name="c" class="dropbtn"/>
+    <p><a type="button" class="button"  href="C.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="c++.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="cpp" style="font-size: 18px"><b>C++</b></p> 
+    <p>Programming Language</p> 
+    <p><input type="submit" value="+Add C++ to my Favourites" name="cpp" class="dropbtn"/>
+    <p><a type="button" class="button" href="C++.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="javascript.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="js" style="font-size: 18px"><b>JAVASCRIPT</b></p> 
+    <p>Web Development</p> 
+    <p><input type="submit" value="+Add JS to my Favourites" name="javascript" class="dropbtn"/>
+    <p><a type="button" class="button" href="JavaScript.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="css.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="css" style="font-size: 18px"><b>CSS</b></p> 
+    <p>Web Development</p> 
+    <p><input type="submit" value="+Add CSS to my Favourites" name="css" class="dropbtn"/>
+    <p><a type="button" class="button" href="CSS.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="html.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="html" style="font-size: 18px"><b>HTML</b></p> 
+    <p>Web Development</p> 
+    <p><input type="submit" value="+Add HTML to my Favourites" name="HTML" class="dropbtn"/>
+    <p><a type="button" class="button" href="HTML.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td>
+<button onclick="document.location.href='categories.html'" class="dropbtn1">See More...</button>
+</td>
+</tr>
+</table>
+</div>
+
+<h1> <font color="green">Discover your Photography Skills....</h1>
+<div style"width:100px;overflow:auto">
+<table width="100%">
+<tr>
+<td width="250px">
+<div class="card1">
+  <center><img src="vediocoverage.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="vc" style="font-size: 18px"><b>Video Coverage</b></p> 
+    <p>Photography Skills</p> 
+    <p><input type="submit" value="+Add VC to my Favourites" name="vc" class="dropbtn"/>
+    <p><a type="button" class="button" href="Video Coverage.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="morphing.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="morphing" style="font-size: 18px"><b>Morphing</b></p> 
+    <p>Photography Skills</p> 
+    <p><input type="submit" value="+Add Morphing to my Favourites" name="morphing" class="dropbtn"/>
+    <p><a type="button" class="button" href="Graphics.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="collage.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="collage" style="font-size: 18px"><b>Photography Collage</b></p> 
+    <p>Photography Skills</p> 
+    <p><input type="submit" value="+Add Collage to my Favourites" name="collage" class="dropbtn"/>
+    <p><a type="button" class="button" href="Digital.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="3d.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="3d" style="font-size: 18px"><b>Making 3D stills</b></p> 
+    <p>Photography Skills</p> 
+    <p><input type="submit" value="+Add 3D draw to my Favourites" name="3d" class="dropbtn"/>
+    <p><a type="button" class="button" href="3d.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="drawing.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="drawing" style="font-size: 18px"><b>Monochrome Stills</b></p> 
+    <p>Photography Skills</p> 
+    <p><input type="submit" value="+Add Monochrome to my Favourites" name="drawing" class="dropbtn"/>
+    <p><a type="button" class="button" href="Monochrome.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td>
+<button onclick="document.location.href='categories.html'" class="dropbtn1">See More...</button>
+</td>
+</tr>
+</table>
+</div>
+
+<h1> <font color="green">Discover your Business Courses....</h1>
+<div style"width:100px;overflow:auto">
+<table width="100%">
+<tr>
+<td width="250px">
+<div class="card1">
+  <center><img src="finance.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="finance" style="font-size: 18px"><b>Finance</b></p> 
+    <p>Business Course</p> 
+    <p><input type="submit" value="+Add Finance to my Favourites" name="finance" class="dropbtn"/>
+    <p><a type="button" class="button" href="Finance.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="accountancy.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="accounts" style="font-size: 18px"><b>Accountancy</b></p> 
+    <p>Business Course</p> 
+    <p><input type="submit" value="+Add Accountancy to my Favourites" name="accounts" class="dropbtn"/>
+    <p><a type="button" class="button" href="Accountancy.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="commerce.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="com" style="font-size: 18px"><b>Commerce</b></p> 
+    <p>Business Course</p> 
+    <p><input type="submit" value="+Add Commerce to my Favourites" name="commerce" class="dropbtn"/>
+    <p><a type="button" class="button" href="Commerce.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="mobile commerce.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="mcom" style="font-size: 18px"><b>Mobile Commerce</b></p> 
+    <p>Business Course</p> 
+    <p><input type="submit" value="+Add M-com to my Favourites" name="mcom" class="dropbtn"/>
+    <p><a type="button" class="button" href="Mcommerce.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="banking.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="banking" style="font-size: 18px"><b>Economics</b></p> 
+    <p>Business Course</p> 
+    <p><input type="submit" value="+Add Economics to my Favourites" name="economics" class="dropbtn"/>
+    <p><a type="button" class="button" href="Economics.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td>
+<button onclick="document.location.href='categories.html'" class="dropbtn1">See More...</button>
+</td>
+</tr>
+</table>
+</div>
+
+<h1> <font color="green">Discover your Skills Courses(Non-Certificaiton)....</h1>
+<div style"width:100px;overflow:auto">
+<table width="100%">
+<tr>
+<td width="250px">
+<div class="card1">
+  <center><img src="personality_dev.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="pd" style="font-size: 18px"><b>Personality Devpl.,</b></p> 
+    <p>Development Skills</p> 
+    <p><input type="submit" value="+Add PD to my Favourites" name="pd" class="dropbtn"/>
+    <p><a type="button" class="button" href="Personal Development.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="apptitude.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="al" style="font-size: 18px"><b>Apptitude Learning</b></p> 
+    <p>Development Skills</p> 
+    <p><input type="submit" value="+Add Apptitude to my Favourites" name="apptitude" class="dropbtn"/>
+    <p><a type="button" class="button" href="Apptitude Learning.php">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="logicals.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="lr" style="font-size: 18px"><b>Logical Reasoning</b></p> 
+    <p>Development Skills</p> 
+    <p><input type="submit" value="+Add Logicals to my Favourites" name="logicals" class="dropbtn"/>
+    <p><a type="button" class="button" href="Logicals.php">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="interview.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="is" style="font-size: 18px"><b>Interview Skills</b></p> 
+    <p>Development Skills</p> 
+    <p><input type="submit" value="+Add Iskills to my Favourites" name="development" class="dropbtn"/>
+    <p><a type="button" class="button" href="Interview Skills.php">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="company.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="cp" style="font-size: 18px"><b>Resume</b></p> 
+    <p>Interview Preparation</p> 
+    <p><input type="submit" value="+Add Resume Prep to my Favourites" name="interview" class="dropbtn"/>
+    <p><a type="button" class="button" href="Resume.php">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td>
+<button onclick="document.location.href='categories.html'" class="dropbtn1">See More...</button>
+</td>
+</tr>
+</table>
+</div>
+
+<h1> <font color="green">Others....</h1>
+<div style"width:100px;overflow:auto">
+<table width="100%">
+<tr>
+<td width="250px">
+<div class="card1">
+  <center><img src="ds.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="ds" style="font-size: 18px"><b>Data Structures</b></p> 
+    <p>Algorithms and Concepts</p> 
+    <p><input type="submit" value="+Add DS to my Favourites" name="ds" class="dropbtn"/>
+    <p><a type="button" class="button" href="Data Structures.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="ct.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="ct" style="font-size: 18px"><b>CT</b></p> 
+    <p>Computing Concepts</p> 
+    <p><input type="submit" value="+Add CT to my Favourites" name="ct" class="dropbtn"/>
+    <p><a type="button" class="button" href="Graphics.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="crowd_simulation.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="cd" style="font-size: 18px"><b>Crowd Simulation</b></p> 
+    <p>Computer Graphics</p> 
+    <p><input type="submit" value="+Add CS to my Favourites" name="crowd" class="dropbtn"/>
+    <p><a type="button" class="button" href="Crowd Simulation.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+<td width="250px">
+<div class="card1">
+  <center><img src="scrolling.png" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="scrolling" style="font-size: 18px"><b>Scrolling</b></p> 
+    <p>PComputer Graphics</p> 
+    <p><input type="submit" value="+Add Scrolling to my Favourites" name="scrolling" class="dropbtn"/>
+    <p><a type="button" class="button" href="Graphics.html">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td width="250px">
+<div class="card1">
+  <center><img src="exam.jpg" alt="subject" style="width:180px; height: 150px;"></center>
+  <div class="container1">
+    <p id="exams" style="font-size: 18px"><b>Exams</b></p> 
+    <p>Academics, GATE, GMAT</p> 
+    <p><input type="submit" value="+Add Exams to my Favourites" name="exams" class="dropbtn"/>
+    <p><a type="button" class="button" href="GMAT.php">Take Course</a></p>
+  </div>
+</div>
+</td>
+
+<td>
+<button onclick="document.location.href='categories.html'" class="dropbtn1">See More...</button>
+</td>
+</tr>
+</table>
+</div>
+</form>
+
+</div>
+</body>
+</html>

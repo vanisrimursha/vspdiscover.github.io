@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<title>JavaScript Quiz</title>
+ <style> body { background-image: url("b3.jpg"); background-repeat: no-repeat; } </style> 
+
+<?php
+session_start();
+$_SESSION['course'] = "JavaScript";
+?>
+
+</head> 
+<style>
+div#test{ border:blue 1px solid; padding:10px 60px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+                  [ "Javascript is a ------------------  computer programming language. ", "Dynamic ", "Static", "Both  A&B", "A" ],
+	[ "The script should be included in or referenced by an ----------  document for the code to be interpreted by the browser. ?", "XML", "HTML", "ASP.net", "B" ],
+	[ "JavaScript also defines -----  trivial data types  ?.", "One", "Two", "Three", "B" ],
+                  [ " JavaScript represents numbers using the ----------- -bit floating-point format defined by the IEEE 754 standard?", "16", "32", "64 ", "C" ],
+	[ "JavaScript is --------  language  ?", "Un typed", "Typed", "Both", "A" ],
+                   [ " The purpose of a ---------  loop is to execute a statement or code block repeatedly as long as an expression is true?", "While", "For", "Do while", "A" ],
+	[ "The --------  statement is the fundamental control statement that allows JavaScript to make decisions and execute statements conditionally", "If-else ", "If", "Switch", "B" ],
+                  [ " In java script When the page loads, it is called an  ?", "Event", "Looping", "Conditional Statements", "A" ],
+	[ " --------------- script	Triggers when the document goes offline?", "onclick ", "onblur", "offline", "C" ],
+                  [ "----------- script Triggers when dragged element is being dropped ", "ondrag", "ondrop", "onscript", "B" ],
+	["--------------- script	Triggers when an element gets user input", "ondrop", "oninput", "oninvalid", "B" ],
+                     [ "Web Browsers and Servers use ----------  protocol to communicate ", "FTP", "HTTP", "TCP", "B" ],
+	[ " In javascript user can call this function directly using the -------  event ", "onclick", "onblur", "Both", "A" ],
+                 [ " The JavaScript print function -------------  prints the current web page when executed", "print()", "window.print()", "print.window()", "B" ],
+	["A  JavaScript function can have an optional return statement. This is required if you want to return a value from a function.", "True", "False", "Not Known", "A" ],
+                    [ "To invoke a function somewhere later in the script, user would simply need to write the name of that function  ", "True", "False", "Not Known", "A" ],
+	[ " -----------  is an event that occurs when you try to submit a form.", "onsubmit", "onblur", "onresult", "A" ],
+	[ "JavaScript variable names should not start with a numeral (0-9) ", "False", "True", "Partialy True", "B" ],
+["--------     script Triggers when the document comes online", "onblur", "ononline", " onione", "B" ],
+[ "A global variable has global scope which means it can be defined anywhere in user JavaScript code", "True", "False", "Not Known", "A" ]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<button onclick='certificate()'>View Certificate</button>";
+		pos = 0;Scaling
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>NEXT</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+
+function certificate()
+{
+window.open("certificate.php");}
+
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+
+</head>
+
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>

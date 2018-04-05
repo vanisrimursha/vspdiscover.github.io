@@ -1,0 +1,3359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MAD</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  Android </button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Android-Environmental Setup</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Android-Architecture</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Android-Application Components</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Android-Resources</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">Android-Activities</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">Android-Services</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">Android-Broadcast Receiver</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">Android-Content Provider</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">Android-fragments</button>
+<button class="tablinks" onclick="openCity(event, 'c11')">Android-Intents</button>
+<button class="tablinks" onclick="openCity(event, 'c12')">Android-Layouts</button>
+<button class="tablinks" onclick="openCity(event, 'c13')">Android-Event Handling</button>
+
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>Android - Overview</h1>
+
+<h2>What is Android?</h2>
+<p>Android is an open source and Linux-based <b>Operating System</b> for mobile devices such as smartphones and tablet computers. Android was developed by the <i>Open Handset Alliance</i>, led by Google, and other companies.</p>
+<p>Android offers a unified approach to application development for mobile devices which means developers need only develop for Android, and their applications should be able to run on different devices powered by Android.</p>
+<p>The first beta version of the Android Software Development Kit (SDK) was released by Google in 2007 where as the first commercial version, Android 1.0, was released in September 2008.</p>
+<p>On June 27, 2012, at the Google I/O conference, Google announced the next Android version, 4.1 <b>Jelly Bean</b>. Jelly Bean is an incremental update, with the primary aim of improving the user interface, both in terms of functionality and performance.</p>
+<p>The source code for Android is available under free and open source software licenses. Google publishes most of the code under the Apache License version 2.0 and the rest, Linux kernel changes, under the GNU General Public License version 2.</p>
+<h2>Why Android ?</h2>
+<h2>Features of Android</h2>
+<p>Android is a powerful operating system competing with Apple 4GS and supports great features. Few of them are listed below &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Feature &amp; Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><p><b>Beautiful UI</b></p>
+<p>Android OS basic screen provides a beautiful and intuitive user interface.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td><p><b>Connectivity</b></p>
+<p>GSM/EDGE, IDEN, CDMA, EV-DO, UMTS, Bluetooth, Wi-Fi, LTE, NFC and WiMAX.</p></td>
+</tr>
+<tr>
+<td>3</td>
+<td><p><b>Storage</b></p>
+<p>SQLite, a lightweight relational database, is used for data storage purposes.</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td><p><b>Media support</b></p>
+<p>H.263, H.264, MPEG-4 SP, AMR, AMR-WB, AAC, HE-AAC, AAC 5.1, MP3, MIDI, Ogg Vorbis, WAV, JPEG, PNG, GIF, and BMP.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td><p><b>Messaging</b></p>
+<p>SMS and MMS</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td><p><b>Web browser</b></p>
+<p>Based on the open-source WebKit layout engine, coupled with Chrome's V8 JavaScript engine supporting HTML5 and CSS3.</p></td>
+</tr>
+<tr>
+<td>7</td>
+<td><p><b>Multi-touch</b></p>
+<p>Android has native support for multi-touch which was initially made available in handsets such as the HTC Hero.</p></td>
+</tr>
+<tr>
+<td>8</td>
+<td><p><b>Multi-tasking</b></p>
+<p>User can jump from one task to another and same time various application can run simultaneously.</p></td>
+</tr>
+<tr>
+<td>9</td>
+<td><p><b>Resizable widgets</b></p>
+<p>Widgets are resizable, so users can expand them to show more content or shrink them to save space.</p></td>
+</tr>
+<tr>
+<td>10</td>
+<td><p><b>Multi-Language</b></p>
+<p>Supports single direction and bi-directional text.</p></td>
+</tr>
+<tr>
+<td>11</td>
+<td><p><b>GCM</b></p>
+<p>Google Cloud Messaging (GCM) is a service that lets developers send short message data to their users on Android devices, without needing a proprietary sync solution.</p></td>
+</tr>
+<tr>
+<td>12</td>
+<td><p><b>Wi-Fi Direct</b></p>
+<p>A technology that lets apps discover and pair directly, over a high-bandwidth peer-to-peer connection.</p></td>
+</tr>
+<tr>
+<td>13</td>
+<td><p><b>Android Beam</b></p>
+<p>A popular NFC-based technology that lets users instantly share, just by touching two NFC-enabled phones together.</p></td>
+</tr>
+</table>
+<h2>Android Applications</h2>
+<p>Android applications are usually developed in the Java language using the Android Software Development Kit.</p>
+<p>Once developed, Android applications can be packaged easily and sold out either through a store such as <b>Google Play</b>, <b>SlideME</b>, <b>Opera Mobile Store</b>, <b>Mobango</b>, <b>F-droid</b> and the <b>Amazon Appstore</b>.</p>
+<p>Android powers hundreds of millions of mobile devices in more than 190 countries around the world. It's the largest installed base of any mobile platform and growing fast. Every day more than 1 million new Android devices are activated worldwide.</p>
+<p>This tutorial has been written with an aim to teach you how to develop and package Android application. We will start from environment setup for Android application programming and then drill down to look into various aspects of Android applications.</p> 
+<h2>Categories of Android applications</h2>
+<p>There are many android applications in the market. The top categories are &minus;</p>
+<h2>History of Android</h2>
+<p>The code names of android ranges from A to N currently, such as Aestro, Blender, Cupcake, Donut, Eclair, Froyo, Gingerbread, Honeycomb, Ice Cream Sandwitch, Jelly Bean, KitKat, Lollipop and Marshmallow. Let's understand the android history in a sequence.</P>
+<h2>What is API level?</h2>
+<blockquote><p>API Level is an integer value that uniquely identifies the framework API revision offered by a version of the Android platform.</p></blockquote>
+<table class="table table-bordered">
+<tr>
+<th>Platform Version</th>
+<th>API Level</th>
+<th>VERSION_CODE</th>
+<th></th>
+</tr>
+<tr>
+<td>Android 6.0</td>
+<td>23</td>
+<td>MARSHMALLOW</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 5.1</td>
+<td>22</td>
+<td>LOLLIPOP_MR1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 5.0</td>
+<td>21</td>
+<td>LOLLIPOP</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 4.4W</td>
+<td>20</td>
+<td>KITKAT_WATCH</td>
+<td style="color:#bbb">KitKat for Wearables Only</td>
+</tr>
+<tr>
+<td>Android 4.4</td>
+<td>19</td>
+<td>KITKAT</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 4.3</td>
+<td>18</td>
+<td>JELLY_BEAN_MR2</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 4.2, 4.2.2</td>
+<td>17</td>
+<td>JELLY_BEAN_MR1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 4.1, 4.1.1</td>
+<td>16</td>
+<td>JELLY_BEAN</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 4.0.3, 4.0.4</td>
+<td>15</td>
+<td>ICE_CREAM_SANDWICH_MR1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 4.0, 4.0.1, 4.0.2</td>
+<td>14</td>
+<td>ICE_CREAM_SANDWICH</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 3.2</td>
+<td>13</td>
+<td>HONEYCOMB_MR2</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 3.1.x</td>
+<td>12</td>
+<td>HONEYCOMB_MR1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 3.0.x</td>
+<td>11</td>
+<td>HONEYCOMB</td>
+<td></td>
+</tr>
+<tr>
+<td><p>Android 2.3.4</p>
+<p>Android 2.3.3</p></td>
+<td>10</td>
+<td>GINGERBREAD_MR1</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p>Android 2.3.2</p>
+<p>Android 2.3.1</p>
+<p>Android 2.3</p></td>
+<td>9</td>
+<td>GINGERBREAD</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 2.2.x</td>
+<td>8</td>
+<td>FROYO</td>
+</tr>
+<tr>
+<td>Android 2.1.x</td>
+<td>7</td>
+<td>ECLAIR_MR1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 2.0.1</td>
+<td>6</td>
+<td>ECLAIR_0_1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 2.0</td>
+<td>5</td>
+<td>ECLAIR</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 1.6</td>
+<td>4</td>
+<td>DONUT</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 1.5</td>
+<td>3</td>
+<td>CUPCAKE</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 1.1</td>
+<td>2</td>
+<td>BASE_1_1</td>
+<td></td>
+</tr>
+<tr>
+<td>Android 1.0</td>
+<td>1</td>
+<td>BASE</td>
+<td></td>
+</tr>
+</table>
+<hr />
+
+</div>
+<div id="c2" class="tabcontent">
+<h1>Android - Environment Setup</h1>
+
+<p>You will be glad to know that you can start your Android application development on either of the following operating systems &minus;</p>
+<ul class="list">
+<li><p>Microsoft Windows XP or later version.</p></li>
+<li><p>Mac OS X 10.5.8 or later version with Intel chip.</p></li>
+<li><p>Linux including GNU C Library 2.7 or later.</p></li>
+</ul>
+<p>Second point is that all the required tools to develop Android applications are freely available and can be downloaded from the Web. Following is the list of software's you will need before you start your Android application programming.</p>
+<ul class="list">
+<li><p>Java JDK5 or later version</p></li>
+<li><p>Android Studio </p></li>
+</ul>
+<p>Here last two components are optional and if you are working on Windows machine then these components make your life easy while doing Java based application development. So let us have a look how to proceed to set required environment.</p>
+<h2>Set-up Java Development Kit (JDK)</h2>
+<p>You can download the latest version of Java JDK from Oracle's Java site &minus;Java SE Downloads.for installing JDK in downloaded files, follow the given instructions to install and configure the setup. Finally set PATH and JAVA_HOME environment variables to refer to the directory that contains <b>java</b> and <b>javac</b>, typically java_install_dir/bin and java_install_dir respectively.</p>
+<p>If you are running Windows and installed the JDK in C:\jdk1.8.0_102, you would have to put the following line in your C:\autoexec.bat file.</p>
+<pre class="result notranslate">
+set PATH=C:\jdk1.8.0_102\bin;%PATH%
+set JAVA_HOME=C:\jdk1.8.0_102
+</pre>
+<p>Alternatively, you could also right-click on <i>My Computer</i>, select <i>Properties</i>, then <i>Advanced</i>, then <i>Environment Variables</i>. Then, you would update the PATH value and press the OK button.</p>
+<p>On Linux, if the SDK is installed in /usr/local/jdk1.8.0_102 and you use the C shell, you would put the following code into your <b>.cshrc</b> file.</p>
+<pre class="result notranslate">
+setenv PATH /usr/local/jdk1.8.0_102/bin:$PATH
+setenv JAVA_HOME /usr/local/jdk1.8.0_102
+</pre>
+<p>Alternatively, if you use Android studio, then it will know automatically where you have installed your Java.</p>
+<h2>Android IDEs</h2>
+<p>There are so many sophisticated Technologies are available to develop android applications, the familiar technologies, which are predominantly using tools as follows</p>
+<ul class="list">
+<li><p>Android Studio</a></p></li>
+<li><p>Eclipse IDE(Deprecated)</a></p></li>
+</ul>
+<hr />
+
+</div>
+<div id="c3" class="tabcontent">
+<h1>Android - Architecture</h1>
+
+<p>Android operating system is a stack of software components which is roughly divided into five sections and four main layers as shown below in the architecture diagram.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed\architecture.jpg" alt="Android Architecture" />
+<h2>Linux kernel</h2>
+<p>At the bottom of the layers is Linux - Linux 3.6 with approximately 115 patches. This provides a level of abstraction between the device hardware and it contains all the essential hardware drivers like camera, keypad, display etc. Also, the kernel handles all the things that Linux is really good at such as networking and a vast array of device drivers, which take the pain out of interfacing to peripheral hardware.</p>
+<h2>Libraries</h2>
+<p>On top of Linux kernel there is a set of libraries including open-source Web browser engine WebKit, well known library libc, SQLite database which is a useful repository for storage and sharing of application data, libraries to play and record audio and video, SSL libraries responsible for Internet security etc.</p>
+<h2>Android Libraries</h2>
+<p>This category encompasses those Java-based libraries that are specific to Android development. Examples of libraries in this category include the application framework libraries in addition to those that facilitate user interface building, graphics drawing and database access. A summary of some key core Android libraries available to the Android developer is as follows &minus;</p>
+<ul class="list">
+<li><p><b>android.app</b> &minus; Provides access to the application model and is the cornerstone of all Android applications.</p></li>
+<li><p><b>android.content</b> &minus; Facilitates content access, publishing and messaging between applications and application components.</p></li>
+<li><p><b>android.database</b> &minus; Used to access data published by content providers and includes SQLite database management classes.</p></li>
+<li><p><b>android.opengl</b> &minus; A Java interface to the OpenGL ES 3D graphics rendering API.</p></li>
+<li><p><b>android.os</b> &minus; Provides applications with access to standard operating system services including messages, system services and inter-process communication.</p></li>
+<li><p><b>android.text</b> &minus; Used to render and manipulate text on a device display.</p></li>
+<li><p><b>android.view</b> &minus; The fundamental building blocks of application user interfaces.</p></li>
+<li><p><b>android.widget</b> &minus; A rich collection of pre-built user interface components such as buttons, labels, list views, layout managers, radio buttons etc.</p></li>
+<li><p><b>android.webkit</b> &minus; A set of classes intended to allow web-browsing capabilities to be built into applications.</p></li>
+</ul>
+<p>Having covered the Java-based core libraries in the Android runtime, it is now time to turn our attention to the C/C++ based libraries contained in this layer of the Android software stack.</p>
+<h2>Android Runtime</h2>
+<p>This is the third section of the architecture and available on the second layer from the bottom. This section provides a key component called <b>Dalvik Virtual Machine</b> which is a kind of  Java Virtual Machine specially designed and optimized for Android.</p>
+<p>The Dalvik VM makes use of Linux core features like memory management and multi-threading, which is intrinsic in the Java language. The Dalvik VM enables every Android application to run in its own process, with its own instance of the Dalvik virtual machine.</p>
+<p>The Android runtime also provides a set of core libraries which enable Android application developers to write Android applications using standard Java programming language.</p>
+<h2>Application Framework</h2>
+<p>The Application Framework layer provides many higher-level services to applications in the form of Java classes. Application developers are allowed to make use of these services in their applications.</p>
+<p>The Android framework includes the following key services &minus;</p>
+<ul class="list">
+<li><p><b>Activity Manager</b> &minus; Controls all aspects of the application lifecycle and activity stack.</p></li>
+<li><p><b>Content Providers</b> &minus; Allows applications to publish and share data with other applications.</p></li>
+<li><p><b>Resource Manager</b> &minus; Provides access to non-code embedded resources such as strings, color settings and user interface layouts.</p></li>
+<li><p><b>Notifications Manager</b> &minus; Allows applications to display alerts and notifications to the user.</p></li>
+<li><p><b>View System</b> &minus; An extensible set of views used to create application user interfaces.</p></li>
+</ul>
+<hr />
+
+</div>
+<div id="c4" class="tabcontent">
+<h1>Android - Application Components</h1>
+
+<p>Application components are the essential building blocks of an Android application. These components are loosely coupled by the application manifest file <i>AndroidManifest.xml</i> that describes each component of the application and how they interact.</p>
+<p>There are following four main components that can be  used within an Android application &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Components &amp;  Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>Activities</b></p>
+<p>They dictate the UI and handle the user interaction to the smart phone screen.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td><p><b>Services</b></p>
+<p>They handle background processing associated with an application.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>Broadcast Receivers</b></p>
+<p>They handle communication between Android OS and applications.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td>
+<p><b>Content Providers</b></p>
+<p>They handle data and database management issues.</p></td>
+</tr>
+</table>
+<h2>Activities</h2>
+<p>An activity represents a single screen with a user interface,in-short Activity performs actions on the screen. For example, an email application might have one activity that shows a list of new emails, another activity to compose an email, and another activity for reading emails. If an application has more than one activity, then one of them should be marked as the activity that is presented when the application is launched.</p>
+<p>An activity is implemented as a subclass of <b>Activity</b> class as follows &minus;</p>
+<pre class="prettyprint notranalste">
+public class MainActivity extends Activity {
+}
+</pre>
+<h2>Services</h2>
+<p>A service is a component that runs in the background to perform long-running operations. For example, a service might play music in the background while the user is in a different application, or it might fetch data over the network without blocking user interaction with an activity.</p>
+<p>A service is implemented as a subclass of <b>Service</b> class as follows &minus;</p>
+<pre class="prettyprint notranalste">
+public class MyService extends Service {
+}
+</pre>
+<h2>Broadcast Receivers</h2>
+<p>Broadcast Receivers simply respond to broadcast messages from other applications or from the system. For example, applications can also initiate broadcasts to let other applications know that some data has been downloaded to the device and is available for them to use, so this is broadcast receiver who will intercept this communication and will initiate appropriate action.</p>
+<p>A broadcast receiver is implemented as a subclass of <b>BroadcastReceiver</b> class and each message is broadcaster as an <b>Intent</b> object.</p>
+<pre class="prettyprint notranalste">
+public class MyReceiver  extends  BroadcastReceiver {
+   public void onReceive(context,intent){}
+}
+</pre>
+<h2>Content Providers</h2>
+<p>A content provider component supplies data from one application to others on request. Such requests are handled by the methods of the <i>ContentResolver</i> class. The data may be stored in the file system, the database or somewhere else entirely.</p>
+<p>A content provider is implemented as a subclass of <b>ContentProvider</b> class and must implement a standard set of APIs that enable other applications to perform transactions.</p>
+<pre class="prettyprint notranalste">
+public class MyContentProvider extends  ContentProvider {
+   public void onCreate(){}
+}
+</pre>
+<p>We will go through these tags in detail while covering application components in individual chapters.</p>
+<h2>Additional Components</h2>
+<p>There are additional components which will be used in the construction of above mentioned entities, their logic, and wiring between them. These components are &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">S.No</th>
+<th style="text-align:center">Components &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td><p><b>Fragments</b></p>
+<p>Represents a portion of user interface in an Activity.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>Views</b></p>
+<p>UI elements that are drawn on-screen including buttons, lists forms etc.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>Layouts</b></p>
+<p>View hierarchies that control screen format and appearance of the views.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td><p><b>Intents</b></p>
+<p>Messages wiring components together.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">5</td>
+<td><p><b>Resources</b></p>
+<p>External elements, such as strings, constants and drawable pictures.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">6</td>
+<td>
+<p><b>Manifest</b></p>
+<p>Configuration file for the application.</p></td>
+</tr>
+</table>
+<hr />
+
+</div>
+
+<div id="c5" class="tabcontent">
+<h1>Android Resources Organizing & Accessing</h1>
+
+<p>There are many more items which you use to build a good Android application. Apart from coding for the application, you take care of various other <b>resources</b> like static content that your code uses, such as bitmaps, colors, layout definitions, user interface strings, animation instructions, and more. These resources are always maintained separately in various sub-directories under <b>res/</b> directory of the project.</p>
+<p>This tutorial will explain you how you can organize your application resources, specify alternative resources and access them in your applications.</p>
+<h2>Organize resource in Android Studio</h2>
+<pre class="result notranslate">
+MyProject/
+   app/
+      manifest/
+         AndroidManifest.xml
+   java/
+      MyActivity.java  
+      <b>res/</b>
+         drawable/  
+            icon.png  
+         layout/  
+            activity_main.xml
+            info.xml
+         values/  
+            strings.xml 
+				 
+</pre>
+<p></p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Directory &amp; Resource Type</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<p><b>anim/</b></p>
+<p>XML files that define property animations. They are saved in res/anim/ folder and accessed from the <b>R.anim</b> class.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+<p><b>color/</b></p>
+<p>XML files that define a state list of colors. They are saved in res/color/ and accessed from the <b>R.color</b> class.</p></td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+<p><b>drawable/</b></p>
+<p>Image files like .png, .jpg, .gif or XML files that are compiled into bitmaps, state lists, shapes, animation drawable. They are saved in res/drawable/ and accessed from the <b>R.drawable</b> class.</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+<p><b>layout/</b></p>
+<p>XML files that define a user interface layout. They are saved in res/layout/ and accessed from the <b>R.layout</b> class.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+<p><b>menu/</b></p>
+<p>XML files that define application menus, such as an Options Menu, Context Menu, or Sub Menu. They are saved in res/menu/ and accessed from the <b>R.menu</b> class.</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+<p><b>raw/</b></p>
+<p>Arbitrary files to save in their raw form. You need to call <i>Resources.openRawResource()</i> with the resource ID, which is <i>R.raw.filename</i> to open such raw files.</p></td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+<p><b>values/</b></p>
+<p>XML files that contain simple values, such as strings, integers, and colors. For example, here are some filename conventions for resources you can create in this directory &minus;</p>
+<ul class="list">
+<li><p>arrays.xml for resource arrays, and accessed from the <b>R.array</b> class.</p></li>
+<li><p>integers.xml for resource integers, and accessed from the <b>R.integer</b> class.</p></li>
+<li><p>bools.xml for resource boolean, and accessed from the <b>R.bool</b> class.</p></li>
+<li><p>colors.xml for color values, and accessed from the <b>R.color</b> class.</p></li>
+<li><p>dimens.xml for dimension values, and accessed from the <b>R.dimen</b> class.</p></li>
+<li><p>strings.xml for string values, and accessed from the <b>R.string</b> class.</p></li>
+<li><p>styles.xml for styles, and accessed from the <b>R.style</b> class.</p></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+<p><b>xml/</b></p>
+<p>Arbitrary XML files that can be read at runtime by calling <i>Resources.getXML()</i>. You can save various configuration files here which will be used at run time.</p></td>
+</tr>
+</table>
+<h2>Alternative Resources</h2>
+<p>Your application should provide alternative resources to support specific device configurations. For example, you should include alternative drawable resources ( i.e.images ) for different screen resolution and alternative string resources for different languages. At runtime, Android detects the current device configuration and loads the appropriate resources for your application.</p>
+<p>To specify configuration-specific alternatives for a set of resources, follow the following steps &minus;</p>
+<ul class="list">
+<li><p>Create a new directory in res/ named in the form <b>&lt;resources_name&gt;-&lt;config_qualifier&gt;</b>. Here <b>resources_name</b> will be any of the resources mentioned in the above table, like layout, drawable etc. The <b>qualifier</b> will specify an individual configuration for which these resources are to be used. You can check official documentation for a complete list of qualifiers for different type of resources.</p></li>
+<li><p>Save the respective alternative resources in this new directory. The resource files must be named exactly the same as the default resource files as shown in the below example, but these files will have content specific to the alternative. For example though image file name will be same but for high resolution screen, its resolution will be high.</p></li>
+</ul>
+<p>Below is an example which specifies images for a default screen and alternative images for high resolution screen.</p>
+<pre class="result notranslate">
+MyProject/
+   app/
+      manifest/
+         AndroidManifest.xml
+   java/
+      MyActivity.java   
+      <b>res/</b>
+         drawable/  
+            icon.png
+            background.png
+         <b>drawable-hdpi/</b>  
+            icon.png
+            background.png  
+         layout/  
+            activity_main.xml
+            info.xml
+         values/  
+            strings.xml 
+</pre>
+<p>Below is another example which specifies layout for a default language and alternative layout for Arabic language.</p>
+<pre class="result notranslate">
+MyProject/
+   app/
+      manifest/
+         AndroidManifest.xml
+   java/
+      MyActivity.java   
+      <b>res/</b>
+         drawable/  
+            icon.png
+            background.png
+         <b>drawable-hdpi/</b>  
+            icon.png
+            background.png  
+         layout/  
+            activity_main.xml
+            info.xml
+         <b>layout-ar/</b>
+            main.xml
+         values/  
+            strings.xml 
+</pre>
+<h2>Accessing Resources</h2>
+<p>During your application development you will need to access defined resources either in your code, or in your layout XML files. Following section explains how to access your resources in both the scenarios &minus;</p>
+<h3>Accessing Resources in Code</h3>
+<p>When your Android application is compiled, a <b>R</b> class gets generated, which contains resource IDs for all the resources available in your <b>res/</b> directory. You can use R class to access that resource using sub-directory and resource name or directly resource ID.</p>
+<h3>Example</h3>
+<p>To access <i>res/drawable/myimage.png</i> and set an ImageView you will use following code &minus;</p>
+<pre class="prettyprint notranslate">
+ImageView imageView = (ImageView) findViewById(R.id.myimageview);
+imageView.setImageResource(R.drawable.myimage);
+</pre>
+<p>Here first line of the code make use of <i>R.id.myimageview</i> to get ImageView defined with id <i>myimageview</i> in a Layout file. Second line of code makes use of  <i>R.drawable.myimage</i> to get an image with name <b>myimage</b> available in drawable sub-directory under <b>/res</b>.</p>
+<h3>Example</h3>
+<p>Consider next example where <i>res/values/strings.xml</i> has following definition &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+   &lt;string  name="hello"&gt;Hello, World!&lt;/string&gt;
+&lt;/resources&gt;
+</pre>
+<p>Now you can set the text on a TextView object with ID msg using a resource ID as follows &minus;</p>
+<pre class="prettyprint notranslate">
+TextView msgTextView = (TextView) findViewById(R.id.msg);
+msgTextView.setText(R.string.hello);
+</pre>
+<h3>Example</h3>
+<p>Consider a layout <i>res/layout/activity_main.xml</i> with the following definition &minus;<p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent" 
+   android:layout_height="fill_parent" 
+   android:orientation="vertical" &gt;
+   
+   &lt;TextView android:id="@+id/text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Hello, I am a TextView" /&gt;
+
+   &lt;Button android:id="@+id/button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Hello, I am a Button" /&gt;
+      
+&lt;/LinearLayout&gt;
+</pre>
+<p>This application code will load this layout for an Activity, in the onCreate() method as follows &minus;</p>
+<pre class="prettyprint notranslate">
+public void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.activity_main);
+}
+</pre>
+<h3>Accessing Resources in XML</h3>
+<p>Consider the following resource XML <i>res/values/strings.xml</i> file that includes a color resource and a string resource &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+   &lt;color name="opaque_red"&gt;#f00&lt;/color&gt;
+   &lt;string name="hello"&gt;Hello!&lt;/string&gt;
+&lt;/resources&gt;
+</pre>
+<p>Now you can use these resources in the following layout file to set the text color and text string as follows &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;EditText xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:textColor=<b>"@color/opaque_red"</b>
+   android:text=<b>"@string/hello" /&gt;</b>
+</pre>
+<p>Now if you will go through previous chapter once again where I have explained <b>Hello World!</b> example, and I'm sure you will have better understanding on all the concepts explained in this chapter. So I highly recommend to check previous chapter for working example and check how I have used various resources at very basic level.</p>
+<hr />
+
+</div>
+
+<div id="c6" class="tabcontent">
+<h1>Android - Activities</h1>
+
+<blockquote>An activity represents a single screen with a user interface just like window or frame of Java.Android activity is the subclass of ContextThemeWrapper class.</blockquote>
+<p>If you have worked with C, C++ or Java programming language then you must have seen that your program starts from <b>main()</b> function. Very similar way, Android system initiates its program with in an <b>Activity</b> starting with a call on <i>onCreate()</i> callback method. There is a sequence of callback methods that start up an activity and a sequence of callback methods that tear down an activity as shown in the below Activity life cycle  diagram: (<i>image courtesy : android.com</i> )</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/activity.jpg" alt="Android Activity lifecycle" />
+<p>The Activity class defines the following call backs i.e. events. You don't need to implement all the callbacks methods. However, it's important that you understand each one and implement those that ensure your app behaves the way users expect.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Callback &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>onCreate()</b></p>
+<p>This is the first callback and called when the activity is first created.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td><p><b>onStart()</b></p>
+<p>This callback is called when the activity becomes visible to the user.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td><p><b>onResume()</b></p>
+<p>This is called when the user starts interacting with the application.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td><p><b>onPause()</b></p>
+<p>The paused activity does not receive user input and cannot execute any code and called when the current activity is being paused and the previous activity is being resumed.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">5</td>
+<td><p><b>onStop()</b></p>
+<p>This callback is called when the activity is no longer visible.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">6</td>
+<td><p><b>onDestroy()</b></p>
+<p>This callback is called before the activity is destroyed by the system.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">7</td>
+<td><p><b>onRestart()</b></p>
+<p>This callback is called when the activity restarts after stopping it.</p></td>
+</tr>
+</table>
+<h2>Example</h2>
+<p>This example will take you through simple steps to show Android application activity life cycle. Follow the following steps to modify the Android application we created in <i>Hello World Example</i> chapter &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Step</th>
+<th style="text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>You will use Android studio to create an Android application and name it as <i>HelloWorld</i> under a package <i>com.example.helloworld</i> as explained in the <i>Hello World Example</i> chapter.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Modify main activity file <i>MainActivity.java</i> as explained below. Keep rest of the files unchanged.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>src/com.example.helloworld/MainActivity.java</b>. This file includes each of the fundamental life cycle methods. The <b>Log.d()</b> method has been used to generate log messages &minus;</p>
+<pre class="prettyprint notranslate">
+package com.example.helloworld;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+   String msg = "Android : ";
+   
+   /** Called when the activity is first created. */
+   @Override
+   public void <b>onCreate</b>(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+      Log.d(msg, "The onCreate() event");
+   }
+
+   /** Called when the activity is about to become visible. */
+   @Override
+   protected void <b>onStart()</b> {
+      super.onStart();
+      Log.d(msg, "The onStart() event");
+   }
+
+   /** Called when the activity has become visible. */
+   @Override
+   protected void <b>onResume()</b> {
+      super.onResume();
+      Log.d(msg, "The onResume() event");
+   }
+
+   /** Called when another activity is taking focus. */
+   @Override
+   protected void <b>onPause()</b> {
+      super.onPause();
+      Log.d(msg, "The onPause() event");
+   }
+
+   /** Called when the activity is no longer visible. */
+   @Override
+   protected void <b>onStop()</b> {
+      super.onStop();
+      Log.d(msg, "The onStop() event");
+   }
+
+   /** Called just before the activity is destroyed. */
+   @Override
+   public void <b>onDestroy()</b> {
+      super.onDestroy();
+      Log.d(msg, "The onDestroy() event");
+   }
+}
+</pre>
+<p>An activity class loads all the UI component using the XML file available in <i>res/layout</i> folder of the project. Following statement loads UI components from <i>res/layout/activity_main.xml file</i>:</p>
+<pre class="prettyprint notranslate">
+setContentView(R.layout.activity_main);
+</pre>
+<p>An application can have one or more activities without any restrictions. Every activity you define for your application must be declared in your <i>AndroidManifest.xml</i> file and the main activity for your app must be declared in the manifest with an &lt;intent-filter&gt; that includes the MAIN action and LAUNCHER category as follows:</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tutorialspoint7.myapplication"&gt;
+
+    &lt;application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"&gt;
+        &lt;activity android:name=".MainActivity"&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name="android.intent.action.MAIN" /&gt;
+
+                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</pre>
+<p>If either the MAIN action or LAUNCHER category are not declared for one of your activities, then your app icon will not appear in the Home screen's list of apps.</p>
+<p>Let's try to run our modified <b>Hello World!</b> application we just modified. I assume you had created your <b>AVD</b> while doing environment setup. To run the app from Android studio, open one of your project's activity files and click Run  Android studio installs the app on your AVD and starts it and if everything is fine with your setup and application, it will display Emulator window and you should see following log messages in <b>LogCat</b> window in Android studio &minus;</p>
+<pre class="result notranslate">
+08-23 10:32:07.682 4480-4480/com.example.helloworld D/Android :: The onCreate() event
+08-23 10:32:07.683 4480-4480/com.example.helloworld D/Android :: The onStart() event
+08-23 10:32:07.685 4480-4480/com.example.helloworld D/Android :: The onResume() event
+</pre>
+<p></p>
+<p>Let us try to click lock screen button on the Android emulator and it will generate following events messages in <b>LogCat</b> window in android studio:</p>
+<pre class="result notranslate">
+08-23 10:32:53.230 4480-4480/com.example.helloworld D/Android :: The onPause() event
+08-23 10:32:53.294 4480-4480/com.example.helloworld D/Android :: The onStop() event
+</pre>
+<p>Let us again try to unlock your screen on the Android emulator and it will generate following events messages in <b>LogCat</b> window in Android studio:</p>
+<pre class="result notranslate">
+08-23 10:34:41.390 4480-4480/com.example.helloworld D/Android :: The onStart() event
+08-23 10:34:41.392 4480-4480/com.example.helloworld D/Android :: The onResume() event
+</pre>
+<p>Next, let us again try to click Back buttonon the Android emulator and it will generate following events messages in <b>LogCat</b> window in Android studio and this completes the Activity Life Cycle for an Android Application.</p>
+<pre class="result notranslate">
+08-23 10:37:24.806 4480-4480/com.example.helloworld D/Android :: The onPause() event
+08-23 10:37:25.668 4480-4480/com.example.helloworld D/Android :: The onStop() event
+08-23 10:37:25.669 4480-4480/com.example.helloworld D/Android :: The onDestroy() event
+</pre>
+<hr />
+
+</div>
+<div id="c7" class="tabcontent">
+<h1>Android - Services</h1>
+
+<blockquote>A <b>service</b> is a component that runs in the background to perform long-running operations without needing to interact with the user and it works even if application is destroyed. A service can essentially take two states &minus;</blockquote>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">State &amp; Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<p><b>Started</b></p>
+<p>A service is <b>started</b> when an application component, such as an activity, starts it by calling <i>startService()</i>. Once started, a service can run in the background indefinitely, even if the component that started it is destroyed.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+<p><b>Bound</b></p>
+<p>A service is <b>bound</b> when an application component binds to it by calling <i>bindService()</i>. A bound service offers a client-server interface that allows components to interact with the service, send requests, get results, and even do so across processes with interprocess communication (IPC).</p></td>
+</tr>
+</table>
+<p>A service has life cycle callback methods that you can implement to monitor changes in the service's state and you can perform work at the appropriate stage. The following diagram on the left shows the life cycle when the service is created with startService() and the diagram on the right shows the life cycle when the service is created with bindService(): <i>(image courtesy : android.com )</i></p>
+<p>To create an service, you create a Java class that extends the Service base class or one of its existing subclasses. The <b>Service</b> base class defines various callback methods and the most important are given below. You don't need to implement all the callbacks methods. However, it's important that you understand each one and implement those that ensure your app behaves the way users expect.</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Callback &amp; Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><p><b>onStartCommand()</b></p>
+<p>The system calls this method when another component, such as an activity, requests that the service be started, by calling <i>startService()</i>. If you implement this method, it is your responsibility to stop the service when its work is done, by calling <i>stopSelf()</i> or <i>stopService()</i> methods.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+<p><b>onBind()</b></p>
+<p>The system calls this method when another component wants to bind with the service by calling <i>bindService()</i>. If you implement this method, you must provide an interface that clients use to communicate with the service, by returning an <i>IBinder</i> object. You must always implement this method, but if you don't want to allow binding, then you should return <i>null</i>.</p></td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+<p><b>onUnbind()</b></p>
+<p>The system calls this method when all clients have disconnected from a particular interface published by the service.</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+<p><b>onRebind()</b></p>
+<p>The system calls this method when new clients have connected to the service, after it had previously been notified that all had disconnected in its <i>onUnbind(Intent)</i>.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+<p><b>onCreate()</b></p>
+<p>The system calls this method when the service is first created using <i>onStartCommand()</i> or <i>onBind()</i>. This call is required to perform one-time set-up.</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+<p><b>onDestroy()</b></p>
+<p>The system calls this method when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.</p></td>
+</tr>
+</table>
+<p>The following skeleton service demonstrates each of the life cycle methods &minus;</p>
+<pre class="prettyprint notranslate">
+package com.tutorialspoint;
+
+import android.app.Service;
+import android.os.IBinder;
+import android.content.Intent;
+import android.os.Bundle;
+
+public class HelloService extends Service {
+   
+   /** indicates how to behave if the service is killed */
+   int mStartMode;
+   
+   /** interface for clients that bind */
+   IBinder mBinder;     
+   
+   /** indicates whether onRebind should be used */
+   boolean mAllowRebind;
+
+   /** Called when the service is being created. */
+   @Override
+   public void onCreate() {
+     
+   }
+
+   /** The service is starting, due to a call to startService() */
+   @Override
+   public int onStartCommand(Intent intent, int flags, int startId) {
+      return mStartMode;
+   }
+
+   /** A client is binding to the service with bindService() */
+   @Override
+   public IBinder onBind(Intent intent) {
+      return mBinder;
+   }
+
+   /** Called when all clients have unbound with unbindService() */
+   @Override
+   public boolean onUnbind(Intent intent) {
+      return mAllowRebind;
+   }
+
+   /** Called when a client is binding to the service with bindService()*/
+   @Override
+   public void onRebind(Intent intent) {
+
+   }
+
+   /** Called when The service is no longer used and is being destroyed */
+   @Override
+   public void onDestroy() {
+
+   }
+}
+</pre>
+<h2>Example</h2>
+<p>This example will take you through simple steps to show how to create your own Android Service. Follow the following steps to modify the Android application we created in <i>Hello World Example</i> chapter &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th class="fivepct">Step</th>
+<th style="text-align:center;">Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>You will use Android StudioIDE to create an Android application and name it as <i>My Application</i> under a package <i>com.example.tutorialspoint7.myapplication</i> as explained in the <i>Hello World Example</i> chapter.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Modify main activity file <i>MainActivity.java</i> to add <i>startService()</i> and <i>stopService()</i> methods.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Create a new java file <i>MyService.java</i> under the package <i>com.example.My Application</i>. This file will have implementation of Android service related methods.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Define your service in <i>AndroidManifest.xml</i> file using &lt;service.../&gt; tag. An application can have one or more services without any restrictions.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Modify the default content of <i>res/layout/activity_main.xml</i> file to include two buttons in linear layout.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>No need to change any constants in <i>res/values/strings.xml</i> file. Android studio take care of string values</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td></tr>
+</table>
+<p>Following is the content of the modified main activity file <b>MainActivity.java</b>. This file can include each of the fundamental life cycle methods. We have added <i>startService()</i> and <i>stopService()</i> methods to start and stop the service.</p>
+<pre class="prettyprint notranslate">
+package com.example.tutorialspoint7.myapplication;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+import android.view.View;
+
+public class MainActivity extends Activity {
+   String msg = "Android : ";
+
+   /** Called when the activity is first created. */
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+      Log.d(msg, "The onCreate() event");
+   }
+
+   public void startService(View view) {
+      startService(new Intent(getBaseContext(), MyService.class));
+   }
+
+   // Method to stop the service
+   public void stopService(View view) {
+      stopService(new Intent(getBaseContext(), MyService.class));
+   }
+}
+</pre>
+<p>Following is the content of <b>MyService.java</b>. This file can have implementation of one or more methods associated with Service based on requirements. For now we are going to implement only two methods <i>onStartCommand()</i> and <i>onDestroy()</i> &minus;</p>
+<pre class="prettyprint notranslate">
+package com.example.tutorialspoint7.myapplication;
+
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+import android.support.annotation.Nullable;
+import android.widget.Toast;
+
+/**
+   * Created by TutorialsPoint7 on 8/23/2016.
+*/
+
+public class MyService extends Service {
+   @Nullable
+   @Override
+   public IBinder onBind(Intent intent) {
+      return null;
+   }
+	
+   @Override
+   public int onStartCommand(Intent intent, int flags, int startId) {
+      // Let it continue running until it is stopped.
+      Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
+      return START_STICKY;
+   }
+
+   @Override
+   public void onDestroy() {
+      super.onDestroy();
+      Toast.makeText(this, "Service Destroyed", Toast.LENGTH_LONG).show();
+   }
+}
+</pre>
+<p>Following will the modified content of <i>AndroidManifest.xml</i> file. Here we have added &lt;service.../&gt; tag to include our service &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.example.tutorialspoint7.myapplication"&gt;
+
+   &lt;application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"&gt;
+		
+      &lt;activity android:name=".MainActivity"&gt;
+         &lt;intent-filter&gt;
+            &lt;action android:name="android.intent.action.MAIN" /&gt;
+
+            &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+         &lt;/intent-filter&gt;
+      &lt;/activity&gt;
+		
+      &lt;service android:name=".MyService" /&gt;
+   &lt;/application&gt;
+
+&lt;/manifest&gt;
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file to include two buttons &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+   android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"&gt;
+   
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Example of services"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp" /&gt;
+      
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point "
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_above="@+id/imageButton"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="40dp" /&gt;
+
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_centerVertical="true"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/button2"
+      android:text="Start Services"
+      android:onClick="startService"
+      android:layout_below="@+id/imageButton"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Stop Services"
+      android:id="@+id/button"
+      android:onClick="stopService"
+      android:layout_below="@+id/button2"
+      android:layout_alignLeft="@+id/button2"
+      android:layout_alignStart="@+id/button2"
+      android:layout_alignRight="@+id/button2"
+      android:layout_alignEnd="@+id/button2" /&gt;
+
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Let's try to run our modified <b>Hello World!</b> application we just modified. I assume you had created your <b>AVD</b> while doing environment setup. To run the app from Android studio, open one of your project's activity files and click Run  icon from the tool bar. Android Studio installs the app on your AVD and starts it and if everything is fine with your set-up and application, it will display following Emulator window &minus;</p>
+<p>Now to start your service, let's click on <b>Start Service</b> button, this will start the service and as per our programming in <i>onStartCommand()</i> method, a message <i>Service Started</i> will appear on the bottom of the the simulator as follows &minus;</p>
+<hr />
+
+</div>
+<div id="c8" class="tabcontent">
+<h1>Android - Broadcast Receivers</h1>
+
+<blockquote><p><b>Broadcast Receivers </b>simply respond to broadcast messages from other applications or from the system itself. These messages are sometime called events or intents. For example, applications can also initiate broadcasts to let other applications know that some data has been downloaded to the device and is available for them to use, so this is broadcast receiver who will intercept this communication and will initiate appropriate action.</p></blockquote>
+<p>There are following two important steps to make BroadcastReceiver works for the system broadcasted intents &minus;</p>
+<ul class="list">
+<li><p>Creating the Broadcast Receiver.</p></li>
+<li><p>Registering Broadcast Receiver</p></li>
+</ul>
+<p>There is one additional steps in case you are going to implement your custom intents then you will have to create and broadcast those intents.</p>
+<h2>Creating the Broadcast Receiver</h2>
+<p>A broadcast receiver is implemented as a subclass of <b>BroadcastReceiver</b> class and overriding the onReceive() method where each message is received as a <b>Intent</b> object parameter.</p>
+<pre class="prettyprint notranslte">
+public class MyReceiver extends BroadcastReceiver {
+   @Override
+   public void onReceive(Context context, Intent intent) {
+      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
+   }
+}
+</pre>
+<h2>Registering Broadcast Receiver</h2>
+<p>An application listens for specific broadcast intents by registering a broadcast receiver in <i>AndroidManifest.xml</i> file. Consider we are going to register <i>MyReceiver</i> for system generated event ACTION_BOOT_COMPLETED  which is fired by the system once the Android system has completed the boot process.</p>
+<h4 align="center">Broadcast-Receiver</h4>
+<pre class="prettyprint notranslte">
+&lt;application
+   android:icon="@drawable/ic_launcher"
+   android:label="@string/app_name"
+   android:theme="@style/AppTheme" &gt;
+   &lt;receiver android:name="MyReceiver"&gt;
+   
+      &lt;intent-filter&gt;
+         &lt;action android:name="android.intent.action.BOOT_COMPLETED"&gt;
+         &lt;/action&gt;
+      &lt;/intent-filter&gt;
+   
+   &lt;/receiver&gt;
+&lt;/application&gt;
+</pre>
+<p>Now whenever your Android device gets booted, it will be intercepted by BroadcastReceiver <i>MyReceiver</i> and implemented logic inside <i>onReceive()</i> will be executed.</p>
+<p>There are several system generated events defined as final static fields in the <b>Intent</b> class. The following table lists a few important system events.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Event Constant &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>android.intent.action.BATTERY_CHANGED</b></p>
+<p>Sticky broadcast containing the charging state, level, and other information about the battery.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>android.intent.action.BATTERY_LOW</b></p>
+<p>Indicates low battery condition on the device.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>android.intent.action.BATTERY_OKAY</b></p>
+<p>Indicates the battery is now okay after being low.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td>
+<p><b>android.intent.action.BOOT_COMPLETED</b></p>
+<p>This is broadcast once, after the system has finished booting.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">5</td>
+<td><p><b>android.intent.action.BUG_REPORT</b></p>
+<p>Show activity for reporting a bug.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">6</td>
+<td><p><b>android.intent.action.CALL</b></p>
+<p>Perform a call to someone specified by the data.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">7</td>
+<td><p><b>android.intent.action.CALL_BUTTON</b></p>
+<p>The user pressed the "call" button to go to the dialer or other appropriate UI for placing a call.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">8</td>
+<td><p><b>android.intent.action.DATE_CHANGED</b></p>
+<p>The date has changed.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">9</td>
+<td><p><b>android.intent.action.REBOOT</b></p>
+<p>Have the device reboot.</p></td>
+</tr>
+</table>
+<h2>Broadcasting Custom Intents</h2>
+<p>If you want your application itself should generate and send custom intents then you will have to create and send those intents by using the <i>sendBroadcast()</i> method inside your activity class. If you use the <i>sendStickyBroadcast(Intent)</i> method, the Intent is <b>sticky</b>, meaning the <i>Intent</i> you are sending stays around after the broadcast is complete.</p>
+<pre class="prettyprint notranslte">
+public void broadcastIntent(View view) {
+   Intent intent = new Intent();
+   intent.setAction("com.tutorialspoint.CUSTOM_INTENT");
+   sendBroadcast(intent);
+}
+</pre>
+<p>This intent <i>com.tutorialspoint.CUSTOM_INTENT</i> can also be registered in similar way as we have regsitered system generated intent.</p>
+<pre class="prettyprint notranslte">
+&lt;application
+   android:icon="@drawable/ic_launcher"
+   android:label="@string/app_name"
+   android:theme="@style/AppTheme" &gt;
+   &lt;receiver android:name="MyReceiver"&gt;
+   
+      &lt;intent-filter&gt;
+         &lt;action android:name="com.tutorialspoint.CUSTOM_INTENT"&gt;
+         &lt;/action&gt;
+      &lt;/intent-filter&gt;
+   
+   &lt;/receiver&gt;
+&lt;/application&gt;
+</pre>
+<h2>Example</h2>
+<p>This example will explain you how to create <i>BroadcastReceiver</i> to intercept custom intent. Once you are familiar with custom intent, then you can program your application to intercept system generated intents. So let's follow the following steps to modify the Android application we created in <i>Hello World Example</i> chapter &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Step</th>
+<th style="text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>You will use Android studio to create an Android application and name it as <i>My Application</i> under a package <i>com.example.tutorialspoint7.myapplication</i> as explained in the <i>Hello World Example</i> chapter.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Modify main activity file <i>MainActivity.java</i> to add <i>broadcastIntent()</i> method.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>Create a new java file called  <i>MyReceiver.java</i> under the package <i>com.example.tutorialspoint7.myapplication</i> to define a BroadcastReceiver.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>An application can handle one or more custom and system intents without any restrictions. Every intent you want to intercept must be registered in your <i>AndroidManifest.xml</i> file using &lt;receiver.../&gt; tag </td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>Modify the default content of <i>res/layout/activity_main.xml</i> file to include a button to broadcast intent.</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>No need to modify the string file, Android studio take care of string.xml file.</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>MainActivity.java</b>. This file can include each of the fundamental life cycle methods. We have added <i>broadcastIntent()</i> method to  broadcast a custom intent.</p>
+<pre class="prettyprint notranslte">
+package com.example.tutorialspoint7.myapplication;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+   /** Called when the activity is first created. */
+   @Override
+   
+   public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+   }
+
+
+   // broadcast a custom intent.
+      
+   public void broadcastIntent(View view){
+      Intent intent = new Intent();
+      intent.setAction("com.tutorialspoint.CUSTOM_INTENT"); sendBroadcast(intent);
+   }
+}
+</pre>
+<p>Following is the content of <b>MyReceiver.java</b>:</p>
+<pre class="prettyprint notranslte">
+package com.example.tutorialspoint7.myapplication;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.widget.Toast;
+
+/**
+ * Created by TutorialsPoint7 on 8/23/2016.
+ */
+public class MyReceiver extends BroadcastReceiver{
+   @Override
+   public void onReceive(Context context, Intent intent) {
+      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
+   }
+}
+</pre>
+<p>Following will the modified content of  <i>AndroidManifest.xml</i> file. Here we have added &lt;receiver.../&gt; tag to include our service:</p>
+<pre class="prettyprint notranslte">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.example.tutorialspoint7.myapplication"&gt;
+
+   &lt;application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"&gt;
+		
+      &lt;activity android:name=".MainActivity"&gt;
+         &lt;intent-filter&gt;
+            &lt;action android:name="android.intent.action.MAIN" /&gt;
+
+            &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+         &lt;/intent-filter&gt;
+      &lt;/activity&gt;
+   
+      &lt;receiver android:name="MyReceiver"&gt;
+         &lt;intent-filter&gt;
+            &lt;action android:name="com.tutorialspoint.CUSTOM_INTENT"&gt;
+            &lt;/action&gt;
+         &lt;/intent-filter&gt;
+
+      &lt;/receiver&gt;
+   &lt;/application&gt;
+
+&lt;/manifest&gt;
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file to include a button to broadcast our custom intent &minus;</p>
+<pre class="prettyprint notranslte">
+&lt;RelativeLayout 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools" 
+   android:layout_width="match_parent"
+   android:layout_height="match_parent" 
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   android:paddingBottom="@dimen/activity_vertical_margin" 
+   tools:context=".MainActivity"&gt;
+   
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Example of Broadcast"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp" /&gt;
+      
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point "
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_above="@+id/imageButton"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="40dp" /&gt;
+      
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_centerVertical="true"
+      android:layout_centerHorizontal="true" /&gt;
+      
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/button2"
+      android:text="Broadcast Intent"
+      android:onClick="broadcastIntent"
+      android:layout_below="@+id/imageButton"
+      android:layout_centerHorizontal="true" /&gt;
+
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Let's try to run our modified <b>Hello World!</b> application we just modified. I assume you had created your <b>AVD</b> while doing environment set-up. To run the app from Android studio, open one of your project's activity files and click Run  icon from the tool bar. Android Studio installs the app on your AVD and starts it and if everything is fine with your set-up and application, it will display following Emulator window &minus;</p>
+<p>Now to broadcast our custom intent, let's click on <b>Broadcast Intent</b> button, this will broadcast our custom intent <i>"com.tutorialspoint.CUSTOM_INTENT"</i> which will be intercepted by our registered BroadcastReceiver  i.e. MyReceiver and as per our implemented logic a toast will appear on the bottom of the the simulator as follows &minus;</p>
+<p>You can try implementing other BroadcastReceiver to intercept system generated intents like system boot up, date changed, low battery etc.</p>
+<hr />
+
+</div>
+<div id="c9" class="tabcontent">
+<h1>Android - Content Providers</h1>
+
+<blockquote><p>A content provider component supplies data from one application to others on request. Such requests are handled by the methods of the ContentResolver class. A content provider can use different ways to store its data and the data can be stored in a database, in files, or even over a network.</p></blockquote>
+<img src="/C:\Users\vit\Documents\subjects\completed/content.jpg" alt="content provider" />
+<h4 align="center"> ContentProvider</h4>
+<blockquote><b>sometimes it is required to share data across applications. This is where content providers become very useful.</b></blockquote>
+<p>Content providers let you centralize content in one place and have many different applications access it as needed. A content provider behaves very much like a database where you can query it, edit its content, as well as add or delete content using insert(), update(), delete(), and query() methods. In most cases this data is stored in an <b>SQlite</b> database.</p>
+<p>A content provider is implemented as a subclass of <b>ContentProvider</b> class and must implement a standard set of APIs that enable other applications to perform transactions.</p>
+<pre class="prettyprint notranslate">
+public class My Application extends  ContentProvider {
+}
+</pre>
+<h2>Content URIs</h2>
+<p>To query a content provider, you specify the query string in the form of a URI which has following format &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;prefix&gt;://&lt;authority&gt;/&lt;data_type&gt;/&lt;id&gt;
+</pre>
+<p>Here is the detail of various parts of the URI &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Part &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td><p><b>prefix</b></p>
+<p>This is always set to content://</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td><p><b>authority</b></p>
+<p>This specifies the name of the content provider, for example <i>contacts</i>,  <i>browser</i> etc. For third-party content providers, this could be the fully qualified name, such as <i>com.tutorialspoint.statusprovider</i></p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td><p><b>data_type</b></p>
+<p>This indicates the type of data that this particular provider provides. For example, if you are getting all the contacts from the <i>Contacts</i> content provider, then the data path would be <i>people</i> and URI would look like this<i>content://contacts/people</i></p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td><p><b>id</b></p>
+<p>This specifies the specific record requested. For example, if you are looking for contact number 5 in the Contacts content provider then URI would look like this <i>content://contacts/people/5</i>.</p></td>
+</tr>
+</table>
+<h2>Create Content Provider</h2>
+<p>This involves number of simple steps to create your own content provider.</p>
+<ul class="list">
+<li><p>First of all you need  to create a Content Provider class that extends the <i>ContentProviderbaseclass.</i> </p></li>
+<li><p>Second, you need to define your content provider URI address which will be used to access the content.</p></li>
+<li><p>Next you will need to create your own database to keep the content. Usually, Android uses SQLite database and framework needs to override <i>onCreate()</i> method which will use SQLite Open Helper method to create or open the provider's database. When your application is launched, the <i>onCreate()</i> handler of each of its Content Providers is called on the main application thread.</p></li>
+<li><p>Next you will have to implement Content Provider queries to perform different database specific operations.</p></li> 
+<li><p>Finally register your Content Provider in your activity file using &lt;provider&gt; tag.</p></li> 
+</ul>
+<p>Here is the list of methods which you need to override in Content Provider class to have your Content Provider working &minus;</p>
+<img src="/android/images/content1.jpg" alt="content provider" />
+<h4 align="center">ContentProvider</h4>
+<ul class="list">
+<li><p><b>onCreate()</b> This method is called when the provider is started.</p></li>
+<li><p><b>query()</b> This method receives a request from a client. The result is returned as a Cursor object.</p></li>
+<li><p><b>insert()</b>This method inserts a new record into the content provider.</p></li>
+<li><p><b>delete()</b> This method deletes an existing record from the content provider.</p></li>
+<li><p><b>update()</b> This method updates an existing record from the content provider.</p></li>
+<li><p><b>getType()</b> This method returns the MIME type of the data at the given URI.</p></li>
+</ul>
+<h2>Example</h2>
+<p>This example will explain you how to create your own <i>ContentProvider</i>. So let's follow the following steps to similar to what we followed while creating <i>Hello World Example</i>&minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Step</th>
+<th style="text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>You will use Android StudioIDE to create an Android application and name it as <i>My Application</i> under a package <i>com.example.MyApplication</i>, with blank Activity.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Modify main activity file <i>MainActivity.java</i> to add two new methods <i>onClickAddName()</i> and <i>onClickRetrieveStudents()</i>.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>Create a new java file called  <i>StudentsProvider.java</i> under the package <i>com.example.MyApplication</i> to define your actual provider and associated methods.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>Register your content provider in your <i>AndroidManifest.xml</i> file using &lt;provider.../&gt; tag </td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>Modify the default content of <i>res/layout/activity_main.xml</i> file to include a small GUI to add students records.</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>No need to change string.xml.Android studio take care of string.xml file.</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>src/com.example.MyApplication/MainActivity.java</b>. This file can include each of the fundamental life cycle methods. We have added two new methods <i>onClickAddName()</i> and <i>onClickRetrieveStudents()</i> to handle user interaction with the application.</p>
+<pre class="prettyprint notranslate">
+package com.example.MyApplication;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Activity;
+
+import android.content.ContentValues;
+import android.content.CursorLoader;
+
+import android.database.Cursor;
+
+import android.view.Menu;
+import android.view.View;
+
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+   }
+   public void onClickAddName(View view) {
+      // Add a new student record
+      ContentValues values = new ContentValues();
+      values.put(StudentsProvider.NAME,
+         ((EditText)findViewById(R.id.editText2)).getText().toString());
+
+      values.put(StudentsProvider.GRADE,
+         ((EditText)findViewById(R.id.editText3)).getText().toString());
+
+      Uri uri = getContentResolver().insert(
+         StudentsProvider.CONTENT_URI, values);
+
+      Toast.makeText(getBaseContext(),
+         uri.toString(), Toast.LENGTH_LONG).show();
+   }
+   public void onClickRetrieveStudents(View view) {
+      // Retrieve student records
+      String URL = "content://com.example.MyApplication.StudentsProvider";
+
+      Uri students = Uri.parse(URL);
+      Cursor c = managedQuery(students, null, null, null, "name");
+
+      if (c.moveToFirst()) {
+         do{
+            Toast.makeText(this,
+               c.getString(c.getColumnIndex(StudentsProvider._ID)) +
+                  ", " +  c.getString(c.getColumnIndex( StudentsProvider.NAME)) +
+                     ", " + c.getString(c.getColumnIndex( StudentsProvider.GRADE)),
+            Toast.LENGTH_SHORT).show();
+         } while (c.moveToNext());
+      }
+   }
+}
+</pre>
+<p>Create new file StudentsProvider.java under <i>com.example.MyApplication</i> package and following is the content of <b>src/com.example.MyApplication/StudentsProvider.java</b> &minus;</p>
+<pre class="prettyprint notranslate">
+package com.example.MyApplication;
+
+import java.util.HashMap;
+
+import android.content.ContentProvider;
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.UriMatcher;
+
+import android.database.Cursor;
+import android.database.SQLException;
+
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+
+import android.net.Uri;
+import android.text.TextUtils;
+
+public class StudentsProvider extends ContentProvider {
+   static final String PROVIDER_NAME = "com.example.MyApplication.StudentsProvider";
+   static final String URL = "content://" + PROVIDER_NAME + "/students";
+   static final Uri CONTENT_URI = Uri.parse(URL);
+
+   static final String _ID = "_id";
+   static final String NAME = "name";
+   static final String GRADE = "grade";
+
+   private static HashMap&lt;String, String&gt; STUDENTS_PROJECTION_MAP;
+
+   static final int STUDENTS = 1;
+   static final int STUDENT_ID = 2;
+
+   static final UriMatcher uriMatcher;
+   static{
+      uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+      uriMatcher.addURI(PROVIDER_NAME, "students", STUDENTS);
+      uriMatcher.addURI(PROVIDER_NAME, "students/#", STUDENT_ID);
+   }
+
+   /**
+      * Database specific constant declarations
+   */
+   
+   private SQLiteDatabase db;
+   static final String DATABASE_NAME = "College";
+   static final String STUDENTS_TABLE_NAME = "students";
+   static final int DATABASE_VERSION = 1;
+   static final String CREATE_DB_TABLE =
+      " CREATE TABLE " + STUDENTS_TABLE_NAME +
+         " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+         " name TEXT NOT NULL, " +
+         " grade TEXT NOT NULL);";
+
+   /**
+      * Helper class that actually creates and manages
+      * the provider's underlying data repository.
+   */
+   
+   private static class DatabaseHelper extends SQLiteOpenHelper {
+      DatabaseHelper(Context context){
+         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+      }
+
+      @Override
+      public void onCreate(SQLiteDatabase db) {
+         db.execSQL(CREATE_DB_TABLE);
+      }
+
+      @Override
+      public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+         db.execSQL("DROP TABLE IF EXISTS " +  STUDENTS_TABLE_NAME);
+         onCreate(db);
+      }
+   }
+
+   @Override
+   public boolean onCreate() {
+      Context context = getContext();
+      DatabaseHelper dbHelper = new DatabaseHelper(context);
+
+      /**
+         * Create a write able database which will trigger its
+         * creation if it doesn't already exist.
+      */
+         
+      db = dbHelper.getWritableDatabase();
+      return (db == null)? false:true;
+   }
+
+   @Override
+   public Uri insert(Uri uri, ContentValues values) {
+      /**
+         * Add a new student record
+      */
+      long rowID = db.insert(	STUDENTS_TABLE_NAME, "", values);
+
+      /**
+         * If record is added successfully
+      */
+      if (rowID &gt; 0) {
+         Uri _uri = ContentUris.withAppendedId(CONTENT_URI, rowID);
+         getContext().getContentResolver().notifyChange(_uri, null);
+         return _uri;
+      }
+        
+      throw new SQLException("Failed to add a record into " + uri);
+   }
+
+   @Override
+   public Cursor query(Uri uri, String[] projection, 
+      String selection,String[] selectionArgs, String sortOrder) {
+      SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+      qb.setTables(STUDENTS_TABLE_NAME);
+
+      switch (uriMatcher.match(uri)) {
+         case STUDENTS:
+            qb.setProjectionMap(STUDENTS_PROJECTION_MAP);
+         break;
+
+         case STUDENT_ID:
+            qb.appendWhere( _ID + "=" + uri.getPathSegments().get(1));
+         break;
+         
+         default:   
+      }
+
+      if (sortOrder == null || sortOrder == ""){
+         /**
+            * By default sort on student names
+         */
+         sortOrder = NAME;
+      }
+      
+      Cursor c = qb.query(db,	projection,	selection, 
+         selectionArgs,null, null, sortOrder);
+      /**
+         * register to watch a content URI for changes
+      */
+      c.setNotificationUri(getContext().getContentResolver(), uri);
+      return c;
+   }
+
+   @Override
+   public int delete(Uri uri, String selection, String[] selectionArgs) {
+      int count = 0;
+      switch (uriMatcher.match(uri)){
+         case STUDENTS:
+            count = db.delete(STUDENTS_TABLE_NAME, selection, selectionArgs);
+         break;
+
+         case STUDENT_ID:
+            String id = uri.getPathSegments().get(1);
+            count = db.delete( STUDENTS_TABLE_NAME, _ID +  " = " + id +
+               (!TextUtils.isEmpty(selection) ? " 
+               AND (" + selection + ')' : ""), selectionArgs);
+            break;
+         default:
+            throw new IllegalArgumentException("Unknown URI " + uri);
+      }
+
+      getContext().getContentResolver().notifyChange(uri, null);
+      return count;
+   }
+
+   @Override
+   public int update(Uri uri, ContentValues values, 
+      String selection, String[] selectionArgs) {
+      int count = 0;
+      switch (uriMatcher.match(uri)) {
+         case STUDENTS:
+            count = db.update(STUDENTS_TABLE_NAME, values, selection, selectionArgs);
+         break;
+
+         case STUDENT_ID:
+            count = db.update(STUDENTS_TABLE_NAME, values, 
+               _ID + " = " + uri.getPathSegments().get(1) +
+               (!TextUtils.isEmpty(selection) ? " 
+               AND (" +selection + ')' : ""), selectionArgs);
+            break;
+         default:
+            throw new IllegalArgumentException("Unknown URI " + uri );
+      }
+        
+      getContext().getContentResolver().notifyChange(uri, null);
+      return count;
+   }
+
+   @Override
+   public String getType(Uri uri) {
+      switch (uriMatcher.match(uri)){
+         /**
+            * Get all student records
+         */
+         case STUDENTS:
+            return "vnd.android.cursor.dir/vnd.example.students";
+         /**
+            * Get a particular student
+         */
+         case STUDENT_ID:
+            return "vnd.android.cursor.item/vnd.example.students";
+         default:
+            throw new IllegalArgumentException("Unsupported URI: " + uri);
+      }
+   }
+}
+</pre>
+<p>Following will the modified content of  <i>AndroidManifest.xml</i> file. Here we have added &lt;provider.../&gt; tag to include our content provider:</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.MyApplication"&gt;
+
+   &lt;application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"&gt;
+         &lt;activity android:name=".MainActivity"&gt;
+            &lt;intent-filter&gt;
+               &lt;action android:name="android.intent.action.MAIN" /&gt;
+               &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+         &lt;/activity&gt;
+        
+      &lt;provider android:name="StudentsProvider"
+         android:authorities="com.example.MyApplication.StudentsProvider"/&gt;
+   &lt;/application&gt;
+&lt;/manifest&gt;
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file&minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingBottom="@dimen/activity_vertical_margin"
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   tools:context="com.example.MyApplication.MainActivity"&gt;
+
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Content provider"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp" /&gt;
+
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point "
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_below="@+id/textView1"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_below="@+id/textView2"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/button2"
+      android:text="Add Name"
+      android:layout_below="@+id/editText3"
+      android:layout_alignRight="@+id/textView2"
+      android:layout_alignEnd="@+id/textView2"
+      android:layout_alignLeft="@+id/textView2"
+      android:layout_alignStart="@+id/textView2"
+      android:onClick="onClickAddName"/&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText"
+      android:layout_below="@+id/imageButton"
+      android:layout_alignRight="@+id/imageButton"
+      android:layout_alignEnd="@+id/imageButton" /&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText2"
+      android:layout_alignTop="@+id/editText"
+      android:layout_alignLeft="@+id/textView1"
+      android:layout_alignStart="@+id/textView1"
+      android:layout_alignRight="@+id/textView1"
+      android:layout_alignEnd="@+id/textView1"
+      android:hint="Name"
+      android:textColorHint="@android:color/holo_blue_light" /&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText3"
+      android:layout_below="@+id/editText"
+      android:layout_alignLeft="@+id/editText2"
+      android:layout_alignStart="@+id/editText2"
+      android:layout_alignRight="@+id/editText2"
+      android:layout_alignEnd="@+id/editText2"
+      android:hint="Grade"
+      android:textColorHint="@android:color/holo_blue_bright" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Retrive student"
+      android:id="@+id/button"
+      android:layout_below="@+id/button2"
+      android:layout_alignRight="@+id/editText3"
+      android:layout_alignEnd="@+id/editText3"
+      android:layout_alignLeft="@+id/button2"
+      android:layout_alignStart="@+id/button2"
+      android:onClick="onClickRetrieveStudents"/&gt;
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Make sure you have following content of  <b>res/values/strings.xml</b> file:</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;string name="app_name"&gt;My Application&lt;/string&gt;
+&lt;/resources&gt;;
+</pre>
+<p>Let's try to run our modified <b>My Application</b> application we just created. I assume you had created your <b>AVD</b> while doing environment set-up. To run the app from Android Studio IDE, open one of your project's activity files and click Run  icon from the tool bar. Android Studio installs the app on your AVD and starts it and if everything is fine with your set-up and application, it will display following Emulator window, be patience because it may take sometime based on your computer speed &minus;</p>
+<p>Now let's enter student <b>Name</b> and <b>Grade</b> and finally click on <b>Add Name</b> button, this will add student record in the database and will flash a message at the bottom showing ContentProvider URI along with record number added in the database. This operation makes use of our <b>insert()</b> method. Let's repeat this process to add few more students in the database of our content provider.</p>
+<p>Once you are done with adding records in the database, now its time to ask ContentProvider to give us those records back, so let's click <b>Retrieve Students</b> button which will fetch and display all the records one by one which is as per our the implementation of our <b>query()</b> method.</p>
+<p>You can write activities against update and delete operations by providing callback functions in <b>MainActivity.java</b> file and then modify user interface to have buttons for update and deleted operations in the same way as we have done for add and read operations.</p>
+<p>This way you can use existing Content Provider like Address Book or you can use Content Provider concept in developing nice database oriented applications where you can perform all sort of database operations like read, write, update and delete as explained above in the example.</p>
+<hr />
+
+</div>
+
+<div id="c10" class="tabcontent">
+<h1>Android - Fragments</h1>
+<blockquote>A <b>Fragment </b>is a piece of an activity which enable more modular activity design. It will not be wrong if we say, a fragment is a kind of <b>sub-activity</b>.</blockquote>
+<p>Following are important points about fragment &minus;</p>
+<ul class="list">
+<li><p>A fragment  has its own layout and its own behaviour with its own life cycle callbacks.</p></li>
+<li><p>You can add or remove fragments in an activity while the activity is running.</p></li>
+<li><p>You can combine multiple fragments in a single activity to build a multi-pane UI.</p></li>
+<li><p>A fragment can be used in multiple activities.</p></li>
+<li><p>Fragment life cycle is closely related to the life cycle of its host activity which means when the activity is paused,  all the fragments available in the activity will also be stopped.</p></li>
+<li><p>A fragment can implement a behaviour that has no user interface component.</p></li>
+<li><p>Fragments were added to the Android API in Honeycomb version of Android which API version 11.</p></li>
+</ul>
+<p>You create fragments by extending <b>Fragment</b> class and You can insert a fragment into your activity layout by declaring the fragment in the activity's layout file, as a <b>&lt;fragment&gt;</b> element.</p>
+<p>Prior to fragment introduction, we had a limitation because we can show only a single activity on the screen at one given point in time. So we were not able to divide device screen and control different parts separately.   But with the introduction of fragment we got more flexibility and removed the limitation of having a single activity on the screen at a time. Now we can have a single activity but each activity can comprise of multiple fragments which will have their own layout, events and complete life cycle.</p>
+<p>Following is a typical example of how two UI modules defined by fragments can be combined into one activity for a tablet design, but separated for a handset design.</p>
+<p>The application can embed two fragments in Activity A, when running on a tablet-sized device. However, on a handset-sized screen, there's not enough room for both fragments, so Activity A includes only the fragment for the list of articles, and when the user selects an article, it starts Activity B, which includes the second fragment to read the article.</p>
+<h2>Fragment Life Cycle</h2>
+<p>Android fragments have their own life cycle very similar to an android activity. This section briefs different stages of its life cycle.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/fragment.jpg" alt="Fragment" />
+<h4 align="Center"> Fragment lifecycle</h4>
+<p>Here is the list of methods which you can to override in your fragment class &minus;</p>
+<ul class="list">
+<li><p><b>onAttach()</b>The fragment instance is associated with an activity instance.The fragment and the activity is not fully initialized. Typically you get in this method a reference to the activity which uses the fragment for further initialization work.</p></li>
+<li><p><b>onCreate()</b> The system calls this method when creating the fragment. You should initialize essential components of the fragment that you want to retain when the fragment is paused or stopped, then resumed.</p></li>
+<li><p><b>onCreateView()</b> The system calls this callback when it's time for the fragment to draw its user interface for the first time. To draw a UI for your fragment, you must return a <b>View</b> component from this method that is the root of your fragment's layout. You can return null if the fragment does not provide a UI.</p></li>
+<li><p><b>onActivityCreated()</b>The onActivityCreated() is called after the onCreateView() method when the host activity is created. Activity and fragment instance have been created as well as the view hierarchy of the activity. At this point, view can be accessed with the findViewById() method. example. In this method you can instantiate objects which require a Context object</p></li>
+<li><p><b>onStart()</b>The onStart() method is called once the fragment gets visible.</p></li>
+<li><p><b>onResume()</b>Fragment becomes active.</p></li>
+<li><p><b>onPause()</b> The system calls this method as the first indication that the user is leaving the fragment. This is usually where you should commit any changes that should be persisted beyond the current user session.</p></li>
+<li><p><b>onStop()</b>Fragment going to be stopped by calling onStop()</p></li>
+<li><p><b>onDestroyView()</b>Fragment view will destroy after call this method</p></li>
+<li><p><b>onDestroy()</b>onDestroy() called to do final clean up of the fragment's state but Not guaranteed to be called by the Android platform.</p></li>
+</ul>
+<h2>How to use Fragments?</h2>
+<p>This involves number of simple steps to create Fragments.</p>
+<ul class="list">
+<li><p>First of all decide how many fragments you want to use in an activity. For example let's we want to use two fragments to handle landscape and portrait modes of the device.</p></li>
+<li><p>Next based on number of fragments, create classes which will extend the <i>Fragment</i> class. The Fragment class has above mentioned callback functions.  You can override any of the functions based on your requirements.</p></li>
+<li><p>Corresponding to each fragment, you will need to create layout files in XML file. These files will have layout for the defined fragments.</p></li>
+<li><p>Finally modify activity file to define the actual logic of replacing fragments based on your requirement.</p></li> 
+</ul>
+<h2> Types of Fragments</h2>
+<p>Basically fragments are divided as three stages as shown below.</p>
+<ul class="list">
+<li><p>Single frame fragments</a> &minus; Single frame fragments are using for hand hold devices like mobiles, here we can show only one fragment as a view.</p></li>
+<li><p>List fragments</a> &minus; fragments having special list view is called as list fragment</p></li>
+<li><p>Fragments transaction</a> &minus; Using with fragment transaction. we can move one fragment to another fragment.</p></li>
+</ul>
+<hr />
+</div>
+<div id="c11" class="tabcontent">
+<h1>Android - Intents and Filters</h1>
+
+<p>An Android <b>Intent</b> is  an abstract description of an operation to be performed. It can be used with <b>startActivity</b> to launch an Activity, <b>broadcastIntent</b> to send it to any interested BroadcastReceiver components, and <b>startService(Intent)</b> or <b>bindService(Intent, ServiceConnection, int) </b> to communicate with a background Service.</p>
+<blockquote><b>The intent itself, an Intent object, is a passive data structure holding an abstract description of an operation to be performed.</b></blockquote>
+<p>For example, let's assume that you have an Activity that needs to launch an email client and sends an email using your Android device. For this purpose, your Activity would send an ACTION_SEND along with appropriate <b>chooser</b>, to the Android Intent Resolver. The specified chooser gives the proper interface for the user to pick how to send your email data.</p>
+<pre class="prettyprint notranslate">
+Intent email = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:"));
+email.putExtra(Intent.EXTRA_EMAIL, recipients);
+email.putExtra(Intent.EXTRA_SUBJECT, subject.getText().toString());
+email.putExtra(Intent.EXTRA_TEXT, body.getText().toString());
+startActivity(Intent.createChooser(email, "Choose an email client from..."));
+</pre>
+<p>Above syntax is calling startActivity method to start an email activity and result should be as shown below &minus;</p> 
+<img src="/C:\Users\vit\Documents\subjects\completed/send_email.jpg" alt="Send Email" />
+<p>For example, assume that you have an Activity that needs to open URL in a web browser on your Android device. For this purpose, your Activity will send ACTION_WEB_SEARCH Intent to the Android Intent Resolver to open given URL in the web browser.  The Intent Resolver parses through a list of Activities and chooses the one that would best match your Intent, in this case, the Web Browser Activity. The Intent Resolver then passes your web page to the web browser and starts the Web Browser Activity.</p>
+<pre class="prettyprint notranslate">
+String q = "tutorialspoint";
+Intent intent = new Intent(Intent.ACTION_WEB_SEARCH );
+intent.putExtra(SearchManager.QUERY, q);
+startActivity(intent);
+</pre>
+<p>Above example will search as <b>tutorialspoint</b> on android search engine and it gives the result of tutorialspoint in your an activity</p> 
+<p>There are separate mechanisms for delivering intents to each type of component &minus; activities, services, and broadcast receivers.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Method &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>Context.startActivity()</b></p> 
+<p>The Intent object is passed to this method to launch a new activity or get an existing activity to do something new.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>Context.startService()</b></p> 
+<p>The Intent object is passed to this method to initiate a service or deliver new instructions to an ongoing service.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>Context.sendBroadcast()</b></p> 
+<p>The Intent object is passed to this method to deliver the message to all interested broadcast receivers.</p>
+</td>
+</tr>
+</table>
+<h2>Intent Objects</h2>
+<p>An Intent object is a bundle of information which is used by the component that receives the intent as well as information used by the Android system.</p>
+<p>An Intent object can contain the following components based on what it is communicating or going to perform &minus;</p>
+<h3>Action</h3>
+<p>This is mandatory part of the Intent object and is a string naming the action to be performed — or, in the case of broadcast intents, the action that took place and is being reported. The action largely determines how the rest of the intent object is structured . The Intent class defines a number of action constants corresponding to different intents. Here is a list of Android Intent Standard Actions</a></p>
+<p>The action in an Intent object can be set by the setAction() method and read by getAction().</p>
+<h3>Data</h3>
+<p>Adds a data specification to an intent filter. The specification can be just a data type (the mimeType attribute), just a URI, or both a data type and a URI. A URI is specified by separate attributes for each of its parts &minus;</p>
+<p>These attributes that specify the URL format are optional, but also mutually dependent &minus;</p>
+<ul class="list">
+<li>If a scheme is not specified for the intent filter, all the other URI attributes are ignored.</li>
+<li>If a host is not specified for the filter, the port attribute and all the path attributes are ignored.</li>
+</ul>
+<p>The setData() method specifies data only as a URI, setType() specifies it only as a MIME type, and setDataAndType() specifies it as both a URI and a MIME type. The URI is read by getData() and the type by getType().</p>
+<p>Some examples of action/data pairs are &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No.</th>
+<th style="text-align:center">Action/Data Pair &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td><p><b>ACTION_VIEW content://contacts/people/1</b></p> 
+<p>Display information about the person whose identifier is "1".</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>ACTION_DIAL content://contacts/people/1</b></p> 
+<p>Display the phone dialer with the person filled in.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>ACTION_VIEW tel:123</b></p> 
+<p>Display the phone dialer with the given number filled in.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td>
+<p><b>ACTION_DIAL tel:123</b></p> 
+<p>Display the phone dialer with the given number filled in.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">5</td>
+<td>
+<p><b>ACTION_EDIT content://contacts/people/1</b></p> 
+<p>Edit information about the person whose identifier is "1".</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">6</td>
+<td>
+<p><b>ACTION_VIEW content://contacts/people/</b></p> 
+<p>Display a list of people, which the user can browse through.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">7</td>
+<td>
+<p><b>ACTION_SET_WALLPAPER</b></p>
+<p>Show settings for choosing wallpaper</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">8</td>
+<td>
+<p><b>ACTION_SYNC</b></p>
+<p>It going to be synchronous the data,Constant Value is <b>android.intent.action.SYNC </b></p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">9</td>
+<td>
+<p><b>ACTION_SYSTEM_TUTORIAL</b></p>
+<p>It will start the platform-defined tutorial(Default tutorial or start up tutorial)</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">10</td>
+<td>
+<p><b>ACTION_TIMEZONE_CHANGED</b></p>
+<p>It intimates when time zone has changed</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">11</td>
+<td>
+<p><b>ACTION_UNINSTALL_PACKAGE</b></p>
+<p>It is used to run default uninstaller</p>
+</td>
+</tr>
+</table>
+<h3>Category</h3>
+<p>The category is an optional part of Intent object and it's a string containing additional information about the kind of component that should handle the intent. The addCategory() method places a category in an Intent object, removeCategory() deletes a category previously added, and getCategories() gets the set of all categories currently in the object. Here is a list of Android Intent Standard Categories</a>.</p>
+<p>You can check detail on Intent Filters in below section to understand how do we use categories to choose appropriate activity corresponding to an Intent.</p>
+<h3>Extras</h3>
+<p>This will be in key-value pairs for additional information that should be delivered to the component handling the intent. The extras can be set and read using the putExtras() and getExtras() methods respectively. Here is a list of Android Intent Standard Extra Data</a></p>
+<h3>Flags</h3>
+<p>These flags are optional part of Intent object and instruct the Android system how to launch an activity, and how to treat it after it's launched etc.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Flags &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>FLAG_ACTIVITY_CLEAR_TASK</b></p>
+<p>If set in an Intent passed to Context.startActivity(), this flag will cause any existing task that would be associated with the activity to be cleared before the activity is started. That is, the activity becomes the new root of an otherwise empty task, and any old activities are finished. This can only be used in conjunction with FLAG_ACTIVITY_NEW_TASK.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>FLAG_ACTIVITY_CLEAR_TOP</b></p>
+<p>If set, and the activity being launched is already running in the current task, then instead of launching a new instance of that activity, all of the other activities on top of it will be closed and this Intent will be delivered to the (now on top) old activity as a new Intent.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>FLAG_ACTIVITY_NEW_TASK</b></p>
+<p>This flag is generally used by activities that want to present a "launcher" style behavior: they give the user a list of separate things that can be done, which otherwise run completely independently of the activity launching them.</p></td>
+</tr>
+</table>
+<h3>Component Name</h3>
+<p>This optional field is  an android <b>ComponentName</b> object representing either Activity, Service or BroadcastReceiver class. If it is set, the Intent object is delivered to an instance of the designated class otherwise Android uses other information in the Intent object to locate a suitable target.</p>
+<p>The component name is set by setComponent(), setClass(), or setClassName() and read by getComponent().</p>
+<h2>Types of Intents</h2>
+<p>There are following two types of intents supported by Android</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent.jpg" alt="Intent" />
+<h3>Explicit Intents</h3> 
+<p>Explicit intent going to be connected internal world of application,suppose if you wants to connect one activity to another activity, we can do this quote by explicit intent, below image is connecting first activity to second activity by clicking button.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent1.jpg" alt="Explicit Intents" />
+<p>These intents designate the target component by its name and they are typically used for application-internal messages - such as an activity starting a subordinate service or launching a sister activity. For example &minus;</p>
+<pre class="prettyprint notranslate">
+// Explicit Intent by specifying its class name
+Intent i = new Intent(FirstActivity.this, SecondActivity.class);
+
+// Starts TargetActivity
+startActivity(i);
+</pre>
+<h3>Implicit Intents</h3> 
+<p>These intents do not name a target and the field for the component name is left blank. Implicit intents are often used to activate components in other applications. For example &minus;</p>
+<pre class="result notranslate">
+Intent read1=new Intent();
+read1.setAction(android.content.Intent.ACTION_VIEW);
+read1.setData(ContactsContract.Contacts.CONTENT_URI);
+startActivity(read1);
+</pre>
+<p>Above code will give result as shown below</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent4.jpg" alt="Intent" />
+<p>The target component which receives the intent can use the <b>getExtras()</b> method to get the extra data sent by the source component. For example &minus;</p>
+<pre class="prettyprint notranslate">
+// Get bundle object at appropriate place in your code
+Bundle extras = getIntent().getExtras();
+
+// Extract data using passed keys
+String value1 = extras.getString("Key1");
+String value2 = extras.getString("Key2");
+</pre>
+<h2>Example</h2>
+<p>Following example shows the functionality of a Android Intent to launch various Android built-in applications.</p>
+<table class="table table-bordered">
+<tr>
+<th class="text-align:center">Step</th>
+<th class="text-align:center">Description</th>
+</tr>
+<tr>
+<td class="text-align:center">1</td>
+<td>You will use Android studio IDE to create an Android application and name it as <i>My Application</i> under a package <i>com.example.saira_000.myapplication</i>.</td>
+</tr>
+<tr>
+<td class="text-align:center">2</td>
+<td>Modify <i>src/main/java/MainActivity.java</i> file and add the code to define two listeners corresponding two buttons ie. Start Browser and Start Phone.</td>
+</tr>
+<tr>
+<td class="text-align:center">3</td>
+<td>Modify layout XML file <i>res/layout/activity_main.xml</i> to add three buttons in linear layout.</td>
+</tr>
+<tr>
+<td class="text-align:center">4</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>src/com.example.My Application/MainActivity.java</b>.</p>
+<pre class="prettyprint notranslate">
+package com.example.saira_000.myapplication;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+   Button b1,b2;
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+
+      b1=(Button)findViewById(R.id.button);
+      b1.setOnClickListener(new View.OnClickListener() {
+
+         @Override
+         public void onClick(View v) {
+            Intent i = new Intent(android.content.Intent.ACTION_VIEW, 
+               Uri.parse("http://www.example.com"));
+            startActivity(i);
+         }
+      });
+
+      b2=(Button)findViewById(R.id.button2);
+      b2.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            Intent i = new Intent(android.content.Intent.ACTION_VIEW,
+               Uri.parse("tel:9510300000"));
+            startActivity(i);
+         }
+      });
+   }
+}
+
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools" 
+   android:layout_width="match_parent"
+   android:layout_height="match_parent" 
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   android:paddingBottom="@dimen/activity_vertical_margin" 
+   tools:context=".MainActivity"&gt;
+   
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Intent Example"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp" /&gt;
+      
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point"
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_below="@+id/textView1"
+      android:layout_centerHorizontal="true" /&gt;
+      
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_below="@+id/textView2"
+      android:layout_centerHorizontal="true" /&gt;
+      
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText"
+      android:layout_below="@+id/imageButton"
+      android:layout_alignRight="@+id/imageButton"
+      android:layout_alignEnd="@+id/imageButton" /&gt;
+      
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Start Browser"
+      android:id="@+id/button"
+      android:layout_alignTop="@+id/editText"
+      android:layout_alignRight="@+id/textView1"
+      android:layout_alignEnd="@+id/textView1"
+      android:layout_alignLeft="@+id/imageButton"
+      android:layout_alignStart="@+id/imageButton" /&gt;
+      
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Start Phone"
+      android:id="@+id/button2"
+      android:layout_below="@+id/button"
+      android:layout_alignLeft="@+id/button"
+      android:layout_alignStart="@+id/button"
+      android:layout_alignRight="@+id/textView2"
+      android:layout_alignEnd="@+id/textView2" /&gt;
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Following will be the content of  <b>res/values/strings.xml</b> to define two new constants &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+   &lt;string name="app_name"&gt;My Applicaiton&lt;/string&gt;
+&lt;/resources&gt;
+</pre>
+<p>Following is the default content of  <b>AndroidManifest.xml</b> &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.example.saira_000.myapplication"&gt;
+
+   &lt;application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"&gt;
+      &lt;activity android:name=".MainActivity"&gt;
+         &lt;intent-filter&gt;
+            &lt;action android:name="android.intent.action.MAIN" /&gt;
+            &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+         &lt;/intent-filter&gt;
+      &lt;/activity&gt;
+   &lt;/application&gt;
+&lt;/manifest&gt;
+</pre>
+<p>Let's try to run your <b>My Application</b> application. I assume you had created your <b>AVD</b> while doing environment setup. To run the app from Android Studio, open one of your project's activity files and click Run  icon from the toolbar.Android Studio installs the app on your AVD and starts it and if everything is fine with your setup and application, it will display following Emulator window &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent5.png" alt="Android Intent Screen" />
+<p>Now click on <b>Start Browser</b> button, which will start a browser configured and display http://www.example.com as shown below &minus;</p>
+<img src="/android/images/android_intent_browser.png" alt="Android Intent Browser" />
+<p>Similar way you can launch phone interface using Start Phone button, which will allow you to dial already given phone number.</p>
+<h2>Intent Filters</h2>
+<p>You have seen how an Intent has been used to call an another activity. Android OS uses filters to pinpoint the set of Activities, Services, and Broadcast receivers that can handle the Intent with help of specified set of action, categories, data scheme associated with an Intent. You will use <b>&lt;intent-filter&gt;</b> element in the manifest file to list down actions, categories and data types associated with any activity, service, or broadcast receiver.</p>
+<p>Following is an example of a part of <b>AndroidManifest.xml</b> file to specify an activity <b>com.example.My Application.CustomActivity</b> which can be invoked by either of the two mentioned actions, one category, and one data &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;activity android:name=".CustomActivity"
+   android:label="@string/app_name"&gt;
+   
+   &lt;intent-filter&gt;
+      &lt;action android:name="android.intent.action.VIEW" /&gt;
+      &lt;action android:name="com.example.My Application.LAUNCH" /&gt;
+      &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+      &lt;data android:scheme="http" /&gt;
+   &lt;/intent-filter&gt;
+   
+&lt;/activity&gt;
+</pre>
+<p>Once this activity is defined along with above mentioned filters, other activities will be able to invoke this activity using either the <b>android.intent.action.VIEW</b>, or using the <b>com.example.My Application.LAUNCH</b> action provided their category is <b>android.intent.category.DEFAULT</b>.</p>
+<p>The <b>&lt;data&gt;</b> element specifies the data type expected by the activity to be called and for above example our custom activity expects the data to start with the "http://"</p>
+<p>There may be a situation that an intent can pass through the filters of more than one activity or service, the user may be asked which component to activate. An exception is raised if no target can be found.</p>
+<p>There are following test Android checks before invoking an activity &minus;</p>
+<ul class="list">
+<li><p>A filter &lt;intent-filter&gt; may list more than one action as shown above but this list cannot be empty; a filter must contain at least one &lt;action&gt; element, otherwise it will block all intents. If more than one actions are mentioned then Android tries to match one of the mentioned actions before invoking the activity.</p></li>
+<li><p>A filter &lt;intent-filter&gt; may list zero, one or more than one categories. if there is no category mentioned then Android always pass this test but if more than one categories are mentioned then for an intent to pass the category test, every category in the Intent object must match a category in the filter.</p></li>
+<li><p>Each &lt;data&gt; element can specify a URI and a data type (MIME media type). There are separate attributes like <b>scheme, host, port</b>, and <b>path</b> for each part of the URI. An Intent object that contains both a URI and a data type passes the data type part of the test only if its type matches a type listed in the filter.</p></li>
+</ul>
+<h2>Example</h2>
+<p>Following example is a modification of the above example. Here we will see how Android resolves conflict if one intent is invoking two activities defined in , next how to invoke a custom activity  using a filter and third one is an exception case if Android does not file appropriate activity defined for an intent.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Step</th>
+<th style="text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>You will use android studio to create an Android application and name it as <i>My Application</i> under a package <i>com.example.tutorialspoint7.myapplication;</i>.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Modify <i>src/Main/Java/MainActivity.java</i> file and add the code to define three listeners corresponding to three buttons defined in layout file.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>Add a new <i>src/Main/Java/CustomActivity.java</i> file  to have one custom activity which will be invoked by different intents.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>Modify layout XML file <i>res/layout/activity_main.xml</i> to add three buttons in linear layout.</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>Add one layout XML file <i>res/layout/custom_view.xml</i> to add a simple &lt;TextView&gt; to show the passed data through intent.</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>Modify <i>AndroidManifest.xml</i> to add &lt;intent-filter&gt; to define rules for your intent to invoke custom activity.</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>src/MainActivity.java</b>.</p>
+<pre class="prettyprint notranslate">
+package com.example.tutorialspoint7.myapplication;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+   Button b1,b2,b3;
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+      b1=(Button)findViewById(R.id.button);
+      b1.setOnClickListener(new View.OnClickListener() {
+      
+         @Override
+         public void onClick(View v) {
+            Intent i = new Intent(android.content.Intent.ACTION_VIEW,
+               Uri.parse("http://www.example.com"));
+            startActivity(i);
+         }
+      });
+
+      b2 = (Button)findViewById(R.id.button2);
+      b2.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            Intent i = new Intent("com.example.
+               tutorialspoint7.myapplication.
+                  LAUNCH",Uri.parse("http://www.example.com"));
+            startActivity(i);
+         }
+      });
+
+      b3 = (Button)findViewById(R.id.button3);
+      b3.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            Intent i = new Intent("com.example.
+               My Application.LAUNCH",
+                  Uri.parse("https://www.example.com"));
+            startActivity(i);
+         }
+      });
+   }
+}
+</pre>
+<p>Following is the content of the modified main activity file <b>src/com.example.My Application/CustomActivity.java</b>.</p>
+<pre class="prettyprint notranslate">
+package com.example.tutorialspoint7.myapplication;
+
+import android.app.Activity;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.TextView;
+
+/**
+ * Created by TutorialsPoint7 on 8/23/2016.
+ */
+public class CustomActivity extends Activity {
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.custom_view);
+      TextView label = (TextView) findViewById(R.id.show_data);
+      Uri url = getIntent().getData();
+      label.setText(url.toString());
+   }
+}
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingBottom="@dimen/activity_vertical_margin"
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   tools:context="com.example.tutorialspoint7.myapplication.MainActivity"&gt;
+
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Intent Example"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp" /&gt;
+
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point"
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_below="@+id/textView1"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_below="@+id/textView2"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText"
+      android:layout_below="@+id/imageButton"
+      android:layout_alignRight="@+id/imageButton"
+      android:layout_alignEnd="@+id/imageButton" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Start Browser"
+      android:id="@+id/button"
+      android:layout_alignTop="@+id/editText"
+      android:layout_alignLeft="@+id/imageButton"
+      android:layout_alignStart="@+id/imageButton"
+      android:layout_alignEnd="@+id/imageButton" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Start browsing with launch action"
+      android:id="@+id/button2"
+      android:layout_below="@+id/button"
+      android:layout_alignLeft="@+id/button"
+      android:layout_alignStart="@+id/button"
+      android:layout_alignEnd="@+id/button" /&gt;
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Exceptional condition"
+      android:id="@+id/button3"
+      android:layout_below="@+id/button2"
+      android:layout_alignLeft="@+id/button2"
+      android:layout_alignStart="@+id/button2"
+      android:layout_toStartOf="@+id/editText"
+      android:layout_alignParentEnd="true" /&gt;
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Following will be the content of <b>res/layout/custom_view.xml</b> file &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical" android:layout_width="match_parent"
+   android:layout_height="match_parent"&gt;
+   &lt;TextView android:id="@+id/show_data"
+      android:layout_width="fill_parent"
+      android:layout_height="400dp"/&gt;
+&lt;/LinearLayout&gt;
+</pre>
+<p>Following will be the content of  <b>res/values/strings.xml</b> to define two new constants &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+   &lt;string name="app_name"&gt;My Application&lt;/string&gt;
+&lt;/resources&gt;
+</pre>
+<p>Following is the default content of  <b>AndroidManifest.xml</b> &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.example.tutorialspoint7.myapplication"&gt;
+
+   &lt;application
+      android:allowBackup = "true"
+      android:icon = "@mipmap/ic_launcher"
+      android:label = "@string/app_name"
+      android:supportsRtl = "true"
+      android:theme = "@style/AppTheme"&gt;
+      &lt;activity android:name = ".MainActivity"&gt;
+         &lt;intent-filter&gt;
+            &lt;action android:name = "android.intent.action.MAIN" /&gt;
+            &lt;category android:name = "android.intent.category.LAUNCHER" /&gt;
+         &lt;/intent-filter&gt;
+      &lt;/activity&gt;
+      
+      &lt;activity android:name="com.example.tutorialspoint7.myapplication.CustomActivity"&gt;
+
+         &lt;intent-filter&gt;
+            &lt;action android:name = "android.intent.action.VIEW" /&gt;
+            &lt;action android:name = "com.example.tutorialspoint7.myapplication.LAUNCH" /&gt;
+            &lt;category android:name = "android.intent.category.DEFAULT" /&gt;
+            &lt;data android:scheme = "http" /&gt;
+         &lt;/intent-filter&gt;
+
+      &lt;/activity&gt;
+   &lt;/application&gt;
+
+&lt;/manifest&gt;
+</pre>
+<p>Let's try to run your <b>My Application</b> application. I assume you had created your <b>AVD</b> while doing environment setup. To run the app from Android Studio, open one of your project's activity files and click Run < icon from the toolbar. Android Studio installs the app on your AVD and starts it and if everything is fine with your setup and application, it will display following Emulator window &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent6.png" alt="Android Custom Activity" />
+<p>Now let's start with first button "Start Browser with VIEW Action". Here we have defined our custom activity with a filter "android.intent.action.VIEW", and there is already one default activity against VIEW action defined by Android which is launching web browser, So android displays following two options to select the activity you want to launch.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent7.png" alt="Android Two Activities" />
+<p>Now if you select Browser, then Android will launch web browser and open example.com website but if you select IndentDemo option then Android will launch CustomActivity which does nothing but just capture passed data and displays in a text view as follows &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/intent8.png" alt="Android Custom Activity Runs" />
+<p>Now go back using back button and click on "Start Browser with LAUNCH Action" button, here Android applies filter to choose define activity and it simply launch your custom activity</p>
+<p>Again, go back using back button and click on "Exception Condition" button, here Android tries to find out a valid filter for the given intent but it does not find a valid activity defined because this time we have used data as <b>https</b> instead of <b>http</b> though we are giving a correct action, so Android raises an exception and shows following screen &minus;</p>
+<hr />
+
+</div>
+
+<div id="c12" class="tabcontent">
+<h1>Android - UI Layouts</h1>
+
+<p>The basic building block for user interface is a <b>View</b> object which is created from the View class and occupies a rectangular area on the screen and is responsible for drawing and event handling. View is the base class for widgets, which are used to create interactive UI components like buttons, text fields, etc.</p>
+<p>The <b>ViewGroup</b> is a subclass of <b>View</b> and provides invisible container that hold other Views or other ViewGroups and define their layout properties.</p>
+<p>At third level we have different layouts which are subclasses of ViewGroup class and a typical layout defines the visual structure for an Android user interface and can be created either at run time using <b>View/ViewGroup</b> objects or you can declare your layout using simple XML file <b>main_layout.xml</b> which is located in the res/layout folder of your project.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/layout.jpg" alt="Layout" />
+<h4 align="center"> Layout params</h4>
+<p>This tutorial is more about creating your GUI based on layouts defined in XML file. A layout may contain any type of  widgets such as buttons, labels, textboxes, and so on. Following is a simple example of XML file having  LinearLayout &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical" &gt;
+   
+   &lt;TextView android:id="@+id/text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="This is a TextView" /&gt;
+      
+   &lt;Button android:id="@+id/button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="This is a Button" /&gt;
+      
+   &lt;!-- More GUI components go here  --&gt;
+   
+&lt;/LinearLayout&gt;
+</pre>
+<p>Once your layout has created, you can load the layout resource from your application code, in your <i>Activity.onCreate()</i> callback implementation as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+public void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.activity_main);
+}
+</pre>
+<h2>Android Layout Types</h2>
+<p>There are number of Layouts provided by Android which you will use in almost all the Android applications to provide different view, look and feel.</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No</th>
+<th style="text-align:center;">Layout &amp; Description</th>
+</tr>
+<tr>
+<td>1<td>
+Linear Layout</a>
+<p>LinearLayout is a view group that aligns all children in a single direction, vertically or horizontally.</p>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+Relative Layout</a>
+<p>RelativeLayout is a view group that displays child views in relative positions.</p>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+Table Layout</a>
+<p>TableLayout is a view that groups views into rows and columns.</p>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+Absolute Layout</a>
+<p>AbsoluteLayout enables you to specify the exact location of its children.</p>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+Frame Layout</a>
+<p>The FrameLayout is a placeholder on screen that you can use to display a single view.</p>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+List View</a>
+<p>ListView is a view group that displays a list of scrollable items.</p>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+Grid View</a>
+<p>GridView is a ViewGroup that displays items in a two-dimensional, scrollable grid.</p>
+</td>
+</tr>
+</table>
+<h2>Layout Attributes</h2>
+<p>Each layout has a set of attributes which define the visual properties of that layout. There are few common attributes among all the layouts and their are other attributes which are specific to that layout. Following are common attributes and will be applied to all the layouts:</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No</th>
+<th style="text-align:center;">Attribute &amp; Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<p><b>android:id</b></p>
+<p>This is the ID which uniquely identifies the view.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+<p><b>android:layout_width</b></p>
+<p>This is the width of the layout.</p></td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+<p><b>android:layout_height</b></p>
+<p>This is the height of the layout</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+<p><b>android:layout_marginTop</b></p>
+<p>This is the extra space on the top side of the layout.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+<p><b>android:layout_marginBottom</b></p>
+<p>This is the extra space on the bottom side of the layout.</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+<p><b>android:layout_marginLeft</b></p>
+<p>This is the extra space on the left side of the layout.</p></td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+<p><b>android:layout_marginRight</b></p>
+<p>This is the extra space on the right side of the layout.</p></td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+<p><b>android:layout_gravity</b></p>
+<p>This specifies how child Views are positioned.</p></td>
+</tr>
+<tr>
+<td>9</td>
+<td>
+<p><b>android:layout_weight</b></p>
+<p>This specifies how much of the extra space in the layout should be allocated to the View.</p></td>
+</tr>
+<tr>
+<td>10</td>
+<td>
+<p><b>android:layout_x</b></p>
+<p>This specifies the x-coordinate of the layout.</p></td>
+</tr>
+<tr>
+<td>11</td>
+<td>
+<p><b>android:layout_y</b></p>
+<p>This specifies the y-coordinate of the layout.</p></td>
+</tr>
+<tr>
+<td>12</td>
+<td>
+<p><b>android:layout_width</b></p>
+<p>This is the width of the layout.</p></td>
+</tr>
+<tr>
+<td>13</td>
+<td>
+<p><b>android:layout_width</b></p>
+<p>This is the width of the layout.</p></td>
+</tr>
+<tr>
+<td>14</td>
+<td>
+<p><b>android:paddingLeft</b></p>
+<p>This is the left padding filled for the layout.</p></td>
+</tr>
+<tr>
+<td>15</td>
+<td>
+<p><b>android:paddingRight</b></p>
+<p>This is the right padding filled for the layout.</p></td>
+</tr>
+<tr>
+<td>16</td>
+<td>
+<p><b>android:paddingTop</b></p>
+<p>This is the top padding filled for the layout.</p></td>
+</tr>
+<tr>
+<td>17</td>
+<td>
+<p><b>android:paddingBottom</b></p>
+<p>This is the bottom padding filled for the layout.</p></td>
+</tr>
+</table>
+<p>Here width and height are the dimension of the layout/view which can be specified in terms of dp (Density-independent Pixels), sp ( Scale-independent Pixels), pt ( Points which is 1/72 of an inch), px( Pixels), mm ( Millimeters) and finally in (inches).</p>
+<p>You can specify width and height with exact measurements but more often, you will use one of these constants to set the width or height &minus;</p>
+<ul class="list">
+<li><p><b>android:layout_width=wrap_content</b> tells your view to size itself to the dimensions required by its content.</p></li>
+<li><p><b>android:layout_width=fill_parent</b> tells your view to become as big as its parent view.</p></li>
+</ul>
+<p>Gravity attribute plays important role in positioning the view object and it can take one or more (separated by '|') of the following constant values.</p>
+<table class="table table-bordered">
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>top</td>
+<td>0x30</td>
+<td>Push object to the top of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>0x50</td>
+<td> Push object to the bottom of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>left</td>
+<td>0x03</td>
+<td>Push object to the left of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>right</td>
+<td>0x05</td>
+<td>Push object to the right of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>center_vertical</td>
+<td>0x10</td>
+<td>Place object in the vertical center of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>fill_vertical</td>
+<td>0x70</td>
+<td>Grow the vertical size of the object if needed so it completely fills its container.</td>
+</tr>
+<tr>
+<td>center_horizontal</td>
+<td>0x01</td>
+<td>Place object in the horizontal center of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>fill_horizontal</td>
+<td>0x07</td>
+<td>Grow the horizontal size of the object if needed so it completely fills its container.</td>
+</tr>
+<tr>
+<td>center</td>
+<td>0x11</td>
+<td>Place the object in the center of its container in both the vertical and horizontal axis, not changing its size.</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>0x77</td>
+<td>Grow the horizontal and vertical size of the object if needed so it completely fills its container.</td>
+</tr>
+<tr>
+<td>clip_vertical</td>
+<td>0x80</td>
+<td>Additional option that can be set to have the top and/or bottom edges of the child clipped to its container's bounds. The clip will be based on the vertical gravity: a top gravity will clip the bottom edge, a bottom gravity will clip the top edge, and neither will clip both edges.</td>
+</tr>
+<tr>
+<td>clip_horizontal</td>
+<td>0x08</td>
+<td>Additional option that can be set to have the left and/or right edges of the child clipped to its container's bounds. The clip will be based on the horizontal gravity: a left gravity will clip the right edge, a right gravity will clip the left edge, and neither will clip both edges.</td>
+</tr>
+<tr>
+<td>start</td>
+<td>0x00800003</td>
+<td>Push object to the beginning of its container, not changing its size.</td>
+</tr>
+<tr>
+<td>end</td>
+<td>0x00800005</td>
+<td>Push object to the end of its container, not changing its size.</td>
+</tr>
+</table>
+<h2>View Identification</h2>
+<p>A view object may have a unique ID assigned to it which will identify the View uniquely within the tree. The syntax for an ID, inside an XML tag is &minus;</p>
+<pre class="result notranslate">
+android:id="@+id/my_button"
+</pre>
+<p>Following is a brief description of @ and + signs &minus;</p>
+<ul class="list">
+<li><p>The at-symbol (@) at the beginning of the string indicates that the XML parser should parse and expand the rest of the ID string and identify it as an ID resource.</p></li>
+<li><p>The plus-symbol (+) means that this is a new resource name that must be created and added to our resources. To create an instance of the view object and capture it from the layout, use the following &minus;</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+Button myButton = (Button) findViewById(R.id.my_button);
+</pre>
+<hr />
+
+</div>
+
+<div id="c13" class="tabcontent">
+<h1>Android - Event Handling</h1>
+
+<blockquote><p><b>Events are a useful way to collect data about a user's interaction with interactive components of Applications.</b> Like button presses or screen touch etc. The Android framework maintains an event queue as first-in, first-out (FIFO) basis. You can capture these events in your program and take appropriate action as per requirements.</p></blockquote>
+<p>There are following three concepts related to Android Event Management &minus;</p>
+<ul class="list">
+<li><p><b>Event Listeners</b> &minus; An event listener is an interface in the View class that contains a single callback method. These methods will be called by the Android framework when the View to which the listener has been registered is triggered by user interaction with the item in the UI.</p></li>
+<li><p><b>Event Listeners Registration </b> &minus; Event Registration is the process by which an Event Handler gets registered with an Event Listener so that the handler is called when the Event Listener fires the event.</p></li>
+<li><p><b>Event Handlers</b> &minus; When an event happens and we have registered an event listener for the event, the event listener calls the Event Handlers, which is the method that actually handles the event.</p></li>
+</ul>
+<h2>Event Listeners &amp; Event Handlers</h2>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Event Handler</th>
+<th style="text-align:center">Event Listener &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onClick()</td>
+<td><p><b>OnClickListener()</b></p>
+<p>This is called when the user either  clicks or touches or focuses upon any widget like button, text, image etc. You will use onClick() event handler to handle such event.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onLongClick()</td>
+<td><p><b>OnLongClickListener()</b></p>
+<p>This is called when the user either  clicks or touches or focuses upon any widget like button, text, image etc. for one or more seconds. You will use onLongClick() event handler to handle such event.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onFocusChange()</td>
+<td><p><b>OnFocusChangeListener()</b></p>
+<p>This is called when the widget looses its focus ie. user goes away from the view item.  You will use onFocusChange() event handler to handle such event.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onKey()</td>
+<td><p><b>OnFocusChangeListener()</b></p>
+<p>This is called when the user is focused on the item and presses or releases a hardware key on the device.  You will use onKey() event handler to handle such event.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onTouch()</td>
+<td><p><b>OnTouchListener()</b></p>
+<p>This is called when the user presses the key, releases the key, or any movement gesture on the screen. You will use onTouch() event handler to handle such event.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onMenuItemClick()</td>
+<td><p><b>OnMenuItemClickListener()</b></p>
+<p>This is called when the user selects a menu item.  You will use onMenuItemClick() event handler to handle such event.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">onCreateContextMenu()</td>
+<td><p><b>onCreateContextMenuItemListener()</b></p>
+<p>This is called when the context menu is being built(as the result of a sustained "long click)</p></td>
+</tr>
+</table>
+<p>There are many more event listeners available as a part of <b>View</b> class like OnHoverListener, OnDragListener etc which may be needed for your application. So I recommend to refer official documentation for Android application development in case you are going to develop a sophisticated apps.</p>
+<h2>Event Listeners Registration</h2>
+<p>Event Registration is the process by which an Event Handler gets registered with an Event Listener so that the handler is called when the Event Listener fires the event. Though there are several tricky ways to register your event listener for any event, but I'm going to list down only top 3 ways, out of which you can use any of them based on the situation.</p>
+<ul class="list">
+<li><p>Using an Anonymous Inner Class</p></li>
+<li><p>Activity class implements the Listener interface.</p></li>
+<li><p>Using Layout file activity_main.xml to specify event handler directly.</p></li>
+</ul>
+<p>Below section will provide you detailed examples on all the three scenarios &minus;</p>
+<h2>Touch Mode</h2>
+<p>Users can interact with their devices by using hardware keys or buttons or touching the screen.Touching the screen puts the device into touch mode. The user can then interact with it by touching the on-screen virtual buttons, images, etc.You can check if the device is in touch mode by calling the View class’s isInTouchMode() method.</p>
+<h2>Focus</h2>
+<p>A view or widget is usually highlighted or displays a flashing cursor when it’s in focus. This indicates that it’s ready to accept input from the user.</p>
+<ul class="list">
+<li><p><b>isFocusable()</b> &minus; it returns true or false</p></li>
+<li><p><b>isFocusableInTouchMode()</b> &minus; checks to see if the view is focusable in touch mode. (A view may be focusable when using a hardware key but not when the device is in touch mode)</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+android:foucsUp="@=id/button_l"
+</pre>
+<h2>onTouchEvent()</h2>
+<pre class="prettyprint notranslate">
+public boolean onTouchEvent(motionEvent event){
+   switch(event.getAction()){
+      case TOUCH_DOWN:
+      Toast.makeText(this,"you have clicked down Touch button",Toast.LENTH_LONG).show();
+      break();
+   
+      case TOUCH_UP:
+      Toast.makeText(this,"you have clicked up touch button",Toast.LENTH_LONG).show();
+      break;
+   
+      case TOUCH_MOVE:
+      Toast.makeText(this,"you have clicked move touch button"Toast.LENTH_LONG).show();
+      break;
+   }
+   return super.onTouchEvent(event) ;
+}
+</pre>
+<h2>Event Handling Examples</h2>
+<h3>Event Listeners Registration Using an Anonymous Inner Class</h3>
+<p>Here you will create an anonymous implementation of the listener and will be useful if each class is applied to a single control only and you have advantage to pass arguments to event handler. In this approach event handler methods can access private data of Activity. No reference is needed to call to Activity.</p>
+<p>But if you applied the handler to more than one control, you would have to cut and paste the code for the handler and if the code for the handler is long, it makes the code harder to maintain.</p>
+<p>Following are the simple steps to show how we will make use of separate Listener class to register and capture click event. Similar way you can implement your listener for any other required event type.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Step</th>
+<th style="text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>You will use Android studio IDE to create an Android application and name it as <i>myapplication</i> under a package <i>com.example.myapplication</i> as explained in the <i>Hello World Example</i> chapter.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Modify <i>src/MainActivity.java</i> file to add click event listeners and handlers for the two buttons defined.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>Modify the detault content of <i>res/layout/activity_main.xml</i> file to include Android UI controls.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>No need to declare default string constants.Android studio takes care default constants.</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the aplication.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>src/com.example.myapplication/MainActivity.java</b>. This file can include each of the fundamental lifecycle methods.</p>
+<pre class="prettyprint notranslate">
+package com.example.myapplication;
+
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends ActionBarActivity {
+   private ProgressDialog progress;
+   Button b1,b2;
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+      progress = new ProgressDialog(this);
+
+      b1=(Button)findViewById(R.id.button);
+      b2=(Button)findViewById(R.id.button2);
+      b1.setOnClickListener(new View.OnClickListener() {
+         
+         @Override
+         public void onClick(View v) {
+            TextView txtView = (TextView) findViewById(R.id.textView);
+            txtView.setTextSize(25);
+         }
+      });
+
+      b2.setOnClickListener(new View.OnClickListener() {
+         
+         @Override
+         public void onClick(View v) {
+            TextView txtView = (TextView) findViewById(R.id.textView);
+            txtView.setTextSize(55);
+         }
+      });
+   }
+}
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file &minus;</p>
+<blockquote>Here abc indicates about tutorialspoint logo</blockquote>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingBottom="@dimen/activity_vertical_margin"
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   tools:context=".MainActivity"&gt;
+   
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Event Handling "
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp"/&gt;
+      
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point "
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_above="@+id/imageButton"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="40dp" /&gt;
+      
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_centerVertical="true"
+      android:layout_centerHorizontal="true" /&gt;
+      
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Small font"
+      android:id="@+id/button"
+      android:layout_below="@+id/imageButton"
+      android:layout_centerHorizontal="true" /&gt;
+      
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Large Font"
+      android:id="@+id/button2"
+      android:layout_below="@+id/button"
+      android:layout_alignRight="@+id/button"
+      android:layout_alignEnd="@+id/button" /&gt;
+      
+   &lt;TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Hello World!"
+      android:id="@+id/textView"
+      android:layout_below="@+id/button2"
+      android:layout_centerHorizontal="true"
+      android:textSize="25dp" /&gt;
+      
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Following will be the content of  <b>res/values/strings.xml</b> to define two new constants &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+   &lt;string name="app_name"&gt;myapplication&lt;/string&gt;
+&lt;/resources&gt;
+</pre>
+<p>Following is the default content of  <b>AndroidManifest.xml</b> &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.example.myapplication" &gt;
+      
+   &lt;application
+      android:allowBackup="true"
+      android:icon="@drawable/ic_launcher"
+      android:label="@string/app_name"
+      android:theme="@style/AppTheme" &gt;
+      
+      &lt;activity
+         android:name="com.example.myapplication.MainActivity"
+         android:label="@string/app_name" &gt;
+      
+         &lt;intent-filter&gt;
+            &lt;action android:name="android.intent.action.MAIN" /&gt;
+            &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+         &lt;/intent-filter&gt;
+      
+      &lt;/activity&gt;
+      
+   &lt;/application&gt;
+&lt;/manifest&gt;
+</pre>
+<p>Let's try to run your <b>myapplication</b> application. I assume you had created your <b>AVD</b> while doing environment setup. To run the app from Android Studio, open one of your project's activity files and click Run  icon from the toolbar. Android Studio installs the app on your AVD and starts it and if everything is fine with your setup and application, it will display following Emulator window &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/event1.png" alt="Android Event Handling" />
+<p>Now you try to click on two buttons, one by one and you will see that font of the <b>Hello World</b> text will change, which happens because registered click event handler method is being called against each click event.</p>
+<h2>Exercise</h2>
+<p>I will recommend to try writing different event handlers for different event types and understand exact difference in different event types and their handling. Events related to menu, spinner, pickers widgets are little different but they are also based on the same concepts as explained above.</p>
+<a href="madquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="MAD">
+    <input type="submit" class="button" value="Quiz Later">
+<hr />
+
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

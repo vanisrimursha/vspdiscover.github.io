@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  HTML</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">HTML-Tags</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">HTML-Element</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">HTML-Attributes</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">HTML-Formattings</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">HTML-Tables</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">HTML-Lists</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">HTML-Frames</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">HTML-Meta Tags</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">HTML-Forms</button>
+<button class="tablinks" onclick="openCity(event, 'c11')">HTML-Layouts</button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h2 class="h2">What is HTML</h2>
+<p>HTML is an acronym which stands for Hyper Text Markup Language. Let's see what is Hyper Text and what is Markup Language?<p>
+<p><b>Hyper Text:</b> Hyper Text simply means "Text within Text". A text has a link within it, is a hypertext. Every time when you click on a word which brings you to a new webpage, you have clicked on a hypertext.</p>
+<p><b>Markup language:</b> A markup language is a programming language that is used make text more interactive and dynamic.  It can turn a text into images, tables, links etc.</p>
+<p>An HTML document is made of many HTML tags and each HTML tag contains different content.</p>
+<hr/>
+<h2 class="h2">Description of HTML Example</h2>
+<p><b>DOCTYPE:</b> It defines the document type.</p>
+<p><b>html</b> : Text between html tag describes the web document.</p>
+<p><b>body</b> : Text between body tag describes the body content of the page that is visible to the end user.</p>
+<p><b>h1</b> : Text between h1 tag describes the heading of the webpage.</p>
+<p><b>p</b> : Text between p tag describes the paragraph of the webpage.</p>
+
+<hr/>
+<h2 class="h2">Brief History of HTML</h2>
+<p>In the late 1980's , A physicist, Tim Berners-Lee who was a contractor at CERN, proposed a system for CERN researchers. In 1989, he wrote a memo proposing an internet based hypertext system. </p>
+<p><b>Tim Berners-Lee</b> is known as <i>father of HTML</i>. The first available description of HTML was a document called "HTML Tags"  proposed by Tim in late 1991. </p>
+
+<hr/>
+<h2 class="h2">Features of HTML</h2>
+<p>1) It is a very <b>easy and simple</b> language. It can be easily understood and modified. </p>
+<p>2) It is very easy to make <b>effective presentation</b> with HTML because it has a lot of <i>formatting tags</i>.</p>
+<p>3) It is a <b>markup language</b> so it provides a flexible way to design web pages along with the text. 
+</p>
+<p>4) It facilitates programmers to add <b>link</b> on the web pages (by <i>html anchor tag</i>) , so it enhances the interest of browsing of the user.
+</p>
+<p>5) It is <b>platform-independent</b> because it can be displayed on any platform like Windows, Linux and Macintosh etc.</p>
+<p>6) It facilitates the programmer to add <b>Graphics, Videos, and Sound</b> to the web pages which makes it more attractive and interactive. </p>
+</div>
+
+<div id="c2" class="tabcontent">
+<h1 class="h1">HTML Tags</h1>
+<p>HTML tags contain three main parts: opening tag, content and closing tag. But some HTML tags are unclosed tags.</p>
+<p>When a web browser reads an HTML document, browser reads it from top to bottom and left to right. HTML tags are used to create HTML documents and render their properties. Each HTML tags have different properties. </p>
+
+<hr/>
+<h2 class="h2">Syntax</h2>
+<p>&lt;tag&gt; content &lt;/tag&gt;</p>
+<hr/>
+<h2 class="h2">HTML Tag Examples</h2>
+<p>Note: HTML Tags are always written in lowercase letters. The basic HTML tags are given below:</p>
+
+<div class="codeblock" style="padding:10px">
+<p>&lt;p&gt; Paragraph Tag &lt;/p&gt;</p>
+<h2>&lt;h2&gt; Heading Tag &lt;/h2&gt;</h2>
+<p>&lt;b&gt; <span style="font-weight:bold">Bold Tag</span> &lt;/b&gt;</p>
+<p>&lt;i&gt; <span style="font-style:italic">Italic Tag</span> &lt;/i&gt;</p>
+<p>&lt;u&gt;<u> Underline Tag</u>&lt;/u&gt;</p>
+</div>
+
+<hr/>
+
+<h2 class="h2">Unclosed HTML Tags</h2>
+<p>Some HTML tags are not closed, for example br and hr.</p>
+<span style="font-weight:bold">&lt;br&gt; Tag</span>: br stands for break line, it breaks the line of the code.</p>
+<p><span style="font-weight:bold"> &lt;hr&gt; Tag</span>: hr stands for Horizontal Rule. This tag 
+is used to put a line across the webpage.</p>
+
+<hr/>
+<h2 class="h2">HTML Meta Tags</h2>
+<p>DOCTYPE, title, link, meta and style</p>
+<hr/>
+<h2 class="h2">HTML Text Tags</h2>
+<p>&lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;address&gt;, &lt;bdo&gt;, &lt;blockquote&gt;, &lt;cite&gt;, &lt;q&gt;, &lt;code&gt;, &lt;ins&gt;, &lt;del&gt;, &lt;dfn&gt;, &lt;kbd&gt;, &lt;pre&gt;, &lt;samp&gt;, &lt;var&gt; and &lt;br&gt;</p>
+<hr/>
+<h2 class="h2">HTML Link Tags</h2>
+<p>&lt;a&gt; and &lt;base&gt;</p>
+<hr/>
+<h2 class="h2">HTML Image and Object Tags</h2>
+<p>&lt;img&gt;, &lt;area&gt;, &lt;map&gt;, &lt;param&gt; and &lt;object&gt;</p>
+<hr/>
+<h2 class="h2">HTML List Tags</h2>
+<p>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt; and &lt;dd&gt;</p>
+<hr/>
+<h2 class="h2">HTML Table Tags</h2>
+<p>table, tr, td, th, tbody, thead, tfoot, col, colgroup and caption</p>
+<hr/>
+<h2 class="h2">HTML Form Tags</h2>
+<p>form, input, textarea, select, option, optgroup, button, label, fieldset and legend</p>
+<hr/>
+<h2 class="h2">HTML Scripting Tags</h2>
+<p>script and noscript</p>
+
+</div>
+
+
+<div id="c3" class="tabcontent">
+<h1>HTML <span class="color_h1">Elements</span></h1>
+
+<hr>
+<h2>HTML Elements</h2>
+<p>An HTML element usually consists of a <strong>start</strong> tag and <strong>end</strong> tag, 
+with the content inserted in between:</p>
+<div class="htmlHigh" style="font-size:20px;padding:10px;margin-bottom:10px;">
+&lt;tagname&gt;Content goes here...&lt;/tagname&gt;
+</div>
+
+<p>The HTML <strong>element</strong> is everything from the start tag to the end tag:</p>
+<div class="htmlHigh" style="font-size:20px;padding:10px;margin-bottom:10px;">
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+</div>
+
+<table class="w3-table-all notranslate">
+<tr>
+<th style="width:33%">Start tag</th>
+<th style="width:33%">Element content</th>
+<th>End tag</th>
+</tr>
+<tr>
+<td>&lt;h1&gt;</td>
+<td>My First Heading</td>
+<td>&lt;/h1&gt;</td>
+</tr>
+<tr>
+<td>&lt;p&gt;</td>
+<td>My first paragraph.</td>
+<td>&lt;/p&gt;</td>
+</tr>
+<tr>
+<td>&lt;br&gt;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+<div class="w3-panel w3-note">
+<p>HTML elements with no content are called empty elements. Empty elements do not have an end tag, such as the &lt;br&gt; 
+  element (which indicates a line break).</p>
+</div>
+<hr>
+
+<h2>Nested HTML Elements</h2>
+<p>HTML elements can be nested (elements can contain elements).</p>
+<p>All HTML documents consist of nested HTML elements.</p>
+<p>This example contains four HTML elements:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>&lt;body&gt;<br><br>
+ &lt;h1&gt;My First Heading&lt;/h1&gt;<br>&lt;p&gt;My first paragraph.&lt;/p&gt;<br><br>
+&lt;/body&gt;<br>&lt;/html&gt;
+</div>
+</div>
+<h3>Example Explained</h3>
+<p>The <strong>&lt;html&gt;</strong> element defines the <strong>whole document</strong>.</p>
+<p>It has a <strong>start</strong> tag &lt;html&gt; and an <strong>end</strong> tag &lt;/html&gt;.</p>
+<p>The element <strong>content</strong> is another HTML element (the &lt;body&gt; element).</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;html&gt;<br>
+&lt;body&gt;<br><br>
+ &lt;h1&gt;My First Heading&lt;/h1&gt;<br>&lt;p&gt;My first paragraph.&lt;/p&gt;<br><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</div></div>
+
+<p>The <strong>&lt;body&gt;</strong> element defines the <strong>document body</strong>.</p>
+<p>It has a <strong>start</strong> tag &lt;body&gt; and an <strong>end</strong> tag &lt;/body&gt;.</p>
+<p>The element <strong>content</strong> is two other HTML elements (&lt;h1&gt; and &lt;p&gt;).</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;body&gt;<br><br>
+ &lt;h1&gt;My First Heading&lt;/h1&gt;<br>&lt;p&gt;My first paragraph.&lt;/p&gt;<br><br>
+&lt;/body&gt;
+</div></div>
+
+<p>The <strong>&lt;h1&gt;</strong> element defines a <strong>heading</strong>.</p>
+<p>It has a <strong>start</strong> tag &lt;h1&gt; and an 
+<strong>end</strong> tag &lt;/h1&gt;.</p>
+<p>The element <strong>content</strong> is: My First Heading.</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+</div>
+</div>
+
+<p>The <strong>&lt;p&gt;</strong> element defines a <strong>paragraph</strong>.</p>
+<p>It has a <strong>start</strong> tag &lt;p&gt; and an 
+<strong>end</strong> tag &lt;/p&gt;.</p>
+<p>The element <strong>content</strong> is: My first paragraph.</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+</div>
+</div>
+<hr>
+<div style="overflow:auto;text-align:center">
+<!-- MidContent -->
+  <div id='div-gpt-ad-1493883843099-0' style="display: inline-block">
+  
+  </div>  
+</div>
+<hr>
+<h2>Do Not Forget the End Tag</h2>
+<p>Some HTML elements will display correctly, even if you forget the end tag:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;html&gt;<br>&lt;body&gt;<br><br>
+ &lt;p&gt;This is a paragraph<br>
+ &lt;p&gt;This is a paragraph<br>
+<br>&lt;/body&gt;<br>&lt;/html&gt;</div>
+</div>
+
+<p>The example above works in all browsers, because the closing tag is considered optional. </p>
+<p><strong>Never rely on this. It might produce unexpected results and/or errors if you forget the end tag.</strong></p>
+<hr>
+
+<h2>Empty HTML Elements</h2>
+<p>HTML elements with no content are called empty elements.</p>
+<p>&lt;br&gt; is an empty element without a closing tag (the &lt;br&gt; tag defines a line break).</p>
+<p>Empty elements can be &quot;closed&quot; in the opening tag like this: &lt;br /&gt;.</p>
+<p>HTML5 does not require empty elements to be closed. But if you want stricter 
+validation, or if you need to make your document readable by XML parsers, you 
+must close all HTML elements properly.</p>
+<hr>
+
+<h2>Use Lowercase Tags</h2>
+<p>HTML tags are not case sensitive: &lt;P&gt; means the same as &lt;p&gt;.</p>
+<p>The HTML5 standard does not require lowercase tags, but W3C
+<b>recommends</b> lowercase in HTML, and <b>demands</b> lowercase for stricter document types like XHTML.</p>
+
+</div>
+
+
+<div id="c4" class="tabcontent">
+<h2>HTML Attributes</h2>
+<ul>
+  <li>All HTML elements can have <b>attributes</b></li>
+  <li>Attributes provide <b>additional information</b> about an element</li>
+  <li>Attributes are always specified in <b>the start tag</b></li>
+  <li>Attributes usually come in name/value pairs like: <b>name=&quot;value&quot;</b></li>
+</ul>
+<hr>
+<h2>The href Attribute</h2>
+<p>HTML links are defined with the <strong>&lt;a&gt;</strong> tag. The link address is specified in the <b>href</b> attribute:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+</div>
+<p>You will learn more about links and the &lt;a&gt; tag later in this tutorial.</p>
+<hr>
+<h2>The src Attribute</h2>
+<p>HTML images are defined with the <strong>&lt;img&gt;</strong> tag.</p>
+<p>The filename of the image source is specified in the <strong>src</strong> attribute:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;img src=&quot;img_girl.jpg&quot;&gt;
+</div>
+</div>
+<hr>
+<h2>The width and height Attributes</h2>
+<p>Images in HTML have a set of size attributes, which specifies the width and 
+height of the image:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;img src=&quot;img_girl.jpg&quot; width=&quot;500&quot; height=&quot;600&quot;&gt;
+</div>
+</div>
+<p>The image size is specified in pixels: width=&quot;500&quot; means 500 pixels wide.</p>
+chapter.</p>
+<hr>
+
+<h2>The alt Attribute</h2>
+<p>The <strong>alt</strong> attribute specifies an alternative text to be used, when an 
+image cannot be displayed.</p>
+<p>The value of the attribute can be read by screen readers. This way, someone &quot;listening&quot; 
+to the webpage, e.g. a blind person, can &quot;hear&quot; the element.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;img src=&quot;img_girl.jpg&quot; alt=&quot;Girl 
+  with a jacket&quot;&gt;
+</div>
+</div>
+
+<div class="w3-panel w3-note">
+  <p>The alt attribute is also useful if the image does not exist:</p>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>What happens if we try to display an image that does not exist:</p>
+<div class="w3-code notranslate htmlHigh">
+ &lt;img src=&quot;img_typo.jpg&quot; alt=&quot;Girl 
+  with a jacket&quot;&gt;
+</div>
+</div>
+<hr>
+<div style="overflow:auto;text-align:center">
+<!-- MidContent -->
+  <div id='div-gpt-ad-1493883843099-0' style="display: inline-block">
+  </div>  
+</div>
+<hr>
+
+
+<h2>The style Attribute</h2>
+<p>The style attribute is used to specify the styling of an element, like color, 
+font, size etc.</p>
+<div class="w3-example">
+<h3>Example</h3>
+  <div class="w3-code notranslate htmlHigh">
+&lt;p style=&quot;color:red&quot;&gt;I am a paragraph&lt;/p&gt;
+  </div>
+</div>
+
+<h2>The lang Attribute</h2>
+<p>The language of the document can be declared in the <strong>&lt;html&gt;</strong> tag.</p>
+<p>The language is declared with the <strong>lang</strong> attribute.</p>
+<p>Declaring a language is important for accessibility applications (screen readers) and search engines:</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en-US&quot;&gt;<br>&lt;body&gt;<br><br>
+ ...<br><br>&lt;/body&gt;<br>&lt;/html&gt;
+</div>
+</div>
+<p>The first two letters specify the language (en). If there is a dialect, use two more letters (US).</p>
+<hr>
+
+<h2>The title Attribute</h2>
+<p>Here, a <strong>title</strong> attribute is added to the <strong>&lt;p&gt;</strong> 
+element.
+The value of the title attribute will be displayed as a tooltip when 
+you mouse over the paragraph:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;p title="I'm a tooltip"&gt;<br>This is a paragraph.<br>&lt;/p&gt;
+</div>
+</div>
+<hr>
+
+<h2>We Suggest: Use Lowercase Attributes</h2>
+<p>The HTML5 standard does not require lowercase attribute names.</p>
+<p>The title attribute can be written with uppercase or lowercase 
+like <strong>title</strong> or <strong>TITLE</strong>.</p>
+<p>We <strong>recommends</strong> lowercase in HTML, and <strong>demands</strong> 
+lowercase for stricter document types like XHTML.</p>
+<div class="w3-panel w3-note">
+  <p>At W3Schools we always use lowercase attribute names.</p>
+</div>
+<hr>
+
+<h2>We Suggest: Quote Attribute Values</h2>
+<p>The HTML5 standard does not require quotes around attribute values.</p>
+<p>The <strong>href</strong> attribute, demonstrated above, can be written as:</p>
+<div class="w3-example">
+<h3>Example</h3>
+</div>
+<p>We <b>recommends</b> quotes in HTML, and <strong>demands</strong> quotes for stricter document types like XHTML.</p>
+<p>Sometimes it is <strong>necessary</strong> to use quotes. This example will not display 
+the title attribute correctly, because it contains a space:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;p
+ title=About W3Schools&gt;</div>
+</div>
+<div class="w3-panel w3-note">
+  <p>Using quotes are the most common. Omitting quotes can produce errors.
+<br>At W3Schools we always use quotes around attribute values.</p>
+</div>
+<hr>
+
+<h2>Single or Double Quotes?</h2>
+<p>Double quotes around attribute values are the most common in HTML, but single 
+quotes can also be used.</p>
+<p>In some situations, when the attribute value itself contains double quotes, it is necessary to use single quotes:</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;p title='John &quot;ShotGun&quot; Nelson'&gt;
+</div>
+</div>
+
+<p>Or vice versa:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;p title=&quot;John 'ShotGun' Nelson&quot;&gt;</div>
+</div>
+<hr>
+
+<h2>Chapter Summary</h2>
+<ul>
+  <li>All HTML elements can have <strong>attributes</strong></li>
+  <li>The <strong>title</strong> attribute provides additional &quot;tool-tip&quot;  information</li>
+  <li>The <strong>href</strong> attribute provides address information for links</li>
+  <li>The <strong>width</strong> and <strong>height</strong> attributes provide size information for images</li>
+  <li>The <strong>alt</strong> attribute provides text for screen readers</li>
+ 
+
+</div>
+
+
+<div id="c5" class="tabcontent">
+<h1 class="h1">HTML Formatting</h1>
+<hr/> 
+<h2 class="h2">HTML Formatting</h2>
+<p><b>HTML Formatting</b> is <i>a process of formatting text for better look and feel</i>. There are many formatting tags in HTML. These tags are used to make text bold, italicized, or underlined. There are almost 12 options available that how text appears in HTML and XHTML.</p>
+<p>Here, we are going to learn 12 HTML formatting tags.</p>
+<hr/>
+<h2 class="h2">1) Bold Text</h2>
+<p>If you write anything within &lt;b&gt;............&lt;/b&gt; element, is shown in bold letters.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p> <b>Write Your First Paragraph in bold text.</b></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p> <b>Write Your First Paragraph in bold text.</b></p> 
+</div>
+
+<hr/>
+<h2 class="h2">2) Italic Text</h2>
+If you write anything within &lt;i&gt;............&lt;/i&gt; element, is shown in italic letters.
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p> <i>Write Your First Paragraph in italic text.</i></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p> <i>Write Your First Paragraph in italic text.</i></p> 
+</div>
+ 
+<hr/>
+
+<h2 class="h2">3) HTML Marked formatting</h2>
+<p>If you want to mark or highlight a text, you should write the content within &lt;mark&gt;.........&lt;/mark&gt;.</p>
+
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<h2>  I want to put a <mark> Mark</mark> on your face</h2>
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<h2>  I want to put a <mark> Mark</mark> on your face</h2>
+</div>
+
+<hr/>
+<h2 class="h2">4) Underlined Text</h2>
+<p>If you write anything within &lt;u&gt;.........&lt;/u&gt; element, is shown in underlined text.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p> <u>Write Your First Paragraph in underlined text.</u></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p> <u>Write Your First Paragraph in underlined text.</u></p> 
+</div>
+<hr/>
+<h2 class="h2">5) Strike Text</h2>
+<p>Anything written within &lt;strike&gt;.......................&lt;/strike&gt; element is displayed with strikethrough. It is a thin line which cross the statement.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p> <strike>Write Your First Paragraph with strikethrough</strike>.</p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p> <strike>Write Your First Paragraph with strikethrough.</strike></p> 
+</div>
+
+<hr/>
+<h2 class="h2">6) Monospaced Font</h2>
+<p>If you want that each letter has the same width then you should write the content within &lt;tt&gt;.............&lt;/tt&gt; element.</p>
+<p>Note: We know that most of the fonts are known as variable-width fonts because different letters have different width. (for example: 'w' is wider than 'i').
+Monospaced Font provides similar space among every letter.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p>Hello <tt>Write Your First Paragraph in monospaced font.</tt></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p>Hello <tt>Write Your First Paragraph in monospaced font.</tt></p> 
+</div>
+<hr/>
+<h2 class="h2">7) Superscript Text</h2>
+<p>If you put the content within &lt;sup&gt;..............&lt;/sup&gt; element, is shown in superscript ; means it is displayed half a character's height above the other characters.</p>
+
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p>Hello <sup>Write Your First Paragraph in superscript.</sup></p>  
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p>Hello <sup>Write Your First Paragraph in superscript.</sup></p> 
+</div>
+<hr/>
+<h2 class="h2">8) Subscript Text</h2>
+<p>If you put the content within &lt;sub&gt;..............&lt;/sub&gt; element, is shown in subscript ; means it is displayed half a character's height below the other characters.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p>Hello <sub>Write Your First Paragraph in subscript.</sub></p>
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p>Hello <sub>Write Your First Paragraph in subscript.</sub></p>
+</div> 
+<hr/>
+<h2 class="h2">9) Deleted Text</h2>
+<p>Anything that puts within &lt;del&gt;..........&lt;/del&gt; is displayed as deleted text.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p>Hello <del>Delete your first paragraph.</del></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p>Hello <del>Delete your first paragraph.</del></p> 
+</div> 
+<hr/>
+<h2 class="h2">10) Inserted Text</h2>
+<p>Anything that puts within &lt;ins&gt;..........&lt;/ins&gt; is displayed as inserted text.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p> <del>Delete your first paragraph.</del><ins>Write another paragraph.</ins></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p> <del>Delete your first paragraph.</del><ins>Write another paragraph.</ins></p> 
+</div> 
+<hr/>
+<h2 class="h2">11) Larger Text</h2>
+<p>If you want to put your font size larger than the rest of the text then put the content within &lt;big&gt;.........&lt;/big&gt;. It increase one font size larger than the previous one.</p>
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p>Hello <big>Write the paragraph in larger font.</big></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p>Hello <big>Write the paragraph in larger font.</big></p> 
+</div> 
+<hr/>
+<h2 class="h2">12) Smaller Text</h2>
+<p>If you want to put your font size smaller than the rest of the text then put the content within &lt;small&gt;.........&lt;/small&gt;tag. It reduces one font size than the previous one.</p>
+
+
+<p>See this example:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+<p>Hello <small>Write the paragraph in smaller font.</small></p> 
+</textarea></div>
+<p>Output:</p>
+<div class="codeblock3">
+<p>Hello <small>Write the paragraph in smaller font.</small></p>  
+</div> 
+
+
+</div>
+
+
+<div id="c6" class="tabcontent">
+<h1 class="h1">HTML Table</h1>
+<p><b>HTML table tag</b> is used to display data in tabular form (row * column). There can be many columns in a row.</p>
+<p>HTML tables are used to manage the layout of the page e.g. header section, navigation bar, body content, footer section etc. But it is recommended to use div tag over table to manage the layout of the page .</p>
+<hr/>
+<h2 class="h2">HTML Table Tags</h2>
+<table class="alt">
+<tr><th>Tag</th><th>Description</th></tr>
+<tr><td>&lt;table&gt;</td><td>It defines a table.</td></tr>
+<tr><td>&lt;tr&gt;</td><td>It defines a row in a table.</td></tr>
+<tr><td>&lt;th&gt;</td><td>It defines a header cell in a table.</td></tr>
+<tr><td>&lt;td&gt;</td><td>It defines a cell in a table.</td></tr>
+<tr><td>&lt;caption&gt;</td><td>It defines the table caption.</td></tr>
+<tr><td>&lt;colgroup&gt;</td><td>It specifies a group of one or more columns in a table for formatting.</td></tr>
+<tr><td>&lt;col&gt;</td><td>It is used with &lt;colgroup&gt; element to specify column properties for each
+column.</td></tr>
+<tr><td>&lt;tbody&gt;</td><td>It is used to group the body content in a table.</td></tr>
+<tr><td>&lt;thead&gt;</td><td>It is used to group the header content in a table.</td></tr>
+<tr><td>&lt;tfooter&gt;</td><td>It is used to group the footer content in a table.</td></tr>
+</table>
+<hr/>
+<h2 class="h2">HTML Table Example</h2>
+<p>Let's see the example of HTML table tag. It output is shown above.</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;First_Name&lt;/th&gt;&lt;th&gt;Last_Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Sonoo&lt;/td&gt;&lt;td&gt;Jaiswal&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;James&lt;/td&gt;&lt;td&gt;William&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Swati&lt;/td&gt;&lt;td&gt;Sironi&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Chetna&lt;/td&gt;&lt;td&gt;Singh&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</textarea></div>
+<p>Output:</p>
+<table>
+<tr><th>First_Name</th><th>Last_Name</th><th>Marks</th></tr>
+<tr><td>Sonoo</td><td>Jaiswal</td><td>60</td></tr>
+<tr><td>James</td><td>William</td><td>80</td></tr>
+<tr><td>Swati</td><td>Sironi</td><td>82</td></tr>
+<tr><td>Chetna</td><td>Singh</td><td>72</td></tr>
+</table>
+<p>In the above html table, there are 5 rows and 3 columns = 5 * 3 = 15 values.</p>
+<hr/>
+<h2 class="h2">HTML Table with Border</h2>
+<p>There are two ways to specify border for HTML tables.</p>
+<ol>
+<li>By border attribute of table in HTML</li>
+<li>By border property in CSS</li>
+</ol>
+<hr/>
+<h2 class="h3">1) HTML Border attribute</h2>
+<p>You can use border attribute of table tag in HTML to specify border. But it is not recommended now.</p>
+
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;table border="1"&gt;
+&lt;tr&gt;&lt;th&gt;First_Name&lt;/th&gt;&lt;th&gt;Last_Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Sonoo&lt;/td&gt;&lt;td&gt;Jaiswal&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;James&lt;/td&gt;&lt;td&gt;William&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Swati&lt;/td&gt;&lt;td&gt;Sironi&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Chetna&lt;/td&gt;&lt;td&gt;Singh&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</textarea></div>
+<p>Output:</p>
+<table border="1">
+<tr><th>First_Name</th><th>Last_Name</th><th>Marks</th></tr>
+<tr><td>Sonoo</td><td>Jaiswal</td><td>60</td></tr>
+<tr><td>James</td><td>William</td><td>80</td></tr>
+<tr><td>Swati</td><td>Sironi</td><td>82</td></tr>
+<tr><td>Chetna</td><td>Singh</td><td>72</td></tr>
+</table>
+<hr/>
+<h2 class="h3">2) CSS Border property</h2>
+<p>It is now recommended to use border property of CSS to specify border in table.</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;style&gt;
+table, th, td {
+    border: 1px solid black;
+}
+&lt;/style&gt;
+</textarea></div>
+<p>You can collapse all the borders in one border by border-collapse property.</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;style&gt;
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+&lt;/style&gt;
+</textarea></div>
+<p>Output:</p>
+<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <th style="border: 1px solid black; border-collapse: collapse;">Name</th>
+    <th  style="border: 1px solid black; border-collapse: collapse;">Last Name</th>
+    <th  style="border: 1px solid black; border-collapse: collapse;">Marks</th>
+  </tr>
+ <tr><td style="border: 1px solid black; border-collapse: collapse;">Sonoo</td><td style="border: 1px solid black; border-collapse: collapse;">Jaiswal</td><td style="border: 1px solid black; border-collapse: collapse;">60</td></tr>
+<tr><td style="border: 1px solid black; border-collapse: collapse;">James</td><td style="border: 1px solid black; border-collapse: collapse;">William</td><td style="border: 1px solid black; border-collapse: collapse;">80</td></tr>
+<tr><td style="border: 1px solid black; border-collapse: collapse;">Swati</td><td style="border: 1px solid black; border-collapse: collapse;">Sironi</td><td style="border: 1px solid black; border-collapse: collapse;">82</td></tr>
+<tr><td style="border: 1px solid black; border-collapse: collapse;">Chetna</td><td style="border: 1px solid black; border-collapse: collapse;">Singh</td><td style="border: 1px solid black; border-collapse: collapse;">72</td></tr>
+</table>
+<hr/>
+<h2 class="h2">HTML Table with cell padding</h2>
+<p>You can specify padding for table header and table data by two ways:</p>
+<ol>
+<li>By cellpadding attribute of table in HTML</li>
+<li>By padding property in CSS</li>
+</ol>
+<p>The cellpadding attribute of HTML table tag is obselete now. It is recommended to use CSS. So let's see the code of CSS.</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;style&gt;
+table, th, td {
+    border: 1px solid pink;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+&lt;/style&gt;
+</textarea></div>
+p>Output:</p>
+<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <th style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Name</th>
+    <th  style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Last Name</th>
+    <th  style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Marks</th>
+  </tr>
+ <tr><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Sonoo</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Jaiswal</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">60</td></tr>
+<tr><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">James</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">William</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">80</td></tr>
+<tr><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Swati</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Sironi</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">82</td></tr>
+<tr><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Chetna</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">Singh</td><td style="padding: 10px;border: 1px solid black; border-collapse: collapse;">72</td></tr>
+</table>
+<hr/>
+<h2 class="h2">HTML Table with colspan</h2>
+<p>If you want to make a cell span more than one column, you can use the colspan attribute.</p>
+<p>Let's see the example that span two columns.</p>
+<p>CSS code:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;style&gt;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+&lt;/style&gt;
+</textarea></div>
+<p>HTML code:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;table style="width:100%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th colspan="2"&gt;Mobile No.&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ajeet Maurya&lt;/td&gt;
+    &lt;td&gt;7503520801&lt;/td&gt;
+    &lt;td&gt;9555879135&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</textarea></div>
+<p>Output:</p>
+<table style="width:100%;border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <th style="padding: 5px;text-align: left;border: 1px solid black; border-collapse: collapse;">Name</th>
+    <th  style="padding: 5px;text-align: left;border: 1px solid black; border-collapse: collapse;" colspan="2">Mobile No.</th>
+  </tr>
+  <tr>
+    <td  style="padding: 5px;text-align: left;border: 1px solid black; border-collapse: collapse;">Ajeet Maurya</td>
+    <td style="padding: 5px;text-align: left;border: 1px solid black; border-collapse: collapse;">7503520801</td>
+    <td style="padding: 5px;text-align: left;border: 1px solid black; border-collapse: collapse;">9555879135</td>
+  </tr>
+</table>
+
+<hr/>
+<h2 class="h2">HTML Table with rowspan</h2>
+<p>If you want to make a cell span more than one row, you can use the rowspan attribute.</p>
+<p>Let's see the example that span two rows.</p>
+<p>CSS code:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;style&gt;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+&lt;/style&gt;
+</textarea></div>
+<p>HTML code:</p>
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;table&gt;  
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;td&gt;Ajeet Maurya&lt;/td&gt;&lt;/tr&gt;  
+&lt;tr&gt;&lt;th rowspan="2"&gt;Mobile No.&lt;/th&gt;&lt;td&gt;7503520801&lt;/td&gt;&lt;/tr&gt;  
+&lt;tr&gt;&lt;td&gt;9555879135&lt;/td&gt;&lt;/tr&gt;  
+&lt;/table&gt; 
+</textarea></div>
+<p>Output:</p>
+<table style="border: 1px solid black;border-collapse: collapse;">  
+<tr><th style="padding: 10px;border: 1px solid black;border-collapse: collapse;">Name</th><td style="padding: 10px;border: 1px solid black;border-collapse: collapse;">Ajeet Maurya</td></tr>  
+<tr><th rowspan="2" style="padding: 10px;border: 1px solid black;border-collapse: collapse;">Mobile No.</th><td style="padding: 10px;border: 1px solid black;border-collapse: collapse;">7503520801</td></tr>  
+<tr><td style="padding: 10px;border: 1px solid black;border-collapse: collapse;">9555879135</td></tr>  
+</table> 
+
+
+
+</div>
+
+
+<div id="c7" class="tabcontent">
+<h1 class="h1">HTML Lists</h1>
+<p>HTML Lists are used to specify lists of information. All lists may contain one or more list elements. There are three different types of HTML lists:</p>
+<ol>
+<li>Ordered List or Numbered List (ol)</li>
+<li>Unordered List or Bulleted List (ul)</li>
+<li>Description List or Definition List (dl)</li>
+</ol>
+
+<hr/>
+<h2 class="h2">HTML Ordered List or Numbered List</h2>
+<p>In the ordered HTML lists, all the list items are marked with numbers. It is known as numbered list also. The ordered list starts with &lt;ol&gt; tag and the list items start with &lt;li&gt; tag.</p>
+
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;ol&gt;
+ &lt;li&gt;Aries&lt;/li&gt;
+ &lt;li&gt;Bingo&lt;/li&gt;
+ &lt;li&gt;Leo&lt;/li&gt;
+ &lt;li&gt;Oracle&lt;/li&gt;
+&lt;/ol&gt;
+</textarea></div>
+<p>Output:</p>
+<ol>
+ <li>Aries</li>
+ <li>Bingo</li>
+ <li>Leo</li>
+ <li>Oracle</li>
+</ol>
+<hr/>
+<hr/>
+
+<h2 class="h2">HTML Unordered List or Bulleted List</h2>
+<p>In HTML Unordered list, all the list items are marked with bullets. It is also known as bulleted list also. The Unordered  list starts with  &lt;ul&gt; tag and list items start with the &lt;li&gt; tag.</p>
+
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;ul&gt;
+ &lt;li&gt;Aries&lt;/li&gt;
+ &lt;li&gt;Bingo&lt;/li&gt;
+ &lt;li&gt;Leo&lt;/li&gt;
+ &lt;li&gt;Oracle&lt;/li&gt;
+&lt;/ul&gt;
+</textarea></div>
+<p>Output:</p>
+<ul>
+ <li>Aries</li>
+ <li>Bingo</li>
+ <li>Leo</li>
+ <li>Oracle</li>
+</ul>
+<hr/>
+<hr/>
+
+<h2 class="h2">HTML Description List or Definition List</h2>
+<p>HTML Description list is also a list style which is supported by HTML and XHTML. It is also known as definition list where entries are listed like a dictionary or encyclopedia.<p>
+<p> The definition list is very appropriate when you want to present glossary, list of terms or other name-value list. </p>
+<p>The HTML definition list contains following three tags:</p>
+<ol>
+<li><b>&lt;dl&gt; tag</b> defines the start of the list.</li>
+<li><b>&lt;dt&gt; tag</b> defines a term.</li>
+<li><b>&lt;dd&gt; tag</b> defines the term definition (description).</li>
+</ol>
+
+<div class="codeblock"><textarea   name="code" class="xml">
+&lt;dl&gt;
+  &lt;dt&gt;Aries&lt;/dt&gt;
+  &lt;dd&gt;-One of the 12 horoscope sign.&lt;/dd&gt;
+  &lt;dt&gt;Bingo&lt;/dt&gt;
+  &lt;dd&gt;-One of my evening snacks&lt;/dd&gt;
+ &lt;dt&gt;Leo&lt;/dt&gt;
+ &lt;dd&gt;-It is also an one of the 12 horoscope sign.&lt;/dd&gt;
+  &lt;dt&gt;Oracle&lt;/dt&gt;
+  &lt;dd&gt;-It is a multinational technology corporation.&lt;/dd&gt; 
+&lt;/dl&gt;
+</textarea></div>
+<p>Output:</p>
+<dl>
+  <dt>Aries</dt>
+  <dd>-One of the 12 horoscope sign.</dd>
+  <dt>Bingo</dt>
+  <dd>-One of my evening snacks</dd>
+ <dt>Leo</dt>
+ <dd>-It is also an one of the 12 horoscope sign.</dd>
+  <dt>Oracle</dt>
+  <dd>-It is a multinational technology corporation.</dd> 
+</dl>
+
+</div>
+
+
+<div id="c8" class="tabcontent">
+<h1>HTML - Frames</h1>
+<p>HTML frames are used to divide your browser window into multiple sections where each section can load a separate HTML document. A collection of frames in the browser window is known as a frameset. The window is divided into frames in a similar way the tables are organized: into rows and columns.</p>
+<h2>Disadvantages of Frames</h2>
+<p>There are few drawbacks with using frames, so it's never recommended to use frames in your webpages &minus;</p>
+<ul class="list">
+<li><p>Some smaller devices cannot cope with frames often because their screen is not big enough to be divided up.</p></li>
+<li><p>Sometimes your page will be displayed differently on different computers due to different screen resolution.</p></li>
+<li><p>The browser's <i>back</i> button might not work as the user hopes.</p></li>
+<li><p>There are still few browsers that do not support frame technology.</p></li>
+</ul>
+<h2>Creating Frames</h2>
+<p>To use frames on a page we use &lt;frameset&gt; tag instead of &lt;body&gt; tag. The &lt;frameset&gt; tag defines, how to divide the window into frames. The <b>rows</b> attribute of &lt;frameset&gt; tag defines horizontal frames and <b>cols</b> attribute defines vertical frames. Each frame is indicated by &lt;frame&gt; tag and it defines which HTML document shall open into the frame.</p>
+<blockquote><p><b>Note</b> &minus; The &lt;frame&gt; tag deprecated in HTML5. Do not use this element.</p></blockquote>
+<h3>Example</h3>
+<p>Following is the example to create three horizontal frames &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;HTML Frames&lt;/title&gt;
+   &lt;/head&gt;
+	
+   &lt;frameset rows = "10%,80%,10%"&gt;
+      &lt;frame name = "top" src = "/html/top_frame.htm" /&gt;
+      &lt;frame name = "main" src = "/html/main_frame.htm" /&gt;
+      &lt;frame name = "bottom" src = "/html/bottom_frame.htm" /&gt;
+   
+      &lt;noframes&gt;
+         &lt;body&gt;Your browser does not support frames.&lt;/body&gt;
+      &lt;/noframes&gt;
+      
+   &lt;/frameset&gt;
+   
+&lt;/html&gt;
+</pre>
+<h3>Example</h3>
+<p>Let's put the above example as follows, here we replaced rows attribute by cols and changed their width. This will create all the three frames vertically &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;HTML Frames&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;frameset cols = "25%,50%,25%"&gt;
+      &lt;frame name = "left" src = "/html/top_frame.htm" /&gt;
+      &lt;frame name = "center" src = "/html/main_frame.htm" /&gt;
+      &lt;frame name = "right" src = "/html/bottom_frame.htm" /&gt;
+      
+      &lt;noframes&gt;
+         &lt;body&gt;Your browser does not support frames.&lt;/body&gt;
+      &lt;/noframes&gt;
+   &lt;/frameset&gt;
+   
+&lt;/html&gt;
+</pre>
+<h2>The &lt;frameset&gt; Tag Attributes</h2>
+<p>Following are important attributes of the &lt;frameset&gt; tag &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No</th>
+<th style="text-align:center">Attribute &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>cols</b></p>
+<p>Specifies how many columns are contained in the frameset and the size of each column. You can specify the width of each column in one of the four ways &minus;</p>
+<p>Absolute values in pixels. For example, to create three vertical frames, use <i>cols = "100, 500, 100"</i>.</p>
+<p>A percentage of the browser window. For example, to create three vertical frames, use <i>cols = "10%, 80%, 10%"</i>.</p>
+<p>Using a wildcard symbol. For example, to create three vertical frames, use <i>cols = "10%, *, 10%"</i>. In this case wildcard takes remainder of the window.</p>
+<p>As relative widths of the browser window. For example, to create three vertical frames, use <i>cols = "3*, 2*, 1*"</i>. This is an alternative to percentages. You can use relative widths of the browser window. Here the window is divided into sixths: the first column takes up half of the window, the second takes one third, and the third takes one sixth.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>rows</b></p>
+<p>This attribute works just like the cols attribute and takes the same values, but it is used to specify the rows in the frameset. For example, to create two horizontal frames, use <i>rows = "10%, 90%"</i>. You can specify the height of each row in the same way as explained above for columns.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>border</b></p>
+<p>This attribute specifies the width of the border of each frame in pixels. For example, border = "5". A value of zero means no border.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td>
+<p><b>frameborder</b></p>
+<p>This attribute specifies whether a three-dimensional border should be displayed between frames. This attribute takes value either 1 (yes) or 0 (no). For example frameborder = "0" specifies no border.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">5</td>
+<td>
+<p><b>framespacing</b></p>
+<p>This attribute specifies the amount of space between frames in a frameset. This can take any integer value. For example framespacing = "10" means there should be 10 pixels spacing between each frames.</p></td>
+</tr>
+</table>
+<h2>The &lt;frame&gt; Tag Attributes</h2>
+<p>Following are the important attributes of &lt;frame&gt; tag &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No</th>
+<th style="text-align:center;">Attribute &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td>
+<p><b>src</b></p>
+<p>This attribute is used to give the file name that should be loaded in the frame. Its value can be any URL. For example, src = "/html/top_frame.htm" will load an HTML file available in html directory.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td>
+<p><b>name</b></p>
+<p>This attribute allows you to give a name to a frame. It is used to indicate which frame a document should be loaded into. This is especially important when you want to create links in one frame that load pages into an another frame, in which case the second frame needs a name to identify itself as the target of the link.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td>
+<p><b>frameborder</b></p>
+<p>This attribute specifies whether or not the borders of that frame are shown; it overrides the value given in the frameborder attribute on the &lt;frameset&gt; tag if one is given, and this can take values either 1 (yes) or 0 (no).</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td>
+<p><b>marginwidth</b></p>
+<p>This attribute allows you to specify the width of the space between the left and right of the frame's borders and the frame's content. The value is given in pixels. For example marginwidth = "10".</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">5</td>
+<td>
+<p><b>marginheight</b></p>
+<p>This attribute allows you to specify the height of the space between the top and bottom of the frame's borders and its contents. The value is given in pixels. For example marginheight = "10".</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">6</td>
+<td>
+<p><b>noresize</b></p>
+<p>By default, you can resize any frame by clicking and dragging on the borders of a frame. The noresize attribute prevents a user from being able to resize the frame. For example noresize = "noresize".</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">7</td>
+<td>
+<p><b>scrolling</b></p>
+<p>This attribute controls the appearance of the scrollbars that appear on the frame. This takes values either "yes", "no" or "auto". For example scrolling = "no" means it should not have scroll bars.</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">8</td>
+<td>
+<p><b>longdesc</b></p>
+<p>This attribute allows you to provide a link to another page containing a long description of the contents of the frame. For example longdesc = "framedescription.htm"</p></td>
+</tr>
+</table>
+<h2>Browser Support for Frames</h2>
+<p>If a user is using any old browser or any browser, which does not support frames then &lt;noframes&gt; element should be displayed to the user.</p>
+<p>So you must place a &lt;body&gt; element inside the &lt;noframes&gt; element because the &lt;frameset&gt; element is supposed to replace the &lt;body&gt; element, but if a browser does not understand &lt;frameset&gt; element then it should understand what is inside the &lt;body&gt; element which is contained in a &lt;noframes&gt; element.</p>
+<p>You can put some nice message for your user having old browsers. For example, <i>Sorry!! your browser does not support frames.</i> as shown in the above example.</p>
+<h2>Frame's name and target attributes</h2>
+<p>One of the most popular uses of frames is to place navigation bars in one frame and then load main pages into a separate frame.</p>
+<p>Let's see following example where a test.htm file has following code &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;HTML Target Frames&lt;/title&gt;
+   &lt;/head&gt;
+	
+   &lt;frameset cols = "200, *"&gt;
+      &lt;frame src = "/html/menu.htm" name = "menu_page" /&gt;
+      &lt;frame src = "/html/main.htm" name = "main_page" /&gt;
+      
+      &lt;noframes&gt;
+         &lt;body&gt;Your browser does not support frames.&lt;/body&gt;
+      &lt;/noframes&gt;
+   &lt;/frameset&gt;
+	
+&lt;/html&gt;
+</pre>
+<p>Here, we have created two columns to fill with two frames. The first frame is 200 pixels wide and will contain the navigation menu bar implemented by <b>menu.htm</b> file. The second column fills in remaining space and will contain the main part of the page and it is implemented by <b>main.htm</b> file. For all the three links available in menu bar, we have mentioned target frame as <b>main_page</b>, so whenever you click any of the links in menu bar, available link will open in main page.</p>
+
+</div>
+
+
+<div id="c9" class="tabcontent">
+<h1>HTML - Meta Tags</h1>
+<p>HTML lets you specify metadata - additional important information about a document in a variety of ways. The META elements can be used to include name/value pairs describing properties of the HTML document, such as author, expiry date, a list of keywords, document author etc.</p>
+<p>The <b>&lt;meta&gt;</b> tag is used to provide such additional information. This tag is an empty element and so does not have a closing tag but it carries information within its attributes.</p>
+<p>You can include one or more meta tags in your document based on what information you want to keep in your document but in general, meta tags do not impact physical appearance of the document so from appearance point of view, it does not matter if you include them or not.</p>
+<h2>Adding Meta Tags to Your Documents</h2>
+<p>You can add metadata to your web pages by placing &lt;meta&gt; tags inside the header of the document which is represented by <b>&lt;head&gt;</b> and <b>&lt;/head&gt;</b> tags. A meta tag can have following attributes in addition to core attributes &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No</th>
+<th style="text-align:center;">Attribute &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>Name</b></p>
+<p>Name for the property. Can be anything. Examples include, keywords, description, author, revised, generator etc.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>content</b></p>
+<p>Specifies the property's value.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>scheme</b></p>
+<p>Specifies a scheme to interpret the property's value (as declared in the content attribute).</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>http-equiv</b></p>
+<p>Used for http response message headers. For example, http-equiv can be used to refresh the page or to set a cookie. Values include content-type, expires, refresh and set-cookie.</p>
+</td>
+</tr>
+</table>
+<h2>Specifying Keywords</h2>
+<p>You can use &lt;meta&gt; tag to specify important keywords related to the document and later these keywords are used by the search engines while indexing your webpage for searching purpose.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<h2>Document Description</h2>
+<p>You can use &lt;meta&gt; tag to give a short description about the document. This again can be used by various search engines while indexing your webpage for searching purpose.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<h2>Document Revision Date</h2>
+<p>You can use &lt;meta&gt; tag to give information about when last time the document was updated. This information can be used by various web browsers while refreshing your webpage.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "revised" content = "Tutorialspoint, 3/7/2014" /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+<h2>Document Refreshing</h2>
+<p>A &lt;meta&gt; tag can be used to specify a duration after which your web page will keep refreshing automatically.</p>
+<h3>Example</h3>
+<p>If you want your page keep refreshing after every 5 seconds then use the following syntax.</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "revised" content = "Tutorialspoint, 3/7/2014" /&gt;
+      &lt;meta http-equiv = "refresh" content = "5" /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+<h2>Page Redirection</h2>
+<p>You can use &lt;meta&gt; tag to redirect your page to any other webpage. You can also specify a duration if you want to redirect the page after a certain number of seconds.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "revised" content = "Tutorialspoint, 3/7/2014" /&gt;
+      &lt;meta http-equiv = "refresh" content = "5; url = http://www.tutorialspoint.com" /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+<h2>Setting Cookies</h2>
+<p>Cookies are data, stored in small text files on your computer and it is exchanged between web browser and web server to keep track of various information based on your web application need.</p>
+<p>You can use &lt;meta&gt; tag to store cookies on client side and later this information can be used by the Web Server to track a site visitor.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "revised" content = "Tutorialspoint, 3/7/2014" /&gt;
+      &lt;meta http-equiv = "cookie" content = "userid = xyz;
+         expires = Wednesday, 08-Aug-15 23:59:59 GMT;" /&gt;
+         
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+<h2>Setting Author Name</h2>
+<p>You can set an author name in a web page using meta tag. See an example below &minus;</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "author" content = "Mahnaz Mohtashim" /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+<h2>Specify Character Set</h2>
+<p>You can use &lt;meta&gt; tag to specify character set used within the webpage.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "author" content = "Mahnaz Mohtashim" /&gt;
+      &lt;meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Meta Tags Example&lt;/title&gt;
+      &lt;meta name = "keywords" content = "HTML, Meta Tags, Metadata" /&gt;
+      &lt;meta name = "description" content = "Learning about Meta Tags." /&gt;
+      &lt;meta name = "author" content = "Mahnaz Mohtashim" /&gt;
+      &lt;meta http-equiv = "Content-Type" content = "text/html; charset = Big5" /&gt;
+   &lt;/head&gt;
+	
+   &lt;body&gt;
+      &lt;p&gt;Hello HTML5!&lt;/p&gt;
+   &lt;/body&gt;
+	
+&lt;/html&gt;
+</pre>
+
+</div>
+
+
+<div id="c10" class="tabcontent">
+<h1 class="h1">HTML Form</h1>
+<p>An <b>HTML form</b> is <i>a section of a document</i> which contains controls such as text fields, password fields, checkboxes, radio buttons, submit button, menus etc.</p>
+<p>An HTML form facilitates the user to enter data that is to be sent to the server for processing.</p>
+<hr/>
+<h2 class="h2">Why use HTML Form</h2>
+<p>HTML forms are required if you want to collect some data from of the site visitor.</p>
+<p> For example: If a user want to purchase some items on internet, he/she must fill the form such as shipping address and credit/debit card details so that item can be sent to the given address. </p>
+<hr/>
+<h2 class="h2">HTML Form Syntax</h2>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form action="server url" method="get|post"&gt;
+  //input controls e.g. textfield, textarea, radiobutton, button
+&lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">HTML Form Tags</h2>
+<p>Let's see the list of HTML 5 form tags.</p>
+<table class="alt">
+<tr><th>Tag</th><th>Description</th></tr>
+<tr><td>&lt;form&gt;</td><td>It defines an HTML form to enter inputs by the used side.</td></tr>
+<tr><td>&lt;input&gt;</td><td>It defines an input control.</td></tr>
+<tr><td>&lt;textarea&gt;</td><td>It defines a multi-line input control.</td></tr>
+<tr><td>&lt;label&gt;</td><td>It defines a label for an input element.</td></tr>
+<tr><td>&lt;fieldset&gt;</td><td>It groups the related element in a form.</td></tr>
+<tr><td>&lt;legend&gt;</td><td>It defines a caption for a &lt;fieldset&gt; element.</td></tr>
+<tr><td>&lt;select&gt;</td><td>It defines a drop-down list.</td></tr>
+<tr><td>&lt;optgroup&gt;</td><td>It defines a group of related options in a drop-down list.</td></tr>
+<tr><td>&lt;option&gt;</td><td>It defines an option in a drop-down list.</td></tr>
+<tr><td>&lt;button&gt;</td><td>It defines a clickable button.</td></tr>
+</table>
+
+
+<h2 class="h2">HTML 5 Form Tags</h2>
+<p>Let's see the list of HTML 5 form tags.</p>
+<table class="alt">
+<tr><th>Tag</th><th>Description</th></tr>
+<tr><td>&lt;datalist&gt;</td><td>It specifies a list of pre-defined options for input control.</td></tr>
+<tr><td>&lt;keygen&gt;</td><td>It defines a key-pair generator field for forms.</td></tr>
+<tr><td>&lt;output&gt;</td><td>It defines the result of a calculation.</td></tr>
+</table>
+<hr/>
+<h2 class="h2">HTML TextField Control</h2>
+<p>The type="text" attribute of input tag creates textfield control also known as single line textfield control. The name attribute is optional, but it is required for the server side component such as JSP, ASP, PHP etc.</p>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form&gt;
+    First Name: &lt;input type="text" name="firstname"/&gt; &lt;br/&gt;
+    Last Name:  &lt;input type="text" name="lastname"/&gt; &lt;br/&gt;
+ &lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">Label Tag in Form</h2>
+<p>It is considered better to have label in form. As it makes the code parser/browser/user friendly. </p>
+<p>If you click on the label tag, it will focus on the text control. To do so, you need to have for attribute in label tag that must be same as id attribute of input tag.</p>
+
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form&gt;
+    &lt;label for="firstname"&gt;First Name: &lt;/label&gt;
+              &lt;input type="text" id="firstname" name="firstname"/&gt; &lt;br/&gt;
+   &lt;label for="lastname"&gt;Last Name: &lt;/label&gt;
+              &lt;input type="text" id="lastname" name="lastname"/&gt; &lt;br/&gt;
+ &lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">HTML Password Field Control</h2>
+<p>The password is not visible to the user in password field control.</p>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form&gt;
+    &lt;label for="password"&gt;Password: &lt;/label&gt;
+              &lt;input type="password" id="password" name="password"/&gt; &lt;br/&gt;
+&lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">HTML 5 Email Field Control</h2>
+<p>The email field in new in HTML 5. It validates the text for correct email address. You must use @ and . in this field.</p>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form&gt;
+    &lt;label for="email"&gt;Email: &lt;/label&gt;
+              &lt;input type="email" id="email" name="email"/&gt; &lt;br/&gt;
+&lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">Radio Button Control</h2>
+<p>The radio button is used to select one from multiple options. It is used in gender, quiz questions etc.</p>
+<p>If you use one name for all the radio buttons, only one radio button can be selected at a time.</p>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form&gt;
+    &lt;label for="gender"&gt;Gender: &lt;/label&gt;
+              &lt;input type="radio" id="gender" name="gender" value="male"/&gt;Male
+              &lt;input type="radio" id="gender" name="gender" value="female"/&gt;Female &lt;br/&gt;
+&lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">Checkbox Control</h2>
+<p>The checkbox control is used to check multiple options from given checkboxes.</p>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form&gt;
+Hobby:&lt;br&gt;
+              &lt;input type="checkbox" id="cricket" name="cricket" value="cricket"/&gt;
+                 &lt;label for="cricket"&gt;Cricket&lt;/label&gt;
+              &lt;input type="checkbox" id="football" name="football" value="football"/&gt;
+                 &lt;label for="football"&gt;Football&lt;/label&gt;
+              &lt;input type="checkbox" id="hockey" name="hockey" value="hockey"/&gt;
+                 &lt;label for="hockey"&gt;Hockey&lt;/label&gt;
+&lt;/form&gt;
+</textarea></div>
+
+<hr/>
+<h2 class="h2">HTML Form Example</h2>
+<p>Let's see a simple example of creating HTML form.</p>
+<div class="codeblock"><textarea  name="code" class="xml">
+&lt;form action="#"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td class="tdLabel"&gt;&lt;label for="register_name" class="label"&gt;Enter name:&lt;/label&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type="text" name="name" value="" id="register_name" style="width:160px"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td class="tdLabel"&gt;&lt;label for="register_password" class="label"&gt;Enter password:&lt;/label&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type="password" name="password" id="register_password" style="width:160px"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td class="tdLabel"&gt;&lt;label for="register_email" class="label"&gt;Enter Email:&lt;/label&gt;&lt;/td&gt;
+    &lt;td
+&gt;&lt;input type="email" name="email" value="" id="register_email" style="width:160px"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td class="tdLabel"&gt;&lt;label for="register_gender" class="label"&gt;Enter Gender:&lt;/label&gt;&lt;/td&gt;
+    &lt;td&gt;
+&lt;input type="radio" name="gender" id="register_gendermale" value="male"/&gt;
+&lt;label for="register_gendermale"&gt;male&lt;/label&gt;
+&lt;input type="radio" name="gender" id="register_genderfemale" value="female"/&gt;
+&lt;label for="register_genderfemale"&gt;female&lt;/label&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td class="tdLabel"&gt;&lt;label for="register_country" class="label"&gt;Select Country:&lt;/label&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;select name="country" id="register_country" style="width:160px"&gt;
+    &lt;option value="india"&gt;india&lt;/option&gt;
+    &lt;option value="pakistan"&gt;pakistan&lt;/option&gt;
+    &lt;option value="africa"&gt;africa&lt;/option&gt;
+    &lt;option value="china"&gt;china&lt;/option&gt;
+    &lt;option value="other"&gt;other&lt;/option&gt;
+&lt;/select&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan="2"&gt;&lt;div align="right"&gt;&lt;input type="submit" id="register_0" value="register"/&gt;
+&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+</textarea></div>
+
+
+</div>
+
+
+<div id="c11" class="tabcontent">
+<h1>HTML - Layouts</h1>
+<p>A webpage layout is very important to give better look to your website. It takes considerable time to design a website's layout with great look and feel.</p>
+<p>Now-a-days, all modern websites are using CSS and JavaScript based framework to come up with responsive and dynamic websites but you can create a good layout using simple HTML tables or division tags in combination with other formatting tags. This chapter will give you few examples on how to create a simple but working layout for your webpage using pure HTML and its attributes.</p>
+<h2>HTML Layout - Using Tables</h2>
+<p>The simplest and most popular way of creating layouts is using HTML &lt;table&gt; tag. These tables are arranged in columns and rows, so you can utilize these rows and columns in whatever way you like.</p>
+<h3>Example</h3>
+<p>For example, the following HTML layout example is achieved using a table with 3 rows and 2 columns but the header and footer column spans both columns using the colspan attribute &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;HTML Layout using Tables&lt;/title&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;table width = "100%" border = "0"&gt;
+         
+         &lt;tr&gt;
+            &lt;td colspan = "2" bgcolor = "#b5dcb3"&gt;
+               &lt;h1&gt;This is Web Page Main title&lt;/h1&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr valign = "top"&gt;
+            &lt;td bgcolor = "#aaa" width = "50"&gt;
+               &lt;b&gt;Main Menu&lt;/b&gt;&lt;br /&gt;
+               HTML&lt;br /&gt;
+               PHP&lt;br /&gt;
+               PERL...
+            &lt;/td&gt;
+            
+            &lt;td bgcolor = "#eee" width = "100" height = "200"&gt;
+               Technical and Managerial Tutorials
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" bgcolor = "#b5dcb3"&gt;
+               &lt;center&gt;
+                  Copyright &copy; 2007 Tutorialspoint.com
+               &lt;/center&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         
+      &lt;/table&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<h2>Multiple Columns Layout - Using Tables</h2>
+<p>You can design your webpage to put your web content in multiple pages. You can keep your content in middle column and you can use left column to use menu and right column can be used to put advertisement or some other stuff. This layout will be very similar to what we have at our website tutorialspoint.com.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Three Column HTML Layout&lt;/title&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;table width = "100%" border = "0"&gt;
+         
+         &lt;tr valign = "top"&gt;
+            &lt;td bgcolor = "#aaa" width = "20%"&gt;
+               &lt;b&gt;Main Menu&lt;/b&gt;&lt;br /&gt;
+               HTML&lt;br /&gt;
+               PHP&lt;br /&gt;
+               PERL...
+            &lt;/td&gt;
+				
+            &lt;td bgcolor = "#b5dcb3" height = "200" width = "60%"&gt;
+               Technical and Managerial Tutorials
+            &lt;/td&gt;
+				
+            &lt;td bgcolor = "#aaa" width = "20%"&gt;
+               &lt;b&gt;Right Menu&lt;/b&gt;&lt;br /&gt;
+               HTML&lt;br /&gt;
+               PHP&lt;br /&gt;
+               PERL...
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         
+      &lt;table&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<h2>HTML Layouts - Using DIV, SPAN</h2>
+<p>The &lt;div&gt; element is a block level element used for grouping HTML elements. While the &lt;div&gt; tag is a block-level element, the HTML &lt;span&gt; element is used for grouping elements at an inline level.</p>
+<p>Although we can achieve pretty nice layouts with HTML tables, but tables weren't really designed as a layout tool. Tables are more suited to presenting tabular data.</p>
+<p><b>Note</b> &minus; This example makes use of Cascading Style Sheet (CSS), so before understanding this example you need to have a better understanding on how CSS works.</p>
+<h3>Example</h3>
+<p>Here we will try to achieve same result using &lt;div&gt; tag along with CSS, whatever you have achieved using &lt;table&gt; tag in previous example.</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;HTML Layouts using DIV, SPAN&lt;/title&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;div style = "width:100%"&gt;
+		
+         &lt;div style = "background-color:#b5dcb3; width:100%"&gt;
+            &lt;h1&gt;This is Web Page Main title&lt;/h1&gt;
+         &lt;/div&gt;
+			
+         &lt;div style = "background-color:#aaa; height:200px; width:100px; float:left;"&gt;
+            &lt;div&gt;&lt;b&gt;Main Menu&lt;/b&gt;&lt;/div&gt;
+            HTML&lt;br /&gt;
+            PHP&lt;br /&gt;
+            PERL...
+         &lt;/div&gt;
+			
+         &lt;div style = "background-color:#eee; height:200px; width:350px; float:left;" &gt;
+            &lt;p&gt;Technical and Managerial Tutorials&lt;/p&gt;
+         &lt;/div&gt;
+		
+         &lt;div style = "background-color:#aaa; height:200px; width:100px; float:right;"&gt;
+            &lt;div&gt;&lt;b&gt;Right Menu&lt;/b&gt;&lt;/div&gt;
+            HTML&lt;br /&gt;
+            PHP&lt;br /&gt;
+            PERL...
+         &lt;/div&gt;
+			
+         &lt;div style = "background-color:#b5dcb3; clear:both"&gt;
+            &lt;center&gt;
+               Copyright &copy; 2007 Tutorialspoint.com
+            &lt;/center&gt;
+         &lt;/div&gt;
+			
+      &lt;/div&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<a href="htmlquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="HTML">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

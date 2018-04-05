@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3D Projection</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">3D PROJECTION</button>
+  
+</div>
+
+<div id="c1" class="tabcontent">
+
+<h1>3D Computer Graphics</h1>
+
+<p>In the 2D system, we use only two coordinates X and Y but in 3D, an extra coordinate Z is added. 3D graphics techniques and their application are fundamental to the entertainment, games, and computer-aided design industries. It is a continuing area of research in scientific visualization.</p>
+<p>Furthermore, 3D graphics components are now a part of almost every personal computer and, although traditionally intended for graphics-intensive software such as games, they are increasingly being used by other applications.</p>
+<img src="3d_coordinates.jpg" alt="3D Coordinates" />
+<h2>Parallel Projection</h2>
+<p>Parallel projection discards z-coordinate and parallel lines from each vertex on the object are extended until they intersect the view plane. In parallel projection, we specify a direction of projection instead of center of projection.</p>
+<p>In parallel projection, the distance from the center of projection to project plane is infinite. In this type of projection, we connect the projected vertices by line segments which correspond to connections on the original object.</p>
+<p>Parallel projections are less realistic, but they are good for exact measurements. In this type of projections, parallel lines remain parallel and angles are not preserved. Various types of parallel projections are shown in the following hierarchy.</p>
+<img src="parallel_projection.jpg" alt="Parallel Projection" />
+<h2>Orthographic Projection</h2>
+<p>In orthographic projection the direction of projection is normal to the projection of the plane. There are three types of orthographic projections &minus;</p>
+<ul class="list">
+<li>Front Projection</li>
+<li>Top Projection</li>
+<li>Side Projection</li>
+</ul>
+<img src="orthographic_projections.jpg" alt="Orthographic Projections" />
+<h2>Oblique Projection</h2>
+<p>In orthographic projection, the direction of projection is not normal to the projection of plane. In oblique projection, we can view the object better than orthographic projection.</p>
+<p>There are two types of oblique projections &minus; <b>Cavalier</b> and <b>Cabinet</b>. The Cavalier projection makes 45&deg; angle with the projection plane. The projection of a line perpendicular to the view plane has the same length as the line itself in Cavalier projection. In a cavalier projection, the foreshortening factors for all three principal directions are equal.</p>
+<p>The Cabinet projection makes 63.4&deg; angle with the projection plane. In Cabinet projection, lines perpendicular to the viewing surface are projected at &frac12; their actual length. Both the projections are shown in the following figure &minus;</p>
+<img src="cavalier_and_cabinet_projection.jpg" alt="Cavalier and Cabinet Projection" />
+<h2>Isometric Projections</h2>
+<p>Orthographic projections that show more than one side of an object are called <b>axonometric orthographic projections</b>. The most common axonometric projection is an <b>isometric projection</b> where the projection plane intersects each coordinate axis in the model coordinate system at an equal distance. In this projection parallelism of lines are preserved but angles are not preserved. The following figure shows isometric projection &minus;</p>
+<img src="isometric_projections.jpg" alt="Isometric Projections" />
+<h2>Perspective Projection</h2>
+<p>In perspective projection, the distance from the center of projection to project plane is finite and the size of the object varies inversely with distance which looks more realistic.</p>
+<p>The distance and angles are not preserved and parallel lines do not remain parallel. Instead, they all converge at a single point called <b>center of projection</b> or <b>projection reference point</b>. There are 3 types of perspective projections which are shown in the following chart.</p>
+<ul class="list">
+<li><p><b>One point</b> perspective projection is simple to draw.</p></li>
+<li><p><b>Two point</b> perspective projection gives better impression of depth.</p></li>
+<li><p><b>Three point</b> perspective projection is most difficult to draw.</p></li>
+</ul>
+<img src="perspective_projections_types.jpg" alt="Perspective Projections Types" />
+<p>The following figure shows all the three types of perspective projection &minus;</p>
+<img src="three_types_of_perspective_projection.jpg" alt="Three Types of Perspective Projections" />
+<h2>Translation</h2>
+<p>In 3D translation, we transfer the Z coordinate along with the X and Y coordinates. The process for translation in 3D is similar to 2D translation. A translation moves an object into a different position on the screen.</p>
+<p>The following figure shows the effect of translation &minus;</p>
+<img src="3d_translation.jpg" alt="3D Translation" />
+<p>A point can be translated in 3D by adding translation coordinate $(t_{x,} t_{y,} t_{z})$ to the original coordinate (X, Y, Z) to get the new coordinate (X’, Y’, Z’).</p>
+<p style="text-align:center;">$T = \begin{bmatrix}
+ 1& 0&  0& 0\\ 
+ 0&  1& 0& 0\\ 
+ 0&  0&  1& 0\\ 
+ t_{x}& t_{y}&  t_{z}& 1\\
+\end{bmatrix}$</p>
+<p style="text-align:center;">P’ = P·T</p>
+<p style="text-align:center;">$[X' \:\: Y' \:\: Z' \:\: 1] \: = \: [X \:\: Y \:\: Z \:\: 1] \: \begin{bmatrix}
+ 1& 0&  0& 0\\ 
+ 0&  1& 0& 0\\ 
+ 0&  0&  1& 0\\ 
+ t_{x}& t_{y}&  t_{z}& 1\\
+\end{bmatrix}$</p>
+<p style="padding-left:38%;">$= [X + t_{x} \:\:\: Y + t_{y} \:\:\: Z + t_{z} \:\:\: 1]$</p>
+<hr />
+<a href="3dprojectionquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="3D Projection">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
+

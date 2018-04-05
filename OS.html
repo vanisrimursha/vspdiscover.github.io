@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Operating System</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Overviewing of  OperatingSystem</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">OS-Types</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">OS-Services</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">OS-Properties</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">OS-Scheduling Algorithms</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">OS-Memory Management</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">OS-File System</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">OS-Security</button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h2>OperatingSystem</h2>
+
+<p>An Operating System (OS) is an interface between a computer user and computer hardware. An operating system is a software which performs all the basic tasks like file management, memory management, process management, handling input and output, and controlling peripheral devices such as disk drives and printers.</br>
+
+Some popular Operating Systems include Linux, Windows, OS X, VMS, OS/400, AIX, z/OS, etc.
+</br>
+<h3>Definition</h3>
+
+An operating system is a program that acts as an interface between the user and the computer hardware and controls the execution of all kinds of programs.</br>
+
+<h3>Conceptual view of an Operating System</h3>
+
+Memory Management</br>
+Processor Management</br>
+Device Management</br>
+File Management</br>
+Security</br>
+Control over system performance</br>
+Job accounting</br>
+Error detecting aids</br>
+Coordination between other software and users</br>
+<h3>Memory Management</h3>
+
+Memory management refers to management of Primary Memory or Main Memory. Main memory is a large array of words or bytes where each word or byte has its own address.</br>
+
+Main memory provides a fast storage that can be accessed directly by the CPU. For a program to be executed, it must in the main memory. An Operating System does the following activities for memory management -</br>
+
+Keeps tracks of primary memory, i.e., what part of it are in use by whom, what part are not in use.</br>
+
+In multiprogramming, the OS decides which process will get memory when and how much.</br>
+
+Allocates the memory when a process requests it to do so.
+</br>
+De-allocates the memory when a process no longer needs it or has been terminated.
+</br>
+<h3>Processor Management</h3>
+In multiprogramming environment, the OS decides which process gets the processor when and for how much time. This function is called process scheduling. An Operating System does the following activities for processor management -
+</br>
+Keeps tracks of processor and status of process. The program responsible for this task is known as traffic controller.
+</br>
+Allocates the processor (CPU) to a process.
+</br>
+De-allocates processor when a process is no longer required.
+</br>
+<h3>Device Management</h3>
+An Operating System manages device communication via their respective drivers. It does the following activities for device management -
+</br>
+Keeps tracks of all devices. Program responsible for this task is known as the I/O controller.
+</br>
+Decides which process gets the device when and for how much time.
+</br>
+Allocates the device in the efficient way.
+</br>
+De-allocates devices.
+</br>
+<h3>File Management</h3>
+A file system is normally organized into directories for easy navigation and usage. These directories may contain files and other directions.
+</br>
+An Operating System does the following activities for file management -
+</br>
+Keeps track of information, location, uses, status etc. The collective facilities are often known as file system.
+</br>
+Decides who gets the resources.
+</br>
+Allocates the resources.
+</br>
+De-allocates the resources.
+</br>
+<h3>Other Important Activities</h3>
+
+Security - By means of password and similar other techniques, it prevents unauthorized access to programs and data.
+</br>
+Control over system performance - Recording delays between request for a service and response from the system.
+</br>
+Job accounting - Keeping track of time and resources used by various jobs and users.
+</br>
+Error detecting aids - Production of dumps, traces, error messages, and other debugging and error detecting aids.
+</br>
+Coordination between other softwares and users - Coordination and assignment of compilers, interpreters, assemblers and other software to the various users of the computer systems.
+</br>
+
+</div>
+
+<div id="c2" class="tabcontent">
+<h3>OS-Types</h3>
+
+<p>Operating systems are there from the very first computer generation and they keep evolving with time. In this chapter, we will discuss some of the important types of operating systems which are most commonly used.</br></br>
+
+<h3>Batch operating system</h3>
+The users of a batch operating system do not interact with the computer directly. Each user prepares his job on an off-line device like punch cards and submits it to the computer operator. To speed up processing, jobs with similar needs are batched together and run as a group. The programmers leave their programs with the operator and the operator then sorts the programs with similar requirements into batches.
+</br></br>
+<h4>The problems with Batch Systems are as follows </h4>
+
+Lack of interaction between the user and the job.
+</br></br>
+CPU is often idle, because the speed of the mechanical I/O devices is slower than the CPU.</br></br>
+Difficult to provide the desired priority.</br></br>
+<b>Time-sharing operating systems</b></br></br>
+Time-sharing is a technique which enables many people, located at various terminals, to use a particular computer system at the same time. Time-sharing or multitasking is a logical extension of multiprogramming. Processor's time which is shared among multiple users simultaneously is termed as time-sharing.</br></br>
+
+<b>The main difference between Multiprogrammed Batch Systems and Time-Sharing Systems is that in case of Multiprogrammed batch systems, the objective is to maximize processor use, whereas in Time-Sharing Systems, the objective is to minimize response time.</b></br></br>
+
+Multiple jobs are executed by the CPU by switching between them, but the switches occur so frequently. Thus, the user can receive an immediate response. For example, in a transaction processing, the processor executes each user program in a short burst or quantum of computation. That is, if n users are present, then each user can get a time quantum. When the user submits the command, the response time is in few seconds at most.</br>
+
+The operating system uses CPU scheduling and multiprogramming to provide each user with a small portion of a time. Computer systems that were designed primarily as batch systems have been modified to time-sharing systems.
+</br>
+<b>Advantages of Timesharing operating systems are as follows </b>
+</br></br>
+Provides the advantage of quick response.
+</br></br>
+Avoids duplication of software.
+</br></br>
+Reduces CPU idle time.
+</br></br>
+<b>Disadvantages of Time-sharing operating systems are as follows -</b></br>
+
+Problem of reliability.</br>
+Question of security and integrity of user programs and data.</br>
+Problem of data communication.</br>
+
+<h3>Distributed operating System</h3>
+Distributed systems use multiple central processors to serve multiple real-time applications and multiple users. Data processing jobs are distributed among the processors accordingly.
+</br>
+The processors communicate with one another through various communication lines (such as high-speed buses or telephone lines). These are referred as loosely coupled systems or distributed systems. Processors in a distributed system may vary in size and function. These processors are referred as sites, nodes, computers, and so on.
+</br>
+<b>The advantages of distributed systems are as follows </b>
+</br>
+With resource sharing facility, a user at one site may be able to use the resources available at another.</br>
+Speedup the exchange of data with one another via electronic mail.</br>
+If one site fails in a distributed system, the remaining sites can potentially continue operating.</br>
+Better service to the customers.</br>
+Reduction of the load on the host computer.</br>
+Reduction of delays in data processing.</br>
+
+<h3>Network operating System</h3>
+
+A Network Operating System runs on a server and provides the server the capability to manage data, users, groups, security, applications, and other networking functions. The primary purpose of the network operating system is to allow shared file and printer access among multiple computers in a network, typically a local area network (LAN), a private network or to other networks.
+</br>
+<b>Examples of network operating systems include Microsoft Windows Server 2003, Microsoft Windows Server 2008, UNIX, Linux, Mac OS X, Novell NetWare, and BSD.</b>
+</br>
+<h4>The advantages of network operating systems are as follows </h4>
+
+Centralized servers are highly stable.
+</br>
+Security is server managed.
+</br>
+Upgrades to new technologies and hardware can be easily integrated into the system.
+</br>
+Remote access to servers is possible from different locations and types of systems.
+</br>
+The disadvantages of network operating systems are as follows -
+</br>
+High cost of buying and running a server.
+</br>
+Dependency on a central location for most operations.
+</br>
+Regular maintenance and updates are required.
+</br>
+<h3>Real Time operating System</h3>
+A real-time system is defined as a data processing system in which the time interval required to process and respond to inputs is so small that it controls the environment. The time taken by the system to respond to an input and display of required updated information is termed as the response time. So in this method, the response time is very less as compared to online processing.
+</br>
+Real-time systems are used when there are rigid time requirements on the operation of a processor or the flow of data and real-time systems can be used as a control device in a dedicated application. A real-time operating system must have well-defined, fixed time constraints, otherwise the system will fail. For example, Scientific experiments, medical imaging systems, industrial control systems, weapon systems, robots, air traffic control systems, etc.
+</br>
+There are two types of real-time operating systems.
+</br>
+<b>Hard real-time systems
+Hard real-time systems guarantee that critical tasks complete on time. In hard real-time systems, secondary storage is limited or missing and the data is stored in ROM. In these systems, virtual memory is almost never found.</b>
+
+<h3>Soft real-time systems</h3>
+Soft real-time systems are less restrictive. A critical real-time task gets priority over other tasks and retains the priority until it completes. Soft real-time systems have limited utility than hard real-time systems. For example, multimedia, virtual reality, Advanced Scientific Projects like undersea exploration and planetary rovers, etc.
+</div>
+<div id="c3" class="tabcontent">
+<h3>OS-Services</h3>
+
+<p>An Operating System provides services to both the users and to the programs.</br>
+</br>
+It provides programs an environment to execute.
+</br></br>
+It provides users the services to execute the programs in a convenient manner.
+</br></br>
+Following are a few common services provided by an operating system -
+</br></br>
+1.Program execution
+</br></br>
+2.I/O operations
+</br></br>
+3.File System manipulation
+</br></br>
+4.Communication
+</br></br>
+5.Error Detection
+</br></br>
+6.Resource Allocation
+</br></br>
+7.Protection
+</br></br>
+<h3>Program execution</h3>
+
+Operating systems handle many kinds of activities from user programs to system programs like printer spooler, name servers, file server, etc. Each of these activities is encapsulated as a process.
+</br></br>
+A process includes the complete execution context (code to execute, data to manipulate, registers, OS resources in use). Following are the major activities of an operating system with respect to program management -
+</br></br>
+Loads a program into memory.
+</br></br>
+Executes the program.
+</br></br>
+Handles program's execution.
+</br></br>
+Provides a mechanism for process synchronization.
+</br></br>
+Provides a mechanism for process communication.
+</br></br>
+Provides a mechanism for deadlock handling.</br></br>
+<b>I/O Operation</b>
+</br></br>
+An I/O subsystem comprises of I/O devices and their corresponding driver software. Drivers hide the peculiarities of specific hardware devices from the users.
+</br></br>
+An Operating System manages the communication between user and device drivers.
+</br></br>
+I/O operation means read or write operation with any file or any specific I/O device.
+</br></br>
+Operating system provides the access to the required I/O device when required.</br></br>
+<h3>File system manipulation</h3>
+A file represents a collection of related information. Computers can store files on the disk (secondary storage), for long-term storage purpose. Examples of storage media include magnetic tape, magnetic disk and optical disk drives like CD, DVD. Each of these media has its own properties like speed, capacity, data transfer rate and data access methods.
+</br></br>
+A file system is normally organized into directories for easy navigation and usage. These directories may contain files and other directions. Following are the major activities of an operating system with respect to file management -
+</br></br>
+<h3>Program needs to read a file or write a file.</h3>
+The operating system gives the permission to the program for operation on file.
+</br></br>
+Permission varies from read-only, read-write, denied and so on.
+</br></br>
+Operating System provides an interface to the user to create/delete files.
+</br></br>
+Operating System provides an interface to the user to create/delete directories.
+</br></br>
+Operating System provides an interface to create the backup of file system.
+</br></br>
+<h3>Communication</h3>
+In case of distributed systems which are a collection of processors that do not share memory, peripheral devices, or a clock, the operating system manages communications between all the processes. Multiple processes communicate with one another through communication lines in the network.
+</br></br>
+The OS handles routing and connection strategies, and the problems of contention and security. Following are the major activities of an operating system with respect to communication -
+</br></br>
+Two processes often require data to be transferred between them
+</br></br>
+Both the processes can be on one computer or on different computers, but are connected through a computer network.
+Communication may be implemented by two methods, either by Shared Memory or by Message Passing.</br></br>
+<h3>Error handling</h3>
+Errors can occur anytime and anywhere. An error may occur in CPU, in I/O devices or in the memory hardware. Following are the major activities of an operating system with respect to error handling -
+</br></br>
+The OS constantly checks for possible errors.</br></br>
+The OS takes an appropriate action to ensure correct and consistent computing.</br></br>
+Resource Management</br></br>
+In case of multi-user or multi-tasking environment, resources such as main memory, CPU cycles and files storage are to be allocated to each user or job. Following are the major activities of an operating system with respect to resource management -
+</br></br>
+The OS manages all kinds of resources using schedulers.</br></br>
+CPU scheduling algorithms are used for better utilization of CPU.</br></br>
+<h3>Protection</h3>
+Considering a computer system having multiple users and concurrent execution of multiple processes, the various processes must be protected from each other's activities.
+</br></br>
+Protection refers to a mechanism or a way to control the access of programs, processes, or users to the resources defined by a computer system. Following are the major activities of an operating system with respect to protection -
+</br></br>
+
+The OS ensures that all access to system resources is controlled.
+</br></br>
+The OS ensures that external I/O devices are protected from invalid access attempts.
+</br></br>
+The OS provides authentication features for each user by means of passwords.</br></br>
+</div>
+
+<div id="c4" class="tabcontent">
+<h2>OS-Properties</h2>
+<h3>Batch processing</h3>
+<p>
+Batch processing is a technique in which an Operating System collects the programs and data together in a batch before processing starts. An operating system does the following activities related to batch processing -
+</br></br>
+The OS defines a job which has predefined sequence of commands, programs and data as a single unit.
+</br></br>
+The OS keeps a number a jobs in memory and executes them without any manual information.
+</br></br>
+Jobs are processed in the order of submission, i.e., first come first served fashion.
+</br></br>
+When a job completes its execution, its memory is released and the output for the job gets copied into an output spool for later printing or processing.
+</br></br>
+<b>Advantages</b></br></br>
+Batch processing takes much of the work of the operator to the computer.
+</br></br>
+Increased performance as a new job get started as soon as the previous job is finished, without any manual intervention.
+</br></br>
+<b>Disadvantages</b>
+</br></br>
+Difficult to debug program.
+</br></br>
+A job could enter an infinite loop.
+</br></br>
+Due to lack of protection scheme, one batch job can affect pending jobs.
+</br></br>
+<h3>Multitasking</h3>
+</br></br>
+Multitasking is when multiple jobs are executed by the CPU simultaneously by switching between them. Switches occur so frequently that the users may interact with each program while it is running. An OS does the following activities related to multitasking -
+</br></br>
+The user gives instructions to the operating system or to a program directly, and receives an immediate response.
+</br></br>
+The OS handles multitasking in the way that it can handle multiple operations/executes multiple programs at a time.
+</br></br>
+Multitasking Operating Systems are also known as Time-sharing systems.
+</br></br>
+These Operating Systems were developed to provide interactive use of a computer system at a reasonable cost.
+</br></br>
+A time-shared operating system uses the concept of CPU scheduling and multiprogramming to provide each user with a small portion of a time-shared CPU.
+</br></br>
+Each user has at least one separate program in memory.
+</br></br>
+
+A program that is loaded into memory and is executing is commonly referred to as a process.
+</br></br>
+When a process executes, it typically executes for only a very short time before it either finishes or needs to perform I/O.
+</br></br>
+Since interactive I/O typically runs at slower speeds, it may take a long time to complete. During this time, a CPU can be utilized by another process.
+</br></br>
+The operating system allows the users to share the computer simultaneously. Since each action or command in a time-shared system tends to be short, only a little CPU time is needed for each user.
+</br></br>
+As the system switches CPU rapidly from one user/program to the next, each user is given the impression that he/she has his/her own CPU, whereas actually one CPU is being shared among many users.
+</br></br>
+<h3>Multiprogramming</h3>
+Sharing the processor, when two or more programs reside in memory at the same time, is referred as multiprogramming. Multiprogramming assumes a single shared processor. Multiprogramming increases CPU utilization by organizing jobs so that the CPU always has one to execute.
+</br></br>
+The following figure shows the memory layout for a multiprogramming system.
+</br></br>
+Memory layout
+</br></br>
+An OS does the following activities related to multiprogramming.
+</br></br>
+The operating system keeps several jobs in memory at a time.
+</br></br>
+This set of jobs is a subset of the jobs kept in the job pool.
+</br></br>
+The operating system picks and begins to execute one of the jobs in the memory.
+</br></br>
+Multiprogramming operating systems monitor the state of all active programs and system resources using memory management programs to ensures that the CPU is never idle, unless there are no jobs to process.
+</br></br>
+<b>Advantages</b></br></br>
+High and efficient CPU utilization.
+</br></br>
+User feels that many programs are allotted CPU almost simultaneously.
+</br></br>
+<b>Disadvantages</b></br></br>
+CPU scheduling is required.
+</br></br>
+To accommodate many jobs in memory, memory management is required.
+</br></br>
+<h3>Interactivity</h3>
+</br></br>
+Interactivity refers to the ability of users to interact with a computer system. An Operating system does the following activities related to interactivity -
+</br></br>
+Provides the user an interface to interact with the system.
+</br></br>
+Manages input devices to take inputs from the user. For example, keyboard.
+</br></br>
+Manages output devices to show outputs to the user. For example, Monitor.
+</br></br>
+The response time of the OS needs to be short, since the user submits and waits for the result.
+</br></br>
+<h3>Real Time System</h3>
+Real-time systems are usually dedicated, embedded systems. An operating system does the following activities related to real-time system activity.
+</br></br>
+In such systems, Operating Systems typically read from and react to sensor data.
+</br></br>
+The Operating system must guarantee response to events within fixed periods of time to ensure correct performance.
+</br></br>
+<h3>Distributed Environment</h3>
+</br></br>
+A distributed environment refers to multiple independent CPUs or processors in a computer system. An operating system does the following activities related to distributed environment -
+</br></br>
+The OS distributes computation logics among several physical processors.
+</br></br>
+The processors do not share memory or a clock. Instead, each processor has its own local memory.
+</br></br>
+The OS manages the communications between the processors. They communicate with each other through various communication lines.
+</br></br>
+<h3>Spooling</h3>
+Spooling is an acronym for simultaneous peripheral operations on line. Spooling refers to putting data of various I/O jobs in a buffer. This buffer is a special area in memory or hard disk which is accessible to I/O devices.
+</br></br>
+An operating system does the following activities related to distributed environment -
+</br></br>
+Handles I/O device data spooling as devices have different data access rates.
+</br></br>
+Maintains the spooling buffer which provides a waiting station where data can rest while the slower device catches up.
+</br></br>
+Maintains parallel computation because of spooling process as a computer can perform I/O in parallel fashion. It becomes possible to have the computer read data from a tape, write data to disk and to write out to a tape printer while it is doing its computing task.
+</br></br>
+<b>Advantages</b>
+</br></br>
+
+The spooling operation uses a disk as a very large buffer.
+</br></br>
+Spooling is capable of overlapping I/O operation for one job with processor operations for another job.
+</br></br>
+</div>
+
+<div id="c5" class="tabcontent">
+<h3>OS-Scheduling Alogithm</h3>
+<p>
+A Process Scheduler schedules different processes to be assigned to the CPU based on particular scheduling algorithms. There are six popular process scheduling algorithms which we are going to discuss in this chapter -
+</br></br>
+1.First-Come, First-Served (FCFS) Scheduling
+</br></br>
+2.Shortest-Job-Next (SJN) Scheduling
+</br></br>
+3.Priority Scheduling
+</br></br>
+4.Shortest Remaining Time
+</br></br>
+5.Round Robin(RR) Scheduling
+</br></br>
+6.Multiple-Level Queues Scheduling
+</br></br>
+
+<h4>First Come First Serve (FCFS)</h4>
+
+Jobs are executed on first come, first serve basis.
+</br></br>
+It is a non-preemptive, pre-emptive scheduling algorithm.
+</br></br>
+Easy to understand and implement.
+</br></br>
+Its implementation is based on FIFO queue.
+</br></br>
+Poor in performance as average wait time is high.
+</br></br>
+First Come First Serve Scheduling Algorithm
+</br></br>
+Wait time of each process is as follows -
+</br></br>
+<b>Process	Wait Time : Service Time - Arrival Time</b></br></br>
+P0--->	0 - 0 = 0
+</br></br>
+P1--->	5 - 1 = 4
+</br></br>
+P2--->	8 - 2 = 6
+</br></br>
+P3--->	16 - 3 = 13
+</br></br>
+Average Wait Time: (0+4+6+13) / 4 = 5.75
+</br></br>
+<h4>Shortest Job Next (SJN)</h4>
+
+This is also known as shortest job first, or SJF
+</br></br>
+This is a non-preemptive, pre-emptive scheduling algorithm.
+</br></br>
+Best approach to minimize waiting time.
+</br></br>
+Easy to implement in Batch systems where required CPU time is known in advance.
+</br></br>
+Impossible to implement in interactive systems where required CPU time is not known.
+</br></br>
+The processer should know in advance how much time process will take.
+</br></br>
+Shortest Job First Scheduling Algorithm
+</br></br>
+
+Wait time of each process is as follows -
+</br></br>
+<b>Process	Wait Time : Service Time - Arrival Time</b>
+</br></br>P0--->	3 - 0 = 3
+</br></br>
+P1--->	0 - 0 = 0
+</br></br>
+P2--->	16 - 2 = 14
+</br></br>
+
+P3--->	8 - 3 = 5
+</br></br>
+Average Wait Time: (3+0+14+5) / 4 = 5.50
+</br></br>
+<h4>Priority Based Scheduling</h4>
+
+Priority scheduling is a non-preemptive algorithm and one of the most common scheduling algorithms in batch systems.
+</br></br>
+Each process is assigned a priority. Process with highest priority is to be executed first and so on.
+</br></br>
+Processes with same priority are executed on first come first served basis.
+</br></br>
+Priority can be decided based on memory requirements, time requirements or any other resource requirement.
+</br></br>
+Priority Scheduling Algorithm
+</br></br>
+
+Wait time of each process is as follows -
+</br></br>
+<b>Process	Wait Time : Service Time - Arrival Time</b>
+</br></br>P0--->	9 - 0 = 9
+</br></br>
+P1--->	6 - 1 = 5
+</br></br>
+P2--->	14 - 2 = 12
+</br></br>
+P3--->	0 - 0 = 0
+</br></br>
+Average Wait Time: (9+5+12+0) / 4 = 6.5
+</br></br>
+<h4>Shortest Remaining Time</h4>
+
+Shortest remaining time (SRT) is the preemptive version of the SJN algorithm.
+</br></br>
+The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion.
+</br></br>
+Impossible to implement in interactive systems where required CPU time is not known.
+</br></br>
+It is often used in batch environments where short jobs need to give preference.
+</br></br>
+<h4>Round Robin Scheduling</h4>
+
+Round Robin is the preemptive process scheduling algorithm.
+</br></br>
+Each process is provided a fix time to execute, it is called a quantum.
+</br></br>
+Once a process is executed for a given time period, it is preempted and other process executes for a given time period.
+</br></br>
+Context switching is used to save states of preempted processes.
+</br></br>
+
+<b>Process	Wait Time : Service Time - Arrival Time</b>
+</br></br>P0--->	(0 - 0) + (12 - 3) = 9</br></br>
+P1--->	(3 - 1) = 2</br></br>
+P2--->	(6 - 2) + (14 - 9) + (20 - 17) = 12</br></br>
+P3--->	(9 - 3) + (17 - 12) = 11</br></br>
+
+Average Wait Time: (9+2+12+11) / 4 = 8.5
+</br></br>
+<h4>Multiple-Level Queues Scheduling</h4>
+
+Multiple-level queues are not an independent scheduling algorithm. They make use of other existing algorithms to group and schedule jobs with common characteristics.
+</br></br>
+Multiple queues are maintained for processes with common characteristics.
+</br></br>
+Each queue can have its own scheduling algorithms.
+</br></br>
+Priorities are assigned to each queue.
+</br></br>
+For example, CPU-bound jobs can be scheduled in one queue and all I/O-bound jobs in another queue. The Process Scheduler then alternately selects jobs from each queue and assigns them to the CPU based on the algorithm assigned to the queue.
+</br></br>
+
+</div>
+
+<div id="c6" class="tabcontent">
+<h2>OS-Memory Management</h2>
+<p>
+Memory management is the functionality of an operating system which handles or manages primary memory and moves processes back and forth between main memory and disk during execution. Memory management keeps track of each and every memory location, regardless of either it is allocated to some process or it is free. It checks how much memory is to be allocated to processes. It decides which process will get memory at what time. It tracks whenever some memory gets freed or unallocated and correspondingly it updates the status.</br>
+</br>
+<b>Process Address Space</b>
+</br></br>
+The process address space is the set of logical addresses that a process references in its code. For example, when 32-bit addressing is in use, addresses can range from 0 to 0x7fffffff; that is, 2^31 possible numbers, for a total theoretical size of 2 gigabytes.
+</br></br>
+The operating system takes care of mapping the logical addresses to physical addresses at the time of memory allocation to the program. There are three types of addresses used in a program before and after memory is allocated -
+</br></br>
+<b>S.N.	Memory Addresses & Description</b>
+<b>	</br></br>
+Symbolic addresses</b>
+</br></br>
+The addresses used in a source code. The variable names, constants, and instruction labels are the basic elements of the symbolic address space.
+</br></br>
+<b>	
+Relative addresses</b>
+</br></br>
+At the time of compilation, a compiler converts symbolic addresses into relative addresses.
+</br></br>
+<b>	
+Physical addresses</b>
+</br></br>
+The loader generates these addresses at the time when a program is loaded into main memory.
+</br></br>
+Virtual and physical addresses are the same in compile-time and load-time address-binding schemes. Virtual and physical addresses differ in execution-time address-binding scheme.
+</br></br>
+The set of all logical addresses generated by a program is referred to as a logical address space. The set of all physical addresses corresponding to these logical addresses is referred to as a physical address space.
+</br></br>
+The runtime mapping from virtual to physical address is done by the memory management unit (MMU) which is a hardware device. MMU uses following mechanism to convert virtual address to physical address.
+</br></br>
+The value in the base register is added to every address generated by a user process, which is treated as offset at the time it is sent to memory. For example, if the base register value is 10000, then an attempt by the user to use address location 100 will be dynamically reallocated to location 10100.
+</br></br>
+The user program deals with virtual addresses; it never sees the real physical addresses.
+</br></br>
+<b>Static vs Dynamic Loading</b>
+</br></br>
+The choice between Static or Dynamic Loading is to be made at the time of computer program being developed. If you have to load your program statically, then at the time of compilation, the complete programs will be compiled and linked without leaving any external program or module dependency. The linker combines the object program with other necessary object modules into an absolute program, which also includes logical addresses.
+</br></br>
+If you are writing a Dynamically loaded program, then your compiler will compile the program and for all the modules which you want to include dynamically, only references will be provided and rest of the work will be done at the time of execution.
+</br></br>
+At the time of loading, with static loading, the absolute program (and data) is loaded into memory in order for execution to start.
+</br></br>
+If you are using dynamic loading, dynamic routines of the library are stored on a disk in relocatable form and are loaded into memory only when they are needed by the program.
+</br></br>
+<b>Static vs Dynamic Linking</b></br></br>
+As explained above, when static linking is used, the linker combines all other modules needed by a program into a single executable program to avoid any runtime dependency.
+</br></br>
+When dynamic linking is used, it is not required to link the actual module or library with the program, rather a reference to the dynamic module is provided at the time of compilation and linking. Dynamic Link Libraries (DLL) in Windows and Shared Objects in Unix are good examples of dynamic libraries.
+</br></br>
+<b>Swapping</b>
+</br></br>
+Swapping is a mechanism in which a process can be swapped temporarily out of main memory (or move) to secondary storage (disk) and make that memory available to other processes. At some later time, the system swaps back the process from the secondary storage to main memory.
+</br></br>
+Though performance is usually affected by swapping process but it helps in running multiple and big processes in parallel and that's the reason Swapping is also known as a technique for memory compaction.
+</br></br>
+<b>Process Swapping</b>
+</br></br>
+The total time taken by swapping process includes the time it takes to move the entire process to a secondary disk and then to copy the process back to memory, as well as the time the process takes to regain main memory.
+</br></br>
+Let us assume that the user process is of size 2048KB and on a standard hard disk where swapping will take place has a data transfer rate around 1 MB per second. The actual transfer of the 1000K process to or from memory will take
+</br></br>
+2048KB / 1024KB per second</br></br>
+= 2 seconds</br></br>
+= 2000 milliseconds</br></br>
+Now considering in and out time, it will take complete 4000 milliseconds plus other overhead where the process competes to regain main memory.
+</br></br>
+<b>Memory Allocation</b></br></br>
+Main memory usually has two partitions -
+</br></br>
+Low Memory - Operating system resides in this memory.
+</br></br>
+High Memory - User processes are held in high memory.
+</br></br>
+Operating system uses the following memory allocation mechanism.
+</br></br>
+<b>S.N.	Memory Allocation & Description</b>
+</br></br>
+<b>1	
+Single-partition allocation</b>
+</br></br>
+In this type of allocation, relocation-register scheme is used to protect user processes from each other, and from changing operating-system code and data. Relocation register contains value of smallest physical address whereas limit register contains range of logical addresses. Each logical address must be less than the limit register.
+</br></br>
+<b>2	
+Multiple-partition allocation</b>
+</br></br>
+In this type of allocation, main memory is divided into a number of fixed-sized partitions where each partition should contain only one process. When a partition is free, a process is selected from the input queue and is loaded into the free partition. When the process terminates, the partition becomes available for another process.
+</br></br>
+<b>Fragmentation</b></br></br>
+As processes are loaded and removed from memory, the free memory space is broken into little pieces. It happens after sometimes that processes cannot be allocated to memory blocks considering their small size and memory blocks remains unused. This problem is known as Fragmentation.
+</br></br>
+<b>Fragmentation is of two types -</b>
+</br></br>
+<b>1	
+External fragmentation</b>
+</br></br>
+Total memory space is enough to satisfy a request or to reside a process in it, but it is not contiguous, so it cannot be used.
+</br></br>
+<b>2	
+Internal fragmentation</b>
+</br></br>
+Memory block assigned to process is bigger. Some portion of memory is left unused, as it cannot be used by another process.
+</br></br>
+The following diagram shows how fragmentation can cause waste of memory and a compaction technique can be used to create more free memory out of fragmented memory -
+</br></br>
+<b>Memory Fragmentation</b></br></br>
+External fragmentation can be reduced by compaction or shuffle memory contents to place all free memory together in one large block. To make compaction feasible, relocation should be dynamic.
+</br></br>
+The internal fragmentation can be reduced by effectively assigning the smallest partition but large enough for the process.
+</br></br>
+<b>Paging</b>
+</br></br>
+A computer can address more memory than the amount physically installed on the system. This extra memory is actually called virtual memory and it is a section of a hard that's set up to emulate the computer's RAM. Paging technique plays an important role in implementing virtual memory.
+</br></br>
+Paging is a memory management technique in which process address space is broken into blocks of the same size called pages (size is power of 2, between 512 bytes and 8192 bytes). The size of the process is measured in the number of pages.
+</br></br>
+Similarly, main memory is divided into small fixed-sized blocks of (physical) memory called frames and the size of a frame is kept the same as that of a page to have optimum utilization of the main memory and to avoid external fragmentation.
+</br></br>
+
+<b>Advantages and Disadvantages of Paging</b>
+</br></br>
+Paging reduces external fragmentation, but still suffer from internal fragmentation.
+</br></br>
+Paging is simple to implement and assumed as an efficient memory management technique.
+</br></br>
+Due to equal size of the pages and frames, swapping becomes very easy.
+</br></br>
+Page table requires extra memory space, so may not be good for a system having small RAM.
+</br></br>
+<b>Segmentation</b>
+</br></br>
+Segmentation is a memory management technique in which each job is divided into several segments of different sizes, one for each module that contains pieces that perform related functions. Each segment is actually a different logical address space of the program.
+</br></br>
+When a process is to be executed, its corresponding segmentation are loaded into non-contiguous memory though every segment is loaded into a contiguous block of available memory.
+</br></br>
+Segmentation memory management works very similar to paging but here segments are of variable-length where as in paging pages are of fixed size.
+</br></br>
+A program segment contains the program's main function, utility functions, data structures, and so on. The operating system maintains a segment map table for every process and a list of free memory blocks along with segment numbers, their size and corresponding memory locations in main memory. For each segment, the table stores the starting address of the segment and the length of the segment. A reference to a memory location includes a value that identifies\ a segment and an offset.
+
+</br></br>
+</div>
+
+
+
+<div id="c8" class="tabcontent">
+<h2>OS-File</h2>
+<p>A file is a named collection of related information that is recorded on secondary storage such as magnetic disks, magnetic tapes and optical disks. In general, a file is a sequence of bits, bytes, lines or records whose meaning is defined by the files creator and user.</br>
+</br>
+<b>File Structure</b>
+</br></br>
+A File Structure should be according to a required format that the operating system can understand.
+</br></br>
+A file has a certain defined structure according to its type.
+</br></br>
+A text file is a sequence of characters organized into lines.
+</br></br>
+A source file is a sequence of procedures and functions.
+</br></br>
+An object file is a sequence of bytes organized into blocks that are understandable by the machine.
+</br></br>
+When operating system defines different file structures, it also contains the code to support these file structure. Unix, MS-DOS support minimum number of file structure.
+</br></br>
+<b>File Type</b>
+</br></br>
+File type refers to the ability of the operating system to distinguish different types of file such as text files source files and binary files etc. Many operating systems support many types of files. Operating system like MS-DOS and UNIX have the following types of files -
+</br></br>
+<b>Ordinary files</b>
+</br></br>
+These are the files that contain user information.
+</br></br>
+These may have text, databases or executable program.
+</br></br>
+The user can apply various operations on such files like add, modify, delete or even remove the entire file.
+</br></br>
+<b>Directory files</b>
+</br></br>
+These files contain list of file names and other information related to these files.</br></br>
+<b>Special files</b>
+</br></br>
+These files are also known as device files.
+</br></br>
+These files represent physical device like disks, terminals, printers, networks, tape drive etc.
+</br></br>
+These files are of two types -
+</br></br>
+Character special files - data is handled character by character as in case of terminals or printers.
+</br></br>
+Block special files - data is handled in blocks as in the case of disks and tapes.
+</br></br>
+<h3>File Access Mechanisms</h3>
+
+File access mechanism refers to the manner in which the records of a file may be accessed. There are several ways to access files -
+</br></br>
+1.Sequential access
+</br></br>
+2.Direct/Random access
+</br></br>
+3.Indexed sequential access
+</br></br>
+4.Sequential access
+</br></br>
+5.A sequential access is that in which the records are accessed in some sequence, i.e., the information in the file is processed in order, one record after the other. This access method is the most primitive one. Example: Compilers usually access files in this fashion.
+</br></br>
+<b>Direct/Random access</b>
+</br></br>
+Random access file organization provides, accessing the records directly.
+</br></br>
+Each record has its own address on the file with by the help of which it can be directly accessed for reading or writing.
+</br></br>
+The records need not be in any sequence within the file and they need not be in adjacent locations on the storage medium.
+</br></br>
+<b>Indexed sequential access</b>
+</br></br>
+This mechanism is built up on base of sequential access.
+</br></br>
+An index is created for each file which contains pointers to various blocks.
+</br></br>
+Index is searched sequentially and its pointer is used to access the file directly.
+</br></br>
+<b>Space Allocation</b></br></br>
+Files are allocated disk spaces by operating system. Operating systems deploy following three main ways to allocate disk space to files.
+</br></br>
+1.Contiguous Allocation
+</br></br>
+2.Linked Allocation
+</br></br>
+3.Indexed Allocation
+</br></br>
+4.Contiguous Allocation
+</br></br>
+5.Each file occupies a contiguous address space on disk.
+</br></br>
+6.Assigned disk address is in linear order.
+</br></br>
+7.Easy to implement.
+</br></br>
+8.External fragmentation is a major issue with this type of allocation technique.
+</br></br>
+<b>Linked Allocation</b>
+</br></br>
+Each file carries a list of links to disk blocks.
+</br></br>
+Directory contains link / pointer to first block of a file.
+</br></br>
+No external fragmentation
+</br></br>
+Effectively used in sequential access file.
+</br></br>
+Inefficient in case of direct access file.
+</br></br>
+<b>Indexed Allocation</b>
+</br></br>
+Provides solutions to problems of contiguous and linked allocation.
+</br></br>
+A index block is created having all pointers to files.
+</br></br>
+Each file has its own index block which stores the addresses of disk space occupied by the file.
+</br></br>
+Directory contains the addresses of index blocks of files.
+</br></br>
+</div>
+
+<div id="c9" class="tabcontent">
+<h2>OS-Security</h2>
+
+<p>Security refers to providing a protection system to computer system resources such as CPU, memory, disk, software programs and most importantly data/information stored in the computer system. If a computer program is run by an unauthorized user, then he/she may cause severe damage to computer or data stored in it. So a computer system must be protected against unauthorized access, malicious access to system memory, viruses, worms etc. We're going to discuss following topics in this chapter.</br>
+
+1.Authentication
+</br></br>
+2.One Time passwords
+</br></br>
+3.program Threats
+</br></br>
+4.System Threats
+</br></br>
+5.Computer Security Classifications
+</br></br>
+<b>Authentication</b>
+</br></br>
+Authentication refers to identifying each user of the system and associating the executing programs with those users. It is the responsibility of the Operating System to create a protection system which ensures that a user who is running a particular program is authentic. Operating Systems generally identifies/authenticates users using following three ways -
+</br></br>
+<b>Username / Password </b>- User need to enter a registered username and password with Operating system to login into the system.
+</br></br>
+<b>User card/key</b> - User need to punch card in card slot, or enter key generated by key generator in option provided by operating system to login into the system.
+</br></br>
+<b>User attribute - fingerprint/ eye retina pattern/ signature</b> - User need to pass his/her attribute via designated input device used by operating system to login into the system.
+</br></br>
+<h4>One Time passwords</h4>
+
+One-time passwords provide additional security along with normal authentication. In One-Time Password system, a unique password is required every time user tries to login into the system. Once a one-time password is used, then it cannot be used again. One-time password are implemented in various ways.
+</br></br>
+<b>Random numbers</b> - Users are provided cards having numbers printed along with corresponding alphabets. System asks for numbers corresponding to few alphabets randomly chosen.
+</br></br>
+<b>Secret key</b> - User are provided a hardware device which can create a secret id mapped with user id. System asks for such secret id which is to be generated every time prior to login.
+</br></br>
+<b>Network password</b> - Some commercial applications send one-time passwords to user on registered mobile/ email which is required to be entered prior to login.
+</br></br>
+<h3>Program Threats</h3>
+
+Operating system's processes and kernel do the designated task as instructed. If a user program made these process do malicious tasks, then it is known as Program Threats. One of the common example of program threat is a program installed in a computer which can store and send user credentials via network to some hacker. Following is the list of some well-known program threats.
+</br></br>
+<b>Trojan Horse </b>- Such program traps user login credentials and stores them to send to malicious user who can later on login to computer and can access system resources.
+</br></br>
+<b>Trap Door</b> - If a program which is designed to work as required, have a security hole in its code and perform illegal action without knowledge of user then it is called to have a trap door.
+</br></br>
+<b>Logic Bomb</b> - Logic bomb is a situation when a program misbehaves only when certain conditions met otherwise it works as a genuine program. It is harder to detect.
+</br></br>
+<b>Virus</b> - Virus as name suggest can replicate themselves on computer system. They are highly dangerous and can modify/delete user files, crash systems. A virus is generatlly a small code embedded in a program. As user accesses the program, the virus starts getting embedded in other files/ programs and can make system unusable for user
+</br></br>
+<h3>System Threats</h3>
+
+System threats refers to misuse of system services and network connections to put user in trouble. System threats can be used to launch program threats on a complete network called as program attack. System threats creates such an environment that operating system resources/ user files are misused. Following is the list of some well-known system threats.
+</br></br>
+<b>Worm</b> - Worm is a process which can choked down a system performance by using system resources to extreme levels. A Worm process generates its multiple copies where each copy uses system resources, prevents all other processes to get required resources. Worms processes can even shut down an entire network.
+</br></br>
+<b>Port Scanning</b> - Port scanning is a mechanism or means by which a hacker can detects system vulnerabilities to make an attack on the system.
+</br></br>
+<b>Denial of Service </b>- Denial of service attacks normally prevents user to make legitimate use of the system. For example, a user may not be able to use internet if denial of service attacks browser's content settings.
+</br></br>
+<h3>Computer Security Classifications</h3>
+As per the U.S. Department of Defense Trusted Computer System's Evaluation Criteria there are four security classifications in computer systems: A, B, C, and D. This is widely used specifications to determine and model the security of systems and of security solutions. Following is the brief description of each classification.
+
+</br></br>
+<b>	
+Type A</b>
+</br>
+Highest Level. Uses formal design specifications and verification techniques. Grants a high degree of assurance of process security.
+</br></br>
+<b>	
+Type B</b>
+</br>
+Provides mandatory protection system. Have all the properties of a class C2 system. Attaches a sensitivity label to each object. It is of three types.
+</br></br>
+B1 - Maintains the security label of each object in the system. Label is used for making decisions to access control.
+</br></br>
+B2 - Extends the sensitivity labels to each system resource, such as storage objects, supports covert channels and auditing of events.
+</br></br>
+B3 - Allows creating lists or user groups for access-control to grant access or revoke access to a given named object.
+</br></br>
+<b>	
+Type C</b>
+</br>
+Provides protection and user accountability using audit capabilities. It is of two types.
+</br></br>
+C1 - Incorporates controls so that users can protect their private information and keep other users from accidentally reading / deleting their data. UNIX versions are mostly Cl class.
+</br></br>
+C2 - Adds an individual-level access control to the capabilities of a Cl level system.
+</br></br>
+<b>	
+Type D
+</b></br>
+Lowest level. Minimum protection. MS-DOS, Window 3.1 fall in this category.</br></br>
+<a href="osquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="OS">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

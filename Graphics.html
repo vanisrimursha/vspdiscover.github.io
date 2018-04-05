@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Computer Graphics</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  Computer Graphics</button>
+ <button class="tablinks" onclick="openCity(event, 'c12')" id="defaultOpen">Raster Graphics</button>
+   <button class="tablinks" onclick="openCity(event, 'c21')">Vector Graphics</button>
+ <button class="tablinks" onclick="openCity(event, 'c13')" id="defaultOpen">Scrolling</button>
+    <button class="tablinks" onclick="openCity(event, 'c14')" id="defaultOpen">Shading</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Line&Circle Drawing Algorithms</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Viewing&Clipping</button>
+ <button class="tablinks" onclick="openCity(event, 'c4')">2D Transformation</button>
+ <button class="tablinks" onclick="openCity(event, 'c5')">3D Transformation</button>
+ <button class="tablinks" onclick="openCity(event, 'c6')">Computer Animations</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">Computer Morphing</button>
+ 
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>Computer Graphics Basics</h1>
+
+<p>Computer graphics is an art of drawing pictures on computer screens with the help of programming. It involves computations, creation, and manipulation of data. In other words, we can say that computer graphics is a rendering tool for the generation and manipulation of images.</p>
+<h2>Cathode Ray Tube</h2>
+<p>The primary output device in a graphical system is the video monitor. The main element of a video monitor is the <b>Cathode Ray Tube (CRT),</b> shown in the following illustration.</p>
+<p>The operation of CRT is very simple &minus;</p>
+<ul class="list">
+<li><p>The electron gun emits a beam of electrons (cathode rays).</p></li>
+<li><p>The electron beam passes through focusing and deflection systems that direct it towards specified positions on the phosphor-coated screen.</p></li>
+<li><p>When the beam hits the screen, the phosphor emits a small spot of light at each position contacted by the electron beam.</p></li>
+<li><p>It redraws the picture by directing the electron beam back over the same screen points quickly.</p></li>
+</ul>
+<p>There are two ways (Random scan and Raster scan) by which we can display an object on the screen.</p>
+<h2>Raster Scan</h2>
+<p>In a raster scan system, the electron beam is swept across the screen, one row at a time from top to bottom. As the electron beam moves across each row, the beam intensity is turned on and off to create a pattern of illuminated spots.</p>
+<p>Picture definition is stored in memory area called the <b>Refresh Buffer</b> or <b>Frame Buffer</b>. This memory area holds the set of intensity values for all the screen points. Stored intensity values are then retrieved from the refresh buffer and “painted” on the screen one row (scan line) at a time as shown in the following illustration.</p>
+<p>Each screen point is referred to as a <b>pixel (picture element)</b> or <b>pel</b>. At the end of each scan line, the electron beam returns to the left side of the screen to begin displaying the next scan line.</p>
+<h3>Random Scan (Vector Scan)</h3>
+<p>In this technique, the electron beam is directed only to the part of the screen where the picture is to be drawn rather than scanning from left to right and top to bottom as in raster scan. It is also called <b>vector display, stroke-writing display,</b> or <b>calligraphic display</b>.</p>
+<p>Picture definition is stored as a set of line-drawing commands in an area of memory referred to as the <b>refresh display file</b>. To display a specified picture, the system cycles through the set of commands in the display file, drawing each component line in turn. After all the line-drawing commands are processed, the system cycles back to the first line command in the list.</p>
+<p>Random-scan displays are designed to draw all the component lines of a picture 30 to 60 times each second.</p>
+<h2>Application of Computer Graphics</h2>
+<p>Computer Graphics has numerous applications, some of which are listed below &minus;</p>
+<ul class="list">
+<li><p><b>Computer graphics user interfaces (GUIs)</b> &minus; A graphic, mouse-oriented paradigm which allows the user to interact with a computer.</p></li>
+<li><p><b>Business presentation graphics</b> &minus; "A picture is worth a thousand words".</p></li>
+<li><p><b>Cartography</b> &minus; Drawing maps.</p></li>
+<li><p><b>Weather Maps</b> &minus; Real-time mapping, symbolic representations.</p></li>
+<li><p><b>Satellite Imaging</b> &minus; Geodesic images.</p></li>
+<li><p><b>Photo Enhancement</b> &minus; Sharpening blurred photos.</p></li>
+<li><p><b>Medical imaging</b> &minus; MRIs, CAT scans, etc. - Non-invasive internal examination.</p></li>
+<li><p><b>Engineering drawings</b> &minus; mechanical, electrical, civil, etc. - Replacing the blueprints of the past.</p></li>
+<li><p><b>Typography</b> &minus; The use of character images in publishing - replacing the hard type of the past.</p></li>
+<li><p><b>Architecture</b> &minus; Construction plans, exterior sketches - replacing the blueprints and hand drawings of the past.</p></li>
+<li><p><b>Art</b> &minus; Computers provide a new medium for artists.</p></li>
+<li><p><b>Training</b> &minus; Flight simulators, computer aided instruction, etc.</p></li>
+<li><p><b>Entertainment</b> &minus; Movies and games.</p></li>
+<li><p><b>Simulation and modeling</b> &minus; Replacing physical modeling and enactments</p></li>
+</ul>
+
+</div>
+<div id="c12" class="tabcontent">
+<h1>Raster Graphics</h1>
+
+<p style="text-align: justify;">Raster graphics are best used for non-line art images; specifically digitized photographs, scanned artwork or detailed graphics. Non-line art images are best represented in raster form because these typically include subtle chromatic gradations, undefined lines and shapes, and complex composition.</p>
+<p style="text-align: justify;">However, because raster images are pixel-based, they suffer a malady called image degradation. Just like photographic images that get blurry and imprecise when blown up, a raster image gets jagged and rough. Why? Ultimately, when you look close enough, you can begin to see the individual pixels that comprise the image. Hence, your raster-based logo, magnified to 1000{d6954f298e7056411867812055b88d7f43ea60a4adf4a53c355cea21d99bcb62}, becomes bitmapped before you know it. Although raster images can be scaled down more easily, smaller versions often appear less crisp or “softer” than the original.</p>
+<p style="text-align: justify;">To maximize the quality of a raster image, you must keep in mind that the raster format is resolution-specific — meaning that raster images are defined and displayed at one specific resolution. Resolution in raster graphics is measured in dpi, or dots per inch. The higher the dpi, the better the resolution. Remember also that the resolution you actually observe on any output device is not a function of the file’s own internal specifications, but the output capacity of the device itself. Thus, high resolution images should only be used if your equipment has the capability to display them at high resolution.</p>
+<p style="text-align: justify;">Better resolution, however, comes at a price. Just as raster files are significantly larger than comparable vector files, high resolution raster files are significantly larger than low resolution raster files. Overall, as compared to vector graphics, raster graphics are less economical, slower to display and print, less versatile and more unwieldy to work with. Remember though that some images, like photographs, are still best displayed in raster format. Common raster formats include TIFF, JPEG, GIF, PCX and BMP files. Despite its shortcomings, raster format is still the Web standard — within a few years, however, vector graphics will likely surpass raster graphics in both prevalence and popularity.</p>
+</div>
+
+<div id="c21" class="tabcontent">
+
+
+				
+<h1>Vector Graphics</h1>
+<p style="text-align: justify;">Unlike pixel-based raster images, vector graphics are based on mathematical formulas that define geometric primitives such as polygons, lines, curves, circles and rectangles. Because vector graphics are composed of true geometric primitives, they are best used to represent more structured images, like line art graphics with flat, uniform colors. Most created images (as opposed to natural images) meet these specifications, including logos, letterhead, and fonts.</p>
+<p style="text-align: justify;">Inherently, vector-based graphics are more malleable than raster images — thus, they are much more versatile, flexible and easy to use. The most obvious advantage of vector images over raster graphics is that vector images are quickly and perfectly scalable. There is no upper or lower limit for sizing vector images. Just as the rules of mathematics apply identically to computations involving two-digit numbers or two-hundred-digit numbers, the formulas that govern the rendering of vector images apply identically to graphics of any size.</p>
+<p style="text-align: justify;">Further, unlike raster graphics, vector images are not resolution-dependent. Vector images have no fixed intrinsic resolution, rather they display at the resolution capability of whatever output device (monitor, printer) is rendering them. Also, because vector graphics need not memorize the contents of millions of tiny pixels, these files tend to be considerably smaller than their raster counterparts. Overall, vector graphics are more efficient and versatile. Common vector formats include AI, EPS, CGM, WMF and PICT (Mac).</p>
+</div>
+
+
+
+
+
+<div id="c13" class="tabcontent">
+
+<h1>SCROLLING IN COMPUTER GRAPHICS</h1>
+<p>
+In computer displays, filmmaking, television production, and other kinetic displays, scrolling is sliding text, images or video across a monitor or display, vertically or horizontally. "Scrolling", as such, does not change the layout of the text or pictures, but moves (pans or tilts) the user's view across what is apparently a larger image that is not wholly seen. A common television and movie special effect is to scroll credits, while leaving the background stationary. Scrolling may take place completely without user intervention (as in film credits) or, on an interactive device, be triggered by touchscreen or a keypress and continue without further intervention until a further user action, or be entirely controlled by input devices.
+</br></br>
+Scrolling may take place in discrete increments (perhaps one or a few lines of text at a time), or continuously (smooth scrolling). Frame rate is the speed at which an entire image is redisplayed. It is related to scrolling in that changes to text and image position can only happen as often as the image can be redisplayed. When frame rate is a limiting factor, one smooth scrolling technique is to blur images during movement that would otherwise appear to "jump".
+</br></br>
+
+<strong>Implementation</strong>
+Scrolling is often carried out on a computer by the CPU (software scrolling) or by a graphics processor. Some systems feature hardware scrolling, where an image may be offset as it is displayed, without any frame buffer manipulation (see also hardware windowing). This was especially common in 8 and 16bit video game consoles.
+</br></br>
+<strong>UI paradigms</strong>
+In a WIMP-style graphical user interface (GUI), user-controlled scrolling is carried out by manipulating a scrollbar with a mouse, or using keyboard shortcuts, often the arrow keys. Scrolling is often supported by text user interfaces and command line interfaces. Older computer terminals changed the entire contents of the display one screenful ("page") at a time; this paging mode requires fewer resources than scrolling. Scrolling displays often also support page mode. Typically certain keys or key combinations page up or down; on PC-compatible keyboards the page up and page down keys or the space bar are used; earlier computers often used control key combinations.[notes 1] Some computer mice have a scroll wheel, which scrolls the display, often vertically, when rolled; others have scroll balls or tilt wheels which allow both vertical and horizontal scrolling.
+</br></br>
+Some software supports other ways of scrolling. Adobe Reader has a mode identified by a small hand icon ("hand tool") on the document, which can then be dragged by clicking on it and moving the mouse as if sliding a large sheet of paper. When this feature is implemented on a touchscreen it is called kinetic scrolling. Touch-screens often use inertial scrolling, in which the scrolling motion of an object continues in a decaying fashion after release of the touch, simulating the appearance of an object with inertia. An early implementation of such behavior was in the "Star7" PDA of Sun Microsystems ca. 1991–1992.
+</br></br>
+Scrolling can be controlled in other software-dependent ways by a PC mouse. Some scroll wheels can be pressed down, functioning like a button. Depending on the software, this allows both horizontal and vertical scrolling by dragging in the direction desired; when the mouse is moved to the original position, scrolling stops. A few scroll wheels can also be tilted, scrolling horizontally in one direction until released. On touchscreen devices, scrolling is a multi-touch gesture, done by swiping a finger on the screen vertically in the direction opposite to where the user wants to scroll to.
+</br></br>
+If any content is too wide to fit on a display, horizontal scrolling is required to view all of it. In applications such as graphics and spreadsheets there is often more content than can fit either the width or the height of the screen at a comfortable scale, and scrolling in both directions is necessary.
+</br></br>
+<strong>Text</strong>
+In languages written horizontally, such as most Western languages, text documents longer than will fit on the screen are often displayed wrapped and sized to fit the screen width, and scrolled vertically to bring desired content into view. It is possible to display lines too long to fit the display without wrapping, scrolling horizontally to view each entire line. However, this requires inconvenient constant line-by-line scrolling, while vertical scrolling is only needed after reading a full screenful.
+</br></br>
+Software such as word processors and web browsers normally uses word-wrapping to display as many words in a single line as will fit the width of the screen or window or, for text organised in columns, each column.
+</br></br>
+<strong>Demos</strong>
+Scrolling texts, also referred to as scrolltexts or scrollers, played an important part in the birth of the computer demo culture. The software crackers often used their deep knowledge of computer platforms to transform the information that accompanied their releases into crack intros. The sole role of these intros was to scroll the text on the screen in an impressive way.
+</br></br>
+Many scrollers were plain horizontal scrollers, but demo coders also paid a lot of attention to creating new and different types of scrolling. The characters could, for example, continuously alter their shape, take unusual flying paths or incorporate color effects such as raster bars. Sometimes it makes the text nearly unreadable.
+</br></br>
+<strong>Film and television</strong>
+Scrolling is commonly used to display the credits at the end of films and television programs.
+</br></br>
+Scrolling is often used in the form of a news ticker towards the bottom of the picture for content such as television news, scrolling sideways across the screen, delivering short-form content.
+</br></br>
+<strong>Video games</strong>
+See also: Side-scrolling video game, Parallax scrolling, and 2.5D
+In computer and video games, scrolling of a playing field allows the player to control an object in a large contiguous area. Early examples of this method include Taito's 1974 vertical-scrolling racing video game Speed Race,Sega's 1976 forward-scrolling racing games Moto-Cross (Fonz) and Road Race, and Super Bug.
+</br></br>
+<strong>Parallax scrolling</strong>
+ which was first featured in Moon Patrol, involves several semi-transparent layers (called playfields), which scroll on top of each other at varying rates in order to give an early pseudo-3D illusion of depth. Belt scrolling is a method used in side-scrolling beat 'em up games with a downward camera angle where players can move up and down in addition to left and right. A previously much used alternative to video game scrolling is the flip-screen method.
+
+</div>
+<div id="c14" class="tabcontent">
+<h1>SHADING IN COMPUTER GRAPHICS</h1>
+
+<p>
+
+Shading refers to depicting depth perception in 3D models or illustrations by varying levels of darkness.[citation needed]
+</br></br>
+
+Example of flat shading vs. Phong shading interpolation. Phong shading is a more realistic shading technique, developed by Bui Tuong Phong in 1973.
+
+</br></br>
+
+
+<b>Example of shading</b>.
+
+Shading is used in drawing for depicting levels of darkness on paper by applying media more densely or with a darker shade for darker areas, and less densely or with a lighter shade for lighter areas. There are various techniques of shading including cross hatching where perpendicular lines of varying closeness are drawn in a grid pattern to shade an area. The closer the lines are together, the darker the area appears. Likewise, the farther apart the lines are, the lighter the area appears.
+
+</br></br>
+Light patterns, such as objects having light and shaded areas, help when creating the illusion of depth on paper.
+
+</br></br>
+Powder shading is a sketching shading method. In this style, the stumping powder and paper stumps are used to draw a picture. This can be in color. The stumping powder is smooth and doesn't have any shiny particles. The paper to be used should have small grains on it so that the powder remains on the paper.
+
+</br></br>
+<b>Computer graphics</b>
+In computer graphics, shading refers to the process of altering the color of an object/surface/polygon in the 3D scene, based on things like (but not limited to) the surface's angle to lights, its distance from lights, its angle to the camera and material properties (e.g. bidirectional reflectance distribution function) to create a photorealistic effect. Shading is performed during the rendering process by a program called a shader.
+
+</br></br>
+Angle to light source
+Shading alters the colors of faces in a 3D model based on the angle of the surface to a light source or light sources.
+
+</br></br>
+The first image below has the faces of the box rendered, but all in the same color. Edge lines have been rendered here as well which makes the image easier to see.
+
+</br></br>
+The second image is the same model rendered without edge lines. It is difficult to tell where one face of the box ends and the next begins.
+
+</br></br>
+The third image has shading enabled, which makes the image more realistic and makes it easier to see which face is which.
+
+</br></br>
+
+Rendered image of a box. This image has no shading on its faces, but uses edge lines to separate the faces.
+
+</br></br>
+This is the same image with the edge lines removed.
+
+</br></br>
+This is the same image rendered with shading of the faces to alter the colors of the 3 faces based on their angle to the light sources.
+Lighting
+
+</br></br>
+Shading effects from floodlight.
+Shading is also dependent on the lighting used. Usually, upon rendering a scene a number of different lighting techniques will be used to make the rendering look more realistic. Different types of light sources are used to give different effects.
+
+</br></br>
+Ambient lighting
+An ambient light source represents an omni-directional, fixed-intensity and fixed-color light source that affects all objects in the scene equally. Upon rendering, all objects in the scene are brightened with the specified intensity and color. This type of light source is mainly used to provide the scene with a basic view of the different objects in it. This is the simplest type of lighting to implement and models how light can be scattered or reflected many times producing a uniform effect.
+
+</br></br>
+Ambient lighting can be combined with ambient occlusion to represent how exposed each point of the scene is, affecting the amount of ambient light it can reflect. This produces diffuse, non-directional lighting throughout the scene, casting no clear shadows, but with enclosed and sheltered areas darkened. The result is usually visually similar to an overcast day.
+
+</br></br>
+Directional lighting
+A directional light source illuminates all objects equally from a given direction, like an area light of infinite size and infinite distance from the scene; there is shading, but cannot be any distance falloff.
+
+</br></br>
+Point lighting
+Light originates from a single point, and spreads outward in all directions.
+
+</br></br>
+Spotlight lighting
+Models a Spotlight. Light originates from a single point, and spreads outward in a cone.
+
+</br></br>
+Area lighting
+Light originates from a small area on a single plane. A more realistic model than a point light source.
+
+</br></br>
+Volumetric lighting
+Light originating from a small volume, an enclosed space lighting objects within that space.
+
+</br></br>
+Shading is interpolated based on how the angle of these light sources reach the objects within a scene. Of course, these light sources can be and often are combined in a scene. The renderer then interpolates how these lights must be combined, and produces a 2d image to be displayed on the screen accordingly.
+
+</br></br>
+Distance falloff
+Theoretically, two surfaces which are parallel are illuminated the same amount from a distant light source, such as the sun. Even though one surface is further away, your eye sees more of it in the same space, so the illumination appears the same.[clarification needed]
+
+</br></br>
+The left image doesn't use distance falloff. Notice that the colors on the front faces of the two boxes are exactly the same. It appears that there is a slight difference where the two faces meet, but this is an optical illusion caused by the vertical edge below where the two faces meet.
+
+</br></br>
+The right image uses distance falloff. Notice that the front face of the front box is brighter than the front face of the back box. Also, the floor goes from light to dark as it gets farther away.
+
+</br></br>
+This distance falloff effect produces images which appear more realistic.
+
+
+</br></br>
+Two boxes rendered with an OpenGL renderer. Note that the colors of the two front faces are the same even though one box is farther away.
+
+</br></br>
+The same model rendered using ARRIS CAD which implements "Distance Falloff" to make surfaces that are closer to the eye appear brighter.
+Distance falloff can be calculated in a number of ways:
+
+</br></br>
+Power of the distance – For a given point at a distance x from the light source, the light intensity received is proportional to 1/xn.
+
+</br></br>
+None (n = 0) – The light intensity received is the same regardless of the distance between the point and the light source.
+
+</br></br>
+Linear (n = 1) – For a given point at a distance x from the light source, the light intensity received is proportional to 1/x.
+
+</br></br>
+Quadratic (n = 2) – This is how light intensity decreases in reality if the light has a free path (i.e. no fog or any other thing in the air that can absorb or scatter the light). For a given point at a distance x from the light source, the light intensity received is proportional to 1/x2.
+
+</br></br>
+Any number of other mathematical functions may also be used.
+
+</br></br>
+Interpolation techniques
+
+</br></br>
+When calculating the brightness of a surface during rendering, our illumination model requires that we know the surface normal. However, a 3D model is usually described by a polygon mesh , which may only store the surface normal at a limited number of points, usually either in the vertices, in the polygon faces, or in both. To get around this problem, one of a number of interpolation techniques can be used.
+
+</br></br>
+Flat shading
+</br></br>
+Here, a color is calculated for one point on each polygon (usually for the first vertex in the polygon, but sometimes for the centroid for triangle meshes), based on the polygon's surface normal and on the assumption that all polygons are flat. The color everywhere else is then interpolated by coloring all points on a polygon the same as the point for which the color was calculated, giving each polygon a uniform color (similar to in nearest-neighbor interpolation). It is usually used for high speed rendering where more advanced shading techniques are too computationally expensive. As a result of flat shading all of the polygon's vertices are colored with one color, allowing differentiation between adjacent polygons. Specular highlights are rendered poorly with flat shading: If there happens to be a large specular component at the representative vertex, that brightness is drawn uniformly over the entire face. If a specular highlight doesn’t fall on the representative point, it is missed entirely. Consequently, the specular reflection component is usually not included in flat shading computation.
+
+</br></br>
+Smooth shading
+</br></br>
+In contrast to flat shading where the colors change discontinuously at polygon borders, with smooth shading the color changes from pixel to pixel, resulting in a smooth color transition between two adjacent polygons. Usually, values are first calculated in the vertices and bilinear interpolation is then used to calculate the values of pixels between the vertices of the polygons.
+
+</br></br>
+Types of smooth shading include:
+
+</br></br>
+Gouraud shading 
+
+</br></br>
+Phong shading 
+
+</br></br>
+Gouraud shading
+
+</br></br>
+Determine the normal at each polygon vertex.
+
+</br></br>
+Apply an illumination model to each vertex to calculate the light intensity from the vertex normal.
+
+</br></br>
+Interpolate the vertex intensities using bilinear interpolation over the surface polygon.
+
+</br></br>
+Data structures
+
+</br></br>
+Sometimes vertex normals can be computed directly (e.g. height field with uniform mesh)
+
+</br></br>
+More generally, need data structure for mesh
+
+</br></br>
+Key: which polygons meet at each vertex.
+
+</br></br>
+Advantages
+
+</br></br>
+Polygons, more complex than triangles, can also have different colors specified for each vertex. In these instances, the underlying logic for shading can become more intricate.
+
+</br></br>
+Problems
+
+</br></br>
+Even the smoothness introduced by Gouraud shading may not prevent the appearance of the shading differences between adjacent polygons.
+
+</br></br>
+Gouraud shading is more CPU intensive and can become a problem when rendering real time environments with many polygons.
+
+</br></br>
+T-Junctions with adjoining polygons can sometimes result in visual anomalies. In general, T-Junctions should be avoided.
+
+</br></br>
+Phong shading
+
+</br></br>
+Phong shading is similar to Gouraud shading, except that instead of interpolating the light intensities, the normals are interpolated between the vertices. Thus, the specular highlights are computed much more precisely than in the Gouraud shading 
+model:
+
+</br></br>
+Compute a normal N for each vertex of the polygon.
+
+</br></br>
+From bilinear interpolation compute a normal, Ni, for each pixel. (This must be renormalized each time.)
+
+</br></br>
+Apply an illumination model to each pixel to calculate the light intensity from Ni.
+
+</br></br>
+Other approaches
+
+</br></br>
+Both Gouraud shading and Phong shading can be implemented using bilinear interpolation. Bishop and Weimer  proposed to use a Taylor series expansion of the resulting expression from applying an illumination model and bilinear interpolation of 
+the normals. Hence, second degree polynomial interpolation was used. This type of biquadratic interpolation was further elaborated by Barrera et al., where one second order polynomial was used to interpolate the diffuse light of the Phong reflection 
+model and another second order polynomial was used for the specular light.
+
+</br></br>
+Spherical Linear Interpolation (Slerp) was used by Kuij and Blake for computing both the normal over the polygon as well as the vector in the direction to the light source. A similar approach was proposed by Hast, which uses Quaternion 
+interpolation of the normals with the advantage that the normal will always have unit length and the computationally heavy normalization is avoided.
+</br></br>
+</div>
+
+
+
+<div id="c2" class="tabcontent">
+<h1>Line Generation Algorithm</h1>
+
+<p>A line connects two points. It is a basic element in graphics. To draw a line, you need two points between which you can draw a line. In the following three algorithms, we refer the one point of line as $X_{0}, Y_{0}$ and the second point of line as $X_{1}, Y_{1}$.</p>
+<h2>DDA Algorithm</h2>
+<p>Digital Differential Analyzer (DDA) algorithm is the simple line generation algorithm which is explained step by step here.</p>
+<p><b>Step 1</b> &minus; Get the input of two end points $(X_{0}, Y_{0})$ and $(X_{1}, Y_{1})$.</p>
+<p><b>Step 2</b> &minus; Calculate the difference between two end points.</p>
+<pre class="result notranslate">
+dx = X<sub>1</sub> - X<sub>0</sub>
+dy = Y<sub>1</sub> - Y<sub>0</sub>
+</pre>
+<p><b>Step 3</b> &minus; Based on the calculated difference in step-2, you need to identify the number of steps to put pixel. If dx &gt; dy, then you need more steps in x coordinate; otherwise in y coordinate.</p>
+<pre class="prettyprint notranslate">
+if (absolute(dx) &gt; absolute(dy))
+   Steps = absolute(dx);
+else
+   Steps = absolute(dy);
+</pre>
+<p><b>Step 4</b> &minus; Calculate the increment in x coordinate and y coordinate.</p>
+<pre class="result notranslate">
+Xincrement = dx / (float) steps;
+Yincrement = dy / (float) steps;
+</pre>
+<p><b>Step 5</b> &minus; Put the pixel by successfully incrementing x and y coordinates accordingly and complete the drawing of the line.</p>
+<pre class="prettyprint notranslate">
+for(int v=0; v &lt; Steps; v++)
+{
+   x = x + Xincrement;
+   y = y + Yincrement;
+   putpixel(Round(x), Round(y));
+}
+</pre>
+<h2>Bresenham’s Line Generation</h2>
+<p>The Bresenham algorithm is another incremental scan conversion algorithm. The big advantage of this algorithm is that, it uses only integer calculations. Moving across the x axis in unit intervals and at each step choose between two different y coordinates.</p>
+<p>For example, as shown in the following illustration, from position (2, 3) you need to choose between (3, 3) and (3, 4). You would like the point that is closer to the original line.</p>
+<p>At sample position $X_{k}+1,$ the vertical separations from the mathematical line are labelled as $d_{upper}$ and $d_{lower}$.</p>
+<img src="/computer_graphics/images/dupper_and_dlower.jpg" alt="dupper and dlower" />
+<p>From the above illustration, the y coordinate on the mathematical line at $x_{k}+1$ is &minus;</p>
+<p style="padding-left:35%;">Y = m($X_{k}$+1) + b</p>
+<p>So, $d_{upper}$ and $d_{lower}$ are given as follows &minus;</p>
+<p>$$d_{lower} = y-y_{k}$$</p>
+<p style="padding-left:24%;">$$= m(X_{k} + 1) + b - Y_{k}$$</p>
+<p>and</p>
+<p>$$d_{upper} = (y_{k} + 1) - y$$</p>
+<p style="padding-left:44%;">$= Y_{k} + 1 - m (X_{k} + 1) - b$</p>
+<p>You can use these to make a simple decision about which pixel is closer to the mathematical line. This simple decision is based on the difference between the two pixel positions.</p>
+<p>$$d_{lower} - d_{upper} = 2m(x_{k} + 1) - 2y_{k} + 2b - 1$$</p>
+<p>Let us substitute <i>m</i> with <i>dy/dx</i> where <i>dx</i> and <i>dy</i> are the differences between the end-points.</p>
+<p>$$dx (d_{lower} - d_{upper}) =dx(2\frac{\mathrm{d} y}{\mathrm{d} x}(x_{k} + 1) - 2y_{k} + 2b - 1)$$</p>
+<p style="padding-left:29%;">$$ = 2dy.x_{k} - 2dx.y_{k} + 2dy + 2dx(2b-1)$$</p>
+<p style="padding-left:9%;">$$ = 2dy.x_{k} - 2dx.y_{k} + C$$</p>
+<p>So, a decision parameter $P_{k}$ for the <i>k</i>th step along a line is given by &minus;</p>
+<p>$$p_{k} = dx(d_{lower} - d_{upper})$$</p>
+<p style="padding-left:8%;">$$ = 2dy.x_{k} - 2dx.y_{k} + C$$</p>
+<p>The sign of the decision parameter $P_{k}$ is the same as that of $d_{lower} - d_{upper}$.</p>
+<p>If $p_{k}$ is negative, then choose the lower pixel, otherwise choose the upper pixel.</p>
+<p>Remember, the coordinate changes occur along the x axis in unit steps, so you can do everything with integer calculations. At step k+1, the decision parameter is given as &minus;</p>
+<p>$$p_{k +1} = 2dy.x_{k + 1} - 2dx.y_{k + 1} + C$$</p>
+<p>Subtracting $p_{k}$ from this we get &minus;</p>
+<p>$$p_{k + 1} - p_{k} = 2dy(x_{k + 1} - x_{k}) - 2dx(y_{k + 1} - y_{k})$$</p> 
+<p>But, $x_{k+1}$ is the same as $(xk)+1$. So &minus;</p>
+<p>$$p_{k+1} = p_{k} + 2dy - 2dx(y_{k+1} - y_{k})$$</p>
+<p>Where, $Y_{k+1} – Y_{k}$ is either 0 or 1 depending on the sign of $P_{k}$.</p>
+<p>The first decision parameter $p_{0}$ is evaluated at $(x_{0}, y_{0})$ is given as &minus;</p>
+<p>$$p_{0} = 2dy - dx$$</p>
+<p>Now, keeping in mind all the above points and calculations, here is the Bresenham algorithm for slope m &lt; 1 &minus;</p>
+<p><b>Step 1</b> &minus; Input the two end-points of line, storing the left end-point in $(x_{0}, y_{0})$.</p>
+<p><b>Step 2</b> &minus; Plot the point $(x_{0}, y_{0})$.</p>
+<p><b>Step 3</b> &minus; Calculate the constants dx, dy, 2dy, and (2dy – 2dx) and get the first value for the decision parameter as &minus;</p>
+<p>$$p_{0} = 2dy - dx$$</p>
+<p><b>Step 4</b> &minus; At each $X_{k}$ along the line, starting at k = 0, perform the following test &minus;</p>
+<p>If $p_{k}$ &lt; 0, the next point to plot is $(x_{k}+1, y_{k})$ and</p>
+<p>$$p_{k+1} = p_{k} + 2dy$$ Otherwise,</p>
+<p>$$(x_{k}, y_{k}+1)$$</p> 
+<p>$$p_{k+1} = p_{k} +  2dy - 2dx$$</p>
+<p><b>Step 5</b> &minus; Repeat step 4 (dx – 1) times.</p>
+<p>For m &gt; 1, find out whether you need to increment x while incrementing y each time.</p>
+<p>After solving, the equation for decision parameter $P_{k}$ will be very similar, just the x and y in the equation gets interchanged.</p>
+<h2>Mid-Point Algorithm</h2>
+<p>Mid-point algorithm is due to Bresenham which was modified by Pitteway and Van Aken. Assume that you have already put the point P at (x, y) coordinate and the slope of the line is 0 &le; k &le; 1 as shown in the following illustration.</p>
+<p>Now you need to decide whether to put the next point at E or N. This can be chosen by identifying the intersection point Q closest to the point N or E. If the intersection point Q is closest to the point N then N is considered as the next point; otherwise E.</p>
+<p>To determine that, first calculate the mid-point M(x+1, y + &frac12;). If the intersection point Q of the line with the vertical line connecting E and N is below M, then take E as the next point; otherwise take N as the next point.</p>
+<p>In order to check this, we need to consider the implicit equation &minus;</p>
+<p style="text-align:center;">F(x,y) = mx + b - y</p>
+<p>For positive m at any given X,</p>
+<ul class="list">
+<li>If y is on the line, then F(x, y) = 0</li>
+<li>If y is above the line, then F(x, y) &lt; 0</li>
+<li>If y is below the line, then F(x, y) &gt; 0</li>
+</ul>
+
+
+<h1>Circle Generation Algorithm</h1>
+<p>Drawing a circle on the screen is a little complex than drawing a line. There are two popular algorithms for generating a circle &minus; <b>Bresenham’s Algorithm</b> and <b>Midpoint Circle Algorithm</b>. These algorithms are based on the idea of determining the subsequent points required to draw the circle. Let us discuss the algorithms in detail &minus;</p>
+<p>The equation of circle is $X^{2} + Y^{2} = r^{2},$ where r is radius.</p>
+<h2>Bresenham’s Algorithm</h2>
+<p>We cannot display a continuous arc on the raster display. Instead, we have to choose the nearest pixel position to complete the arc.</p>
+<p>From the following illustration, you can see that we have put the pixel at (X, Y) location and now need to decide where to put the next pixel &minus; at N (X+1, Y) or at S (X+1, Y-1).</p>
+<p>This can be decided by the decision parameter <b>d</b>.</p>
+<ul class="list">
+<li>If d &lt;= 0, then N(X+1, Y) is to be chosen as next pixel.</li>
+<li>If d &gt; 0, then S(X+1, Y-1) is to be chosen as the next pixel.</li>
+</ul>
+<h3>Algorithm</h3>
+<p><b>Step 1</b> &minus; Get the coordinates of the center of the circle and radius, and store them in x, y, and R respectively. Set P=0 and Q=R.</p>
+<p><b>Step 2</b> &minus; Set decision parameter D = 3 – 2R.</p>
+<p><b>Step 3</b> &minus; Repeat through step-8 while P &le; Q.</p>
+<p><b>Step 4</b> &minus; Call Draw Circle (X, Y, P, Q).</p>
+<p><b>Step 5</b> &minus; Increment the value of P.</p>
+<p><b>Step 6</b> &minus; If D &lt; 0 then D = D + 4P + 6.</p>
+<p><b>Step 7</b> &minus; Else Set R = R - 1, D = D + 4(P-Q) + 10.</p>
+<p><b>Step 8</b> &minus; Call Draw Circle (X, Y, P, Q).</p>
+<pre class="result notranslate">
+Draw Circle Method(X, Y, P, Q).
+
+Call Putpixel (X + P, Y + Q).
+Call Putpixel (X - P, Y + Q).
+Call Putpixel (X + P, Y - Q).
+Call Putpixel (X - P, Y - Q).
+Call Putpixel (X + Q, Y + P).
+Call Putpixel (X - Q, Y + P).
+Call Putpixel (X + Q, Y - P).
+Call Putpixel (X - Q, Y - P).
+</pre>
+<h2>Mid Point Algorithm</h2>
+<p><b>Step 1</b> &minus; Input radius <b>r</b> and circle center $(x_{c,} y_{c})$ and obtain the first point on the circumference of the circle centered on the origin as</p>
+<pre class="result notranslate">
+(x<sub>0</sub>, y<sub>0</sub>) = (0, r)
+</pre>
+<p><b>Step 2</b> &minus; Calculate the initial value of decision parameter as</p>
+<p>$P_{0}$ = 5/4 – r (See the following description for simplification of this equation.)</p>
+<pre class="prettyprint notranslate">
+f(x, y) = x<sup>2</sup> + y<sup>2</sup> - r<sup>2</sup> = 0
+
+f(x<sub>i</sub> - 1/2 + e, y<sub>i</sub> + 1)
+        = (x<sub>i</sub> - 1/2 + e)<sup>2</sup> + (y<sub>i</sub> + 1)<sup>2</sup> - r<sup>2</sup> 
+        = (x<sub>i</sub>- 1/2)<sup>2</sup> + (y<sub>i</sub> + 1)<sup>2</sup> - r<sup>2</sup> + 2(x<sub>i</sub> - 1/2)e + e<sup>2</sup>
+        = f(x<sub>i</sub> - 1/2, y<sub>i</sub> + 1) + 2(x<sub>i</sub> - 1/2)e + e<sup>2</sup> = 0
+</pre>
+<pre class="prettyprint notranslate">
+Let d<sub>i</sub> = f(x<sub>i</sub> - 1/2, y<sub>i</sub> + 1) = -2(x<sub>i</sub> - 1/2)e - e<sup>2</sup>
+Thus,
+
+If e &lt; 0 then di &gt; 0 so choose point S = (x<sub>i</sub> - 1, y<sub>i</sub> + 1).
+d<sub>i+1</sub>    = f(x<sub>i</sub> - 1 - 1/2, y<sub>i</sub> + 1 + 1) = ((x<sub>i</sub> - 1/2) - 1)<sup>2</sup> + ((y<sub>i</sub> + 1) + 1)<sup>2</sup> - r<sup>2</sup>
+        = d<sub>i</sub> - 2(x<sub>i</sub> - 1) + 2(y<sub>i</sub> + 1) + 1
+        = d<sub>i</sub> + 2(y<sub>i + 1</sub> - x<sub>i + 1</sub>) + 1
+		  
+If e &gt;= 0 then di &lt;= 0 so choose point T = (x<sub>i</sub>, y<sub>i</sub> + 1)
+   d<sub>i+1</sub> = f(x<sub>i</sub> - 1/2, y<sub>i</sub> + 1 + 1)
+       = d<sub>i</sub> + 2y<sub>i+1</sub> + 1
+		  
+The initial value of di is
+   d<sub>0</sub> = f(r - 1/2, 0 + 1) = (r - 1/2)<sup>2</sup> + 1<sup>2</sup> - r<sup>2</sup>
+      = 5/4 - r {1-r can be used if r is an integer}
+		
+When point S = (x<sub>i</sub> - 1, y<sub>i</sub> + 1) is chosen then
+   d<sub>i+1</sub> = d<sub>i</sub> + -2x<sub>i+1</sub> + 2y<sub>i+1</sub> + 1
+	
+When point T = (x<sub>i</sub>, y<sub>i</sub> + 1) is chosen then
+   d<sub>i+1</sub> = d<sub>i</sub> + 2y<sub>i+1</sub> + 1
+</pre>
+<p><b>Step 3</b> &minus; At each $X_{K}$ position starting at K=0, perform the following test &minus;</p>
+<pre class="prettyprint notranslate">
+If P<sub>K</sub> &lt; 0 then next point on circle (0,0) is (X<sub>K+1</sub>,Y<sub>K</sub>) and
+   P<sub>K+1</sub> = P<sub>K</sub> + 2X<sub>K+1</sub> + 1
+Else
+   P<sub>K+1</sub> = P<sub>K</sub> + 2X<sub>K+1</sub> + 1 – 2Y<sub>K+1</sub>
+	
+Where, 2X<sub>K+1</sub> = 2X<sub>K+2</sub> and 2Y<sub>K+1</sub> = 2Y<sub>K-2</sub>.
+</pre>
+<p><b>Step 4</b> &minus; Determine the symmetry points in other seven octants.</p>
+<p><b>Step 5</b> &minus; Move each calculate pixel position (X, Y) onto the circular path centered on $(X_{C,} Y_{C})$ and plot the coordinate values.</p>
+<pre class="result notranslate">
+X = X + X<sub>C</sub>,   Y = Y + Y<sub>C</sub>
+</pre>
+<p><b>Step 6</b> &minus; Repeat step-3 through 5 until X &gt;= Y.</p>
+
+
+</div>
+<div id="c3" class="tabcontent">
+<h1>Viewing &amp; Clipping</h1>
+
+<p>The primary use of clipping in computer graphics is to remove objects, lines, or line segments that are outside the viewing pane. The viewing transformation is insensitive to the position of points relative to the viewing volume &minus; especially those points behind the viewer &minus; and it is necessary to remove these points before generating the view.</p>
+<h2>Point Clipping</h2>
+<p>Clipping a point from a given window is very easy. Consider the following figure, where the rectangle indicates the window. Point clipping tells us whether the given point (X, Y) is within the given window or not; and decides whether we will use the minimum and maximum coordinates of the window.</p>
+<p>The X-coordinate of the given point is inside the window, if X lies in between Wx1 &le; X &le; Wx2. Same way, Y coordinate of the given point is inside the window, if Y lies in between Wy1 &le; Y &le; Wy2.</p>
+<h2>Line Clipping</h2>
+<p>The concept of line clipping is same as point clipping. In line clipping, we will cut the portion of line which is outside of window and keep only the portion that is inside the window.</p>
+<h2>Cohen-Sutherland Line Clippings</h2>
+<p>This algorithm uses the clipping window as shown in the following figure. The minimum coordinate for the clipping region is $(XW_{min,} YW_{min})$ and the maximum coordinate for the clipping region is $(XW_{max,} YW_{max})$.</p>
+<p>We will use 4-bits to divide the entire region. These 4 bits represent the Top, Bottom, Right, and Left of the region as shown in the following figure. Here, the <b>TOP</b> and <b>LEFT</b> bit is set to 1 because it is the <b>TOP-LEFT</b> corner.</p>
+<p>There are 3 possibilities for the line &minus;</p>
+<ul class="list">
+<li><p>Line can be completely inside the window (This line should be accepted).</p></li>
+<li><p>Line can be completely outside of the window (This line will be completely removed from the region).</p></li>
+<li><p>Line can be partially inside the window (We will find intersection point and draw only that portion of line that is inside region).</p></li>
+</ul>
+<h3>Algorithm</h3>
+<p><b>Step 1</b> &minus; Assign a region code for each endpoints.</p>
+<p><b>Step 2</b> &minus; If both endpoints have a region code <b>0000</b> then accept this line.</p>
+<p><b>Step 3</b> &minus; Else, perform the logical <b>AND</b>operation for both region codes.</p>
+<p style="padding-left:50px;"><b>Step 3.1</b> &minus; If the result is not <b>0000,</b> then reject the line.</p>
+<p><b>Step 3.2</b> &minus; Else you need clipping.</p>
+<p style="padding-left:50px;"><b>Step 3.2.1</b> &minus; Choose an endpoint of the line that is outside the window.</p>
+<p style="padding-left:50px;"><b>Step 3.2.2</b> &minus; Find the intersection point at the window boundary (base on region code).</p>
+<p style="padding-left:50px;"><b>Step 3.2.3</b> &minus; Replace endpoint with the intersection point and update the region code.</p>
+<p style="padding-left:50px;"><b>Step 3.2.4</b> &minus; Repeat step 2 until we find a clipped line either trivially accepted or trivially rejected.</p>
+<p><b>Step 4</b> &minus; Repeat step 1 for other lines.</p>
+<h2>Cyrus-Beck Line Clipping Algorithm</h2>
+<p>This algorithm is more efficient than Cohen-Sutherland algorithm. It employs parametric line representation and simple dot products.</p>
+<p>Parametric equation of line is &minus;</p>
+<pre class="result notranslate">
+P<sub>0</sub>P<sub>1</sub>:P(t) = P<sub>0</sub> + t(P<sub>1</sub> - P<sub>0</sub>)
+</pre>
+<p>Let N<sub>i</sub> be the outward normal edge E<Sub>i</sub>. Now pick any arbitrary point P<sub>Ei</sub> on edge E<sub>i</sub> then the dot product N<sub>i</sub>.[P(t) – P<sub>Ei</sub>] determines whether the point P(t) is “inside the clip edge” or “outside” the clip edge or “on” the clip edge.</p>
+<p>The point P(t) is inside if N<sub>i</sub>.[P(t) – P<sub>Ei</sub>] &lt; 0</p>
+<p>The point P(t) is outside if N<sub>i</sub>.[P(t) – P<sub>Ei</sub>] &gt; 0</p>
+<p>The point P(t) is on the edge if N<sub>i</sub>.[P(t) – P<sub>Ei</sub>] = 0 (Intersection point)</p>
+<p style="padding-left:50px;">N<sub>i</sub>.[P(t) – P<sub>Ei</sub>] <span style="padding-left:25%;">= 0</span></p>
+<p style="padding-left:50px;">N<sub>i</sub>.[ P<sub>0</sub> + t(P<sub>1</sub> - P<sub>0</sub>) – P<sub>Ei</sub>] <span style="padding-left:13%;">= 0 (Replacing P(t) with P<sub>0</sub> + t(P<sub>1</sub> - P<sub>0</sub>))</span></p>
+<p style="padding-left:50px;">N<sub>i</sub>.[P<sub>0</sub> – P<sub>Ei</sub>] + N<sub>i</sub>.t[P<sub>1</sub> - P<sub>0</sub>] <span style="padding-left:10%;">= 0</span></p>
+<p style="padding-left:50px;">N<sub>i</sub>.[P<sub>0</sub> – P<sub>Ei</sub>] + N<sub>i</sub>·tD <span style="padding-left:17%;">= 0 (substituting D for [P<sub>1</sub> - P<sub>0</sub>])</span></p>
+<p style="padding-left:50px;">N<sub>i</sub>.[P<sub>0</sub> – P<sub>Ei</sub>] <span style="padding-left:26%;">= - N<sub>i</sub>·tD</span></p>
+<p>The equation for t becomes,</p>
+<p>$$t = \tfrac{N_{i}.[P_{o} - P_{Ei}]}{{- N_{i}.D}}$$</p>
+<p>It is valid for the following conditions &minus;</p>
+<ul class="list">
+<li>N<sub>i</sub> &ne; 0 (error cannot happen)</li>
+<li>D &ne; 0 (P<sub>1</sub> &ne; P<sub>0</sub>)</li>
+<li>N<sub>i</sub>·D &ne; 0 (P<sub>0</sub>P<sub>1</sub> not parallel to E<sub>i</sub>)</li>
+</ul>
+<h2>Polygon Clipping (Sutherland Hodgman Algorithm)</h2>
+<p>A polygon can also be clipped by specifying the clipping window. Sutherland Hodgeman polygon clipping algorithm is used for polygon clipping. In this algorithm, all the vertices of the polygon are clipped against each edge of the clipping window.</p>
+<p>First the polygon is clipped against the left edge of the polygon window to get new vertices of the polygon. These new vertices are used to clip the polygon against right edge, top edge, bottom edge, of the clipping window as shown in the following figure.</p>
+<p>While processing an edge of a polygon with clipping window, an intersection point is found if edge is not completely inside clipping window and the a partial edge from the intersection point to the outside edge is clipped. The following figures show left, right, top and bottom edge clippings &minus;</p>
+<h2>Text Clipping</h2>
+<p>Various techniques are used to provide text clipping in a computer graphics. It depends on the methods used to generate characters and the requirements of a particular application. There are three methods for text clipping which are listed below &minus;</p>
+<ul class="list">
+<li>All or none string clipping</li>
+<li>All or none character clipping</li>
+<li>Text clipping</li>
+</ul>
+<p>The following figure shows all or none string clipping &minus;</p>
+<p>In all or none string clipping method, either we keep the entire string or we reject entire string based on the clipping window. As shown in the above figure, STRING2 is entirely inside the clipping window so we keep it and STRING1 being only partially inside the window, we reject.</p>
+<p>The following figure shows all or none character clipping &minus;</p>
+<p>This clipping method is based on characters rather than entire string. In this method if the string is entirely inside the clipping window, then we keep it. If it is partially outside the window, then &minus;</p>
+<ul class="list">
+<li><p>You reject only the portion of the string being outside</p></li>
+<li><p>If the character is on the boundary of the clipping window, then we discard that entire character and keep the rest string.</p></li>
+</ul>
+<p>The following figure shows text clipping &minus;</p>
+<p>This clipping method is based on characters rather than the entire string. In this method if the string is entirely inside the clipping window, then we keep it. If it is partially outside the window, then</p>
+<ul class="list">
+<li><p>You reject only the portion of string being outside.</p></li>
+<li><p>If the character is on the boundary of the clipping window, then we discard only that portion of character that is outside of the clipping window.</p></li>
+</ul>
+<h2>Bitmap Graphics</h2>
+<p>A bitmap is a collection of pixels that describes an image. It is a type of computer graphics that the computer uses to store and display pictures. In this type of graphics, images are stored bit by bit and hence it is named Bit-map graphics. For better understanding let us consider the following example where we draw a smiley face using bit-map graphics.</p>
+<p>Now we will see how this smiley face is stored bit by bit in computer graphics.</p>
+<p>By observing the original smiley face closely, we can see that there are two blue lines which are represented as B1, B2 and E1, E2 in the above figure.</p>
+<p>In the same way, the smiley is represented using the combination bits of A4, B5, C6, D6, E5, and F4 respectively.</p>
+<p>The main disadvantages of bitmap graphics are &minus;</p>
+<ul class="list">
+<li><p>We cannot resize the bitmap image. If you try to resize, the pixels get blurred.</p></li>
+<li><p>Colored bitmaps can be very large.</p></li>
+</ul>
+
+</div>
+<div id="c4" class="tabcontent">
+<h1>2D Transformation</h1>
+
+<p>Transformation means changing some graphics into something else by applying rules. We can have various types of transformations such as translation, scaling up or down, rotation, shearing, etc. When a transformation takes place on a 2D plane, it is called 2D transformation.</p>
+<p>Transformations play an important role in computer graphics to reposition the graphics on the screen and change their size or orientation.</p>
+<h2>Homogenous Coordinates</h2>
+<p>To perform a sequence of transformation such as translation followed by rotation and scaling, we need to follow a sequential process &minus;</p>
+<ul class="list">
+<li>Translate the coordinates,</li>
+<li>Rotate the translated coordinates, and then</li>
+<li>Scale the rotated coordinates to complete the composite transformation.</li>
+</ul>
+<p>To shorten this process, we have to use 3&times;3 transformation matrix instead of 2&times;2 transformation matrix. To convert a 2&times;2 matrix to 3&times;3 matrix, we have to add an extra dummy coordinate W.</p>
+<p>In this way, we can represent the point by 3 numbers instead of 2 numbers, which is called <b>Homogenous Coordinate</b> system. In this system, we can represent all the transformation equations in matrix multiplication. Any Cartesian point P(X, Y) can be converted to homogenous coordinates by P’ (X<sub>h</sub>, Y<sub>h</sub>, h).</p>
+<h2>Translation</h2>
+<p>A translation moves an object to a different position on the screen. You can translate a point in 2D by adding translation coordinate (t<sub>x</sub>, t<sub>y</sub>) to the original coordinate (X, Y) to get the new coordinate (X’, Y’).</p>
+<p>From the above figure, you can write that &minus;</p>
+<p style="text-align:center;"><b>X’ = X &plus; t<sub>x</sub></b></p>
+<p style="text-align:center;"><b>Y’ = Y &plus; t<sub>y</sub></b></p>
+<p>The pair (t<sub>x</sub>, t<sub>y</sub>) is called the translation vector or shift vector. The above equations can also be represented using the column vectors.</p>
+<p style="text-align:center;">$P = \frac{[X]}{[Y]}$  <span style="padding-left:4%;">p' = $\frac{[X']}{[Y']}$</span><span style="padding-left:4%;">T = $\frac{[t_{x}]}{[t_{y}]}$</span></p>
+<p>We can write it as &minus;</p>
+<p style="text-align:center;"><b>P’ = P &plus; T</b></p>
+<h2>Rotation</h2>
+<p>In rotation, we rotate the object at particular angle &theta; (theta) from its origin. From the following figure, we can see that the point P(X, Y) is located at angle &phi; from the horizontal X coordinate with distance r from the origin.</p>
+<p>Let us suppose you want to rotate it at the angle &theta;. After rotating it to a new location, you will get a new point P’ (X’, Y’).</p>
+<p>Using standard trigonometric the original coordinate of point P(X, Y) can be represented as &minus;</p>
+<p style="text-align:center;">$X = r \, cos \, \phi  ...... (1)$</p>
+<p style="text-align:center;">$Y = r \, sin \, \phi  ...... (2)$</p>
+<p>Same way we can represent the point P’ (X’, Y’) as &minus;</p>
+<p style="text-align:center;">${x}'= r \: cos \: \left ( \phi \: &plus; \: \theta    \right ) = r\: cos \: \phi \: cos \: \theta \: &minus; \: r \: sin \: \phi \: sin \: \theta ....... (3)$</p>
+<p style="text-align:center;">${y}'= r \: sin \: \left ( \phi \: &plus; \: \theta    \right ) = r\: cos \: \phi \: sin \: \theta \: &plus; \: r \: sin \: \phi \: cos \: \theta ....... (4)$</p>
+<p>Substituting equation (1) &amp; (2) in (3) &amp; (4) respectively, we will get</p>
+<p style="text-align:center;">${x}'= x \: cos \: \theta  &minus; \: y \: sin \:  \theta $</p>
+<p style="text-align:center;">${y}'= x \: sin \: \theta  &plus; \: y \: cos \:  \theta $</p>
+<p>Representing the above equation in matrix form,</p>
+<p>$$[X' Y'] = [X Y] \begin{bmatrix}
+cos\theta  & sin\theta \\ 
+&minus;sin\theta  & cos\theta  
+\end{bmatrix}OR $$</p>
+<p style="padding-left:250px;">P’ = P . R</p>
+<p>Where R is the rotation matrix</p>
+<p>$$R = \begin{bmatrix}
+cos\theta  & sin\theta \\ 
+&minus;sin\theta  & cos\theta  
+\end{bmatrix}$$</p>
+<p>The rotation angle can be positive and negative.</p>
+<p>For positive rotation angle, we can use the above rotation matrix. However, for negative angle rotation, the matrix will change as shown below &minus;</p>
+<p>$$R = \begin{bmatrix}
+cos(&minus;\theta)  & sin(&minus;\theta) \\ 
+-sin(&minus;\theta)  & cos(&minus;\theta)  
+\end{bmatrix}$$</p>
+<p>$$=\begin{bmatrix}
+cos\theta  & &minus;sin\theta \\ 
+sin\theta  & cos\theta  
+\end{bmatrix}  \left (\because  cos(&minus;\theta ) = cos \theta \; and\; sin(&minus;\theta ) = &minus;sin \theta   \right )$$</p>
+<h2>Scaling</h2>
+<p>To change the size of an object, scaling transformation is used. In the scaling process, you either expand or compress the dimensions of the object. Scaling can be achieved by multiplying the original coordinates of the object with the scaling factor to get the desired result.</p>
+<p>Let us assume that the original coordinates are (X, Y), the scaling factors are (S<sub>X</sub>, S<sub>Y</sub>), and the produced coordinates are (X’, Y’). This can be mathematically represented as shown below &minus;</p>
+<p style="text-align:center;"><b>X' = X . S<sub>X</sub> <span style="padding-left:8%;">and</span> <span style="padding-left:8%;">Y' = Y . S</span><sub>Y</sub></b></p>
+<p>The scaling factor S<sub>X</sub>, S<sub>Y</sub> scales the object in X and Y direction respectively. The above equations can also be represented in matrix form as below &minus;</p>
+<p>$$\binom{X'}{Y'} = \binom{X}{Y} \begin{bmatrix}
+S_{x} & 0\\ 
+0 &  S_{y}
+\end{bmatrix}$$</p>
+<p>OR</p>
+<p style="text-align:center;"><b>P’ = P . S</b></p>
+<p>Where S is the scaling matrix. The scaling process is shown in the following figure.</p>
+<p>If we provide values less than 1 to the scaling factor S, then we can reduce the size of the object. If we provide values greater than 1, then we can increase the size of the object.</p>
+<h2>Reflection</h2>
+<p>Reflection is the mirror image of original object. In other words, we can say that it is a rotation operation with 180&deg;. In reflection transformation, the size of the object does not change.</p>
+<p>The following figures show reflections with respect to X and Y axes, and about the origin respectively.</p>
+<h2>Shear</h2>
+<p>A transformation that slants the shape of an object is called the shear transformation. There are two shear transformations <b>X-Shear</b> and <b>Y-Shear</b>. One shifts X coordinates values and other shifts Y coordinate values. However; in both the cases only one coordinate changes its coordinates and other preserves its values. Shearing is also termed as <b>Skewing</b>.</p>
+<h3>X-Shear</h3>
+<p>The X-Shear preserves the Y coordinate and changes are made to X coordinates, which causes the vertical lines to tilt right or left as shown in below figure.</p>
+<p>The transformation matrix for X-Shear can be represented as &minus;</p>
+<p>$$X_{sh} = \begin{bmatrix}
+ 1&  0& 0\\ 
+ shx&  1& 0\\ 
+ 0&  0& 1
+\end{bmatrix}$$</p>
+<p style="text-align:center;">X' = X &plus; Sh<sub>x</sub> . Y</p>
+<p style="text-align:center;">Y’ = Y</p>
+<h3>Y-Shear</h3>
+<p>The Y-Shear preserves the X coordinates and changes the Y coordinates which causes the horizontal lines to transform into lines which slopes up or down as shown in the following figure.</p>
+<p>The Y-Shear can be represented in matrix from as &minus;</p>
+<p>$$Y_{sh} \begin{bmatrix}
+ 1&  shy& 0\\ 
+ 0&  1& 0\\ 
+ 0&  0& 1
+\end{bmatrix}$$</p>
+<p style="text-align:center;">Y’ = Y &plus; Sh<sub>y</sub> . X</p>
+<p style="text-align:center;">X’ = X</p>
+<h2>Composite Transformation</h2>
+<p>If a transformation of the plane T1 is followed by a second plane transformation T2, then the result itself may be represented by a single transformation T which is the composition of T1 and T2 taken in that order. This is written as T = T1·T2.</p>
+<p>Composite transformation can be achieved by concatenation of transformation matrices to obtain a combined transformation matrix.</p>
+<p>A combined matrix &minus;</p>
+<p style="text-align:center;"><b>[T][X] = [X] [T1] [T2] [T3] [T4] …. [Tn]</b></p>
+<p>Where [Ti] is any combination of</p>
+<ul class="list">
+<li>Translation</li>
+<li>Scaling</li>
+<li>Shearing</li>
+<li>Rotation</li>
+<li>Reflection</li>
+</ul>
+<p>The change in the order of transformation would lead to different results, as in general matrix multiplication is not cumulative, that is [A] . [B] ? [B] . [A] and the order of multiplication. The basic purpose of composing transformations is to gain efficiency by applying a single composed transformation to a point, rather than applying a series of transformation, one after another.</p>
+<p>For example, to rotate an object about an arbitrary point (X<sub>p</sub>, Y<sub>p</sub>), we have to carry out three steps &minus;</p>
+<ul class="list">
+<li>Translate point (X<sub>p</sub>, Y<sub>p</sub>) to the origin.</li>
+<li>Rotate it about the origin.</li>
+<li>Finally, translate the center of rotation back where it belonged.</li>
+</ul>
+</div>
+<div id="c5" class="tabcontent">
+<h1>3D Transformation</h1>
+<h2>Rotation</h2>
+<p>3D rotation is not same as 2D rotation. In 3D rotation, we have to specify the angle of rotation along with the axis of rotation. We can perform 3D rotation about X, Y, and Z axes. They are represented in the matrix form as below &minus;</p>
+<p style="font-size:.82em;">$$R_{x}(\theta) = \begin{bmatrix}
+ 1& 0&  0& 0\\ 
+ 0&  cos\theta & &minus;sin\theta& 0\\ 
+ 0&  sin\theta &  cos\theta& 0\\ 
+ 0& 0&  0& 1\\
+\end{bmatrix}
+R_{y}(\theta) = \begin{bmatrix}
+ cos\theta& 0&  sin\theta& 0\\ 
+ 0&  1& 0& 0\\ 
+ &minus;sin\theta&  0&  cos\theta& 0\\ 
+ 0& 0&  0& 1\\
+\end{bmatrix}
+R_{z}(\theta) =\begin{bmatrix}
+ cos\theta &  &minus;sin\theta &  0& 0\\ 
+ sin\theta &  cos\theta &  0& 0\\ 
+ 0& 0&  1& 0\\ 
+ 0&  0&  0& 1
+\end{bmatrix}$$</p>
+<p>The following figure explains the rotation about various axes &minus;</p>
+<h2>Scaling</h2>
+<p>You can change the size of an object using scaling transformation. In the scaling process, you either expand or compress the dimensions of the object. Scaling can be achieved by multiplying the original coordinates of the object with the scaling factor to get the desired result. The following figure shows the effect of 3D scaling &minus;</p>
+<p>In 3D scaling operation, three coordinates are used. Let us assume that the original coordinates are (X, Y, Z), scaling factors are $(S_{X,} S_{Y,} S_{z})$ respectively, and the produced coordinates are (X’, Y’, Z’). This can be mathematically represented as shown below &minus;</p>
+<p style="text-align:center;">$S = \begin{bmatrix}
+ S_{x}&  0&  0& 0\\ 
+ 0&  S_{y}&  0& 0\\ 
+ 0& 0&  S_{z}& 0\\ 
+ 0&  0&  0& 1
+\end{bmatrix}$</p>
+<p style="text-align:center;">P’ = P·S</p>
+<p style="text-align:center;">$[{X}' \:\:\: {Y}' \:\:\: {Z}' \:\:\: 1] = [X \:\:\:Y \:\:\: Z \:\:\: 1] \:\: \begin{bmatrix}
+ S_{x}&  0&  0& 0\\ 
+ 0&  S_{y}&  0& 0\\ 
+ 0& 0&  S_{z}& 0\\ 
+ 0&  0&  0& 1
+\end{bmatrix}$</p>
+<p style="padding-left:38%;">$ = [X.S_{x} \:\:\: Y.S_{y} \:\:\: Z.S_{z} \:\:\: 1]$</p>
+<h2>Shear</h2>
+<p>A transformation that slants the shape of an object is called the <b>shear transformation</b>. Like in 2D shear, we can shear an object along the X-axis, Y-axis, or Z-axis in 3D.</p>
+<p>As shown in the above figure, there is a coordinate P. You can shear it to get a new coordinate P', which can be represented in 3D matrix form as below &minus;</p>
+<p style="text-align:center;">$Sh = \begin{bmatrix}
+1 & sh_{x}^{y}  & sh_{x}^{z}  & 0 \\ 
+sh_{y}^{x} & 1  & sh_{y}^{z}  & 0 \\ 
+sh_{z}^{x} & sh_{z}^{y} & 1  & 0 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}$</p>
+<p style="text-align:center;">P’ = P · Sh</p>
+<p style="text-align:center;">$X’ = X + Sh_{x}^{y} Y + Sh_{x}^{z} Z$</p>
+<p style="text-align:center;">$Y' = Sh_{y}^{x}X + Y +sh_{y}^{z}Z$</p>
+<p style="text-align:center;">$Z' = Sh_{z}^{x}X + Sh_{z}^{y}Y + Z$</p>
+<h2>Transformation Matrices</h2>
+<p>Transformation matrix is a basic tool for transformation. A matrix with n x m dimensions is multiplied with the coordinate of objects. Usually 3 x 3 or 4 x 4 matrices are used for transformation. For example, consider the following matrix for various operation.</p>
+<table style="font-size:12px;" class="table table-bordered">
+<tr>
+<td>$T = \begin{bmatrix}
+ 1& 0&  0& 0\\ 
+ 0&  1& 0& 0\\ 
+ 0&  0&  1& 0\\ 
+ t_{x}& t_{y}&  t_{z}& 1\\
+\end{bmatrix}$</td>
+<td>$S = \begin{bmatrix}
+ S_{x}&  0&  0& 0\\ 
+ 0&  S_{y}&  0& 0\\ 
+ 0& 0&  S_{z}& 0\\ 
+ 0&  0&  0& 1
+\end{bmatrix}$</td>
+<td>$Sh = \begin{bmatrix}
+ 1&  sh_{x}^{y}&  sh_{x}^{z}& 0\\ 
+ sh_{y}^{x}&  1 &  sh_{y}^{z}& 0\\ 
+ sh_{z}^{x}& sh_{z}^{y}&  1& 0\\ 
+ 0&  0&  0& 1
+\end{bmatrix}$</td>
+</tr>
+<tr style="text-align:center;">
+<td><b>Translation Matrix</b></td>
+<td><b>Scaling Matrix</b></td>
+<td><b>Shear Matrix</b></td>
+</tr>
+<tr>
+<td>$R_{x}(\theta) = \begin{bmatrix}
+ 1& 0&  0& 0\\ 
+ 0&  cos\theta & -sin\theta& 0\\ 
+ 0&  sin\theta &  cos\theta& 0\\ 
+ 0& 0&  0& 1\\
+\end{bmatrix}$</td>
+<td>$R_{y}(\theta) = \begin{bmatrix}
+ cos\theta& 0&  sin\theta& 0\\ 
+ 0&  1& 0& 0\\ 
+ -sin\theta&  0&  cos\theta& 0\\ 
+ 0& 0&  0& 1\\
+\end{bmatrix}$</td>
+<td>$R_{z}(\theta) = \begin{bmatrix}
+ cos\theta &  -sin\theta &  0& 0\\ 
+ sin\theta &  cos\theta &  0& 0\\ 
+ 0& 0&  1& 0\\ 
+ 0&  0&  0& 1
+\end{bmatrix}$</td>
+</tr>
+<tr>
+<td style="text-align:center;" colspan="3"><b>Rotation Matrix</b></td>
+</tr>
+</table>
+
+
+</div>
+<div id="c6" class="tabcontent">
+<h1>Computer Animation</h1>
+
+<p>Animation means giving life to any object in computer graphics. It has the power of injecting energy and emotions into the most seemingly inanimate objects. Computer-assisted animation and computer-generated animation are two categories of computer animation. It can be presented via film or video.</p>
+<p>The basic idea behind animation is to play back the recorded images at the rates fast enough to fool the human eye into interpreting them as continuous motion. Animation can make a series of dead images come alive. Animation can be used in many areas like entertainment, computer aided-design, scientific visualization, training, education, e-commerce, and computer art.</p>
+<h2>Animation Techniques</h2>
+<p>Animators have invented and used a variety of different animation techniques. Basically there are six animation technique which we would discuss one by one in this section.</p>
+<h3>Traditional Animation (frame by frame)</h3>
+<p>Traditionally most of the animation was done by hand. All the frames in an animation had to be drawn by hand. Since each second of animation requires 24 frames (film), the amount of efforts required to create even the shortest of movies can be tremendous.</p>
+<h3>Keyframing</h3>
+<p>In this technique, a storyboard is laid out and then the artists draw the major frames of the animation. Major frames are the ones in which prominent changes take place. They are the key points of animation. Keyframing requires that the animator specifies critical or key positions for the objects. The computer then automatically fills in the missing frames by smoothly interpolating between those positions.</p>
+<h3>Procedural</h3>
+<p>In a procedural animation, the objects are animated by a procedure &minus; a set of rules &minus; not by keyframing. The animator specifies rules and initial conditions and runs simulation. Rules are often based on physical rules of the real world expressed by mathematical equations.</p>
+<h3>Behavioral</h3>
+<p>In behavioral animation, an autonomous character determines its own actions, at least to a certain extent. This gives the character some ability to improvise, and frees the animator from the need to specify each detail of every character's motion.</p>
+<h3>Performance Based (Motion Capture)</h3>
+<p>Another technique is Motion Capture, in which magnetic or vision-based sensors record the actions of a human or animal object in three dimensions. A computer then uses these data to animate the object.</p>
+<p>This technology has enabled a number of famous athletes to supply the actions for characters in sports video games. Motion capture is pretty popular with the animators mainly because some of the commonplace human actions can be captured with relative ease. However, there can be serious discrepancies between the shapes or dimensions of the subject and the graphical character and this may lead to problems of exact execution.</p>
+<h3>Physically Based (Dynamics)</h3>
+<p>Unlike key framing and motion picture, simulation uses the laws of physics to generate motion of pictures and other objects. Simulations can be easily used to produce slightly different sequences while maintaining physical realism. Secondly, real-time simulations allow a higher degree of interactivity where the real person can maneuver the actions of the simulated character.</p>
+<p>In contrast the applications based on key-framing and motion select and modify motions form a pre-computed library of motions. One drawback that simulation suffers from is the expertise and time required to handcraft the appropriate controls systems.</p>
+<h2>Key Framing</h2>
+<p>A keyframe is a frame where we define changes in animation. Every frame is a keyframe when we create frame by frame animation. When someone creates a 3D animation on a computer, they usually don’t specify the exact position of any given object on every single frame. They create keyframes.</p>
+<p>Keyframes are important frames during which an object changes its size, direction, shape or other properties. The computer then figures out all the in-between frames and saves an extreme amount of time for the animator. The following illustrations depict the frames drawn by user and the frames generated by computer.</p>
+
+</div>
+<div id="c7" class="tabcontent">
+<h1>Morphing</h1>
+<ul>
+<li>Morphing is a familiar technology to produce special effects in image or videos. Morphing is common in entertainment industry.</li>
+<li>Morphing is widely used in movies, animation games etc. In addition to the usage of entertainment industry, morphing can be used in computer based trainings, electronic book illustrations, presentations, education purposes etc. morphing software is widely available in internet. </li>
+<li>Animation industry looking for advanced technology to produce special effects on their movies. Increasing customers of animation industry does not satisfy with the movies with simple animation. </li>
+<li>Here comes the significance of morphing.</li>
+<li>The Word "Morphing" comes from the word "metamorphosis" which means change shape, appearance or form. Morphing is done by coupling image warping with colour interpolation. </li>
+<li>Morphing is the process in which the source image is gradually distorted and vanished while producing the target image. So earlier images in the sequence are similar to source image and last images are similar to target image. Middle image of the sequence is the average of the source image and the target image.</li>
+</ul>
+<p><strong>Image warping</strong> </p>
+<p>Image warping is the process of digitally manipulating an image such that any shapes portrayed in the image have been significantly distorted. Warping <br>
+may be used for correcting image distortion as well as for creative purposes (e.g., morphing). The same techniques are equally applicable to video.</p>
+<p>While an image can be transformed in various ways, pure warping means that points are mapped to points without changing the colors. This can be based mathematically on any function from (part of) the plane to the plane. If the function is injective the original can be reconstructed. If the function is a bijection any image can be inversely transformed.</p>
+<p>The following list is not meant to be a partitioning of all available methods into categories.</p>
+<ul>
+<li>Images may be distorted through simulation of optical aberrations.</li>
+<li>Images may be viewed as if they had been projected onto a curved or mirrored surface. (This is often seen in raytraced images.)</li>
+<li>Images can be partitioned into polygons and each polygon distorted.</li>
+<li>Images can be distorted using morphing.</li>
+</ul>
+<p><strong>Mesh Warping</strong></p>
+<ul>
+<li>Many projection environments require images that are not simple perspective projections that are the norm for flat screen displays. </li>
+<li>Examples include geometry correction for cylindrical displays and some new methods of projecting into planetarium domes orupright domes intended for VR. The standard approach is to create the image in a format that contains all the required visual information and distort it (from now on referred to as "warping") to compensate for the non planar nature of the projection device or surface. For both realtime and offline warping the concept of a OpenGL texture is used, that is, the original image is considered to be a texture that is applied to a mesh defined by node positions and corresponding texture coordinates, see figure 1. The following describes a file format for storing such warping meshes, it consists of both an ascii/human readable format and a binary format.</li>
+</ul>
+<p><strong>Feature Morphing</strong></p>
+<p>This method gives the animator a high level of control over the process. The animator interactively selects corresponding feature lines in the 2 images to be morphed. </p>
+<p>The algorithm uses lines to relate features in the source image to features in the destination image. </p>
+<p>It is based upon fields of influence surrounding the feature lines selected. It uses reverse mapping (i.e. it goes through the destination image pixel by pixel, and samples the correct pixel from the source image) for warping the image. </p>
+<p>A pair of lines (one defined relative to the source image, the other defined relative to the destination image) defines a mapping from one image to the other</p>
+<ul>
+<li>Where, X is the pixel co-ordinate in the destination image and X’ is the corresponding pixel co-ordinate in the source image, PQ is a line segment in the destination image and P’Q’ is the corresponding line segment in the source image, u is the position along the line, and v is the distance from the line. </li>
+<li>The value u goes from 0 to 1 as the pixel moves from P to Q, and is less than 0 or greater than 1 outside that range. The value for v is the perpendicular distance in pixels from the line. </li>
+<li>The above algorithm is for the case of a single feature line. In a normal morphing scenario, however there are multiple features in the images to be morphed and consequently multiple feature line pairs are specified</li>
+</ul>
+<p>The displacement of a point in the source image is then, actually a weighted sum of the mappings due to each line pair, with the weights attributed to distance and line length. The weight assigned to each line should be strongest when the pixel is exactly on the line, and weaker the further the pixel is from it. The equation used is as follow.</p>
+<p>$\text{weight} = \bigg(\frac{\text{length}^p}{(a + dist)}\bigg)^b$</p>
+
+<a href="cgquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="Computer Graphics">
+    <input type="submit" class="button" value="Quiz Later">
+</hr>
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

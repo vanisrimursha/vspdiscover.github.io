@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+
+       <style>
+    
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+}
+
+.button { 
+    background-color: white; 
+    border: none; 
+    color: blue; 
+    padding: 10px 12px; 
+    text-align: center; 
+    text-decoration: blink; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 10px; 
+    box-shadow: 0 8px 16px 0 rgba(10,15,20,30), 0 6px 20px 0 rgba(10,20,30,0.19);
+} 
+
+.login { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+.inputs { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+    </style>
+
+</head>
+
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+  <div class="login">
+	<h1>Instructor Login</h1>
+<form method="post" action="http://localhost/instructor_login.php">
+<table>
+<tr>
+    
+    <td><b><font color="white">Instructor Id: </font></b> </td><td><input type="text" name="userid" id="userid" class="inputs" placeholder="Username" /></td></tr>
+    	<tr><td><b><font color="white">Password: </font></b></td><td><input type="password" id="password" name="password" class="inputs" placeholder="Password"/><br>
+<input type="checkbox" onclick="myFunction()">Show Password</td></td></tr></table>
+        <center><input type="submit" value="login" name="login" class="button"/> &nbsp 
+<input type="button" value="Cancel" class="button" onlick="document.location.href='homepage.html'" /> &nbsp 
+<input type="button" value="Signup" class="button" onclick="document.location.href='instructor_signup.html'" /></center>
+    </form>
+</div>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>  
+   
+</body>
+</html>

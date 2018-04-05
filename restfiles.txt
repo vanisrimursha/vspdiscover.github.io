@@ -1,0 +1,224 @@
+<?php
+
+if(isset($_POST['userid'])){ $name = $_POST['userid'];
+echo $name ;}
+
+?>
+
+
+
+session_start();
+function getUserById($id)
+{
+global $con;
+$query = "SELECT username FROM student_login WHERE username=". $id;
+$result = mysqli_query($con,$query);
+$user = mysqli_fetch_assoc($result);
+return $user;
+}
+
+		$logged_in_user_id = mysqli_insert_id($con);
+		$_SESSIOn['user'] = getUserById($logged_in_user_id);
+		$_SESSION['success']="Logged in Successfully";
+
+
+<button type="submit" value="Submit" name="submit" id="submit" hidden="hidden">
+onkeypress="document.passvalue.submit.value=this.value"
+
+
+<?php
+$name=' welcome ' .$_POST['username'];
+if( isset($_POST['username']) && $_POST['username'] != NULL )
+{
+         $sname = $_POST['sname'];}
+
+?>
+
+$username=' Hi! Discoverer....Welcome ';
+if( isset($_POST['username']) && $_POST['username'] != NULL )
+{
+         $username = $_POST['username'];
+}
+
+----------------------------
+
+logout back:::::::::::
+
+<script type="text/javascript">
+    function noBack() { window.history.forward(); }
+    noBack();
+    window.onload = noBack;
+    window.onpageshow = function (evt) { if (evt.persisted) noBack(); }
+    window.onunload = function () { void (0); }
+</script>
+
+-----------------------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ xmlns="http://www.w3.org/1999/xhtml"
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+onclick='document.location.href='".$results['course_name'].".html'
+----------------------------------------------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ xmlns="http://www.w3.org/1999/xhtml"
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+=-------------------------------------------------------------
+
+<?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["upload"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not a vedio.";
+        $uploadOk = 0;
+    }
+}
+?>
+-----------------------------------------------------
+<?php
+
+if (isset($_POST['upload']))
+{
+    $file_name = $_FILES['fileToUpload']['name'];
+    $file_type = $_FILES['fileToUpload']['type'];
+    $file_size = $_FILES['fileToUpload']['size'];
+
+    $allowed_extensions = array("webm", "mp4", "ogv");
+    $file_size_max = 2147483648;
+    $pattern = implode ($allowed_extensions, "|");
+
+    if (!empty($file_name))
+    {    //here is what I changed - as you can see above, I used implode for the array
+        // and I am using it in the preg_match. You pro can do the same with file_type,
+        // but I will leave that up to you
+        if (preg_match("/({$pattern})$/i", $file_name) && $file_size < $file_size_max)
+        {
+            if (($file_type == "video/webm") || ($file_type == "video/mp4") || ($file_type == "video/ogv"))
+            {
+                if ($_FILES['file']['error'] > 0)
+                {
+                    echo "Unexpected error occured, please try again later.";
+                } else {
+                    if (file_exists("secure/".$file_name))
+                    {
+                        echo $file_name." already exists.";
+                    } else {
+                        move_uploaded_file($_FILES["file"]["tmp_name"], "secure/".$file_name);
+                        echo "Stored in: " . "secure/".$file_name;
+                    }
+                }
+            } else {
+                echo "Invalid video format.";
+            }
+        }else{
+            echo "where is my mojo?? grrr";
+        }
+    } else {
+        echo "Please select a video to upload.";
+    }
+}
+?>
+-------------------------------------------
+no errors success uploading:
+
+<?php
+error_reporting(1);
+ 
+$con=mysql_connect("localhost","root","","demo");
+ 
+mysql_select_db("demo",$con);
+ 
+extract($_POST);
+ 
+$target_dir = "test_upload/";
+ 
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+ 
+if($upd)
+{
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+ 
+if($imageFileType != "mp4" && $imageFileType != "avi" && $imageFileType != "mov" && $imageFileType != "3gp" && $imageFileType != "mpeg")
+{
+    echo "File Format Not Suppoted";
+} 
+ 
+else
+{
+ 
+$video_path=$_FILES['fileToUpload']['name'];
+ 
+mysql_query("insert into video(video_name) values('$video_path')");
+ 
+move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
+ 
+echo "uploaded ";
+ 
+}
+ 
+}
+ 
+//display all uploaded video
+ 
+if($disp)
+ 
+{
+ 
+$query=mysql_query("select * from video");
+ 
+	while($all_video=mysql_fetch_array($query))
+ 
+	{
+?>
+	 
+	 <video width="300" height="200" controls>
+	<source src="test_upload/<?php echo $all_video['video_name']; ?>" type="video/mp4">
+	</video> 
+	
+	<?php } } ?>
+
+-----------------------------------------------------------------------------
+
+ini_set("SMTP","smtp.gmail.com");
+ini_set("smtp_port","465");
+ini_set('sendmail_from','vanisrimursha@gmail.com');
+
+$subject = 'Welcome to Discover!!! Design Your Life With Discover - Smart Learning Center';
+$message = "Your Username and Password was Successfully registered";/* \nUser can (Discover) learn as many courses and can get certification as soon as user completed the course\nThanks for Registering and continue to Design your Life with Colors" ;*/
+$headers = "From: Discover-Smart Learning";
+/*$message = wordwrap($message,700);*/
+$to = 'localhost.vanisrimursha@gmail.com';
+$send=mail($to, $subject,$message, $headers);
+if($send)
+{echo "Mail sent";
+echo "<script> alert('Successfully Registered')</script>";}
+else{echo "Error in Sending";}
+
+------------------------------------------
+"C:\wamp\sendmail\sendmail.exe -t -i"
+------------------------------------------------
+
+<div class="w3-container">
+<button onclick="myFunction('show8')" class="w3-button w3-block w3-black w3-left-align">
+Languages</button>
+
+<div id="show8" class="w3-hide">
+  <a class="w3-button w3-block w3-left-align" href="Tamil.html" target="_blank">Tamil</a>
+  <a class="w3-button w3-block w3-left-align" href="Basic English.html" target="_blank">Basic English</a>
+  <a class="w3-button w3-block w3-left-align" href="Com English.html" target="_blank">Communicational English</a>
+  <a class="w3-button w3-block w3-left-align" href="Arabic.html" target="_blank">Arabic for Beginners</a>
+</div>
+</div><br>

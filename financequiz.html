@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<title>Finance Quiz</title>
+ <style> body { background-image: url("b3.jpg"); background-repeat: no-repeat; } </style> 
+
+<?php
+session_start();
+$_SESSION['course'] = "Finance";
+?>
+
+</head> 
+<style>
+div#test{ border:blue 1px solid; padding:10px 60px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+                  [ "---------- is one of the safest financial markets available for currency transactions","Money Market","Share Market","Equity Market","A"],
+   [ "The Bank for International Settlements has revealed that the daily turnover of a traditional exchange market is about -----------  billion","$1770","$1440","$1880","C"],
+      [ "The International Monetary Market (IMM) was formed in December ----------- ","1981","1971","1961","B"],
+   [ "The international bond market is composed of ---------  separate types of bond markets","Three","Four","Five","A"],
+   [ "-------- bonds are dealt in local basis and domestic borrowers issue the local bonds","Domestic Bond","Foreign Bond","Euro Bond","A"],
+   [ "Domestic bonds are bought and sold in --------------- ","Foreign Currency","Euro Currency","Local Currency","C"],
+   [ "A group of multinational banks issue ------------","Eurobonds","Foreignbonds","BothA&B","A"],
+   [ "ADR price quotes are in ---------","Euros","U.S Dollers","Both A&B","B"],
+   [ "FDI is an important source of externally derived ------------- ","Economics","Trade","Finance","C"],   
+[ "-----------  financing is usually needed for acquiring new equipment, R&D, cash flow enhancement, and company expansion","Equity","Long-Term","Short-Term","B"],
+   [ "--------  includes preferred stocks and common stocks","Equity","Long-Term","Short-Term","A"],
+   [ "---- is the existing difference between the given book balance and the actual bank balance of an account","Float","Balance Enquiry","Current balance","A"],
+   [ "----------- occurs when the payment of a debt or installment payment is done before the due date","Post Payment","Pre Payment","Drafts","B"],
+   [ "----------  account is a method of making payments for various trade transactions","Current","Savings","Open","C"],
+   [ "There Are -----  major processes of transaction in international trade","5","8","4","A"],
+      [ "True or False ?</br> A basic deficit which is the current account plus FDI, excluding short-term loans and the reserve account.","True","False","Partialy True","A"],
+      [ "True or False ?</br>BOP is an account to show the expenses made by consumers and firms on imported goods and services.","True","False","Partialy True","A"],
+      [ "True or False ?</br>BOP is also a pointer to how much the successful firms of a country are exporting to foreign countries.","True","False","Partialy True","A"],
+      [ "True or False ?</br>The money or the foreign currency entering a nation is taken as a negative entry ","True","False","Partialy True","B"],
+      [ "True or False ?</br>The money going out or expenses of foreign currency is adjusted as a positive entry","True","False","Partialy True","B"]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<button onclick='certificate()'>View Certificate</button>";
+		pos = 0;Scaling
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>NEXT</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+
+function certificate()
+{
+window.open("certificate.php");}
+
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+
+</head>
+
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>

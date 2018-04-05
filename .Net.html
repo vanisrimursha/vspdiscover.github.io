@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ASP.Net</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+
+
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of  ASP.NET</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">ASP.NET-Event Handling</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">ASP.NET-Server Side</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">ASP.NET-Server Control</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">ASP.NET-Client Side</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">ASP.NET-Basic Control</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">ASP.NET-Error Handling</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">ASP.NET-Debugging</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">ASP.NET-Web Services</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">ASP.NET-Multi Threading</button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>ASP.NET </h1>
+
+<p>ASP.NET is a web development platform, which provides a programming model, a comprehensive software infrastructure and various services required to build up robust web applications for PC, as well as mobile devices.</p>
+<p>ASP.NET works on top of the HTTP protocol, and uses the HTTP commands and policies to set a browser-to-server bilateral communication and cooperation.</p>
+<p>ASP.NET is a part of Microsoft .Net platform. ASP.NET applications are compiled codes, written using the extensible and reusable components or objects present in .Net framework. These codes can use the entire hierarchy of classes in .Net framework.</p>
+<p>The ASP.NET application codes can be written in any of the following languages:</p>
+<ul class="list">
+<li>C#</li>
+<li>Visual Basic.Net</li>
+<li>Jscript</li>
+<li>J#</li>
+</ul>
+<p>ASP.NET is used to produce interactive, data-driven web applications over the internet. It consists of a large number of controls such as text boxes, buttons, and labels for assembling, configuring, and manipulating code to create HTML pages.</p>
+<h2>ASP.NET Web Forms Model</h2>
+<p>ASP.NET web forms extend the event-driven model of interaction to the web applications. The browser submits a web form to the web server and the server returns a full markup page or HTML page in response.</p>
+<p>All client side user activities are forwarded to the server for stateful processing. The server processes the output of the client actions and triggers the reactions.</p>
+<p>Now, HTTP is a stateless protocol. ASP.NET framework helps in storing the information regarding the state of the application, which consists of:</p>
+<ul class="list">
+<li>Page state</li>
+<li>Session state</li>
+</ul>
+<p>The page state is the state of the client, i.e., the content of various input fields in the web form. The session state is the collective information obtained from various pages the user visited and worked with, i.e., the overall session state. To clear the concept, let us take an example of a shopping cart.</p>
+<p>User adds items to a shopping cart. Items are selected from a page, say the items page, and the total collected items and price are shown on a different page, say the cart page. Only HTTP cannot keep track of all the information coming from various pages. ASP.NET session state and server side infrastructure keeps track of the information collected globally over a session.</p>
+<p>The ASP.NET runtime carries the page state to and from the server across page requests while generating ASP.NET runtime codes, and incorporates the state of the server side components in hidden fields.</p>
+<p>This way, the server becomes aware of the overall application state and operates in a two-tiered connected way.</p>
+<h2>The ASP.NET Component Model</h2>
+<p>The ASP.NET component model provides various building blocks of ASP.NET pages. Basically it is an object model, which describes:</p>
+<ul class="list">
+<li><p>Server side counterparts of almost all HTML elements or tags, such as &lt;form&gt; and &lt;input&gt;.</p></li>
+<li><p>Server controls, which help in developing complex user-interface. For example, the Calendar control or the Gridview control.</p></li>
+</ul>
+<p>ASP.NET is a technology, which works on the .Net framework that contains all web-related functionalities. The .Net framework is made of an object-oriented hierarchy. An ASP.NET web application is made of pages. When a user requests an ASP.NET page, the IIS delegates the processing of the page to the ASP.NET runtime system.</p>
+<p>The ASP.NET runtime transforms the .aspx page into an instance of a class, which inherits from the base class page of the .Net framework. Therefore, each ASP.NET page is an object and all its components i.e., the server-side controls are also objects.</p>
+<h2>Components of .Net Framework 3.5</h2>
+<p>Before going to the next session on Visual Studio.Net, let us go through at the various components of the .Net framework 3.5. The following table describes the components of the .Net framework 3.5 and the job they perform:</p>
+<table class="table table-bordered">
+<tr>
+</tr>
+<tr>
+<td>
+<p><b>(1) Common Language Runtime or CLR</b></p>
+<p>It performs memory management, exception handling, debugging, security checking, thread execution, code execution, code safety, verification, and compilation. The code that is directly managed by the CLR is called the managed code. When the managed code is compiled, the compiler converts the source code into a CPU independent intermediate language (IL) code. A Just In Time(JIT) compiler compiles the IL code into native code, which is CPU specific.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(2) .Net Framework Class Library</b></p>
+<p>It contains a huge library of reusable types. classes, interfaces, structures, and enumerated values, which are collectively called types.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(3) Common Language Specification</b></p>
+<p>It contains the specifications for the .Net supported languages and implementation of language integration.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(4) Common Type System</b></p>
+<p>It provides guidelines for declaring, using, and managing types at runtime, and cross-language communication.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(5) Metadata and Assemblies</b></p>
+<p>Metadata is the binary information describing the program, which is either stored in a portable executable file (PE) or in the memory. Assembly is a logical unit consisting of the assembly manifest, type metadata, IL code, and a set of resources like image files.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(6) Windows Forms</b></p>
+<p>Windows Forms contain the graphical representation of any window displayed in the application.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(7) ASP.NET and ASP.NET AJAX</b></p>
+<p>ASP.NET is the web development model and AJAX is an extension of ASP.NET for developing and implementing AJAX functionality. ASP.NET AJAX contains the components that allow the developer to update data on a website without a complete reload of the page.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(8) ADO.NET</b></p>
+<p>It is the technology used for working with data and databases. It provides access to data sources like SQL server, OLE DB, XML etc. The ADO.NET allows connection to data sources for retrieving, manipulating, and updating data.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(9) Windows Workflow Foundation (WF)</b></p>
+<p>It helps in building workflow-based applications in Windows. It contains activities, workflow runtime, workflow designer, and a rules engine.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(10) Windows Presentation Foundation</b></p>
+<p>It provides a separation between the user interface and the business logic. It helps in developing visually stunning interfaces using documents, media, two and three dimensional graphics, animations, and more.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(11) Windows Communication Foundation (WCF)</b></p>
+<p>It is the technology used for building and executing connected systems. </p></td>
+</tr>
+<tr>
+<td>
+<p><b>(12) Windows CardSpace</b></p>
+<p>It provides safety for accessing resources and sharing personal information on the internet.</p></td>
+</tr>
+<tr>
+<td>
+<p><b>(13) LINQ</b></p>
+<p>It imparts data querying capabilities to .Net languages using a syntax which is similar to the tradition query language SQL.</p></td>
+</tr>
+</table>
+
+</div>
+
+<div id="c2" class="tabcontent">
+<h1>ASP.NET - Event Handling</h1>
+
+<p>An event is an action or occurrence such as a mouse click, a key press, mouse movements, or any system-generated notification. A process communicates through events. For example, interrupts are system-generated events. When events occur, the application should be able to respond to it and manage it.</p>
+<p>Events in ASP.NET raised at the client machine, and handled at the server machine. For example, a user clicks a button displayed in the browser. A Click event is raised. The browser handles this client-side event by posting it to the server.</p>
+<p>The server has a subroutine describing what to do when the event is raised; it is called the event-handler. Therefore, when the event message is transmitted to the server, it checks whether the Click event has an associated event handler. If it has, the event handler is executed.</p>
+<h2>Event Arguments</h2>
+<p>ASP.NET event handlers generally take two parameters and return void. The first parameter represents the object raising the event and the second parameter is event argument.</p>
+<p>The general syntax of an event is:</p>
+<pre class="prettyprint notranslate">
+private void EventName (object sender, EventArgs e);
+</pre>
+<h2>Application and Session Events</h2>
+<p>The most important application events are:</p>
+<ul class="list">
+<li><p><b>Application_Start</b> - It is raised when the application/website is started.</p></li>
+<li><p><b>Application_End</b> - It is raised when the application/website is stopped.</p></li>
+</ul>
+<p>Similarly, the most used Session events are:</p>
+<ul class="list">
+<li><p><b>Session_Start</b> - It is raised when a user first requests a page from the application.</p></li>
+<li><p><b>Session_End</b> - It is raised when the session ends.</p></li>
+</ul>
+<h2>Page and Control Events</h2>
+<p>Common page and control events are:</p>
+<ul class="list">
+<li><p><b>DataBinding</b> - It is raised when a control binds to a data source.</p></li>
+<li><p><b>Disposed</b> - It is raised when the page or the control is released.</p></li>
+<li><p><b>Error</b> - It is a page event, occurs when an unhandled exception is thrown.</p></li>
+<li><p><b>Init</b> - It is raised when the page or the control is initialized.</p></li>
+<li><p><b>Load</b> - It is raised when the page or a control is loaded.</p></li>
+<li><p><b>PreRender</b> - It is raised when the page or the control is to be rendered.</p></li>
+<li><p><b>Unload</b> - It is raised when the page or control is unloaded from memory.</p></li>
+</ul>
+<h2>Event Handling Using Controls</h2>
+<p>All ASP.NET controls are implemented as classes, and they have events which are fired when a user performs a certain action on them. For example, when a user clicks a button the 'Click' event is generated. For handling events, there are in-built attributes and event handlers. Event handler is coded to respond to an event, and take appropriate action on it.</p>
+<p>By default, Visual Studio creates an event handler by including a Handles clause on the Sub procedure. This clause names the control and event that the procedure handles.</p>
+<p>The ASP tag for a button control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Button ID="btnCancel" runat="server" Text="Cancel" /&gt;
+</pre>
+<p>The event handler for the Click event:</p>
+<pre class="prettyprint notranslate">
+Protected Sub btnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) 
+
+   Handles btnCancel.Click
+   
+End Sub
+</pre>
+<p>An event can also be coded without Handles clause. Then, the handler must be named according to the appropriate event attribute of the control.</p>
+<p>The ASP tag for a button control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Button ID="btnCancel" runat="server" Text="Cancel" Onclick="btnCancel_Click" /&gt;
+</pre>
+<p>The event handler for the Click event:</p>
+<pre class="prettyprint notranslate">
+Protected Sub btnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+
+End Sub
+</pre>
+<p>The common control events are:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:20%">Event</th>
+<th style="width:20%">Attribute</th>
+<th>Controls</th>
+</tr>
+<tr>
+<td>Click</td>
+<td>OnClick</td>
+<td>Button, image button, link button, image map</td>
+</tr>
+<tr>
+<td>Command</td>
+<td>OnCommand</td>
+<td>Button, image button, link button</td>
+</tr>
+<tr>
+<td>TextChanged</td>
+<td>OnTextChanged</td>
+<td>Text box</td>
+</tr>
+<tr>
+<td>SelectedIndexChanged</td>
+<td>OnSelectedIndexChanged</td>
+<td>Drop-down list, list box, radio button list, check box list.</td>
+</tr>
+<tr>
+<td>CheckedChanged</td>
+<td>OnCheckedChanged</td>
+<td>Check box, radio button</td>
+</tr>
+</table>
+<p>Some events cause the form to be posted back to the server immediately, these are called the postback events. For example, the click event such as, Button.Click.</p>
+<p>Some events are not posted back to the server immediately, these are called non-postback events.</p>
+<p>For example, the change events or selection events such as TextBox.TextChanged or CheckBox.CheckedChanged. The nonpostback events could be made to post back immediately by setting their AutoPostBack property to true.</p>
+<h2>Default Events</h2>
+<p>The default event for the Page object is Load event. Similarly, every control has a default event. For example, default event for the button control is the Click event.</p>
+<p>The default event handler could be created in Visual Studio, just by double clicking the control in design view. The following table shows some of the default events for common controls:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:50%">Control</th>
+<th style="width:50%">Default Event</th>
+</tr>
+<tr>
+<td>AdRotator</td>
+<td>AdCreated</td>
+</tr>
+<tr>
+<td>BulletedList</td>
+<td>Click</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>Click</td>
+</tr>
+<tr>
+<td>Calender</td>
+<td>SelectionChanged</td>
+</tr>
+<tr>
+<td>CheckBox</td>
+<td>CheckedChanged</td>
+</tr>
+<tr>
+<td>CheckBoxList</td>
+<td>SelectedIndexChanged</td>
+</tr>
+<tr>
+<td>DataGrid</td>
+<td>SelectedIndexChanged</td>
+</tr>
+<tr>
+<td>DataList</td>
+<td>SelectedIndexChanged</td>
+</tr>
+<tr>
+<td>DropDownList</td>
+<td>SelectedIndexChanged</td>
+</tr>
+<tr>
+<td>HyperLink</td>
+<td>Click</td>
+</tr>
+<tr>
+<td>ImageButton</td>
+<td>Click</td>
+</tr>
+<tr>
+<td>ImageMap</td>
+<td>Click</td>
+</tr>
+<tr>
+<td>LinkButton</td>
+<td>Click</td>
+</tr>
+<tr>
+<td>ListBox</td>
+<td>SelectedIndexChanged</td>
+</tr>
+<tr>
+<td>Menu</td>
+<td>MenuItemClick</td>
+</tr>
+<tr>
+<td>RadioButton</td>
+<td>CheckedChanged</td>
+</tr>
+<tr>
+<td>RadioButtonList</td>
+<td>SelectedIndexChanged</td>
+</tr>
+</table>
+<h3>Example</h3>
+<p>This example includes a simple page with a label control and a button control on it. As the page events such as Page_Load, Page_Init, Page_PreRender etc. take place, it sends a message, which is displayed by the label control. When the button is clicked, the Button_Click event is raised and that also sends a message to be displayed on the label.</p>
+<p>Create a new website and drag a label control and a button control on it from the control tool box. Using the properties window, set the IDs of the controls as .lblmessage. and .btnclick. respectively. Set the Text property of the Button control as 'Click'.</p>
+<p>The markup file (.aspx):</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" 
+   Inherits="eventdemo._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;Untitled Page&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form id="form1" runat="server"&gt;
+         &lt;div&gt;
+            &lt;asp:Label ID="lblmessage" runat="server" &gt;
+            
+            &lt;/asp:Label&gt;
+            
+            &lt;br /&gt;
+            &lt;br /&gt;
+            &lt;br /&gt;
+            
+            &lt;asp:Button ID="btnclick" runat="server" Text="Click" onclick="btnclick_Click" /&gt;
+         &lt;/div&gt;
+      &lt;/form&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+
+<pre class="prettyprint notranslate">
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+using System.Xml.Linq;
+
+namespace eventdemo {
+
+   public partial class _Default : System.Web.UI.Page {
+   
+      protected void Page_Load(object sender, EventArgs e) {
+         lblmessage.Text += "Page load event handled. &lt;br /&gt;";
+         
+         if (Page.IsPostBack) {
+            lblmessage.Text += "Page post back event handled.&lt;br/&gt;";
+         }
+      }
+      
+      protected void Page_Init(object sender, EventArgs e) {
+         lblmessage.Text += "Page initialization event handled.&lt;br/&gt;";
+      }
+      
+      protected void Page_PreRender(object sender, EventArgs e) {
+         lblmessage.Text += "Page prerender event handled. &lt;br/&gt;";
+      }
+      
+      protected void btnclick_Click(object sender, EventArgs e) {
+         lblmessage.Text += "Button click event handled. &lt;br/&gt;";
+      }
+   }
+}
+
+
+</div>
+<div id="c3" class="tabcontent">
+<h1>ASP.NET - Server Side</h1>
+
+<p>We have studied the page life cycle and how a page contains various controls. The page itself is instantiated as a control object. All web forms are basically instances of the ASP.NET Page class. The page class has the following extremely useful properties that correspond to intrinsic objects:</p>
+<ul class="list">
+<li>Session</li>
+<li>Application</li>
+<li>Cache</li>
+<li>Request</li>
+<li>Response</li>
+<li>Server</li>
+<li>User</li>
+<li>Trace</li>
+</ul>
+<p>We will discuss each of these objects in due time. In this tutorial we will explore the Server object, the Request object, and the Response object.</p>
+<h2>Server Object</h2>
+<p>The Server object in Asp.NET is an instance of the System.Web.HttpServerUtility class. The HttpServerUtility class provides numerous properties and methods to perform various jobs.</p>
+<h3>Properties and Methods of the Server object</h3>
+<p>The methods and properties of the HttpServerUtility class are exposed through the intrinsic Server object provided by ASP.NET.</p>
+<p>The following table provides a list of the properties:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>MachineName</td>
+<td>Name of server computer</td>
+</tr>
+<tr>
+<td>ScriptTimeOut</td>
+<td>Gets and sets the request time-out value in seconds.</td>
+</tr>
+</table>
+<p>The following table provides a list of some important methods:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>CreateObject(String)</td>
+<td>Creates an instance of the COM object identified by its ProgID (Programmatic ID).</td>
+</tr>
+<tr>
+<td>CreateObject(Type)</td>
+<td>Creates an instance of the COM object identified by its Type.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified Object is equal to the current Object.</td>
+</tr>
+<tr>
+<td>Execute(String)</td>
+<td>Executes the handler for the specified virtual path in the context of the current request.</td>
+</tr>
+<tr>
+<td>Execute(String, Boolean)</td>
+<td>Executes the handler for the specified virtual path in the context of the current request and specifies whether to clear the QueryString and Form collections.</td>
+</tr>
+<tr>
+<td>GetLastError</td>
+<td>Returns the previous exception.</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the Type of the current instance.</td>
+</tr>
+<tr>
+<td>HtmlEncode</td>
+<td>Changes an ordinary string into a string with legal HTML characters.</td>
+</tr>
+<tr>
+<td>HtmlDecode</td>
+<td>Converts an Html string into an ordinary string.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a String that represents the current Object.</td>
+</tr>
+<tr>
+<td>Transfer(String)</td>
+<td>For the current request, terminates execution of the current page and starts execution of a new page by using the specified URL path of the page.</td>
+</tr>
+<tr>
+<td>UrlDecode</td>
+<td>Converts an URL string into an ordinary string.</td>
+</tr>
+<tr>
+<td>UrlEncodeToken</td>
+<td>Works same as UrlEncode, but on a byte array that contains Base64-encoded data.</td>
+</tr>
+<tr>
+<td>UrlDecodeToken</td>
+<td>Works same as UrlDecode, but on a byte array that contains Base64-encoded data.</td>
+</tr>
+<tr>
+<td>MapPath</td>
+<td>Return the physical path that corresponds to a specified virtual file path on the server.</td>
+</tr>
+<tr>
+<td>Transfer</td>
+<td>Transfers execution to another web page in the current application.</td>
+</tr>
+</table>
+<h2>Request Object</h2>
+<p>The request object is an instance of the System.Web.HttpRequest class. It represents the values and properties of the HTTP request that makes the page loading into the browser.</p>
+<p>The information presented by this object is wrapped by the higher level abstractions (the web control model). However, this object helps in checking some information such as the client browser and cookies.</p>
+<h3>Properties and Methods of the Request Object</h3>
+<p>The following table provides some noteworthy properties of the Request object:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AcceptTypes</td>
+<td>Gets a string array of client-supported MIME accept types.</td>
+</tr>
+<tr>
+<td>ApplicationPath</td>
+<td>Gets the ASP.NET application's virtual application root path on the server.</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Gets or sets information about the requesting client's browser capabilities.</td>
+</tr>
+<tr>
+<td>ContentEncoding</td>
+<td>Gets or sets the character set of the entity-body.</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>Specifies the length, in bytes, of content sent by the client.</td>
+</tr>
+<tr>
+<td>ContentType</td>
+<td>Gets or sets the MIME content type of the incoming request.</td>
+</tr>
+<tr>
+<td>Cookies</td>
+<td>Gets a collection of cookies sent by the client.</td>
+</tr>
+<tr>
+<td>FilePath</td>
+<td>Gets the virtual path of the current request.</td>
+</tr>
+<tr>
+<td>Files</td>
+<td>Gets the collection of files uploaded by the client, in multipart MIME format.</td>
+</tr>
+<tr>
+<td>Form</td>
+<td>Gets a collection of form variables.</td>
+</tr>
+<tr>
+<td>Headers</td>
+<td>Gets a collection of HTTP headers.</td>
+</tr>
+<tr>
+<td>HttpMethod</td>
+<td>Gets the HTTP data transfer method (such as GET, POST, or HEAD) used by the client.</td>
+</tr>
+<tr>
+<td>InputStream</td>
+<td>Gets the contents of the incoming HTTP entity body.</td>
+</tr>
+<tr>
+<td>IsSecureConnection</td>
+<td>Gets a value indicating whether the HTTP connection uses secure sockets (that is, HTTPS).</td>
+</tr>
+<tr>
+<td>QueryString</td>
+<td>Gets the collection of HTTP query string variables.</td>
+</tr>
+<tr>
+<td>RawUrl</td>
+<td>Gets the raw URL of the current request.</td>
+</tr>
+<tr>
+<td>RequestType</td>
+<td>Gets or sets the HTTP data transfer method (GET or POST) used by the client.</td>
+</tr>
+<tr>
+<td>ServerVariables</td>
+<td>Gets a collection of Web server variables.</td>
+</tr>
+<tr>
+<td>TotalBytes</td>
+<td>Gets the number of bytes in the current input stream.</td>
+</tr>
+<tr>
+<td>Url</td>
+<td>Gets information about the URL of the current request.</td>
+</tr>
+<tr>
+<td>UrlReferrer</td>
+<td>Gets information about the URL of the client's previous request that is linked to the current URL.</td>
+</tr>
+<tr>
+<td>UserAgent</td>
+<td>Gets the raw user agent string of the client browser.</td>
+</tr>
+<tr>
+<td>UserHostAddress</td>
+<td>Gets the IP host address of the remote client.</td>
+</tr>
+<tr>
+<td>UserHostName</td>
+<td>Gets the DNS name of the remote client.</td>
+</tr>
+<tr>
+<td>UserLanguages</td>
+<td>Gets a sorted string array of client language preferences.</td>
+</tr>
+</table>
+<p>The following table provides a list of some important methods:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BinaryRead</td>
+<td>Performs a binary read of a specified number of bytes from the current input stream.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified object is equal to the current object. (Inherited from object.)</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the Type of the current instance.</td>
+</tr>
+<tr>
+<td>MapImageCoordinates</td>
+<td>Maps an incoming image-field form parameter to appropriate x-coordinate and y-coordinate values.</td>
+</tr>
+<tr>
+<td>MapPath(String)</td>
+<td>Maps the specified virtual path to a physical path.</td>
+</tr>
+<tr>
+<td>SaveAs</td>
+<td>Saves an HTTP request to disk.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a String that represents the current object.</td>
+</tr>
+<tr>
+<td>ValidateInput</td>
+<td>Causes validation to occur for the collections accessed through the Cookies, Form, and QueryString properties.</td>
+</tr>
+</table>
+<h2>Response Object</h2>
+<p>The Response object represents the server's response to the client request. It is an instance of the System.Web.HttpResponse class.</p>
+<p>In ASP.NET, the response object does not play any vital role in sending HTML text to the client, because the server-side controls have nested, object oriented methods for rendering themselves.</p>
+<p>However, the HttpResponse object still provides some important functionalities, like the cookie feature and the Redirect() method. The Response.Redirect() method allows transferring the user to another page, inside as well as outside the application. It requires a round trip.</p>
+<h3>Properties and Methods of the Response Object</h3>
+<p>The following table provides some noteworthy properties of the Response object:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Property</th><th>Description</th>
+</tr>
+<tr>
+<td>Buffer</td>
+<td>Gets or sets a value indicating whether to buffer the output and send it after the complete response is finished processing.</td>
+</tr>
+<tr>
+<td>BufferOutput</td>
+<td>Gets or sets a value indicating whether to buffer the output and send it after the complete page is finished processing.</td>
+</tr>
+<tr>
+<td>Charset</td>
+<td>Gets or sets the HTTP character set of the output stream.</td>
+</tr>
+<tr>
+<td>ContentEncoding</td>
+<td>Gets or sets the HTTP character set of the output stream.</td>
+</tr>
+<tr>
+<td>ContentType</td>
+<td>Gets or sets the HTTP MIME type of the output stream.</td>
+</tr>
+<tr>
+<td>Cookies</td>
+<td>Gets the response cookie collection.</td>
+</tr>
+<tr>
+<td>Expires</td>
+<td>Gets or sets the number of minutes before a page cached on a browser expires.</td>
+</tr>
+<tr>
+<td>ExpiresAbsolute</td>
+<td>Gets or sets the absolute date and time at which to remove cached information from the cache.</td>
+</tr>
+<tr>
+<td>HeaderEncoding</td>
+<td>Gets or sets an encoding object that represents the encoding for the current header output stream.</td>
+</tr>
+<tr>
+<td>Headers</td>
+<td>Gets the collection of response headers.</td>
+</tr>
+<tr>
+<td>IsClientConnected</td>
+<td>Gets a value indicating whether the client is still connected to the server.</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Enables output of text to the outgoing HTTP response stream.</td>
+</tr>
+<tr>
+<td>OutputStream</td>
+<td>Enables binary output to the outgoing HTTP content body.</td>
+</tr>
+<tr>
+<td>RedirectLocation</td>
+<td>Gets or sets the value of the Http Location header.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Sets the status line that is returned to the client.</td>
+</tr>
+<tr>
+<td>StatusCode</td>
+<td>Gets or sets the HTTP status code of the output returned to the client.</td>
+</tr>
+<tr>
+<td>StatusDescription</td>
+<td>Gets or sets the HTTP status string of the output returned to the client.</td>
+</tr>
+<tr>
+<td>SubStatusCode</td>
+<td>Gets or sets a value qualifying the status code of the response.</td>
+</tr>
+<tr>
+<td>SuppressContent</td>
+<td>Gets or sets a value indicating whether to send HTTP content to the client.</td>
+</tr>
+</table>
+<p>The following table provides a list of some important methods:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AddHeader</td>
+<td>Adds an HTTP header to the output stream. AddHeader is provided for compatibility with earlier versions of ASP.</td>
+</tr>
+<tr>
+<td>AppendCookie</td>
+<td>Infrastructure adds an HTTP cookie to the intrinsic cookie collection.</td>
+</tr>
+<tr>
+<td>AppendHeader</td>
+<td>Adds an HTTP header to the output stream.</td>
+</tr>
+<tr>
+<td>AppendToLog</td>
+<td>Adds custom log information to the InterNET Information Services (IIS) log file.</td>
+</tr>
+<tr>
+<td>BinaryWrite</td>
+<td>Writes a string of binary characters to the HTTP output stream.</td>
+</tr>
+<tr>
+<td>ClearContent</td>
+<td>Clears all content output from the buffer stream.</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Closes the socket connection to a client.</td>
+</tr>
+<tr>
+<td>End</td>
+<td>Sends all currently buffered output to the client, stops execution of the page, and raises the EndRequest event.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified object is equal to the current object.</td>
+</tr>
+<tr>
+<td>Flush</td>
+<td>Sends all currently buffered output to the client.</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the Type of the current instance.</td>
+</tr>
+<tr>
+<td>Pics</td>
+<td>Appends a HTTP PICS-Label header to the output stream.</td>
+</tr>
+<tr>
+<td>Redirect(String)</td>
+<td>Redirects a request to a new URL and specifies the new URL.</td>
+</tr>
+<tr>
+<td>Redirect(String, Boolean)</td>
+<td>Redirects a client to a new URL. Specifies the new URL and whether execution of the current page should terminate.</td>
+</tr>
+<tr>
+<td>SetCookie</td>
+<td>Updates an existing cookie in the cookie collection.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a String that represents the current Object.</td>
+</tr>
+<tr>
+<td>TransmitFile(String)</td>
+<td>Writes the specified file directly to an HTTP response output stream, without buffering it in memory.</td>
+</tr>
+<tr>
+<td>Write(Char)</td>
+<td>Writes a character to an HTTP response output stream.</td>
+</tr>
+<tr>
+<td>Write(Object)</td>
+<td>Writes an object to an HTTP response stream.</td>
+</tr>
+<tr>
+<td>Write(String)</td>
+<td>Writes a string to an HTTP response output stream.</td>
+</tr>
+<tr>
+<td>WriteFile(String)</td>
+<td>Writes the contents of the specified file directly to an HTTP response output stream as a file block.</td>
+</tr>
+<tr>
+<td>WriteFile(String, Boolean)</td>
+<td>Writes the contents of the specified file directly to an HTTP response output stream as a memory block.</td>
+</tr>
+</table>
+<h2>Example</h2>
+<p>The following simple example has a text box control where the user can enter name, a button to send the information to the server, and a label control to display the URL of the client computer.</p>
+<p>The content file:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" 
+   Inherits="server_side._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;Untitled Page&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form id="form1" runat="server"&gt;
+         &lt;div&gt;
+            
+            Enter your name:
+            &lt;br /&gt;
+            &lt;asp:TextBox ID="TextBox1" runat="server"&gt;&lt;/asp:TextBox&gt;
+            &lt;asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" /&gt;
+            &lt;br /&gt;
+            &lt;asp:Label ID="Label1" runat="server"/&gt;
+
+         &lt;/div&gt;
+      &lt;/form&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<p>The code behind Button1_Click:</p>
+<pre class="prettyprint notranslate">
+protected void Button1_Click(object sender, EventArgs e) {
+
+   if (!String.IsNullOrEmpty(TextBox1.Text)) {
+   
+      // Access the HttpServerUtility methods through
+      // the intrinsic Server object.
+      Label1.Text = "Welcome, " + Server.HtmlEncode(TextBox1.Text) + ". &lt;br/&gt; The url is " + Server.UrlEncode(Request.Url.ToString())
+   }
+}
+</pre>
+
+</div>
+<div id="c4" class="tabcontent">
+<h1>ASP.NET - Server Controls</h1>
+
+<p>Controls are small building blocks of the graphical user interface, which include text boxes, buttons, check boxes, list boxes, labels, and numerous other tools. Using these tools, the users can enter data, make selections and indicate their preferences.</p>
+<p>Controls are also used for structural jobs, like validation, data access, security, creating master pages, and data manipulation.</p>
+<p>ASP.NET uses five types of web controls, which are:</p>
+<ul class="list">
+<li>HTML controls</li>
+<li>HTML Server controls</li>
+<li>ASP.NET Server controls</li>
+<li>ASP.NET Ajax Server controls</li>
+<li>User controls and custom controls</li>
+</ul>
+<p>ASP.NET server controls are the primary controls used in ASP.NET. These controls can be grouped into the following categories:</p>
+<ul class="list">
+<li><p><b>Validation controls</b> - These are used to validate user input and they work by running client-side script.</p></li>
+<li><p><b>Data source controls</b> - These controls provides  data binding to different data sources.</p></li>
+<li><p><b>Data view controls</b> - These are various lists and tables, which can bind to data from data sources for displaying.</p></li>
+<li><p><b>Personalization controls</b> - These are used for personalization of a page according to the user preferences, based on user information.</p></li>
+<li><p><b>Login and security controls</b> - These controls provide user authentication.</p></li>
+<li><p><b>Master pages</b> - These controls provide consistent layout and interface throughout the application.</p></li>
+<li><p><b>Navigation controls</b> - These controls help in navigation. For example, menus, tree view etc.</p></li>
+<li><p><b>Rich controls</b> - These controls implement special features. For example, AdRotator, FileUpload, and Calendar control.</p></li>
+</ul>
+<p>The syntax for using server controls is:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:controlType  ID ="ControlID" runat="server" Property1=value1  [Property2=value2] /&gt;
+</pre>
+<p>In addition, visual studio has the following features, to help produce in error-free coding:</p>
+<ul class="list">
+<li>Dragging and dropping of controls in design view</li>
+<li>IntelliSense feature that displays and auto-completes the properties</li>
+<li>The properties window to set the property values directly</li>
+</ul>
+<h2>Properties of the Server Controls</h2>
+<p>ASP.NET server controls with a visual aspect are derived from the WebControl class and inherit all the properties, events, and methods of this class.</p>
+<p>The WebControl class itself and some other server controls that are not visually rendered are derived from the System.Web.UI.Control class. For example, PlaceHolder control or XML control.</p>
+<p>ASP.Net server controls inherit all properties, events, and methods of the WebControl and System.Web.UI.Control class.</p>
+<p>The following table shows the inherited properties, common to all server controls:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AccessKey</td>
+<td>Pressing this key with the Alt key moves focus to the control.</td>
+</tr>
+<tr>
+<td>Attributes</td>
+<td>It is the collection of arbitrary attributes (for rendering only) that do not correspond to properties on the control.</td>
+</tr>
+<tr>
+<td>BackColor</td>
+<td>Background color.</td>
+</tr>
+<tr>
+<td>BindingContainer</td>
+<td>The control that contains this control's data binding.</td>
+</tr>
+<tr>
+<td>BorderColor</td>
+<td>Border color.</td>
+</tr>
+<tr>
+<td>BorderStyle</td>
+<td>Border style.</td>
+</tr>
+<tr>
+<td>BorderWidth</td>
+<td>Border width.</td>
+</tr>
+<tr>
+<td>CausesValidation</td>
+<td>Indicates if it causes validation.</td>
+</tr>
+<tr>
+<td>ChildControlCreated</td>
+<td>It indicates whether the server control's child controls have been created.</td>
+</tr>
+<tr>
+<td>ClientID</td>
+<td>Control ID for HTML markup.</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>The HttpContext object associated with the server control.</td>
+</tr>
+<tr>
+<td>Controls</td>
+<td>Collection of all controls contained within the control.</td>
+</tr>
+<tr>
+<td>ControlStyle</td>
+<td>The style of the Web server control.</td>
+</tr>
+<tr>
+<td>CssClass</td>
+<td>CSS class</td>
+</tr>
+<tr>
+<td>DataItemContainer</td>
+<td>Gets a reference to the naming container if the naming container implements IDataItemContainer.</td>
+</tr>
+<tr>
+<td>DataKeysContainer</td>
+<td>Gets a reference to the naming container if the naming container implements IDataKeysControl.</td>
+</tr>
+<tr>
+<td>DesignMode</td>
+<td>It indicates whether the control is being used on a design surface.</td>
+</tr>
+<tr>
+<td>DisabledCssClass</td>
+<td>Gets or sets the CSS class to apply to the rendered HTML element when the control is disabled.</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>Indicates whether the control is grayed out.</td>
+</tr>
+<tr>
+<td>EnableTheming</td>
+<td>Indicates whether theming applies to the control.</td>
+</tr>
+<tr>
+<td>EnableViewState</td>
+<td>Indicates whether the view state of the control is maintained.</td>
+</tr>
+<tr>
+<td>Events</td>
+<td>Gets a list of event handler delegates for the control.</td>
+</tr>
+<tr>
+<td>Font</td>
+<td>Font.</td>
+</tr>
+<tr>
+<td>Forecolor</td>
+<td>Foreground color.</td>
+</tr>
+<tr>
+<td>HasAttributes</td>
+<td>Indicates whether the control has attributes set.</td>
+</tr>
+<tr>
+<td>HasChildViewState</td>
+<td>Indicates whether the current server control's child controls have any saved view-state settings.</td>
+</tr>
+<tr>
+<td>Height</td>
+<td>Height in pixels or %.</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>Identifier for the control.</td>
+</tr>
+<tr>
+<td>IsChildControlStateCleared</td>
+<td>Indicates whether controls contained within this control have control state.</td>
+</tr>
+<tr>
+<td>IsEnabled</td>
+<td>Gets a value indicating whether the control is enabled.</td>
+</tr>
+<tr>
+<td>IsTrackingViewState</td>
+<td>It indicates whether the server control is saving changes to its view state.</td>
+</tr>
+<tr>
+<td>IsViewStateEnabled</td>
+<td>It indicates whether view state is enabled for this control.</td>
+</tr>
+<tr>
+<td>LoadViewStateById</td>
+<td>It indicates whether the control participates in loading its view state by ID instead of index.</td>
+</tr>
+<tr>
+<td>Page</td>
+<td>Page containing the control.</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>Parent control.</td>
+</tr>
+<tr>
+<td>RenderingCompatibility</td>
+<td>It specifies the ASP.NET version that the rendered HTML will be compatible with.</td>
+</tr>
+<tr>
+<td>Site</td>
+<td>The container that hosts the current control when rendered on a design surface.</td>
+</tr>
+<tr>
+<td>SkinID</td>
+<td>Gets or sets the skin to apply to the control.</td>
+</tr>
+<tr>
+<td>Style</td>
+<td>Gets a collection of text attributes that will be rendered as a style attribute on the outer tag of the Web server control.</td>
+</tr>
+<tr>
+<td>TabIndex</td>
+<td>Gets or sets the tab index of the Web server control.</td>
+</tr>
+<tr>
+<td>TagKey</td>
+<td>Gets the HtmlTextWriterTag value that corresponds to this Web server control. </td>
+</tr>
+<tr>
+<td>TagName</td>
+<td>Gets the name of the control tag.</td>
+</tr>
+<tr>
+<td>TemplateControl</td>
+<td>The template that contains this control.</td>
+</tr>
+<tr>
+<td>TemplateSourceDirectory</td>
+<td>Gets the virtual directory of the page or control containing this control.</td>
+</tr>
+<tr>
+<td>ToolTip</td>
+<td>Gets or sets the text displayed when the mouse pointer hovers over the web server control.</td>
+</tr>
+<tr>
+<td>UniqueID</td>
+<td>Unique identifier.</td>
+</tr>
+<tr>
+<td>ViewState</td>
+<td>Gets a dictionary of state information that saves and restores the view state of a server control across multiple requests for the same page.</td>
+</tr>
+<tr>
+<td>ViewStateIgnoreCase</td>
+<td>It indicates whether the StateBag object is case-insensitive.</td>
+</tr>
+<tr>
+<td>ViewStateMode</td>
+<td>Gets or sets the view-state mode of this control.</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>It indicates whether a server control is visible.</td>
+</tr>
+<tr>
+<td>Width</td>
+<td>Gets or sets the width of the Web server control.</td>
+</tr>
+</table>
+<h2>Methods of the Server Controls</h2>
+<p>The following table provides the methods of the server controls:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AddAttributesToRender</td>
+<td>Adds HTML attributes and styles that need to be rendered to the specified HtmlTextWriterTag.</td>
+</tr>
+<tr>
+<td>AddedControl</td>
+<td>Called after a child control is added to the Controls collection of the control object.</td>
+</tr>
+<tr>
+<td>AddParsedSubObject</td>
+<td>Notifies the server control that an element, either XML or HTML, was parsed, and adds the element to the server control's control collection.</td>
+</tr>
+<tr>
+<td>ApplyStyleSheetSkin</td>
+<td>Applies the style properties defined in the page style sheet to the control. </td>
+</tr>
+<tr>
+<td>ClearCachedClientID</td>
+<td>Infrastructure. Sets the cached ClientID value to null.</td>
+</tr>
+<tr>
+<td>ClearChildControlState</td>
+<td>Deletes the control-state information for the server control's child controls.</td>
+</tr>
+<tr>
+<td>ClearChildState</td>
+<td>Deletes the view-state and control-state information for all the server control's child controls.</td>
+</tr>
+<tr>
+<td>ClearChildViewState</td>
+<td>Deletes the view-state information for all the server control's child controls.</td>
+</tr>
+<tr>
+<td>CreateChildControls</td>
+<td>Used in creating child controls.</td>
+</tr>
+<tr>
+<td>CreateControlCollection</td>
+<td>Creates a new ControlCollection object to hold the child controls.</td>
+</tr>
+<tr>
+<td>CreateControlStyle</td>
+<td>Creates the style object that is used to implement all style related properties.</td>
+</tr>
+<tr>
+<td>DataBind</td>
+<td>Binds a data source to the server control and all its child controls. </td>
+</tr>
+<tr>
+<td>DataBind(Boolean)</td>
+<td>Binds a data source to the server control and all its child controls with an option to raise the DataBinding event.</td>
+</tr>
+<tr>
+<td>DataBindChildren</td>
+<td>Binds a data source to the server control's child controls.</td>
+</tr>
+<tr>
+<td>Dispose</td>
+<td>Enables a server control to perform final clean up before it is released from memory.</td>
+</tr>
+<tr>
+<td>EnsureChildControls</td>
+<td>Determines whether the server control contains child controls. If it does not, it creates child controls.</td>
+</tr>
+<tr>
+<td>EnsureID</td>
+<td>Creates an identifier for controls that do not have an identifier.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified object is equal to the current object.</td>
+</tr>
+<tr>
+<td>Finalize</td>
+<td>Allows an object to attempt to free resources and perform other cleanup operations before the object is reclaimed by garbage collection.</td>
+</tr>
+<tr>
+<td>FindControl(String)</td>
+<td>Searches the current naming container for a server control with the specified id parameter.</td>
+</tr>
+<tr>
+<td>FindControl(String, Int32)</td>
+<td>Searches the current naming container for a server control with the specified id and an integer.</td>
+</tr>
+<tr>
+<td>Focus</td>
+<td>Sets input focus to a control.</td>
+</tr>
+<tr>
+<td>GetDesignModeState</td>
+<td>Gets design-time data for a control.</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the type of the current instance.</td>
+</tr>
+<tr>
+<td>GetUniqueIDRelativeTo</td>
+<td>Returns the prefixed portion of the UniqueID  property of the specified control.</td>
+</tr>
+<tr>
+<td>HasControls</td>
+<td>Determines if the server control contains any child controls.</td>
+</tr>
+<tr>
+<td>HasEvents</td>
+<td>Indicates whether events are registered for the control or any child controls.</td>
+</tr>
+<tr>
+<td>IsLiteralContent</td>
+<td>Determines if the server control holds only literal content.</td>
+</tr>
+<tr>
+<td>LoadControlState</td>
+<td>Restores control-state information.</td>
+</tr>
+<tr>
+<td>LoadViewState</td>
+<td>Restores view-state information.</td>
+</tr>
+<tr>
+<td>MapPathSecure</td>
+<td>Retrieves the physical path that a virtual path, either absolute or relative, maps to.</td>
+</tr>
+<tr>
+<td>MemberwiseClone</td>
+<td>Creates a shallow copy of the current object.</td>
+</tr>
+<tr>
+<td>MergeStyle</td>
+<td>Copies any nonblank elements of the specified style to the web control, but does not overwrite any existing style elements of the control.</td>
+</tr>
+<tr>
+<td>OnBubbleEvent</td>
+<td>Determines whether the event for the server control is passed up the page's UI server control hierarchy.</td>
+</tr>
+<tr>
+<td>OnDataBinding</td>
+<td>Raises the data binding event.</td>
+</tr>
+<tr>
+<td>OnInit</td>
+<td>Raises the Init event.</td>
+</tr>
+<tr>
+<td>OnLoad</td>
+<td>Raises the Load event.</td>
+</tr>
+<tr>
+<td>OnPreRender</td>
+<td>Raises the PreRender event.</td>
+</tr>
+<tr>
+<td>OnUnload</td>
+<td>Raises the Unload event.</td>
+</tr>
+<tr>
+<td>OpenFile</td>
+<td>Gets a Stream used to read a file.</td>
+</tr>
+<tr>
+<td>RemovedControl</td>
+<td>Called after a child control is removed from the controls collection of the control object.</td>
+</tr>
+<tr>
+<td>Render</td>
+<td>Renders the control to the specified HTML writer.</td>
+</tr>
+<tr>
+<td>RenderBeginTag</td>
+<td>Renders the HTML opening tag of the control to the specified writer.</td>
+</tr>
+<tr>
+<td>RenderChildren</td>
+<td>Outputs the contents of a server control's children to a provided HtmlTextWriter object, which writes the contents to be rendered on the client. </td>
+</tr>
+<tr>
+<td>RenderContents</td>
+<td>Renders the contents of the control to the specified writer.</td>
+</tr>
+<tr>
+<td>RenderControl(HtmlTextWriter)</td>
+<td>Outputs server control content to a provided HtmlTextWriter object and stores tracing information about the control if tracing is enabled.</td>
+</tr>
+<tr>
+<td>RenderEndTag</td>
+<td>Renders the HTML closing tag of the control into the specified writer.</td>
+</tr>
+<tr>
+<td>ResolveAdapter</td>
+<td>Gets the control adapter responsible for rendering the specified control.</td>
+</tr>
+<tr>
+<td>SaveControlState</td>
+<td>Saves any server control state changes that have occurred since the time the page was posted back to the server.</td>
+</tr>
+<tr>
+<td>SaveViewState</td>
+<td>Saves any state that was modified after the TrackViewState method was invoked.</td>
+</tr>
+<tr>
+<td>SetDesignModeState</td>
+<td>Sets design-time data for a control.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a string that represents the current object.</td>
+</tr>
+<tr>
+<td>TrackViewState</td>
+<td>Causes the control to track changes to its view state so that they can be stored in the object's view state property.</td>
+</tr>
+</table>
+
+<p> Write a few lines of code to ensure that when a particular node is selected, the label control displays the node text and the text box displays all child nodes under it, if any. The code behind the file should look like this:</p>
+<pre class="prettyprint notranslate">
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+using System.Xml.Linq;
+ 
+namespace eventdemo {
+   public partial class treeviewdemo : System.Web.UI.Page {
+   
+      protected void Page_Load(object sender, EventArgs e) { 
+         txtmessage.Text = " "; 
+      }
+      
+      protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e) {
+      
+         txtmessage.Text = " "; 
+         lblmessage.Text = "Selected node changed to: " + TreeView1.SelectedNode.Text;
+         TreeNodeCollection childnodes = TreeView1.SelectedNode.ChildNodes;
+         
+         if(childnodes != null) {
+            txtmessage.Text = " ";
+            
+            foreach (TreeNode t in childnodes) {
+               txtmessage.Text += t.Value;
+            }
+         }
+      }
+   }
+}
+</pre>
+</div>
+<div id="c5" class="tabcontent">
+<h1>ASP.NET - Client Side</h1>
+
+<p>ASP.NET client side coding has two aspects:</p>
+<ul class="list">
+<li><p><b>Client side scripts</b> : It runs on the browser and in turn speeds up the execution of page. For example, client side data validation which can catch invalid data and warn the user accordingly without making a round trip to the server.</p></li> 
+<li><p><b>Client side source code</b> : ASP.NET pages generate this. For example, the HTML source code of an ASP.NET page contains a number of hidden fields and automatically injected blocks of JavaScript code, which keeps information like view state or does other jobs to make the page work.</p></li>
+</ul>
+<h2>Client Side Scripts</h2>
+<p>All ASP.NET server controls allow calling client side code written using JavaScript or VBScript. Some ASP.NET server controls use client side scripting to provide response to the users without posting back to the server. For example, the validation controls.</p>
+<p>Apart from these scripts, the Button control has a property OnClientClick, which allows executing client-side script, when the button is clicked.</p>
+<p>The traditional and server HTML controls have the following events that can execute a script when they are raised:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Event</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>onblur</td>
+<td>When the control loses focus</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>When the control receives focus</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>When the control is clicked</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>When the value of the control changes</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>When the user presses a key</td>
+</tr>
+<tr>
+<td>onkeypress</td>
+<td>When the user presses an alphanumeric key</td>
+</tr>
+<tr>
+<td>onkeyup</td>
+<td>When the user releases a key</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>When the user moves the mouse pointer over the control</td>
+</tr>
+<tr>
+<td>onserverclick</td>
+<td>It raises the ServerClick event of the control, when the control is clicked</td>
+</tr>
+</table>
+<h2>Client Side Source Code</h2>
+<p>We have already discussed that, ASP.NET pages are generally written in two files:</p>
+<ul class="list">
+<li>The content file or the markup file ( .aspx)</li>
+<li>The code-behind file</li>
+</ul>
+<p>The content file contains the HTML or ASP.NET control tags and literals to form the structure of the page. The code behind file contains the class definition. At run-time, the content file is parsed and transformed into a page class.</p>
+<p>This class, along with the class definition in the code file, and system generated code, together make the executable code (assembly) that processes all posted data, generates response, and sends it back to the client.</p>
+<p>Consider the simple page:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" 
+   Inherits="clientside._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;
+         Untitled Page
+      &lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form id="form1" runat="server"&gt;
+      
+         &lt;div&gt;
+            &lt;asp:TextBox ID="TextBox1" runat="server"&gt;&lt;/asp:TextBox&gt;  
+            &lt;asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Click" /&gt;
+         &lt;/div&gt;
+         
+         &lt;hr /&gt;
+         
+         &lt;h3&gt; &lt;asp:Label ID="Msg" runat="server" Text=""&gt; &lt;/asp:Label&gt; &lt;/h3&gt;
+      &lt;/form&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<p>When this page is run on the browser, the View Source option shows the HTML page sent to the browser by the ASP.Net runtime:</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+ 
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head&gt;
+      &lt;title&gt;
+         Untitled Page
+      &lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form name="form1" method="post" action="Default.aspx" id="form1"&gt;
+      
+         &lt;div&gt;
+            &lt;input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" 
+               value="/wEPDwUKMTU5MTA2ODYwOWRk31NudGDgvhhA7joJum9Qn5RxU2M=" /&gt;
+         &lt;/div&gt;
+ 
+         &lt;div&gt;
+            &lt;input type="hidden" name="__EVENTVALIDATION"  id="__EVENTVALIDATION" 
+               value="/wEWAwKpjZj0DALs0bLrBgKM54rGBhHsyM61rraxE+KnBTCS8cd1QDJ/"/&gt;
+         &lt;/div&gt;
+
+         &lt;div&gt;
+            &lt;input name="TextBox1" type="text" id="TextBox1" /&gt;  
+            &lt;input type="submit" name="Button1" value="Click" id="Button1" /&gt;
+         &lt;/div&gt;
+
+         &lt;hr /&gt;
+         &lt;h3&gt;&lt;span id="Msg"&gt;&lt;/span&gt;&lt;/h3&gt;
+         
+      &lt;/form&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>If you go through the code properly, you can see that first two &lt;div&gt; tags contain the hidden fields which store the view state and validation information.</p>
+
+</div>
+<div id="c6" class="tabcontent">
+<h1>ASP.NET - Basic Controls</h1>
+
+<p>In this chapter, we will discuss the basic controls available in ASP.NET.</p>
+<h2>Button Controls</h2>
+<p>ASP.NET provides three types of button control:</p>
+<ul class="list">
+<li><p><b>Button</b> : It displays text within a rectangular area.</p></li>
+<li><p><b>Link Button</b> : It displays text that looks like a hyperlink.</p></li>
+<li><p><b>Image Button</b> : It displays an image.</p></li>
+</ul>
+<p>When a user clicks a button, two events are raised: Click and Command.</p>
+<p>Basic syntax of button control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Click" / &gt;
+</pre>
+<p>Common properties of the button control:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text displayed on the button. This is for button and link button controls only.</td>
+</tr>
+<tr>
+<td>ImageUrl</td>
+<td>For image button control only. The image to be displayed for the button.</td>
+</tr>
+<tr>
+<td>AlternateText</td>
+<td>For image button control only. The text to be displayed if the browser cannot display the image.</td>
+</tr>
+<tr>
+<td>CausesValidation</td>
+<td>Determines whether page validation occurs when a user clicks the button. The default is true.</td>
+</tr>
+<tr>
+<td>CommandName</td>
+<td>A string value that is passed to the command event when a user clicks the button.</td>
+</tr>
+<tr>
+<td>CommandArgument</td>
+<td>A string value that is passed to the command event when a user clicks the button.</td>
+</tr>
+<tr>
+<td>PostBackUrl</td>
+<td>The URL of the page that is requested when the user clicks the button.</td>
+</tr>
+</table>
+<h2>Text Boxes and Labels</h2>
+<p>Text box controls are typically used to accept input from the user. A text box control can accept one or more lines of text depending upon the settings of the TextMode attribute.</p>
+<p>Label controls provide an easy way to display text which can be changed from one execution of a page to the next. If you want to display text that does not change, you use the literal text.</p>
+<p>Basic syntax of text control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:TextBox ID="txtstate" runat="server" &gt;&lt;/asp:TextBox&gt;
+</pre>
+<p>Common Properties of the Text Box and Labels:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>TextMode</td>
+<td>Specifies the type of text box. SingleLine creates a standard text box, MultiLIne creates a text box that accepts more than one line of text and the Password causes the characters that are entered to be masked. The default is SingleLine.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text content of the text box.</td>
+</tr>
+<tr>
+<td>MaxLength</td>
+<td>The maximum number of characters that can be entered into the text box.</td>
+</tr>
+<tr>
+<td>Wrap</td>
+<td>It determines whether or not text wraps automatically for multi-line text box; default is true.</td>
+</tr>
+<tr>
+<td>ReadOnly</td>
+<td>Determines whether the user can change the text in the box; default is false, i.e., the user can not change the text.</td>
+</tr>
+<tr>
+<td>Columns</td>
+<td>The width of the text box in characters. The actual width is determined based on the font that is used for the text entry.</td>
+</tr>
+<tr>
+<td>Rows</td>
+<td>The height of a multi-line text box in lines. The default value is 0, means a single line text box.</td>
+</tr>
+</table>
+<p>The mostly used attribute for a label control is 'Text', which implies the text displayed on the label.</p>
+<h2>Check Boxes and Radio Buttons</h2>
+<p>A check box displays a single option that the user can either check or uncheck and radio buttons present a group of options from which the user can select just one option.</p>
+<p>To create a group of radio buttons, you specify the same name for the GroupName attribute of each radio button in the group. If more than one group is required in a single form, then specify a different group name for each group.</p>
+<p>If you want check box or radio button to be selected when the form is initially displayed, set its Checked attribute to true. If the Checked attribute is set to true for multiple radio buttons in a group, then only the last one is considered as true.</p>
+<p>Basic syntax of check box:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:CheckBox ID= "chkoption" runat= "Server"&gt; 
+&lt;/asp:CheckBox&gt;
+</pre>
+<p>Basic syntax of radio button:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:RadioButton ID= "rdboption" runat= "Server"&gt; 
+&lt;/asp: RadioButton&gt;
+</pre>
+<p>Common properties of check boxes and radio buttons:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text displayed next to the check box or radio button.</td>
+</tr>
+<tr>
+<td>Checked</td>
+<td>Specifies whether it is selected or not, default is false.</td>
+</tr>
+<tr>
+<td>GroupName</td>
+<td>Name of the group the control belongs to.</td>
+</tr>
+</table>
+<h2>List Controls</h2>
+<p>ASP.NET provides the following controls</p>
+<ul class="list">
+<li>Drop-down list,</li>
+<li>List box,</li>
+<li>Radio button list,</li>
+<li>Check box list,</li>
+<li>Bulleted list.</li>
+</ul>
+<p>These control let a user choose from one or more items from the list. List boxes and drop-down lists contain one or more list items. These lists can be loaded either by code or by the ListItemCollection editor.</p>
+<p>Basic syntax of list box control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True"    OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"&gt;
+&lt;/asp:ListBox&gt;
+</pre>
+<p>Basic syntax of drop-down list control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"   OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"&gt;
+&lt;/asp:DropDownList&gt;
+</pre>
+<p>Common properties of list box and drop-down Lists:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Items</td>
+<td>The collection of ListItem objects that represents the items in the control. This property returns an object of type ListItemCollection.</td>
+</tr>
+<tr>
+<td>Rows</td>
+<td>Specifies the number of items displayed in the box. If actual list contains more rows than displayed then a scroll bar is added.</td>
+</tr>
+<tr>
+<td>SelectedIndex</td>
+<td>The index of the currently selected item. If more than one item is selected, then the index of the first selected item. If no item is selected, the value of this property is -1.</td>
+</tr>
+<tr>
+<td>SelectedValue</td>
+<td>The value of the currently selected item. If more than one item is selected, then the value of the first selected item. If no item is selected, the value of this property is an empty string ("").</td>
+</tr>
+<tr>
+<td>SelectionMode</td>
+<td>Indicates whether a list box allows single selections or multiple selections.</td>
+</tr>
+</table>
+<p>Common properties of each list item objects:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text displayed for the item.</td>
+</tr>
+<tr>
+<td>Selected</td>
+<td>Indicates whether the item is selected.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>A string value associated with the item.</td>
+</tr>
+</table>
+<p>It is important to notes that:</p>
+<ul class="list">
+<li><p>To work with the items in a drop-down list or list box, you use the Items property of the control. This property returns a ListItemCollection object which contains all the items of the list.</p></li>
+<li><p>The SelectedIndexChanged event is raised when the user selects a different item from a drop-down list or list box.</p></li>
+</ul>
+<h2>The ListItemCollection</h2>
+<p>The ListItemCollection object is a collection of ListItem objects. Each ListItem object represents one item in the list. Items in a ListItemCollection are numbered from 0.</p>
+<p>When the items into a list box are loaded using strings like:  lstcolor.Items.Add("Blue"), then both the Text and Value properties of the list item are set to the string value you specify. To set it differently you must create a list item object and then add that item to the collection.</p>
+<p>The ListItemCollection Editor is used to add item to a drop-down list or list box. This is used to create a static list of items. To display the collection editor, select edit item from the smart tag menu, or select the control and then click the ellipsis button from the Item property in the properties window.</p>
+<p>Common properties of ListItemCollection:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Item(integer)</td>
+<td>A  ListItem object that represents the item at the specified index.</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>The number of items in the collection.</td>
+</tr>
+</table>
+<p>Common methods of ListItemCollection:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Methods</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Add(string)</td>
+<td>Adds a new item at the end of the collection and assigns the string parameter to the Text property of the item.</td>
+</tr>
+<tr>
+<td>Add(ListItem)</td>
+<td>Adds a new item at the end of the collection.</td>
+</tr>
+<tr>
+<td>Insert(integer, string)</td>
+<td>Inserts an item at the specified index location in the collection, and assigns string parameter to the text property of the item.</td>
+</tr>
+<tr>
+<td>Insert(integer, ListItem)</td>
+<td>Inserts the item at the specified index location in the collection.</td>
+</tr>
+<tr>
+<td>Remove(string)</td>
+<td>Removes the item with the text value same as the string.</td>
+</tr>
+<tr>
+<td>Remove(ListItem)</td>
+<td>Removes the specified item.</td>
+</tr>
+<tr>
+<td>RemoveAt(integer)</td>
+<td>Removes the item at the specified index as the integer.</td>
+</tr>
+<tr>
+<td>Clear</td>
+<td>Removes all the items of the collection.</td>
+</tr>
+<tr>
+<td>FindByValue(string)</td>
+<td>Returns the item whose value is same as the string.</td>
+</tr>
+<tr>
+<td>FindByValue(Text)</td>
+<td>Returns the item whose text is same as the string.</td>
+</tr>
+</table>
+<h2>Radio Button list and Check Box list</h2>
+<p>A radio button list presents a list of mutually exclusive options.  A check box list presents a list of independent options. These controls contain a collection of ListItem objects that could be referred to through the Items property of the control.</p>
+<p>Basic syntax of radio button list:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" 
+   OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged"&gt;
+&lt;/asp:RadioButtonList&gt;
+</pre>
+<p>Basic syntax of check box list:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="True" 
+   OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged"&gt;
+&lt;/asp:CheckBoxList&gt;
+</pre>
+<p>Common properties of check box and radio button lists:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>RepeatLayout</td>
+<td>This attribute specifies whether the table tags or the normal html flow to use while formatting the list when it is rendered. The default is Table.</td>
+</tr>
+<tr>
+<td>RepeatDirection</td>
+<td>It specifies the direction in which the controls to be repeated. The values available are Horizontal and Vertical. Default is Vertical.</td>
+</tr>
+<tr>
+<td>RepeatColumns</td>
+<td>It specifies the number of columns to use when repeating the controls; default is 0.</td>
+</tr>
+</table>
+<h2>Bulleted lists and Numbered lists</h2>
+<p>The bulleted list control creates bulleted lists or numbered lists. These controls contain a collection of ListItem objects that could be referred to through the Items property of the control.</p>
+<p>Basic syntax of a bulleted list:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:BulletedList ID="BulletedList1" runat="server"&gt;
+&lt;/asp:BulletedList&gt;
+</pre>
+<p>Common properties of the bulleted list:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BulletStyle</td>
+<td>This property specifies the style and looks of the bullets, or numbers.</td>
+</tr>
+<tr>
+<td>RepeatDirection</td>
+<td>It specifies the direction in which the controls to be repeated. The values available are Horizontal and Vertical. Default is Vertical.</td>
+</tr>
+<tr>
+<td>RepeatColumns</td>
+<td>It specifies the number of columns to use when repeating the controls; default is 0.</td>
+</tr>
+</table>
+<h2>HyperLink Control</h2>
+<p>The HyperLink control is like the HTML &lt;a&gt; element.</p>
+<p>Basic syntax for a hyperlink control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:HyperLink ID="HyperLink1" runat="server"&gt;
+   HyperLink
+&lt;/asp:HyperLink&gt;
+</pre>
+<p>It has the following important properties:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ImageUrl</td>
+<td>Path of the image to be displayed by the control.</td>
+</tr>
+<tr>
+<td>NavigateUrl</td>
+<td>Target link URL.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text to be displayed as the link.</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>The window or frame which loads the linked page.</td>
+</tr>
+</table>
+<h2>Image Control</h2>
+<p>The image control is used for displaying images on the web page, or some alternative text, if the image is not available.</p>
+<p>Basic syntax for an image control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Image ID="Image1" runat="server"&gt;
+</pre>
+<p>It has the following important properties:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AlternateText</td>
+<td>Alternate text to be displayed in absence of the image.</td>
+</tr>
+<tr>
+<td>ImageAlign</td>
+<td>Alignment options for the control.</td>
+</tr>
+<tr>
+<td>ImageUrl</td>
+<td>Path of the image to be displayed by the control.</td>
+</tr>
+</table>
+</div>
+<div id="c7" class="tabcontent">
+<h1>ASP.NET - Error Handling</h1>
+
+<p>Error handling in ASP.NET has three aspects:</p>
+<ul class="list">
+<li><p><b>Tracing</b> - tracing the program execution at page level or application level.</p></li>
+<li><p><b>Error handling</b> - handling standard errors or custom errors at page level or application level.</p></li>
+<li><p><b>Debugging</b> - stepping through the program, setting break points to analyze the code</p></li>
+</ul>
+<p>In this chapter, we will discuss tracing and error handling and in this chapter, we will discuss debugging.</p>
+<p>To understand the concepts, create the following sample application. It has a label control, a dropdown list, and a link. The dropdown list loads an array list of famous quotes and the selected quote is shown in the label below. It also has a hyperlink which has points to a nonexistent link.</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="errorhandling._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;
+         Tracing, debugging and error handling
+      &lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form id="form1" runat="server"&gt;
+      
+         &lt;div&gt;
+            &lt;asp:Label ID="lblheading" runat="server" Text="Tracing, Debuggin  and Error Handling"&gt;
+            &lt;/asp:Label&gt;
+            
+            &lt;br /&gt; &lt;br /&gt;
+            
+            &lt;asp:DropDownList ID="ddlquotes" runat="server" AutoPostBack="True"  onselectedindexchanged="ddlquotes_SelectedIndexChanged"&gt;
+            &lt;/asp:DropDownList&gt;
+            
+            &lt;br /&gt; &lt;br /&gt;
+            
+            &lt;asp:Label ID="lblquotes" runat="server"&gt;
+            &lt;/asp:Label&gt;
+            
+            &lt;br /&gt; &lt;br /&gt;
+            
+            &lt;asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="mylink.htm"&gt;Link to:&lt;/asp:HyperLink&gt;
+         &lt;/div&gt;
+         
+      &lt;/form&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<p>The code behind file:</p>
+<pre class="prettyprint notranslate">
+public partial class _Default : System.Web.UI.Page
+{
+   protected void Page_Load(object sender, EventArgs e)
+   {
+      if (!IsPostBack)
+      {
+         string[,] quotes = 
+         {
+            {"Imagination is more important than Knowledge.", "Albert Einsten"},
+            {"Assume a virtue, if you have it not" "Shakespeare"},
+            {"A man cannot be comfortable without his own approval", "Mark Twain"},
+            {"Beware the young doctor and the old barber", "Benjamin Franklin"},
+            {"Whatever begun in anger ends in shame", "Benjamin Franklin"}
+         };
+         
+         for (int i=0; i&lt;quotes.GetLength(0); i++)
+            ddlquotes.Items.Add(new ListItem(quotes[i,0], quotes[i,1]));
+      }
+   }
+   
+   protected void ddlquotes_SelectedIndexChanged(object sender, EventArgs e)
+   {
+      if (ddlquotes.SelectedIndex != -1)
+      {
+         lblquotes.Text = String.Format("{0}, Quote: {1}", ddlquotes.SelectedItem.Text, ddlquotes.SelectedValue);
+      }
+   }
+}
+</pre>
+<h2>Tracing</h2>
+<p>To enable page level tracing, you need to modify the Page directive and add a Trace attribute as shown:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
+   Inherits="errorhandling._Default" <b>Trace</b> ="true" %&gt;
+</pre>
+<p>Now when you execute the file, you get the tracing information:</p>
+<p>It provides the following information at the top:</p>
+<ul class="list">
+<li>Session ID</li>
+<li>Status Code</li>
+<li>Time of Request</li>
+<li>Type of Request</li>
+<li>Request and Response Encoding</li>
+</ul>
+<p>The status code sent from the server, each time the page is requested shows the name and time of error if any. The following table shows the common HTTP status codes:</p>
+<table class="table table-bordered" >
+<tr>
+<th style="width:45%">Number</th>
+<th>Description</th>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center;">
+<b>Informational (100 - 199)</b>
+</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Continue</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Switching protocols</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center;">
+<b>Successful (200 - 299)</b></td>
+</tr>
+<tr>
+<td>200</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No content</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center;">
+<b>Redirection (300 - 399)</b></td>
+</tr>
+<tr>
+<td>301</td>
+<td>
+Moved permanently
+</td>
+</tr>
+<tr>
+<td>305</td>
+<td>Use proxy</td>
+</tr>
+<tr>
+<td>307</td>
+<td>Temporary redirect</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center;">
+<b>Client Errors (400 - 499)</b>
+</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad request</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Payment required</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not found</td>
+</tr>
+<tr>
+<td>408</td>
+<td>Request timeout</td>
+</tr>
+<tr>
+<td>417</td>
+<td>Expectation failed</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center;">
+<b>Server Errors (500 - 599)</b>
+</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal server error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service unavailable</td>
+</tr>
+<tr>
+<td>505</td>
+<td>HTTP version not supported</td>
+</tr>
+</table>
+<p>Under the top level information, there is Trace log, which provides details of page life cycle. It provides elapsed time in seconds since the page was initialized.</p>
+<p>The next section is control tree, which lists all controls on the page in a hierarchical manner:</p>
+<p>Last in the Session and Application state summaries, cookies, and headers collections followed by list of all server variables.</p>
+<p>The Trace object allows you to add custom information to the trace output. It has two methods to accomplish this: the Write method and the Warn method.</p>
+<p>Change the Page_Load event handler to check the Write method:</p>
+<pre class="prettyprint notranslate">
+protected void Page_Load(object sender, EventArgs e)
+{
+   Trace.Write("Page Load");
+   
+   if (!IsPostBack)
+   {
+      Trace.Write("Not Post Back, Page Load");
+      string[,] quotes = 
+      .......................
+   }
+}
+</pre>
+<p>Run to observe the effects:</p>
+<p>To check the Warn method, let us forcibly enter some erroneous code in the selected index changed event handler:</p>
+<pre class="prettyprint notranslate">
+try
+{
+   int a = 0;
+   int b = 9 / a;
+}catch (Exception e)
+{
+   Trace.Warn("UserAction", "processing 9/a", e);
+}
+</pre>
+<p>Try-Catch is a C# programming construct. The try block holds any code that may or may not produce error and the catch block catches the error. When the program is run, it sends the warning in the trace log.</p>
+<p>Application level tracing applies to all the pages in the web site. It is implemented by putting the following code lines in the web.config file:</p>
+<pre class="prettyprint notranslate">
+&lt;system.web&gt;
+   &lt;trace enabled="true" /&gt;
+&lt;/system.web&gt;
+</pre>
+<h2>Error Handling</h2>
+<p>Although ASP.NET can detect all runtime errors, still some subtle errors may still be there. Observing the errors by tracing is meant for the developers, not for the users.</p>
+<p>Hence, to intercept such occurrence, you can add error handing settings in the web.config file of the application. It is application-wide error handling. For example, you can add the following lines in the web.config file:</p>
+<pre class="prettyprint notranslate">
+&lt;configuration&gt;
+   &lt;system.web&gt;
+   
+      &lt;customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm"&gt;
+         &lt;error statusCode="403" redirect="NoAccess.htm"	/&gt;
+         &lt;error statusCode="404" redirect="FileNotFound.htm" /&gt;
+      &lt;/customErrors&gt;
+      
+   &lt;/system.web&gt;
+&lt;configuration&gt;
+</pre>
+<p>The &lt;customErrors&gt; section has the possible attributes:</p>
+<ul class="list">
+<li><p><b>Mode</b> : It enables or disables custom error pages. It has the three possible values:</p>
+<ul class="list">
+<li><b>On</b> : displays the custom pages.</li>
+<li><b>Off</b> : displays ASP.NET error pages (yellow pages)</li>
+<li><b>remoteOnly</b> : It displays custom errors to client, display ASP.NET errors locally.</li>
+</ul>
+</li>
+<li><p><b>defaultRedirect</b> : It contains the URL of the page to be displayed in case of unhandled errors.</p></li>
+</ul>
+<p>To put different custom error pages for different type of errors, the &lt;error&gt; sub tags are used, where different error pages are specified, based on the status code of the errors.</p>
+<p>To implement page level error handling, the Page directive could be modified:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
+   Inherits="errorhandling._Default" Trace ="true" ErrorPage="PageError.htm" %&gt;
+</pre>
+<p>Because ASP.NET Debugging is an important subject in itself, so we would discuss it in the next chapter separately.</p>
+
+</div>
+<div id="c8" class="tabcontent">
+<h1>ASP.NET - Debugging</h1>
+
+<p>Debugging allows the developers to see how the code works in a step-by-step manner, how the values of the variables change, how the objects are created and destroyed, etc.</p>
+<p>When the site is executed for the first time, Visual Studio displays a prompt asking whether it should be enabled for debugging:</p>
+<p>When debugging is enabled, the following lines of codes are shown in the web.config:</p>
+<pre class="prettyprint notranslate">
+&lt;system.web&gt;
+   &lt;compilation debug="true"&gt;
+      &lt;assemblies&gt;
+      ..............
+      &lt;/assemblies&gt;
+   &lt;/compilation&gt;	
+&lt;/system.web&gt;
+</pre>
+<p>The Debug toolbar provides all the tools available for debugging:</p>
+<h2>Breakpoints</h2>
+<p>Breakpoints specifies the runtime to run a specific line of code and then stop execution so that the code could be examined and perform various debugging jobs such as, changing the value of the variables, step through the codes, moving in and out of functions and methods etc.</p>
+<p>To set a breakpoint, right click on the code and choose insert break point. A red dot appears on the left margin and the line of code is highlighted as shown:</p>
+<p>Next when you execute the code, you can observe its behavior.</p>
+<p>At this stage, you can step through the code, observe the execution flow and examine the value of the variables, properties, objects, etc.</p>
+<p>You can modify the properties of the breakpoint from the Properties menu obtained by right clicking the breakpoint glyph:</p>
+<p>The location dialog box shows the location of the file, line number and the character number of the selected code. The condition menu item allows you to enter a valid expression, which is evaluated when the program execution reaches the breakpoint:</p>
+<p>The Hit Count menu item displays a dialog box that shows the number of times the break point has been executed.</p>
+<p>Clicking on any option presented by the drop down list opens an edit field where a target hit count is entered. This is particularly helpful in analyzing loop constructs in code.</p>
+<p>The Filter menu item allows setting a filter for specifying machines, processes, or threads or any combination, for which the breakpoint will be effective.</p>
+<p>The When Hit menu item allows you to specify what to do when the break point is hit.</p>
+<h2>The Debug Windows</h2>
+<p>Visual Studio provides the following debug windows, each of which shows some program information. The following table lists the windows:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Window</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Immediate</td>
+<td>Displays variables and expressions.</td>
+</tr>
+<tr>
+<td>Autos</td>
+<td>Displays all variables in the current and previous statements.</td>
+</tr>
+<tr>
+<td>Locals</td>
+<td>Displays all variables in the current context.</td>
+</tr>
+<tr>
+<td>Watch</td>
+<td>Displays up to four different sets of variables.</td>
+</tr>
+<tr>
+<td>Call Stack</td>
+<td>Displays all methods in the call stack.</td>
+</tr>
+<tr>
+<td>Threads</td>
+<td>Displays and control threads.</td>
+</tr>
+</table>
+
+</div>
+<div id="c9" class="tabcontent">
+<h1>ASP.NET - Web Services</h1>
+
+<p>A web service is a web-based functionality accessed using the protocols of the web to be used by the web applications. There are three aspects of web service development:</p>
+<ul class="list">
+<li>Creating the web service</li> 
+<li>Creating a proxy</li> 
+<li>Consuming the web service</li> 
+</ul>
+<h2>Creating a Web Service</h2>
+<p>A web service is a web application which is basically a class consisting of methods that could be used by other applications. It also follows a code-behind architecture such as the ASP.NET web pages, although it does not have a user interface.</p>
+<p>To understand the concept let us create a web service to provide stock price information. The clients can query about the name and price of a stock based on the stock symbol. To keep this example simple, the values are hardcoded in a two-dimensional array. This web service has three methods:</p>
+<ul class="list">
+<li>A default HelloWorld method</li>
+<li>A GetName Method</li>
+<li>A GetPrice Method</li>
+</ul>
+<p>Take the following steps to create the web service:</p>
+<p><b>Step (1)</b> : Select File -&gt; New -&gt; Web Site in Visual Studio, and then select ASP.NET Web Service.</p>
+<p><b>Step (2)</b> : A web service file called Service.asmx and its code behind file, Service.cs is created in the App_Code directory of the project.</p>
+<p><b>Step (3)</b> : Change the names of the files to StockService.asmx and StockService.cs.</p>
+<p><b>Step (4)</b> : The .asmx file has simply a WebService directive on it:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ WebService Language="C#" CodeBehind="~/App_Code/StockService.cs" Class="StockService" %&gt;
+</pre>
+<p><b>Step (5)</b> : Open the StockService.cs file, the code generated in it is the basic Hello World service. The default web service code behind file looks like the following:</p>
+<pre class="prettyprint notranslate">
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+
+using System.Web;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+
+using System.Xml.Linq;
+
+namespace StockService
+{
+   // &lt;summary&gt;
+   // Summary description for Service1
+   // &lt;summary&gt;
+   
+   [WebService(Namespace = "http://tempuri.org/")]
+   [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+   [ToolboxItem(false)]
+   
+   // To allow this Web Service to be called from script, 
+   // using ASP.NET AJAX, uncomment the following line. 
+   // [System.Web.Script.Services.ScriptService]
+   
+   public class Service1 : System.Web.Services.WebService
+   {
+      [WebMethod]
+      
+      public string HelloWorld()
+      {
+         return "Hello World";
+      }
+   }
+}
+</pre>
+<p><b>Step (6)</b> : Change the code behind file to add the two dimensional array of strings for stock symbol, name and price and two web methods for getting the stock information.</p>
+<pre class="prettyprint notranslate">
+using System;
+using System.Linq;
+
+using System.Web;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+
+using System.Xml.Linq;
+
+[WebService(Namespace = "http://tempuri.org/")]
+[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+
+// To allow this Web Service to be called from script, 
+// using ASP.NET AJAX, uncomment the following line. 
+// [System.Web.Script.Services.ScriptService]
+
+public class StockService : System.Web.Services.WebService
+{
+   public StockService () {
+      //Uncomment the following if using designed components 
+      //InitializeComponent(); 
+   }
+   
+   string[,] stocks =
+   {
+      {"RELIND", "Reliance Industries", "1060.15"},
+      {"ICICI", "ICICI Bank", "911.55"},
+      {"JSW", "JSW Steel", "1201.25"},
+      {"WIPRO", "Wipro Limited", "1194.65"},
+      {"SATYAM", "Satyam Computers", "91.10"}
+   };
+
+   [WebMethod]
+   public string HelloWorld() {
+      return "Hello World";
+   }
+   
+   [WebMethod]
+   public double GetPrice(string symbol)
+   { 
+      //it takes the symbol as parameter and returns price
+      for (int i = 0; i &lt; stocks.GetLength(0); i++)
+      {
+         if (String.Compare(symbol, stocks[i, 0], true) == 0)
+         return Convert.ToDouble(stocks[i, 2]);
+      }
+      
+      return 0;
+   }
+   
+   [WebMethod]
+   public string GetName(string symbol)
+   {
+      // It takes the symbol as parameter and 
+      // returns name of the stock
+      for (int i = 0; i &lt; stocks.GetLength(0); i++)
+      {
+         if (String.Compare(symbol, stocks[i, 0], true) == 0)
+         return stocks[i, 1];
+      }
+      
+      return "Stock Not Found";
+   }
+}
+</pre>
+<p><b>Step (7)</b> : Running the web service application gives a web service test page, which allows testing the service methods.</p>
+<p><b>Step (8)</b> : Click on a method name, and check whether it runs properly.</p>
+<p><b>Step (9)</b> : For testing the GetName method, provide one of the stock symbols, which are hard coded, it returns the name of the stock</p>
+<h2>Consuming the Web Service</h2>
+<p>For using the web service, create a web site under the same solution. This could be done by right clicking on the Solution name in the Solution Explorer. The web page calling the web service should have a label control to display the returned results and two button controls one for post back and another for calling the service.</p>
+<p>The content file for the web application is as follows:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="wsclient._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;
+         Untitled Page
+      &lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;form id="form1" runat="server"&gt;
+         &lt;div&gt;
+         
+            &lt;h3&gt;Using the Stock Service&lt;/h3&gt;
+            
+            &lt;br /&gt; &lt;br /&gt;
+            
+            &lt;asp:Label ID="lblmessage" runat="server"&gt;&lt;/asp:Label&gt;
+            
+            &lt;br /&gt; &lt;br /&gt;
+            
+            &lt;asp:Button ID="btnpostback" runat="server" onclick="Button1_Click" Text="Post Back" style="width:132px" /&gt;
+            &nbsp;&nbsp;&nbsp;
+            &lt;asp:Button ID="btnservice" runat="server" onclick="btnservice_Click"  Text="Get Stock" style="width:99px" /&gt;
+            
+         &lt;/div&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>The code behind file for the web application is as follows:</p>
+<pre class="prettyprint notranslate">
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+using System.Xml.Linq;
+
+//this is the proxy
+using localhost;
+
+namespace wsclient
+{
+   public partial class _Default : System.Web.UI.Page
+   {
+      protected void Page_Load(object sender, EventArgs e)
+      {
+         if (!IsPostBack)
+         {
+            lblmessage.Text = "First Loading Time: " +  DateTime.Now.ToLongTimeString
+         }
+         else
+         {
+            lblmessage.Text = "PostBack at: " + DateTime.Now.ToLongTimeString();
+         }
+      }
+      
+      protected void btnservice_Click(object sender, EventArgs e)
+      {
+         StockService proxy = new StockService();
+         lblmessage.Text = String.Format("Current SATYAM Price:{0}",
+         proxy.GetPrice("SATYAM").ToString());
+      }
+   }
+}
+</pre>
+<h2>Creating the Proxy</h2>
+<p>A proxy is a stand-in for the web service codes. Before using the web service, a proxy must be created. The proxy is registered with the client application. Then the client application makes the calls to the web service as it were using a local method.</p>
+<p>The proxy takes the calls, wraps it in proper format and sends it as a SOAP request to the server. SOAP stands for Simple Object Access Protocol. This protocol is used for exchanging web service data.</p>
+<p>When the server returns the SOAP package to the client, the proxy decodes everything and presents it to the client application.</p>
+<p>Before calling the web service using the btnservice_Click, a web reference should be added to the application. This creates a proxy class transparently, which is used by the btnservice_Click event.</p>
+<pre class="prettyprint notranslate">
+protected void btnservice_Click(object sender, EventArgs e)
+{
+   StockService proxy = new StockService();
+   lblmessage.Text = String.Format("Current SATYAM Price: {0}", 
+   proxy.GetPrice("SATYAM").ToString());
+}
+</pre>
+<p>Take the following steps for creating the proxy:</p>
+<p><b>Step (1)</b> : Right click on the web application entry in the Solution Explorer and click on 'Add Web Reference'.</p>
+<p><b>Step (2)</b> : Select 'Web Services in this solution'. It returns the StockService reference.</p>
+<p><b>Step (3)</b> : Clicking on the service opens the test web page. By default the proxy created is called 'localhost', you can rename it. Click on 'Add Reference' to add the proxy to the client application.</p>
+<p>Include the proxy in the code behind file by adding:</p>
+<pre class="prettyprint notranslate">
+ using localhost;
+</pre>
+
+</div>
+<div id="c10" class="tabcontent">
+<h1>ASP.NET - Multi Threading</h1>
+
+<p>A thread is defined as the execution path of a program. Each thread defines a unique flow of control. If your application involves complicated and time consuming operations such as database access or some intense I/O operations, then it is often helpful to set different execution paths or threads, with each thread performing a particular job.</p>
+<p>Threads are lightweight processes. One common example of use of thread is implementation of concurrent programming by modern operating systems. Use of threads saves wastage of CPU cycle and increases efficiency of an application.</p>
+<p>So far we compiled programs where a single thread runs as a single process which is the running instance of the application. However, this way the application can perform one job at a time. To make it execute multiple tasks at a time, it could be divided into smaller threads.</p>
+<p>In .Net, the threading is handled through the 'System.Threading' namespace. Creating a variable of the <i>System.Threading.Thread</i> type allows you to create a new thread to start working with. It allows you to create and access individual threads in a program.</p>
+<h2>Creating Thread</h2>
+<p>A thread is created by creating a Thread object, giving its constructor a ThreadStart reference.</p>
+<pre class="prettyprint notranslate">
+ThreadStart childthreat = new ThreadStart(childthreadcall);
+</pre>
+<h2>Thread Life Cycle</h2>
+<p>The life cycle of a thread starts when an object of the System.Threading.Thread class is created and ends when the thread is terminated or completes execution.</p>
+<p>Following are the various states in the life cycle of a thread:</p>
+<ul class="list">
+<li><p><b>The Unstarted State</b> : It is the situation when the instance of the thread is created but the Start method is not called.</p></li>
+<li><p><b>The Ready State</b> : It is the situation when the thread is ready to execute and waiting CPU cycle.</p></li>
+<li><p><b>The Not Runnable State</b> : a thread is not runnable, when:</p>
+<ul class="list">
+<li>Sleep method has been called</li>
+<li>Wait method has been called</li>
+<li>Blocked by I/O operations</li>
+</ul>
+</li>
+<li><p><b>The Dead State</b> : It is the situation when the thread has completed execution or has been aborted.</p></li>
+</ul>
+<h2>Thread Priority</h2>
+<p>The Priority property of the Thread class specifies the priority of one thread with respect to other. The .Net runtime selects the ready thread with the highest priority.</p>
+<p>The priorities could be categorized as:</p>
+<ul class="list">
+<li>Above normal</li>
+<li>Below normal</li>
+<li>Highest</li>
+<li>Lowest</li>
+<li>Normal</li>
+</ul>
+<p>Once a thread is created, its priority is set using the Priority property of the thread class.</p>
+<pre class="prettyprint notranslate">
+NewThread.Priority = ThreadPriority.Highest;
+</pre>
+<h2>Thread Properties &amp; Methods</h2>
+<p>The Thread class has the following important properties:</p>
+<table class="table table-bordered" >
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>CurrentContext</td>
+<td>Gets the current context in which the thread is executing.</td>
+</tr>
+<tr>
+<td>CurrentCulture</td>
+<td>Gets or sets the culture for the current thread.</td>
+</tr>
+<tr>
+<td>CurrentPrinciple</td>
+<td>Gets or sets the thread's current principal for role-based security.</td>
+</tr>
+<tr>
+<td>CurrentThread</td>
+<td>Gets the currently running thread.</td>
+</tr>
+<tr>
+<td>CurrentUICulture</td>
+<td>Gets or sets the current culture used by the Resource Manager to look up culture-specific resources at run time.</td>
+</tr>
+<tr>
+<td>ExecutionContext</td>
+<td>Gets an ExecutionContext object that contains information about the various contexts of the current thread.</td>
+</tr>
+<tr>
+<td>IsAlive</td>
+<td>Gets a value indicating the execution status of the current thread.</td>
+</tr>
+<tr>
+<td>IsBackground</td>
+<td>Gets or sets a value indicating whether or not a thread is a background thread.</td>
+</tr>
+<tr>
+<td>IsThreadPoolThread</td>
+<td>Gets a value indicating whether or not a thread belongs to the managed thread pool.</td>
+</tr>
+<tr>
+<td>ManagedThreadId</td>
+<td>Gets a unique identifier for the current managed thread.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Gets or sets the name of the thread.</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>Gets or sets a value indicating the scheduling priority of a thread.</td>
+</tr>
+<tr>
+<td>ThreadState</td>
+<td>Gets a value containing the states of the current thread.</td>
+</tr>
+</table>
+<p>The Thread class has the following important methods:</p>
+<table class="table table-bordered" >
+<tr>
+<th style="width:30%">Methods</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Abort</td>
+<td>Raises a ThreadAbortException in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.</td>
+</tr>
+<tr>
+<td>AllocateDataSlot</td>
+<td>Allocates an unnamed data slot on all the threads. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</td>
+</tr>
+<tr>
+<td>AllocateNamedDataSlot</td>
+<td>Allocates a named data slot on all threads. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</td>
+</tr>
+<tr>
+<td>BeginCriticalRegion</td>
+<td>Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception might endanger other tasks in the application domain.</td>
+</tr>
+<tr>
+<td>BeginThreadAffinity</td>
+<td>Notifies a host that managed code is about to execute instructions that depend on the identity of the current physical operating system thread.</td>
+</tr>
+<tr>
+<td>EndCriticalRegion</td>
+<td>Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception are limited to the current task.</td>
+</tr>
+<tr>
+<td>EndThreadAffinity</td>
+<td>Notifies a host that managed code has finished executing instructions that depend on the identity of the current physical operating system thread.</td>
+</tr>
+<tr>
+<td>FreeNamedDataSlot</td>
+<td>Eliminates the association between a name and a slot, for all threads in the process. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</td>
+</tr>
+<tr>
+<td>GetData</td>
+<td>Retrieves the value from the specified slot on the current thread, within the current thread's current domain. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</td>
+</tr>
+<tr>
+<td>GetDomain</td>
+<td>Returns the current domain in which the current thread is running.</td>
+</tr>
+<tr>
+<td>GetDomainID</td>
+<td>Returns a unique application domain identifier.</td>
+</tr>
+<tr>
+<td>GetNamedDataSlot</td>
+<td>Looks up a named data slot. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</td>
+</tr>
+<tr>
+<td>Interrupt </td>
+<td>Interrupts a thread that is in the WaitSleepJoin thread state.</td>
+</tr>
+<tr>
+<td>Join </td>
+<td>Blocks the calling thread until a thread terminates, while continuing to perform standard COM and SendMessage pumping. This method has different overloaded forms.</td>
+</tr>
+<tr>
+<td>MemoryBarrier</td>
+<td>Synchronizes memory access as follows: The processor executing the current thread cannot reorder instructions in such a way that memory accesses prior to the call to MemoryBarrier execute after memory accesses that follow the call to MemoryBarrier.</td>
+</tr>
+<tr>
+<td>ResetAbort</td>
+<td>Cancels an Abort requested for the current thread.</td>
+</tr>
+<tr>
+<td>SetData</td>
+<td>Sets the data in the specified slot on the currently running thread, for that thread's current domain. For better performance, use fields marked with the ThreadStaticAttribute attribute instead.</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Starts a thread.</td>
+</tr>
+<tr>
+<td>Sleep</td>
+<td>Makes the thread pause for a period of time.</td>
+</tr>
+<tr>
+<td>SpinWait</td>
+<td>Causes a thread to wait the number of times defined by the iterations parameter.</td>
+</tr>
+<tr>
+<td>VolatileRead()</td>
+<td>Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache. This method has different overloaded forms.</td>
+</tr>
+<tr>
+<td>VolatileWrite()</td>
+<td>Writes a value to a field immediately, so that the value is visible to all processors in the computer. This method has different overloaded forms.</td>
+</tr>
+<tr>
+<td>Yield </td>
+<td>Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.</td>
+</tr>
+</table>
+<h3>Example</h3>
+<p>The following example illustrates the uses of the Thread class. The page has a label control for displaying messages from the child thread. The messages from the main program are directly displayed using the Response.Write() method. Hence they appear on the top of the page.</p>
+<p>The source file is as follows:</p> 
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="threaddemo._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;
+         Untitled Page
+      &lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form id="form1" runat="server"&gt;
+         &lt;div&gt;
+            &lt;h3&gt;Thread Example&lt;/h3&gt;
+         &lt;/div&gt;
+         
+         &lt;asp:Label ID="lblmessage" runat="server" Text="Label"&gt;
+         &lt;/asp:Label&gt;
+      &lt;/form&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<p>The code behind file is as follows:</p>
+<pre class="prettyprint notranslate">
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+using System.Xml.Linq;
+using System.Threading;
+
+namespace threaddemo
+{
+   public partial class _Default : System.Web.UI.Page
+   {
+      protected void Page_Load(object sender, EventArgs e)
+      {
+         ThreadStart childthreat = new ThreadStart(childthreadcall);
+         Response.Write("Child Thread Started &lt;br/&gt;");
+         Thread child = new Thread(childthreat);
+         
+         child.Start();
+         
+         Response.Write("Main sleeping  for 2 seconds.......&lt;br/&gt;");
+         Thread.Sleep(2000);
+         Response.Write("&lt;br/&gt;Main aborting child thread&lt;br/&gt;");
+         
+         child.Abort();
+      }
+      
+      public void childthreadcall()
+      {
+         try{
+            lblmessage.Text = "&lt;br /&gt;Child thread started &lt;br/&gt;";
+            lblmessage.Text += "Child Thread: Coiunting to 10";
+            
+            for( int i =0; i&lt;10; i++)
+            {
+               Thread.Sleep(500);
+               lblmessage.Text += "&lt;br/&gt; in Child thread &lt;/br&gt;";
+            }
+            
+            lblmessage.Text += "&lt;br/&gt; child thread finished";
+            
+         }catch(ThreadAbortException e){
+         
+            lblmessage.Text += "&lt;br /&gt; child thread - exception";
+            
+         }finally{
+            lblmessage.Text += "&lt;br /&gt; child thread - unable to catch the  exception";
+         }
+      }
+   }
+}
+</pre>
+<h2>Observe the following</h2>
+<ul class="list">
+<li><p>When the page is loaded, a new thread is started with the reference of the method childthreadcall(). The main thread activities are displayed directly on the web page.</p></li>
+<li><p>The second thread runs and sends messages to the label control.</p></li>
+<li><p>The main thread sleeps for 2000 ms, during which the child thread executes.</p></li>
+<li><p>The child thread runs till it is aborted by the main thread. It raises the ThreadAbortException and is terminated.</p></li>
+<li><p>Control returns to the main thread.</p></li>
+</ul>
+
+
+
+
+<a href=".netquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="Ash.Net">
+    <input type="submit" class="button" value="Quiz Later">
+</div>
+</div>
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

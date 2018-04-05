@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filling Algorithm</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Polygon Filling Algorithm</button>
+  
+</div>
+
+<div id="c1" class="tabcontent">
+
+<h1>POLYGON FILLING ALGORITHM  IN COMPUTER GRAPHICS</h1>
+<p>Polygon is an ordered list of vertices as shown in the following figure. For filling polygons with particular colors, you need to determine the pixels falling on the border of the polygon and those which fall inside the polygon. In this chapter, we will see how we can fill polygons using different techniques.</p>
+<h2>Scan Line Algorithm</h2>
+<p>This algorithm works by intersecting scanline with polygon edges and fills the polygon between pairs of intersections. The following steps depict how this algorithm works.</p>
+<p><b>Step 1</b> &minus; Find out the Ymin and Ymax from the given polygon.</p>
+<p><b>Step 2</b> &minus; ScanLine intersects with each edge of the polygon from Ymin to Ymax. Name each intersection point of the polygon. As per the figure shown above, they are named as p0, p1, p2, p3.</p>
+<p><b>Step 3</b> &minus; Sort the intersection point in the increasing order of X coordinate i.e. (p0, p1), (p1, p2), and (p2, p3).</p>
+<p><b>Step 4</b> &minus; Fill all those pair of coordinates that are inside polygons and ignore the alternate pairs.</p>
+<h2>Flood Fill Algorithm</h2>
+<p>Sometimes we come across an object where we want to fill the area and its boundary with different colors. We can paint such objects with a specified interior color instead of searching for particular boundary color as in boundary filling algorithm.</p>
+<p>Instead of relying on the boundary of the object, it relies on the fill color. In other words, it replaces the interior color of the object with the fill color. When no more pixels of the original interior color exist, the algorithm is completed.</p>
+<p>Once again, this algorithm relies on the Four-connect or Eight-connect method of filling in the pixels. But instead of looking for the boundary color, it is looking for all adjacent pixels that are a part of the interior.</p>
+<h2>Boundary Fill Algorithm</h2>
+<p>The boundary fill algorithm works as its name. This algorithm picks a point inside an object and starts to fill until it hits the boundary of the object. The color of the boundary and the color that we fill should be different for this algorithm to work.</p>
+<p>In this algorithm, we assume that color of the boundary is same for the entire object. The boundary fill algorithm can be implemented by 4-connected pixels or 8-connected pixels.</p>
+<h2>4-Connected Polygon</h2>
+<p>In this technique 4-connected pixels are used as shown in the figure. We are putting the pixels above, below, to the right, and to the left side of the current pixels and this process will continue until we find a boundary with different color.</p>
+<h3>Algorithm</h3>
+<p><b>Step 1</b> &minus; Initialize the value of seed point (seedx, seedy), fcolor and dcol.</p> 
+<p><b>Step 2</b> &minus; Define the boundary values of the polygon.</p>
+<p><b>Step 3</b> &minus; Check if the current seed point is of default color, then repeat the steps 4 and 5 till the boundary pixels reached.</p>
+<pre class="prettyprint notranslate">
+If getpixel(x, y) = dcol then repeat step 4 and 5
+</pre>
+<p><b>Step 4</b> &minus; Change the default color with the fill color at the seed point.</p>
+<pre class="result notranslate">
+setPixel(seedx, seedy, fcol)
+</pre>
+<p><b>Step 5</b> &minus; Recursively follow the procedure with four neighborhood points.</p>
+<pre class="result notranslate">
+FloodFill (seedx – 1, seedy, fcol, dcol)
+FloodFill (seedx + 1, seedy, fcol, dcol)
+FloodFill (seedx, seedy - 1, fcol, dcol)
+FloodFill (seedx – 1, seedy + 1, fcol, dcol)
+</pre>
+<p><b>Step 6</b> &minus; Exit</p>
+<p>There is a problem with this technique. Consider the case as shown below where we tried to fill the entire region. Here, the image is filled only partially. In such cases, 4-connected pixels technique cannot be used.</p>
+<h2>8-Connected Polygon</h2>
+<p>In this technique 8-connected pixels are used as shown in the figure. We are putting pixels above, below, right and left side of the current pixels as we were doing in 4-connected technique.</p>
+<p>In addition to this, we are also putting pixels in diagonals so that entire area of the current pixel is covered. This process will continue until we find a boundary with different color.</p>
+<h3>Algorithm</h3>
+<p><b>Step 1</b> &minus; Initialize the value of seed point (seedx, seedy), fcolor and dcol.</p>
+<p><b>Step 2</b> &minus; Define the boundary values of the polygon.</p>
+<p><b>Step 3</b> &minus; Check if the current seed point is of default color then repeat the steps 4 and 5 till the boundary pixels reached</p>
+<pre class="result notranslate">
+If getpixel(x,y) = dcol then repeat step 4 and 5
+</pre>
+<p><b>Step 4</b> &minus; Change the default color with the fill color at the seed point.</p>
+<pre class="result notranslate">
+setPixel(seedx, seedy, fcol)
+</pre>
+<p><b>Step 5</b> &minus; Recursively follow the procedure with four neighbourhood points</p>
+<pre class="result notranslate">
+FloodFill (seedx – 1, seedy, fcol, dcol)
+FloodFill (seedx + 1, seedy, fcol, dcol)
+FloodFill (seedx, seedy - 1, fcol, dcol)
+FloodFill (seedx, seedy + 1, fcol, dcol)
+FloodFill (seedx – 1, seedy + 1, fcol, dcol)
+FloodFill (seedx + 1, seedy + 1, fcol, dcol)
+FloodFill (seedx + 1, seedy - 1, fcol, dcol)
+FloodFill (seedx – 1, seedy - 1, fcol, dcol)
+</pre>
+<p><b>Step 6</b> &minus; Exit</p>
+<p>The 4-connected pixel technique failed to fill the area as marked in the following figure which won’t happen with the 8-connected technique.</p>
+<h2>Inside-outside Test</h2>
+<p>This method is also known as <b>counting number method</b>. While filling an object, we often need to identify whether particular point is inside the object or outside it. There are two methods by which we can identify whether particular point is inside an object or outside.</p>
+<ul class="list">
+<li>Odd-Even Rule</li>
+<li>Nonzero winding number rule</li>
+</ul>
+<h3>Odd-Even Rule</h3>
+<p>In this technique, we will count the edge crossing along the line from any point (x,y) to infinity. If the number of interactions is odd, then the point (x,y) is an interior point; and if the number of interactions is even, then the point (x,y) is an exterior point. The following example depicts this concept.</p>
+<p>From the above figure, we can see that from the point (x,y), the number of interactions point on the left side is 5 and on the right side is 3. From both ends, the number of interaction points is odd, so the point is considered within the object.</p>
+<h3>Nonzero Winding Number Rule</h3>
+<p>This method is also used with the simple polygons to test the given point is interior or not. It can be simply understood with the help of a pin and a rubber band. Fix up the pin on one of the edge of the polygon and tie-up the rubber band in it and then stretch the rubber band along the edges of the polygon.</p>
+<p>When all the edges of the polygon are covered by the rubber band, check out the pin which has been fixed up at the point to be test. If we find at least one wind at the point consider it within the polygon, else we can say that the point is not inside the polygon.</p>
+<p>In another alternative method, give directions to all the edges of the polygon. Draw a scan line from the point to be test towards the left most of X direction.</p>
+<ul class="list">
+<li><p>Give the value 1 to all the edges which are going to upward direction and all other -1 as direction values.</p></li>
+<li><p>Check the edge direction values from which the scan line is passing and sum up them.</p></li>
+<li><p>If the total sum of this direction value is non-zero, then this point to be tested is an <b>interior point,</b> otherwise it is an <b>exterior point</b>.</p></li>
+<li><p>In the above figure, we sum up the direction values from which the scan line is passing then the total is 1 – 1 + 1 = 1; which is non-zero. So the point is said to be an interior point.</p></li>
+</ul>
+<a href="fillingalgorithmquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="Filling Algorithm">
+    <input type="submit" class="button" value="Quiz Later">
+<hr />
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

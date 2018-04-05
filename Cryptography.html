@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cryptography</title>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: none;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'c1')" id="defaultOpen">Over Viewing of Cryptography</button>
+  <button class="tablinks" onclick="openCity(event, 'c2')">Attacks On Cryptography</button>
+  <button class="tablinks" onclick="openCity(event, 'c3')">Symmetric Key Encryption</button>
+<button class="tablinks" onclick="openCity(event, 'c4')">Block Cipher</button>
+<button class="tablinks" onclick="openCity(event, 'c5')">Data Encryption Standard</button>
+<button class="tablinks" onclick="openCity(event, 'c6')">Triple DES</button>
+<button class="tablinks" onclick="openCity(event, 'c7')">Public Key Encryption</button>
+<button class="tablinks" onclick="openCity(event, 'c8')">Data integrity in Cryptography</button>
+<button class="tablinks" onclick="openCity(event, 'c9')">Cryptography Hash Functions</button>
+<button class="tablinks" onclick="openCity(event, 'c10')">Public Key Infrastructure </button>
+</div>
+
+<div id="c1" class="tabcontent">
+<h1>Origin of Cryptography</h1>
+
+<p>Human being from ages had two inherent needs &minus; (a) to communicate and share information and (b) to communicate selectively. These two needs gave rise to the art of coding the messages in such a way that only the intended people could have access to the information. Unauthorized people could not extract any information, even if the scrambled messages fell in their hand.</p>
+<p><i>The art and science of concealing the messages to introduce secrecy in information security is recognized as cryptography.</i></p>
+<p>The word ëcryptographyí was coined by combining two Greek words, ëKryptoí meaning hidden and ëgrapheneí meaning writing.</p>
+<h2>History of Cryptography</h2>
+<p>The art of cryptography is considered to be born along with the art of writing. As civilizations evolved, human beings got organized in tribes, groups, and kingdoms. This led to the emergence of ideas such as power, battles, supremacy, and politics. These ideas further fueled the natural need of people to communicate secretly with selective recipient which in turn ensured the continuous evolution of cryptography as well.</p> 
+<p>The roots of cryptography are found in Roman and Egyptian civilizations.</p> 
+<h3>Hieroglyph &minus; The Oldest Cryptographic Technique</h3>
+<p>The first known evidence of cryptography can be traced to the use of ëhieroglyphí. Some 4000 years ago, the Egyptians used to communicate by messages written in hieroglyph. This code was the secret known only to the scribes who used to transmit messages on behalf of the kings. One such hieroglyph is shown below.</p> 
+<p>Later, the scholars moved on to using simple mono-alphabetic substitution ciphers during 500 to 600 BC. This involved replacing alphabets of message with other alphabets with some secret rule. This <b>rule</b> became a <b>key</b> to retrieve the message back from the garbled message.</p> 
+<p>The earlier Roman method of cryptography, popularly known as the <b>Caesar Shift Cipher,</b> relies on shifting the letters of a message by an agreed number (three was a common choice), the recipient of this message would then shift the letters back by the same number and obtain the original message.</p> 
+<h3>Steganography</h3>
+<p>Steganography is similar but adds another dimension to Cryptography. In this method, people not only want to protect the secrecy of an information by concealing it, but they also want to make sure any unauthorized person gets no evidence that the information even exists. For example, <b>invisible watermarking</b>.</p>
+<p>In steganography, an unintended recipient or an intruder is unaware of the fact that observed data contains hidden information. In cryptography, an intruder is normally aware that data is being communicated, because they can see the coded/scrambled message.</p>
+<h2>Evolution of Cryptography</h2>
+<p>It is during and after the European Renaissance, various Italian and Papal states led the rapid proliferation of cryptographic techniques. Various analysis and attack techniques were researched in this era to break the secret codes.</p>
+<ul class="list">
+<li><p>Improved coding techniques such as <b>Vigenere Coding</b> came into existence in the 15<sup>th</sup> century, which offered moving letters in the message with a number of variable places instead of moving them the same number of places.</p></li>
+<li><p>Only after the 19<sup>th</sup> century, cryptography evolved from the ad hoc approaches to encryption to the more sophisticated art and science of information security.</p></li>
+<li><p>In the early 20<sup>th</sup> century, the invention of mechanical and electromechanical machines, such as the <b>Enigma rotor machine,</b> provided more advanced and efficient means of coding the information.</p></li>
+<li><p>During the period of World War II, both <b>cryptography</b> and <b>cryptanalysis</b> became excessively mathematical.</p></li>
+</ul>
+<p>With the advances taking place in this field, government organizations, military units, and some corporate houses started adopting the applications of cryptography. They used cryptography to guard their secrets from others. Now, the arrival of computers and the Internet has brought effective cryptography within the reach of common people.</p>
+<hr />
+
+</div>
+<div id="c2" class="tabcontent">
+<h2>Attacks On Cryptography</h2>
+<p>In the present era, not only business but almost all the aspects of human life are driven by information. Hence, it has become imperative to protect useful information from malicious activities such as attacks. Let us consider the types of attacks to which information is typically subjected to.</p>
+<p>Attacks are typically categorized based on the action performed by the attacker. An attack, thus, can be <b>passive</b> or <b>active</b>.</p>
+<h2>Passive Attacks</h2>
+<p>The main goal of a passive attack is to obtain <b>unauthorized access to the information</b>. For example, actions such as intercepting and eavesdropping on the communication channel can be regarded as passive attack.</p>
+<p>These actions are passive in nature, as they neither affect information nor disrupt the communication channel. A passive attack is often seen as <i>stealing</i> information. The only difference in stealing physical goods and stealing information is that theft of data still leaves the owner in possession of that data. Passive information attack is thus more dangerous than stealing of goods, as information theft may go unnoticed by the owner.</p>
+<h2>Active Attacks</h2>
+<p>An active attack involves changing the information in some way by conducting some process on the information. For example,</p>
+<ul class="list">
+<li><p>Modifying the information in an unauthorized manner.</p></li>
+<li><p>Initiating unintended or unauthorized transmission of information.</p></li>
+<li><p>Alteration of authentication data such as originator name or timestamp associated with information</p></li>
+<li><p>Unauthorized deletion of data.</p></li>
+<li><p>Denial of access to information for legitimate users (denial of service).</p></li>
+</ul>
+<p>Cryptography provides many tools and techniques for implementing cryptosystems capable of preventing most of the attacks described above.</p>
+<h2>Assumptions of Attacker</h2>
+<p>Let us see the prevailing environment around cryptosystems followed by the types of attacks employed to break these systems &minus;</p>
+<h3>Environment around Cryptosystem</h3>
+<p>While considering possible attacks on the cryptosystem, it is necessary to know the cryptosystems environment. The attackerís assumptions and knowledge about the environment decides his capabilities.</p>
+<p>In cryptography, the following three assumptions are made about the security environment and attackerís capabilities.</p>
+<h3>Details of the Encryption Scheme</h3>
+<p>The design of a cryptosystem is based on the following two cryptography algorithms &minus;</p>
+<ul class="list">
+<li><p><b>Public Algorithms</b> &minus; With this option, all the details of the algorithm are in the public domain, known to everyone.</p></li>
+<li><p><b>Proprietary algorithms</b> &minus; The details of the algorithm are only known by the system designers and users.</p></li>
+</ul>
+<p>In case of proprietary algorithms, security is ensured through obscurity. Private algorithms may not be the strongest algorithms as they are developed in-house and may not be extensively investigated for weakness.</p>
+<p>Secondly, they allow communication among closed group only. Hence they are not suitable for modern communication where people communicate with large number of known or unknown entities. Also, according to Kerckhoffís principle, the algorithm is preferred to be public with strength of encryption lying in the <i>key</i>.</p>
+<p>Thus, the first assumption about security environment is that the <b>encryption algorithm is known to the attacker</b>.</p>
+<h3>Availability of Ciphertext</h3>
+<p>We know that once the plaintext is encrypted into ciphertext, it is put on unsecure public channel (say email) for transmission. Thus, the attacker can obviously assume that it has <b>access to the ciphertext generated by the cryptosystem</b>.</p>
+<h3>Availability of Plaintext and Ciphertext</h3>
+<p>This assumption is not as obvious as other. However, there may be situations where an attacker can have <b>access to plaintext and corresponding ciphertext</b>. Some such possible circumstances are &minus;</p>
+<ul class="list">
+<li><p>The attacker influences the sender to convert plaintext of his choice and obtains the ciphertext.</p></li>
+<li><p>The receiver may divulge the plaintext to the attacker inadvertently. The attacker has access to corresponding ciphertext gathered from open channel.</p></li>
+<li><p>In a public-key cryptosystem, the encryption key is in open domain and is known to any potential attacker. Using this key, he can generate pairs of corresponding plaintexts and ciphertexts.</p></li>
+</ul>
+<h2>Cryptographic Attacks</h2>
+<p>The basic intention of an attacker is to break a cryptosystem and to find the plaintext from the ciphertext. To obtain the plaintext, the attacker only needs to find out the secret decryption key, as the algorithm is already in public domain.</p>
+<p>Hence, he applies maximum effort towards finding out the secret key used in the cryptosystem. Once the attacker is able to determine the key, the attacked system is considered as <i>broken</i> or <i>compromised</i>.</p>
+<p>Based on the methodology used, attacks on cryptosystems are categorized as follows &minus;</p>
+<ul class="list">
+<li><p><b>Ciphertext Only Attacks (COA)</b> &minus; In this method, the attacker has access to a set of ciphertext(s). He does not have access to corresponding plaintext. COA is said to be successful when the corresponding plaintext can be determined from a given set of ciphertext. Occasionally, the encryption key can be determined from this attack. Modern cryptosystems are guarded against ciphertext-only attacks.</p></li>
+<li><p><b>Known Plaintext Attack (KPA)</b> &minus; In this method, the attacker knows the plaintext for some parts of the ciphertext. The task is to decrypt the rest of the ciphertext using this information. This may be done by determining the key or via some other method. The best example of this attack is <i>linear cryptanalysis</i> against block ciphers.</p></li>
+<li><p><b>Chosen Plaintext Attack (CPA)</b> &minus; In this method, the attacker has the text of his choice encrypted. So he has the ciphertext-plaintext pair of his choice. This simplifies his task of determining the encryption key. An example of this attack is <i>differential cryptanalysis</i> applied against block ciphers as well as hash functions. A popular public key cryptosystem, RSA is also vulnerable to chosen-plaintext attacks.</p></li>
+<li><p><b>Dictionary Attack</b> &minus; This attack has many variants, all of which involve compiling a ëdictionaryí. In simplest method of this attack, attacker builds a dictionary of ciphertexts and corresponding plaintexts that he has learnt over a period of time. In future, when an attacker gets the ciphertext, he refers the dictionary to find the corresponding plaintext.</p></li>
+<li><p><b>Brute Force Attack (BFA)</b> &minus; In this method, the attacker tries to determine the key by attempting all possible keys. If the key is 8 bits long, then the number of possible keys is 2<sup>8</sup> = 256. The attacker knows the ciphertext and the algorithm, now he attempts all the 256 keys one by one for decryption. The time to complete the attack would be very high if the key is long.</p></li>
+<li><p><b>Birthday Attack</b> &minus; This attack is a variant of brute-force technique. It is used against the cryptographic hash function. When students in a class are asked about their birthdays, the answer is one of the possible 365 dates. Let us assume the first student's birthdate is 3<sup>rd</sup> Aug. Then to find the next student whose birthdate is 3<sup>rd</sup> Aug, we need to enquire 1.25<sup>*</sup>Å&radic;365 &asymp; 25 students.</p>
+<p>Similarly, if the hash function produces 64 bit hash values, the possible hash values are 1.8x10<sup>19</sup>. By repeatedly evaluating the function for different inputs, the same output is expected to be obtained after about 5.1x10<sup>9</sup> random inputs.</p>
+<p>If the attacker is able to find two different inputs that give the same hash value, it is a <b>collision</b> and that hash function is said to be broken.</p></li>
+<li><p><b>Man in Middle Attack (MIM)</b> &minus; The targets of this attack are mostly public key cryptosystems where key exchange is involved before communication takes place.</p>
+<ul class="list">
+<li><p>Host <i>A</i> wants to communicate to host <i>B</i>, hence requests public key of <i>B</i>.</p></li>
+<li><p>An attacker intercepts this request and sends his public key instead.</p></li>
+<li><p>Thus, whatever host <i>A</i> sends to host <i>B</i>, the attacker is able to read.</p></li>
+<li><p>In order to maintain communication, the attacker re-encrypts the data after reading with his public key and sends to <i>B</i>.</p></li>
+<li><p>The attacker sends his public key as <i>A</i>ís public key so that <i>B</i> takes it as if it is taking it from <i>A</i>.</p></li>
+</ul>
+</li>
+<li><p><b>Side Channel Attack (SCA)</b> &minus; This type of attack is not against any particular type of cryptosystem or algorithm. Instead, it is launched to exploit the weakness in physical implementation of the cryptosystem.</p></li>
+<li><p><b>Timing Attacks</b> &minus; They exploit the fact that different computations take different times to compute on processor. By measuring such timings, it is be possible to know about a particular computation the processor is carrying out. For example, if the encryption takes a longer time, it indicates that the secret key is long.</p></li>
+<li><p><b>Power Analysis Attacks</b> &minus; These attacks are similar to timing attacks except that the amount of power consumption is used to obtain information about the nature of the underlying computations.</p></li>
+<li><p><b>Fault analysis Attacks</b> &minus; In these attacks, errors are induced in the cryptosystem and the attacker studies the resulting output for useful information.</p></li>
+</ul>
+<h2>Practicality of Attacks</h2>
+<p>The attacks on cryptosystems described here are highly academic, as majority of them come from the academic community. In fact, many academic attacks involve quite unrealistic assumptions about environment as well as the capabilities of the attacker. For example, in chosen-ciphertext attack, the attacker requires an impractical number of deliberately chosen plaintext-ciphertext pairs. It may not be practical altogether.</p>
+<p>Nonetheless, the fact that any attack exists should be a cause of concern, particularly if the attack technique has the potential for improvement.</p>
+<hr />
+
+</div>
+<div id="c3" class="tabcontent">
+<h1>Modern Symmetric Key Encryption</h1>
+
+<p>Digital data is represented in strings of binary digits (bits) unlike alphabets. Modern cryptosystems need to process this binary strings to convert in to another binary string. Based on how these binary strings are processed, a symmetric encryption schemes can be classified in to &minus;</p>
+<h2>Block Ciphers</h2>
+<p>In this scheme, the plain binary text is processed in blocks (groups) of bits at a time; i.e. a block of plaintext bits is selected, a series of operations is performed on this block to generate a block of ciphertext bits. The number of bits in a block is fixed. For example, the schemes DES and AES have block sizes of 64 and 128, respectively.</p>
+<h2>Stream Ciphers</h2>
+<p>In this scheme, the plaintext is processed one bit at a time i.e. one bit of plaintext is taken, and a series of operations is performed on it to generate one bit of ciphertext. Technically, stream ciphers are block ciphers with a block size of one bit.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/block_and_stream_ciphers.jpg" alt="Block and Stream Ciphers" />
+<hr />
+</div>
+<div id="c4" class="tabcontent">
+<h1>Block Cipher</h1>
+
+<p>The basic scheme of a block cipher is depicted as follows &minus;</p>
+<p>A block cipher takes a block of plaintext bits and generates a block of ciphertext bits, generally of same size. The size of block is fixed in the given scheme. The choice of block size does not directly affect to the strength of encryption scheme. The strength of cipher depends up on the key length.</p>
+<h2>Block Size</h2>
+<p>Though any size of block is acceptable, following aspects are borne in mind while selecting a size of a block.</p>
+<ul class="list">
+<li><p><b>Avoid very small block size</b> &minus; Say a block size is m bits. Then the possible plaintext bits combinations are then 2<sup>m</sup>. If the attacker discovers the plain text blocks corresponding to some previously sent ciphertext blocks, then the attacker can launch a type of ëdictionary attackí by building up a dictionary of plaintext/ciphertext pairs sent using that encryption key. A larger block size makes attack harder as the dictionary needs to be larger.</p></li>
+<li><p><b>Do not have very large block size</b> &minus; With very large block size, the cipher becomes inefficient to operate. Such plaintexts will need to be padded before being encrypted.</p></li>
+<li><p><b>Multiples of 8 bit</b> &minus; A preferred block size is a multiple of 8 as it is easy for implementation as most computer processor handle data in multiple of 8 bits.</p></li>
+</ul>
+<h2>Padding in Block Cipher</h2>
+<p>Block ciphers process blocks of fixed sizes (say 64 bits). The length of plaintexts is mostly not a multiple of the block size. For example, a 150-bit plaintext provides two blocks of 64 bits each with third block of balance 22 bits. The last block of bits needs to be padded up with redundant information so that the length of the final block equal to block size of the scheme. In our example, the remaining 22 bits need to have additional 42 redundant bits added to provide a complete block. The process of adding bits to the last block is referred to as <b>padding</b>.</p>
+<p>Too much padding makes the system inefficient. Also, padding may render the system insecure at times, if the padding is done with same bits always.</p>
+<h2>Block Cipher Schemes</h2>
+<p>There is a vast number of block ciphers schemes that are in use. Many of them are publically known. Most popular and prominent block ciphers are listed below.</p>
+<ul class="list">
+<li><p><b>Digital Encryption Standard (DES)</b> &minus; The popular block cipher of the 1990s. It is now considered as a ëbrokení block cipher, due primarily to its small key size.</p></li>
+<li><p><b>Triple DES</b> &minus; It is a variant scheme based on repeated DES applications. It is still a respected block ciphers but inefficient compared to the new faster block ciphers available.</p></li>
+<li><p><b>Advanced Encryption Standard (AES)</b> &minus; It is a relatively new block cipher based on the encryption algorithm <b>Rijndael</b> that won the AES design competition.</p></li>
+<li><p><b>IDEA</b> &minus; It is a sufficiently strong block cipher with a block size of 64 and a key size of 128 bits. A number of applications use IDEA encryption, including early versions of Pretty Good Privacy (PGP) protocol. The use of IDEA scheme has a restricted adoption due to patent issues.</p></li>
+<li><p><b>Twofish</b> &minus; This scheme of block cipher uses block size of 128 bits and a key of variable length. It was one of the AES finalists. It is based on the earlier block cipher Blowfish with a block size of 64 bits.</p></li>
+<li><p><b>Serpent</b> &minus; A block cipher with a block size of 128 bits and key lengths of 128, 192, or 256 bits, which was also an AES competition finalist. It is a slower but has more secure design than other block cipher.</p></li>
+</ul>
+<p>In the next sections, we will first discuss the model of block cipher followed by DES and AES, two of the most influential modern block ciphers.</p>
+<hr />
+</div>
+<div id="c5" class="tabcontent">
+<h1>Data Encryption Standard</h1>
+
+<p>The Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST).</p>
+<p>DES is an implementation of a Feistel Cipher. It uses 16 round Feistel structure. The block size is 64-bit. Though, key length is 64-bit, DES has an effective key length of 56 bits, since 8 of the 64 bits of the key are not used by the encryption algorithm (function as check bits only). General Structure of DES is depicted in the following illustration &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/des_structure.jpg" alt="DES Structure" />
+<p>Since DES is based on the Feistel Cipher, all that is required to specify DES is &minus;</p>
+<ul class="list">
+<li>Round function</li>
+<li>Key schedule</li>
+<li>Any additional processing &minus; Initial and final permutation</li>
+</ul>
+<h2>Initial and Final Permutation</h2>
+<p>The initial and final permutations are straight Permutation boxes (P-boxes) that are inverses of each other. They have no cryptography significance in DES. The initial and final permutations are shown as follows &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/initial_and_final_permutation.jpg" alt="Initial and Final Permutation" />
+<h2>Round Function</h2>
+<p>The heart of this cipher is the DES function, <i>f</i>. The DES function applies a 48-bit key to the rightmost 32 bits to produce a 32-bit output.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/round_function.jpg" alt="Round Function" />
+<ul class="list">
+<li><p><b>Expansion Permutation Box</b> &minus; Since right input is 32-bit and round key is a 48-bit, we first need to expand right input to 48 bits. Permutation logic is graphically depicted in the following illustration &minus;</p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/permutation_logic.jpg" alt="Permutation Logic" />
+<ul class="list">
+<li><p>The graphically depicted permutation logic is generally described as table in DES specification illustrated as shown &minus;</p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/des_specification.jpg" alt="DES Specification" />
+<ul class="list">
+<li><p><b>XOR (Whitener).</b> &minus; After the expansion permutation, DES does XOR operation on the expanded right section and the round key. The round key is used only in this operation.</p></li>
+<li><p><b>Substitution Boxes.</b> &minus; The S-boxes carry out the real mixing (confusion). DES uses 8 S-boxes, each with a 6-bit input and a 4-bit output. Refer the following illustration &minus;</p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/s-boxes.jpg" alt="S-boxes" />
+<ul class="list">
+<li><p>The S-box rule is illustrated below &minus;</p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/s_box_rule.jpg" alt="S-box Rule" />
+<ul class="list">
+<li><p>There are a total of eight S-box tables. The output of all eight s-boxes is then combined in to 32 bit section.</p></li>
+<li><p><b>Straight Permutation</b> &minus; The 32 bit output of S-boxes is then subjected to the straight permutation with rule shown in the following illustration:<p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/straight_permutation.jpg" alt="Straight Permutation" />
+<h2>Key Generation</h2>
+<p>The round-key generator creates sixteen 48-bit keys out of a 56-bit cipher key. The process of key generation is depicted in the following illustration &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/key_generation.jpg" alt="Key Generation" />
+<p>The logic for Parity drop, shifting, and Compression P-box is given in the DES description.</p>
+<h2>DES Analysis</h2>
+<p>The DES satisfies both the desired properties of block cipher. These two properties make cipher very strong.</p>
+<ul class="list">
+<li><p><b>Avalanche effect</b> &minus; A small change in plaintext results in the very great change in the ciphertext.</p></li>
+<li><p><b>Completeness</b> &minus; Each bit of ciphertext depends on many bits of plaintext.</p></li>
+</ul>
+<p>During the last few years, cryptanalysis have found some weaknesses in DES when key selected are weak keys. These keys shall be avoided.</p>
+<p>DES has proved to be a very well designed block cipher. There have been no significant cryptanalytic attacks on DES other than exhaustive key search.</p>
+<hr />
+</div>
+<div id="c6" class="tabcontent">
+<h1>Triple DES</h1>
+
+<p>The speed of exhaustive key searches against DES after 1990 began to cause discomfort amongst users of DES. However, users did not want to replace DES as it takes an enormous amount of time and money to change encryption algorithms that are widely adopted and embedded in large security architectures.</p>
+<p>The pragmatic approach was not to abandon the DES completely, but to change the manner in which DES is used. This led to the modified schemes of Triple DES (sometimes known as 3DES).</p>
+<p>Incidentally, there are two variants of Triple DES known as 3-key Triple DES (3TDES) and 2-key Triple DES (2TDES).</p>
+<h2>3-KEY Triple DES</h2>
+<p>Before using 3TDES, user first generate and distribute a 3TDES key K, which consists of three different DES keys K<sub>1</sub>, K<sub>2</sub> and K<sub>3</sub>. This means that the actual 3TDES key has length 3◊56 = 168 bits. The encryption scheme is illustrated as follows &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/encryption_scheme.jpg" alt="Encryption Scheme" />
+<p>The encryption-decryption process is as follows &minus;</p>
+<ul class="list">
+<li><p>Encrypt the plaintext blocks using single DES with key K<sub>1</sub>.</p></li>
+<li><p>Now decrypt the output of step 1 using single DES with key K<sub>2</sub>.</p></li>
+<li><p>Finally, encrypt the output of step 2 using single DES with key K<sub>3</sub>.</p></li>
+<li><p>The output of step 3 is the ciphertext.</p></li>
+<li><p>Decryption of a ciphertext is a reverse process. User first decrypt using K<sub>3,</sub> then encrypt with K<sub>2,</sub> and finally decrypt with K<sub>1</sub>.</p></li>
+</ul>
+<p>Due to this design of Triple DES as an encryptñdecryptñencrypt process, it is possible to use a 3TDES (hardware) implementation for single DES by setting K<sub>1,</sub> K<sub>2,</sub> and K<sub>3</sub> to be the same value. This provides backwards compatibility with DES.</p>
+<p>Second variant of Triple DES (2TDES) is identical to 3TDES except that K<sub>3</sub>is replaced by K<sub>1</sub>. In other words, user encrypt plaintext blocks with key K<sub>1,</sub> then decrypt with key K<sub>2,</sub> and finally encrypt with K<sub>1</sub> again. Therefore, 2TDES has a key length of 112 bits.</p>
+<p>Triple DES systems are significantly more secure than single DES, but these are clearly a much slower process than encryption using single DES.</p>
+<hr />
+</div>
+<div id="c7" class="tabcontent">
+<h1>Public Key Encryption</h1>
+
+<h2>Public Key Cryptography</h2>
+<p>Unlike symmetric key cryptography, we do not find historical use of public-key cryptography. It is a relatively new concept.</p>
+<p>Symmetric cryptography was well suited for organizations such as governments, military, and big financial corporations were involved in the classified communication.</p>
+<p>With the spread of more unsecure computer networks in last few decades, a genuine need was felt to use cryptography at larger scale. The symmetric key was found to be non-practical due to challenges it faced for key management. This gave rise to the public key cryptosystems.</p>
+<p>The most important properties of public key encryption scheme are &minus;</p>
+<ul class="list">
+<li><p>Different keys are used for encryption and decryption. This is a property which set this scheme different than symmetric encryption scheme.</p></li>
+<li><p>Each receiver possesses a unique decryption key, generally referred to as his private key.</p></li>
+<li><p>Receiver needs to publish an encryption key, referred to as his public key.</p></li>
+<li><p>Some assurance of the authenticity of a public key is needed in this scheme to avoid spoofing by adversary as the receiver. Generally, this type of cryptosystem involves trusted third party which certifies that a particular public key belongs to a specific person or entity only.</p></li>
+<li><p>Encryption algorithm is complex enough to prohibit attacker from deducing the plaintext from the ciphertext and the encryption (public) key.</p></li>
+<li><p>Though private and public keys are related mathematically, it is not be feasible to calculate the private key from the public key. In fact, intelligent part of any public-key cryptosystem is in designing a relationship between two keys.</p></li>
+</ul>
+<p>There are three types of Public Key Encryption schemes. We discuss them in following sections &minus;</p>
+<h2>RSA Cryptosystem</h2>
+<p>This cryptosystem is one the initial system. It remains most employed cryptosystem even today. The system was invented by three scholars <b>Ron Rivest, Adi Shamir,</b> and <b>Len Adleman</b> and hence, it is termed as RSA cryptosystem.</p>
+<p>We will see two aspects of the RSA cryptosystem, firstly generation of key pair and secondly encryption-decryption algorithms.</p>
+<h3>Generation of RSA Key Pair</h3>
+<p>Each person or a party who desires to participate in communication using encryption needs to generate a pair of keys, namely public key and private key. The process followed in the generation of keys is described below &minus;</p>
+<ul class="list">
+<li><p><b>Generate the RSA modulus (n)</b></p>
+<ul class="list">
+<li><p>Select two large primes, p and q.</p></li>
+<li><p>Calculate n=p*q. For strong unbreakable encryption, let n be a large number, typically a minimum of 512 bits.</p></li>
+</ul>
+</li>
+<li><p><b>Find Derived Number (e)</b></p>
+<ul>
+<li><p>Number <b>e</b> must be greater than 1 and less than (p - 1)(q - 1).</p></li>
+<li><p>There must be no common factor for e and (p - 1)(q - 1) except for 1. In other words two numbers e and (p ñ 1)(q ñ 1) are coprime.</p></li>
+</ul>
+</li>
+<li><p><b>Form the public key</b></p>
+<ul class="list">
+<li><p>The pair of numbers (n, e) form the RSA public key and is made public.</p></li>
+<li><p>Interestingly, though n is part of the public key, difficulty in factorizing a large prime number ensures that attacker cannot find in finite time the two primes (p &amp; q) used to obtain n. This is strength of RSA.</p></li>
+</ul>
+</li>
+<li><p><b>Generate the private key</b></p>
+<ul class="list">
+<li><p>Private Key d is calculated from p, q, and e. For given n and e, there is unique number d.</p></li>
+<li><p>Number d is the inverse of e modulo (p - 1)(q ñ 1). This means that d is the number less than (p - 1)(q - 1) such that when multiplied by e, it is equal to 1 modulo (p - 1)(q - 1).</p></li>
+<li><p>This relationship is written mathematically as follows &minus;</p></li>
+</ul>
+</li>
+</ul>
+<pre class="result notranslate">
+ed = 1 mod (p - 1)(q - 1)
+</pre>
+<p>The Extended Euclidean Algorithm takes p, q, and e as input and gives d as output.</p>
+<h3>Example</h3>
+<p>An example of generating RSA Key pair is given below. (For ease of understanding, the primes p &amp; q taken here are small values. Practically, these values are very high).</p>
+<ul class="list">
+<li><p>Let two primes be p = 7 and q = 13. Thus, modulus n = pq = 7 x 13 = 91.</p></li>
+<li><p>Select e = 5, which is a valid choice since there is no number that is common factor of 5 and (p - 1)(q - 1) = 6 ◊ 12 = 72, except for 1.</p></li>
+<li><p>The pair of numbers (n, e) = (91, 5) forms the public key and can be made available to anyone whom we wish to be able to send us encrypted messages.</p></li>
+<li><p>Input p = 7, q = 13, and e = 5 to the Extended Euclidean Algorithm. The output will be d = 29.</p></li>
+<li><p>Check that the d calculated is correct by computing &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+de = 29 ◊ 5 = 145 = 1 mod 72
+</pre>
+<ul class="list">
+<li><p>Hence, public key is (91, 5) and private keys is (91, 29).</p></li>
+</ul>
+<h3>Encryption and Decryption</h3>
+<p>Once the key pair has been generated, the process of encryption and decryption are relatively straightforward and computationally easy.</p>
+<p>Interestingly, RSA does not directly operate on strings of bits as in case of symmetric key encryption. It operates on numbers modulo n. Hence, it is necessary to represent the plaintext as a series of numbers less than n.</p>
+<h3>RSA Encryption</h3>
+<ul class="list">
+<li><p>Suppose the sender wish to send some text message to someone whose public key is (n, e).</p></li>
+<li><p>The sender then represents the plaintext as a series of numbers less than n.</p></li>
+<li><p>To encrypt the first plaintext P, which is a number modulo n. The encryption process is simple mathematical step as &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+C = P<sup>e</sup> mod n
+</pre>
+<ul class="list">
+<li><p>In other words, the ciphertext C is equal to the plaintext P multiplied by itself e times and then reduced modulo n. This means that C is also a number less than n.</p></li>
+<li><p>Returning to our Key Generation example with plaintext P = 10, we get ciphertext C &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+C = 10<sup>5</sup> mod 91
+</pre>
+<h3>RSA Decryption</h3>
+<ul class="list">
+<li><p>The decryption process for RSA is also very straightforward. Suppose that the receiver of public-key pair (n, e) has received a ciphertext C.</p></li>
+<li><p>Receiver raises C to the power of his private key d. The result modulo n will be the plaintext P.</p></li>
+</ul>
+<pre class="result notranslate">
+Plaintext = C<sup>d</sup> mod n
+</pre>
+<ul class="list">
+<li><p>Returning again to our numerical example, the ciphertext C = 82 would get decrypted to number 10 using private key 29 &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+Plaintext = 82<sup>29</sup> mod 91 = 10
+</pre>
+<h3>RSA Analysis</h3>
+<p>The security of RSA depends on the strengths of two separate functions. The RSA cryptosystem is most popular public-key cryptosystem strength of which is based on the practical difficulty of factoring the very large numbers.</p>
+<ul class="list">
+<li><p><b>Encryption Function</b> &minus; It is considered as a one-way function of converting plaintext into ciphertext and it can be reversed only with the knowledge of private key d.</p></li>
+<li><p><b>Key Generation</b> &minus; The difficulty of determining a private key from an RSA public key is equivalent to factoring the modulus n. An attacker thus cannot use knowledge of an RSA public key to determine an RSA private key unless he can factor n. It is also a one way function, going from p &amp; q values to modulus n is easy but reverse is not possible.</p></li>
+</ul>
+<p>If either of these two functions are proved non one-way, then RSA will be broken. In fact, if a technique for factoring efficiently is developed then RSA will no longer be safe.</p>
+<p>The strength of RSA encryption drastically goes down against attacks if the number p and q are not large primes and/ or chosen public key e is a small number.</p>
+<h2>ElGamal Cryptosystem</h2>
+<p>Along with RSA, there are other public-key cryptosystems proposed. Many of them are based on different versions of the Discrete Logarithm Problem.</p>
+<p>ElGamal cryptosystem, called Elliptic Curve Variant, is based on the Discrete Logarithm Problem. It derives the strength from the assumption that the discrete logarithms cannot be found in practical time frame for a given number, while the inverse operation of the power can be computed efficiently.</p>
+<p>Let us go through a simple version of ElGamal that works with numbers modulo p. In the case of elliptic curve variants, it is based on quite different number systems.</p>
+<h3>Generation of ElGamal Key Pair</h3>
+<p>Each user of ElGamal cryptosystem generates the key pair through as follows &minus;</p>
+<ul class="list">
+<li><p><b>Choosing a large prime p.</b> Generally a prime number of 1024 to 2048 bits length is chosen.</p></li>
+<li><p><b>Choosing a generator element g.</b></p>
+<ul class="list">
+<li><p>This number must be between 1 and p - 1, but cannot be any number.</p></li>
+<li><p>It is a generator of the multiplicative group of integers modulo p. This means for every integer m co-prime to p, there is an integer k such that g<sup>k</sup>=a mod n.</p>
+<p>For example, 3 is generator of group 5 (Z<sub>5</sub> = {1, 2, 3, 4}).</p>
+</li>
+</ul>
+</li>
+</ul>
+<table class="table table-bordered">
+<tr>
+<th>N</th>
+<th>3<sup>n</sup></th>
+<th>3<sup>n</sup> mod 5</th>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>27</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>81</td>
+<td>1</td>
+</tr>
+</table>
+<ul class="list">
+<li><p><b>Choosing the private key.</b> The private key x is any number bigger than 1 and smaller than p-1.</p></li>
+<li><p><b>Computing part of the public key.</b> The value y is computed from the parameters p, g and the private key x as follows &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+y = g<sup>x</sup> mod p
+</pre>
+<ul class="list">
+<li><p><b>Obtaining Public key.</b> The ElGamal public key consists of the three parameters (p, g, y).</p>
+<p>For example, suppose that p = 17 and that g = 6 (It can be confirmed that 6 is a generator of group Z<sub>17</sub>). The private key x can be any number bigger than 1 and smaller than 71, so we choose x = 5. The value y is then computed as follows &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+y = 6<sup>5</sup> mod 17 = 7
+</pre>
+<ul class="list">
+<li><p>Thus the private key is 62 and the public key is (17, 6, 7).</p></li>
+</ul>
+<h3>Encryption and Decryption</h3>
+<p>The generation of an ElGamal key pair is comparatively simpler than the equivalent process for RSA. But the encryption and decryption are slightly more complex than RSA.</p>
+<h3>ElGamal Encryption</h3>
+<p>Suppose sender wishes to send a plaintext to someone whose ElGamal public key is (p, g, y), then &minus;</p>
+<ul class="list">
+<li><p>Sender represents the plaintext as a series of numbers modulo p.</p></li>
+<li><p>To encrypt the first plaintext P, which is represented as a number modulo p. The encryption process to obtain the ciphertext C is as follows &minus;</p>
+<ul class="list">
+<li>Randomly generate a number k;</li>
+<li>Compute two values C1 and C2, where &minus;</li>
+</ul>
+</li>
+</ul>
+<pre class="result notranslate">
+C1 = g<sup>k</sup> mod p
+C2 = (P<sup>*</sup>y<sup>k</sup>) mod p
+</pre>
+<ul class="list">
+<li><p>Send the ciphertext C, consisting of the two separate values (C1, C2), sent together.</p></li>
+<li><p>Referring to our ElGamal key generation example given above, the plaintext P = 13 is encrypted as follows &minus;</p>
+<ul class="list">
+<li>Randomly generate a number, say k = 10</li>
+<li>Compute the two values C1 and C2, where &minus;</li>
+</ul>
+</li>
+</ul>
+<pre class="result notranslate">
+C1 = 6<sup>10</sup> mod 17
+C2 = (13<sup>*</sup>7<sup>10</sup>) mod 17 = 9
+</pre>
+<ul class="list">
+<li><p>Send the ciphertext C = (C1, C2) = (15, 9).</p></li>
+</ul>
+</ul>
+<h3>ElGamal Decryption</h3>
+<ul class="list">
+<li><p>To decrypt the ciphertext (C1, C2) using private key x, the following two steps are taken &minus;</p>
+<ul class="list">
+<li><p>Compute the modular inverse of (C1)<sup>x</sup> modulo p, which is (C1)<sup>-x </sup>, generally referred to as decryption factor.</p></li>
+<li><p>Obtain the plaintext by using the following formula &minus;</p></li>
+</ul>
+</li>
+</ul>
+<pre class="result notranslate">
+C2 ◊ (C1)<sup>-x </sup> mod p = Plaintext
+</pre>
+<ul class="list">
+<li><p>In our example, to decrypt the ciphertext C = (C1, C2) = (15, 9) using private key x = 5, the decryption factor is</p></li>
+</ul>
+<pre class="result notranslate">
+15<sup>-5 </sup> mod 17 = 9
+</pre>
+<ul class="list">
+<li><p>Extract plaintext P = (9 ◊ 9) mod 17 = 13.</p></li>
+</ul>
+<h3>ElGamal Analysis</h3>
+<p>In ElGamal system, each user has a private key x. and has <b>three components</b> of public key &minus; <b>prime modulus p, generator g, and public Y = g<sup>x</sup> mod p</b>. The strength of the ElGamal is based on the difficulty of discrete logarithm problem.</p>
+<p>The secure key size is generally &gt; 1024 bits. Today even 2048 bits long key are used. On the processing speed front, Elgamal is quite slow, it is used mainly for key authentication protocols. Due to higher processing efficiency, Elliptic Curve variants of ElGamal are becoming increasingly popular.</p>
+<h2>Elliptic Curve Cryptography (ECC)</h2>
+<p>Elliptic Curve Cryptography (ECC) is a term used to describe a suite of cryptographic tools and protocols whose security is based on special versions of the discrete logarithm problem. It does not use numbers modulo p.</p>
+<p>ECC is based on sets of numbers that are associated with mathematical objects called elliptic curves. There are rules for adding and computing multiples of these numbers, just as there are for numbers modulo p.</p>
+<p>ECC includes a variants of many cryptographic schemes that were initially designed for modular numbers such as ElGamal encryption and Digital Signature Algorithm.</p>
+<p>It is believed that the discrete logarithm problem is much harder when applied to points on an elliptic curve. This prompts switching from numbers modulo p to points on an elliptic curve. Also an equivalent security level can be obtained with shorter keys if we use elliptic curve-based variants.</p>
+<p>The shorter keys result in two benefits &minus;</p>
+<ul class="list">
+<li>Ease of key management</li>
+<li>Efficient computation</li>
+</ul>
+<p>These benefits make elliptic-curve-based variants of encryption scheme highly attractive for application where computing resources are constrained.</p>
+<h2>RSA and ElGamal Schemes ñ A Comparison</h2>
+<p>Let us briefly compare the RSA and ElGamal schemes on the various aspects.</p>
+<table class="table table-bordered">
+<tr>
+<th>RSA</th>
+<th>ElGamal</th>
+</tr>
+<tr>
+<td>It is more efficient for encryption.</td>
+<td>It is more efficient for decryption.</td>
+</tr>
+<tr>
+<td>It is less efficient for decryption.</td>
+<td>It is more efficient for decryption.</td>
+</tr>
+<tr>
+<td>For a particular security level, lengthy keys are required in RSA.</td>
+<td>For the same level of security, very short keys are required.</td>
+</tr>
+<tr>
+<td>It is widely accepted and used.</td>
+<td>It is new and not very popular in market.</td>
+</tr>
+</table>
+<hr />
+
+</div>
+<div id="c8" class="tabcontent">
+<h1>Data Integrity in Cryptography</h1>
+
+<p>Until now, we discussed the use of symmetric and public key schemes to achieve the confidentiality of information. With this chapter, we begin our discussion on different cryptographic techniques designed to provide other security services.</p>
+<p>The focus of this chapter is on data integrity and cryptographic tools used to achieve the same.</p>
+<h2>Threats to Data Integrity</h2>
+<p>When sensitive information is exchanged, the receiver must have the assurance that the message has come intact from the intended sender and is not modified inadvertently or otherwise. There are two different types of data integrity threats, namely <b>passive</b> and <b>active</b>.</p>
+<h3>Passive Threats</h3>
+<p>This type of threats exists due to accidental changes in data.</p>
+<ul class="list">
+<li><p>These data errors are likely to occur due to noise in a communication channel. Also, the data may get corrupted while the file is stored on a disk.</p></li>
+<li><p>Error-correcting codes and simple checksums like Cyclic Redundancy Checks (CRCs) are used to detect the loss of data integrity. In these techniques, a digest of data is computed mathematically and appended to the data.</p></li>
+</ul>
+<h3>Active Threats</h3>
+<p>In this type of threats, an attacker can manipulate the data with malicious intent.</p>
+<ul class="list">
+<li><p>At simplest level, if data is without digest, it can be modified without detection. The system can use techniques of appending CRC to data for detecting any active modification.</p></li>
+<li><p>At higher level of threat, attacker may modify data and try to derive new digest for modified data from exiting digest. This is possible if the digest is computed using simple mechanisms such as CRC.</p></li>
+<li><p>Security mechanism such as Hash functions are used to tackle the active modification threats.</p></li>
+</ul>
+<hr />
+</div>
+<div id="c9" class="tabcontent">
+<h1>Cryptography Hash functions</h1>
+
+<p>Hash functions are extremely useful and appear in almost all information security applications.</p>
+<p>A hash function is a mathematical function that converts a numerical input value into another compressed numerical value. The input to the hash function is of arbitrary length but output is always of fixed length.</p>
+<p>Values returned by a hash function are called <b>message digest</b> or simply <b>hash values</b>. The following picture illustrated hash function &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/hash_functions.jpg" alt="Hash Functions" />
+<h2>Features of Hash Functions</h2>
+<p>The typical features of hash functions are &minus;</p>
+<ul class="list">
+<li><p><b>Fixed Length Output (Hash Value)</b></p>
+<ul class="list">
+<li><p>Hash function coverts data of arbitrary length to a fixed length. This process is often referred to as <b>hashing the data</b>.</p></li>
+<li><p>In general, the hash is much smaller than the input data, hence hash functions are sometimes called <b>compression functions</b>.</p></li>
+<li><p>Since a hash is a smaller representation of a larger data, it is also referred to as a <b>digest</b>.</p></li>
+<li><p>Hash function with n bit output is referred to as an <b>n-bit hash function</b>. Popular hash functions generate values between 160 and 512 bits.</p></li>
+</ul>
+</li>
+<li><p><b>Efficiency of Operation</b></p>
+<ul class="list">
+<li><p>Generally for any hash function h with input x, computation of h(x) is a fast operation.</p></li>
+<li><p>Computationally hash functions are much faster than a symmetric encryption.</p></li>
+</ul>
+</li>
+</ul>
+<h2>Properties of Hash Functions</h2>
+<p>In order to be an effective cryptographic tool, the hash function is desired to possess following properties &minus;</p>
+<ul class="list">
+<li><p><b>Pre-Image Resistance</b></p>
+<ul class="list">
+<li><p>This property means that it should be computationally hard to reverse a hash function.</p></li>
+<li><p>In other words, if a hash function h produced a hash value z, then it should be a difficult process to find any input value x that hashes to z.</p></li>
+<li><p>This property protects against an attacker who only has a hash value and is trying to find the input.</p></li>
+</ul>
+</li>
+<li><p><b>Second Pre-Image Resistance</b></p>
+<ul class="list">
+<li><p>This property means given an input and its hash, it should be hard to find a different input with the same hash.</p></li>
+<li><p>In other words, if a hash function h for an input x produces hash value h(x), then it should be difficult to find any other input value y such that h(y) = h(x).</p></li>
+<li><p>This property of hash function protects against an attacker who has an input value and its hash, and wants to substitute different value as legitimate value in place of original input value.</p></li>
+</ul>
+</li>
+<li><p><b>Collision Resistance</b></p>
+<ul class="list">
+<li><p>This property means it should be hard to find two different inputs of any length that result in the same hash. This property is also referred to as collision free hash function.</p></li>
+<li><p>In other words, for a hash function h, it is hard to find any two different inputs x and y such that h(x) = h(y).</p></li>
+<li><p>Since, hash function is compressing function with fixed hash length, it is impossible for a hash function not to have collisions. This property of collision free only confirms that these collisions should be hard to find.</p></li>
+<li><p>This property makes it very difficult for an attacker to find two input values with the same hash.</p></li>
+<li><p>Also, if a hash function is collision-resistant <b>then it is second pre-image resistant.</b></p></li>
+</ul>
+</li>
+</ul>
+<h2>Design of Hashing Algorithms</h2>
+<p>At the heart of a hashing is a mathematical function that operates on two fixed-size blocks of data to create a hash code. This hash function forms the part of the hashing algorithm.</p>
+<p>The size of each data block varies depending on the algorithm. Typically the block sizes are from 128 bits to 512 bits. The following illustration demonstrates hash function &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/hash_function_structure.jpg" alt="Hash Function Structure" />
+<p>Hashing algorithm involves rounds of above hash function like a block cipher. Each round takes an input of a fixed size, typically a combination of the most recent message block and the output of the last round.</p>
+<p>This process is repeated for as many rounds as are required to hash the entire message. Schematic of hashing algorithm is depicted in the following illustration &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/hashing_algorithm.jpg" alt="Hashing Algorithm" />
+<p>Since, the hash value of first message block becomes an input to the second hash operation, output of which alters the result of the third operation, and so on. This effect, known as an <b>avalanche</b> effect of hashing.</p>
+<p>Avalanche effect results in substantially different hash values for two messages that differ by even a single bit of data.</p>
+<p>Understand the difference between hash function and algorithm correctly. The hash function generates a hash code by operating on two blocks of fixed-length binary data.</p>
+<p>Hashing algorithm is a process for using the hash function, specifying how the message will be broken up and how the results from previous message blocks are chained together.</p>
+<h2>Popular Hash Functions</h2>
+<p>Let us briefly see some popular hash functions &minus;</p>
+<h3>Message Digest (MD)</h3>
+<p>MD5 was most popular and widely used hash function for quite some years.</p>
+<ul class="list">
+<li><p>The MD family comprises of hash functions MD2, MD4, MD5 and MD6. It was adopted as Internet Standard RFC 1321. It is a 128-bit hash function.</p></li>
+<li><p>MD5 digests have been widely used in the software world to provide assurance about integrity of transferred file. For example, file servers often provide a pre-computed MD5 checksum for the files, so that a user can compare the checksum of the downloaded file to it.</p></li>
+<li><p>In 2004, collisions were found in MD5. An analytical attack was reported to be successful only in an hour by using computer cluster. This collision attack resulted in compromised MD5 and hence it is no longer recommended for use.</p></li>
+</ul>
+<h3>Secure Hash Function (SHA)</h3>
+<p>Family of SHA comprise of four SHA algorithms; SHA-0, SHA-1, SHA-2, and SHA-3. Though from same family, there are structurally different.</p>
+<ul class="list">
+<li><p>The original version is SHA-0, a 160-bit hash function, was published by the National Institute of Standards and Technology (NIST) in 1993. It had few weaknesses and did not become very popular. Later in 1995, SHA-1 was designed to correct alleged weaknesses of SHA-0.</p></li>
+<li><p>SHA-1 is the most widely used of the existing SHA hash functions. It is employed in several widely used applications and protocols including Secure Socket Layer (SSL) security.</p></li>
+<li><p>In 2005, a method was found for uncovering collisions for SHA-1 within practical time frame making long-term employability of SHA-1 doubtful.</p></li>
+<li><p>SHA-2 family has four further SHA variants, SHA-224, SHA-256, SHA-384, and SHA-512 depending up on number of bits in their hash value. No successful attacks have yet been reported on SHA-2 hash function.</p></li>
+<li><p>Though SHA-2 is a strong hash function. Though significantly different, its basic design is still follows design of SHA-1. Hence, NIST called for new competitive hash function designs.</p></li>
+<li><p>In October 2012, the NIST chose the Keccak algorithm as the new SHA-3 standard. Keccak offers many benefits, such as efficient performance and good resistance for attacks.</p></li>
+</ul>
+<h3>RIPEMD</h3>
+<p>The RIPEND is an acronym for RACE Integrity Primitives Evaluation Message Digest. This set of hash functions was designed by open research community and generally known as a family of European hash functions.</p>
+<ul class="list">
+<li><p>The set includes RIPEND, RIPEMD-128, and RIPEMD-160. There also exist 256, and 320-bit versions of this algorithm.</p></li>
+<li><p>Original RIPEMD (128 bit) is based upon the design principles used in MD4 and found to provide questionable security. RIPEMD 128-bit version came as a quick fix replacement to overcome vulnerabilities on the original RIPEMD.</p></li>
+<li><p>RIPEMD-160 is an improved version and the most widely used version in the family. The 256 and 320-bit versions reduce the chance of accidental collision, but do not have higher levels of security as compared to RIPEMD-128 and RIPEMD-160 respectively.</p></li>
+</ul>
+<h3>Whirlpool</h3>
+<p>This is a 512-bit hash function.</p>
+<ul class="list">
+<li><p>It is derived from the modified version of Advanced Encryption Standard (AES). One of the designer was Vincent Rijmen, a co-creator of the AES.</p></li>
+<li><p>Three versions of Whirlpool have been released; namely WHIRLPOOL-0, WHIRLPOOL-T, and WHIRLPOOL.</p></li>
+</ul>
+<h2>Applications of Hash Functions</h2>
+<p>There are two direct applications of hash function based on its cryptographic properties.</p>
+<h3>Password Storage</h3>
+<p>Hash functions provide protection to password storage.</p>
+<ul class="list">
+<li><p>Instead of storing password in clear, mostly all logon processes store the hash values of passwords in the file.</p></li>
+<li><p>The Password file consists of a table of pairs which are in the form (user id, h(P)).</p></li>
+<li><p>The process of logon is depicted in the following illustration &minus;</p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/process_of_logon.jpg" alt="Process of Logon" />
+<ul class="list">
+<li><p>An intruder can only see the hashes of passwords, even if he accessed the password. He can neither logon using hash nor can he derive the password from hash value since hash function possesses the property of pre-image resistance.</p></li>
+</ul>
+<h3>Data Integrity Check</h3>
+<p>Data integrity check is a most common application of the hash functions. It is used to generate the checksums on data files. This application provides assurance to the user about correctness of the data.</p>
+<p>The process is depicted in the following illustration &minus;</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/data_integrity_check.jpg" alt="Data Integrity Check" />
+<p>The integrity check helps the user to detect any changes made to original file. It however, does not provide any assurance about originality. The attacker, instead of modifying file data, can change the entire file and compute all together new hash and send to the receiver. This integrity check application is useful only if the user is sure about the originality of file.</p>
+<hr />
+</div>
+<div id="c10" class="tabcontent">
+<h1>Public Key Infrastructure</h1>
+
+<p>The most distinct feature of Public Key Infrastructure (PKI) is that it uses a pair of keys to achieve the underlying security service. The key pair comprises of private key and public key.</p>
+<p>Since the public keys are in open domain, they are likely to be abused. It is, thus, necessary to establish and maintain some kind of trusted infrastructure to manage these keys.</p>
+<h2>Key Management</h2>
+<p>It goes without saying that the security of any cryptosystem depends upon how securely its keys are managed. Without secure procedures for the handling of cryptographic keys, the benefits of the use of strong cryptographic schemes are potentially lost.</p>
+<p>It is observed that cryptographic schemes are rarely compromised through weaknesses in their design. However, they are often compromised through poor key management.</p>
+<p>There are some important aspects of key management which are as follows &minus;</p>
+<ul class="list">
+<li><p>Cryptographic keys are nothing but special pieces of data. Key management refers to the secure administration of cryptographic keys.</p></li>
+<li><p>Key management deals with entire key lifecycle as depicted in the following illustration &minus;</p></li>
+</ul>
+<img src="/C:\Users\vit\Documents\subjects\completed/key_management_life_cycle.jpg" alt="Key Management LifeCycle" />
+<ul class="list">
+<li><p>There are two specific requirements of key management for public key cryptography.</p>
+<ul class="list">
+<li><p><b>Secrecy of private keys.</b> Throughout the key lifecycle, secret keys must remain secret from all parties except those who are owner and are authorized to use them.</p></li>
+<li><p><b>Assurance of public keys.</b> In public key cryptography, the public keys are in open domain and seen as public pieces of data. By default there are no assurances of whether a public key is correct, with whom it can be associated, or what it can be used for. Thus key management of public keys needs to focus much more explicitly on assurance of purpose of public keys.</p></li>
+</ul>
+</li>
+</ul>
+<p>The most crucial requirement of ëassurance of public keyí can be achieved through the public-key infrastructure (PKI), a key management systems for supporting public-key cryptography.</p>
+<h2>Public Key Infrastructure (PKI)</h2>
+<p>PKI provides assurance of public key. It provides the identification of public keys and their distribution. An anatomy of PKI comprises of the following components.</p>
+<ul class="list">
+<li>Public Key Certificate, commonly referred to as ëdigital certificateí.</li>
+<li>Private Key tokens.</li>
+<li>Certification Authority.</li>
+<li>Registration Authority.</li>
+<li>Certificate Management System.</li>
+</ul>
+<h2>Digital Certificate</h2>
+<p>For analogy, a certificate can be considered as the ID card issued to the person. People use ID cards such as a driver's license, passport to prove their identity. A digital certificate does the same basic thing in the electronic world, but with one difference.</p>
+<p>Digital Certificates are not only issued to people but they can be issued to computers, software packages or anything else that need to prove the identity in the electronic world.</p>
+<ul class="list">
+<li><p>Digital certificates are based on the ITU standard X.509 which defines a standard certificate format for public key certificates and certification validation. Hence digital certificates are sometimes also referred to as X.509 certificates.</p>
+<p>Public key pertaining to the user client is stored in digital certificates by The Certification Authority (CA) along with other relevant information such as client information, expiration date, usage, issuer etc.</p></li>
+<li><p>CA digitally signs this entire information and includes digital signature in the certificate.</p></li>
+<li><p>Anyone who needs the assurance about the public key and associated information of client, he carries out the signature validation process using CAís public key. Successful validation assures that the public key given in the certificate belongs to the person whose details are given in the certificate.</p></li>
+</ul>
+<p>The process of obtaining Digital Certificate by a person/entity is depicted in the following illustration.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/digital_certificate.jpg" alt="Digital Certificate" />
+<p>As shown in the illustration, the CA accepts the application from a client to certify his public key. The CA, after duly verifying identity of client, issues a digital certificate to that client.</p>
+<h2>Certifying Authority (CA)</h2>
+<p>As discussed above, the CA issues certificate to a client and assist other users to verify the certificate. The CA takes responsibility for identifying correctly the identity of the client asking for a certificate to be issued, and ensures that the information contained within the certificate is correct and digitally signs it.</p>
+<h3>Key Functions of CA</h3>
+<p>The key functions of a CA are as follows &minus;</p>
+<ul class="list">
+<li><p><b>Generating key pairs</b> &minus; The CA may generate a key pair independently or jointly with the client.</p></li>
+<li><p><b>Issuing digital certificates</b> &minus; The CA could be thought of as the PKI equivalent of a passport agency &minus; the CA issues a certificate after client provides the credentials to confirm his identity. The CA then signs the certificate to prevent modification of the details contained in the certificate.</p></li>
+<li><p><b>Publishing Certificates</b> &minus; The CA need to publish certificates so that users can find them. There are two ways of achieving this. One is to publish certificates in the equivalent of an electronic telephone directory. The other is to send your certificate out to those people you think might need it by one means or another.</p></li>
+<li><p><b>Verifying Certificates</b> &minus; The CA makes its public key available in environment to assist verification of his signature on clientsí digital certificate.</p></li>
+<li><p><b>Revocation of Certificates</b> &minus; At times, CA revokes the certificate issued due to some reason such as compromise of private key by user or loss of trust in the client. After revocation, CA maintains the list of all revoked certificate that is available to the environment.</p></li>
+</ul>
+<h3>Classes of Certificates</h3>
+<p>There are four typical classes of certificate &minus;</p>
+<ul class="list">
+<li><p><b>Class 1</b> &minus; These certificates can be easily acquired by supplying an email address.</p></li>
+<li><p><b>Class 2</b> &minus; These certificates require additional personal information to be supplied.</p></li>
+<li><p><b>Class 3</b> &minus; These certificates can only be purchased after checks have been made about the requestorís identity.</p></li>
+<li><p><b>Class 4</b> &minus; They may be used by governments and financial organizations needing very high levels of trust.</p></li>
+</ul>
+<h3>Registration Authority (RA)</h3>
+<p>CA may use a third-party Registration Authority (RA) to perform the necessary checks on the person or company requesting the certificate to confirm their identity. The RA may appear to the client as a CA, but they do not actually sign the certificate that is issued.</p>
+<h3>Certificate Management System (CMS)</h3>
+<p>It is the management system through which certificates are published, temporarily or permanently suspended, renewed, or revoked. Certificate management systems do not normally delete certificates because it may be necessary to prove their status at a point in time, perhaps for legal reasons. A CA along with associated RA runs certificate management systems to be able to track their responsibilities and liabilities.</p>
+<h3>Private Key Tokens</h3>
+<p>While the public key of a client is stored on the certificate, the associated secret private key can be stored on the key ownerís computer. This method is generally not adopted. If an attacker gains access to the computer, he can easily gain access to private key. For this reason, a private key is stored on secure removable storage token access to which is protected through a password.</p>
+<p>Different vendors often use different and sometimes proprietary storage formats for storing keys. For example, Entrust uses the proprietary .epf format, while Verisign, GlobalSign, and Baltimore use the standard .p12 format.</p>
+<h2>Hierarchy of CA</h2>
+<p>With vast networks and requirements of global communications, it is practically not feasible to have only one trusted CA from whom all users obtain their certificates. Secondly, availability of only one CA may lead to difficulties if CA is compromised.</p>
+<p>In such case, the hierarchical certification model is of interest since it allows public key certificates to be used in environments where two communicating parties do not have trust relationships with the same CA.</p>
+<ul class="list">
+<li><p>The root CA is at the top of the CA hierarchy and the root CA's certificate is a self-signed certificate.</p></li>
+<li><p>The CAs, which are directly subordinate to the root CA (For example, CA1 and CA2) have CA certificates that are signed by the root CA.</p></li>
+<li><p>The CAs under the subordinate CAs in the hierarchy (For example, CA5 and CA6) have their CA certificates signed by the higher-level subordinate CAs.</p></li>
+</ul>
+<p>Certificate authority (CA) hierarchies are reflected in certificate chains. A certificate chain traces a path of certificates from a branch in the hierarchy to the root of the hierarchy.</p>
+<p>The following illustration shows a CA hierarchy with a certificate chain leading from an entity certificate through two subordinate CA certificates (CA6 and CA3) to the CA certificate for the root CA.</p>
+<img src="/C:\Users\vit\Documents\subjects\completed/ca_hierarchy.jpg" alt="CA Hierarchy" />
+<p>Verifying a certificate chain is the process of ensuring that a specific certificate chain is valid, correctly signed, and trustworthy. The following procedure verifies a certificate chain, beginning with the certificate that is presented for authentication &minus;</p>
+<ul class="list">
+<li><p>A client whose authenticity is being verified supplies his certificate, generally along with the chain of certificates up to Root CA.</p></li>
+<li><p>Verifier takes the certificate and validates by using public key of issuer. The issuerís public key is found in the issuerís certificate which is in the chain next to clientís certificate.</p></li>
+<li><p>Now if the higher CA who has signed the issuerís certificate, is trusted by the verifier, verification is successful and stops here.</p></li>
+<li><p>Else, the issuer's certificate is verified in a similar manner as done for client in above steps. This process continues till either trusted CA is found in between or else it continues till Root CA.</p></li>
+</ul>
+<a href="cryptographyquiz.php" class="button">Start Quiz</a>
+<form name="cname" action="laterquiz.php">
+    <input type="hidden" name="cname" value="Cryptography">
+    <input type="submit" class="button" value="Quiz Later">
+<hr />
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

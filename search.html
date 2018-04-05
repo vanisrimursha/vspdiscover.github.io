@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Search</title>
+<style>
+.formclass{padding:0.01em 16px}
+.bluecolor{color:#fff !important;background-color:royalblue !important}
+.inputstyle{padding:8px;display:block;border:none; border-bottom:1px solid #ccc;width:100%}
+.dropbtn {
+    background-color: royalblue;
+    width:120px;
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight:bold;
+    font-style:italic;
+    font-size: 14px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: lawngreen;
+    font-weight: bold;
+    font-style: italic;
+    color: indigo;}
+</style>
+</head>
+<body>
+<div style="width: 100%; max-width: 1920px;  min-width: 480px; height: auto; overflow: hidden;">
+<div class="formclass bluecolor">
+<h2> Search Courses </h2>
+</div>
+    <form action="search.php" method="GET" class="formclass" target="courses">
+<p>
+<label><b><font color="orange">Type Course Name or Course Type: </font></b></label>
+        <input type="text" name="query" class="inputstyle"/>
+        <input type="submit" value="Search" class="dropbtn"/>
+    </form>
+</div>
+</body>
+</html>
